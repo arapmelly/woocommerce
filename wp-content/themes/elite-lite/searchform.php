@@ -1,0 +1,1 @@
+<form role="search" method="get" class="searchform" action="<?php echo home_url('/'); ?>">  <div>    <input onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}"  value="Search" type="text" value="" name="s" id="s" />    <input type="submit" value="" name="submit"/>  </div></form><div class="clear"></div>

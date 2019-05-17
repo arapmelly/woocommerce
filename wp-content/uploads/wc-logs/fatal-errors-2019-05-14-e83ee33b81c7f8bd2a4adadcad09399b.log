@@ -1,0 +1,159 @@
+2019-05-14T07:11:20+00:00 CRITICAL Uncaught Error: Class 'Lipisha\Exception' not found in /var/www/wordpress/optimus/wp-content/plugins/lipisha/classes/Lipisha.php:69
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/lipisha/lipisha.php(27): Lipisha\Lipisha->__construct(NULL, NULL, NULL)
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): get_balance('', '', 'lipisha-balance')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(lipish...', 'do_shortcode_ta...', '[shop-banner]\n\n...')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('[shop-banner]\n\n...')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('[shop-banner]\n\n...', Array)
+#6 /var/www/wordpress/optimus/wp-includes/post-template.php(247): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-content/themes/elite-lite/page.php(24): the_content()
+#8 /var/www/wordpress/optimus/wp- in /var/www/wordpress/optimus/wp-content/plugins/lipisha/classes/Lipisha.php on line 69
+
+2019-05-14T07:11:49+00:00 CRITICAL Allowed memory size of 134217728 bytes exhausted (tried to allocate 4096 bytes) in /var/www/wordpress/optimus/wp-content/plugins/lipisha/lipisha.php on line 29
+
+2019-05-14T07:12:15+00:00 CRITICAL Uncaught Error: Class 'Lipisha' not found in /var/www/wordpress/optimus/wp-content/plugins/lipisha/lipisha.php:29
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): get_balance('', '', 'lipisha-balance')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(lipish...', 'do_shortcode_ta...', '[shop-banner]\n\n...')
+#3 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('[shop-banner]\n\n...')
+#4 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('[shop-banner]\n\n...', Array)
+#5 /var/www/wordpress/optimus/wp-includes/post-template.php(247): apply_filters('the_content', '<!-- wp:shortco...')
+#6 /var/www/wordpress/optimus/wp-content/themes/elite-lite/page.php(24): the_content()
+#7 /var/www/wordpress/optimus/wp-includes/template-loader.php(77): include('/var/www/wordpr...')
+#8 /var/www/wordpress/optimus/wp-blog-header.php(19): require_once('/var/ww in /var/www/wordpress/optimus/wp-content/plugins/lipisha/lipisha.php on line 29
+
+2019-05-14T07:24:28+00:00 CRITICAL Object of class Lipisha\Lipisha could not be converted to string in /var/www/wordpress/optimus/wp-includes/shortcodes.php on line 325
+
+2019-05-14T07:25:34+00:00 CRITICAL Allowed memory size of 134217728 bytes exhausted (tried to allocate 4096 bytes) in /var/www/wordpress/optimus/wp-content/plugins/lipisha/classes/Lipisha.php on line 61
+
+2019-05-14T07:56:12+00:00 CRITICAL Uncaught Error: Class 'Lipisha\Exception' not found in /var/www/wordpress/optimus/wp-content/plugins/lipisha/classes/Lipisha.php:69
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/lipisha/lipisha.php(29): Lipisha\Lipisha->__construct('0115020f49038db...', 'x5Ri4QVS7LqsdYt...', 'LIVE')
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): get_balance('', '', 'lipisha-balance')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(lipish...', 'do_shortcode_ta...', '[shop-banner]\n\n...')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('[shop-banner]\n\n...')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('[shop-banner]\n\n...', Array)
+#6 /var/www/wordpress/optimus/wp-includes/post-template.php(247): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-content/themes/elite-lite/page.php(24): the_content() in /var/www/wordpress/optimus/wp-content/plugins/lipisha/classes/Lipisha.php on line 69
+
+2019-05-14T07:58:37+00:00 CRITICAL Allowed memory size of 536870912 bytes exhausted (tried to allocate 4096 bytes) in /var/www/wordpress/optimus/wp-content/plugins/lipisha/lipisha.php on line 29
+
+2019-05-14T12:46:30+00:00 CRITICAL Uncaught Error: Call to a member function decode() on null in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:34
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php(42): authorize()
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '[mpesa]\n')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('[mpesa]\n')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('[mpesa]\n', Array)
+#6 /var/www/wordpress/optimus/wp-includes/post-template.php(247): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-content/themes/elite-lite/page.php(24): the_content()
+#8 /var/www/wordpress/optimus/wp-includes/template-loader.php(77): include('/var/www/wordpr...')
+#9 /var/www/wordpress/optimus/ in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 34
+
+2019-05-14T12:47:01+00:00 CRITICAL Uncaught Error: Call to a member function decode() on null in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:34
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php(42): authorize()
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '<p>[shop-banner...')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('<p>[shop-banner...')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('<p>[shop-banner...', Array)
+#6 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(545): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(380): WP_REST_Revisions_Controller->prepare_ite in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 34
+
+2019-05-14T12:47:14+00:00 CRITICAL Uncaught Error: Call to a member function decode() on null in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:36
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php(44): authorize()
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '[mpesa]\n')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('[mpesa]\n')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('[mpesa]\n', Array)
+#6 /var/www/wordpress/optimus/wp-includes/post-template.php(247): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-content/themes/elite-lite/page.php(24): the_content()
+#8 /var/www/wordpress/optimus/wp-includes/template-loader.php(77): include('/var/www/wordpr...')
+#9 /var/www/wordpress/optimus/ in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 36
+
+2019-05-14T12:47:27+00:00 CRITICAL Uncaught Error: Call to a member function decode() on null in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:36
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php(44): authorize()
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '[mpesa]\n')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('[mpesa]\n')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('[mpesa]\n', Array)
+#6 /var/www/wordpress/optimus/wp-includes/post-template.php(247): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-content/themes/elite-lite/page.php(24): the_content()
+#8 /var/www/wordpress/optimus/wp-includes/template-loader.php(77): include('/var/www/wordpr...')
+#9 /var/www/wordpress/optimus/ in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 36
+
+2019-05-14T12:48:03+00:00 CRITICAL Uncaught Error: Call to a member function decode() on null in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:36
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php(44): authorize()
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '<p>[shop-banner...')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('<p>[shop-banner...')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('<p>[shop-banner...', Array)
+#6 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(545): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(380): WP_REST_Revisions_Controller->prepare_ite in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 36
+
+2019-05-14T12:49:06+00:00 CRITICAL Uncaught Error: Call to a member function decode() on null in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:36
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php(44): authorize()
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '<p>[shop-banner...')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('<p>[shop-banner...')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('<p>[shop-banner...', Array)
+#6 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(545): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(380): WP_REST_Revisions_Controller->prepare_ite in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 36
+
+2019-05-14T12:50:08+00:00 CRITICAL Uncaught Error: Call to a member function decode() on null in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:36
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php(44): authorize()
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '<p>[shop-banner...')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('<p>[shop-banner...')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('<p>[shop-banner...', Array)
+#6 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(545): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(380): WP_REST_Revisions_Controller->prepare_ite in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 36
+
+2019-05-14T12:53:18+00:00 CRITICAL Uncaught Error: Call to a member function decode() on null in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:45
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php(53): authorize()
+#1 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '<p>[shop-banner...')
+#4 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('<p>[shop-banner...')
+#5 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('<p>[shop-banner...', Array)
+#6 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(545): apply_filters('the_content', '<!-- wp:shortco...')
+#7 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(380): WP_REST_Revisions_Controller->prepare_ite in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 45
+
+2019-05-14T13:09:40+00:00 CRITICAL Uncaught Error: Call to undefined function authorize() in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:24
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '<p>[shop-banner...')
+#3 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('<p>[shop-banner...')
+#4 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('<p>[shop-banner...', Array)
+#5 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(545): apply_filters('the_content', '<!-- wp:shortco...')
+#6 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(380): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#7 /var/www/wordpress/optimus in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 24
+
+2019-05-14T13:10:41+00:00 CRITICAL Uncaught Error: Call to undefined function authorize() in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php:27
+Stack trace:
+#0 /var/www/wordpress/optimus/wp-includes/shortcodes.php(325): test('', '', 'mpesa')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 /var/www/wordpress/optimus/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(mpesa)...', 'do_shortcode_ta...', '<p>[shop-banner...')
+#3 /var/www/wordpress/optimus/wp-includes/class-wp-hook.php(286): do_shortcode('<p>[shop-banner...')
+#4 /var/www/wordpress/optimus/wp-includes/plugin.php(208): WP_Hook->apply_filters('<p>[shop-banner...', Array)
+#5 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(545): apply_filters('the_content', '<!-- wp:shortco...')
+#6 /var/www/wordpress/optimus/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(380): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#7 /var/www/wordpress/optimus in /var/www/wordpress/optimus/wp-content/plugins/mpesa/mpesa.php on line 27
+
