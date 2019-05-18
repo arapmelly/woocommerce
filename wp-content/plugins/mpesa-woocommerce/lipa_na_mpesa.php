@@ -154,9 +154,6 @@ public function process_payment($order_id){
 
   $phone_number = preg_replace('/^0/','254',$_POST['mpesa_phone_number']);
   $password = base64_encode($this->business_short_code . $this->passkey . date('YmdHis'));
-  $site_url = get_option('siteurl');
-  $siteurl = $site_url.$this->callback_url;
-
 
   $payload = array(
     'BusinessShortCode' => $this->business_short_code,
@@ -186,7 +183,7 @@ public function process_payment($order_id){
       'sslverify' => false,
     ) );
 
-print_r($response);
+   print_r($response);
 
     if ( is_wp_error( $response ) )
       throw new Exception( __( 'Encountered an error while processing payment. Sorry for the inconvenience.', 'lipa_na_mpesa' ) );
