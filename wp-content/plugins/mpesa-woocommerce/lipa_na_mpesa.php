@@ -22,7 +22,7 @@ class Lipa_Na_Mpesa extends WC_Payment_Gateway {
     $this->enabled        = $this->get_option( 'enabled' );
     $this->consumer_key        = $this->get_option( 'consumer_key' );
     $this->consumer_secret        = $this->get_option( 'consumer_secret' );
-    $this->callback_url        = $this->get_option( 'callback_url' );
+    $this->call_back_url        = $this->get_option( 'call_back_url' );
     $this->environment        = $this->get_option( 'environment' );
     $this->business_short_code = $this->get_option( 'business_short_code' );
     $this->passkey        = $this->get_option( 'passkey' );
@@ -184,9 +184,7 @@ public function process_payment($order_id){
       'sslverify' => false,
     ) );
 
-    print_r($response);
 
-    /*
     if ( is_wp_error( $response ) )
       throw new Exception( __( 'Encountered an error while processing payment. Sorry for the inconvenience.', 'lipa_na_mpesa' ) );
     if ( empty( $response['body'] ) )
@@ -218,7 +216,7 @@ public function process_payment($order_id){
         'redirect' => $this->get_return_url( $customer_order )
     );
 
-*/
+
 
 
 }
