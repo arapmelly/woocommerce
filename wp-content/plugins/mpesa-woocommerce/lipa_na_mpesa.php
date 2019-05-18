@@ -186,7 +186,7 @@ public function process_payment($order_id){
       'sslverify' => false,
     ) );
 
-
+print_r($response);
 
     if ( is_wp_error( $response ) )
       throw new Exception( __( 'Encountered an error while processing payment. Sorry for the inconvenience.', 'lipa_na_mpesa' ) );
