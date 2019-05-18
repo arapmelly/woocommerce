@@ -186,6 +186,7 @@ public function process_payment($order_id){
 
     print_r($response);
 
+    /*
     if ( is_wp_error( $response ) )
       throw new Exception( __( 'Encountered an error while processing payment. Sorry for the inconvenience.', 'lipa_na_mpesa' ) );
     if ( empty( $response['body'] ) )
@@ -217,7 +218,7 @@ public function process_payment($order_id){
         'redirect' => $this->get_return_url( $customer_order )
     );
 
-
+*/
 
 
 }
