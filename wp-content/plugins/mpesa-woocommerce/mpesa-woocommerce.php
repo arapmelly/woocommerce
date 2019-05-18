@@ -56,8 +56,26 @@ function init_lipa_na_mpesa(){
  * Add Gateway class to all payment gateway methods
  */
 function woo_add_gateway_class( $methods ) {
-  
+
 	$methods[] = 'Lipa_Na_Mpesa';
 	return $methods;
 }
 add_filter( 'woocommerce_payment_gateways', 'woo_add_gateway_class' );
+
+
+function mpesa_payment_callback(){
+
+  $data = json_decode(file_get_contents('php://input'), true);
+
+  print_r($data);
+}
+
+
+
+add_action('rest_api_init', function() {
+
+    register_rest_route('mpesa/v1/payments', 'callback', array('methods'=>'POST', 'callback'=>'mpesa_payment_callback'));
+
+
+
+});

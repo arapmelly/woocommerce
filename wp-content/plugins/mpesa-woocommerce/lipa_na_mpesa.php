@@ -78,11 +78,12 @@ class Lipa_Na_Mpesa extends WC_Payment_Gateway {
         'type'    => 'text',
         'desc_tip'  => __( 'Mpesa consumer secret', 'lipa_na_mpesa' ),
       ),
-      'callback_url' => array(
-        'title'    => __( 'Callback URL', 'lipa_na_mpesa' ),
+      'call_back_url' => array(
+        'title'    => __( 'Callback Url', 'lipa_na_mpesa' ),
         'type'    => 'text',
-        'desc_tip'  => __( 'The application callback URL', 'lipa_na_mpesa' ),
-        'default'  => __('/wp-json/mpesa/v1/process_payment', 'lipa_na_mpesa' ),
+        'disabled' => true,
+        'desc_tip'  => __( 'Payment title of checkout process.', 'lipa_na_mpesa' ),
+        'default'  => __( site_url('/wp-json/mpesa/v1/payment_callback'), 'lipa_na_mpesa' ),
       ),
       'environment' => array(
         'title'    => __( 'Environment', 'lipa_na_mpesa' ),
@@ -164,7 +165,7 @@ public function process_payment($order_id){
     'PartyA' => $phone_number,
     'PartyB' => $this->business_short_code,
     'PhoneNumber' => $phone_number,
-    'CallBackURL' => $this->callback_url,
+    'CallBackURL' => $this->call_back_url,
     'AccountReference' => $customer_order->get_order_number(),
     'TransactionDesc' => 'Test Transaction '
   );
@@ -182,8 +183,6 @@ public function process_payment($order_id){
       'timeout'   => 90,
       'sslverify' => false,
     ) );
-
-   print_r($response);
 
     if ( is_wp_error( $response ) )
       throw new Exception( __( 'Encountered an error while processing payment. Sorry for the inconvenience.', 'lipa_na_mpesa' ) );
@@ -220,7 +219,6 @@ public function process_payment($order_id){
 
 
 }
-
 
 
 }
