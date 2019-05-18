@@ -143,13 +143,13 @@ public function process_payment($order_id){
 
 
   $credentials = base64_encode($this->consumer_key.':'.$this->consumer_secret);
-  $response = wp_remote_get('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', array(
+  $res = wp_remote_get('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', array(
     'headers' => array(
         'Authorization' => 'Basic ' . $credentials
     ),
   ));
 
-  $data = json_decode($response['body'], true);
+  $data = json_decode($res['body'], true);
 
   $access_token = $data['access_token'];
 
@@ -183,8 +183,6 @@ public function process_payment($order_id){
       'timeout'   => 90,
       'sslverify' => false,
     ) );
-
-    print_r($response);
 
     if ( is_wp_error( $response ) )
       throw new Exception( __( 'Encountered an error while processing payment. Sorry for the inconvenience.', 'lipa_na_mpesa' ) );
