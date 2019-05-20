@@ -41,6 +41,15 @@ function om_activate(){
 }
 
 
+function om_tracking_script() {
+
+    wp_register_script('om_tracker', plugins_url('om_tracker.js', __FILE__), array('jquery'),'3.3.1', true);
+    wp_enqueue_script('om_tracker');
+
+}
+add_action( 'wp_enqueue_scripts', 'om_tracking_script' );
+
+
 //SHORTCODES
 
 add_shortcode('shop-banner', 'display_shop_banner');

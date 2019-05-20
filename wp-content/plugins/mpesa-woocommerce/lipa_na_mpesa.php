@@ -185,10 +185,11 @@ public function process_payment($order_id){
     ) );
 
 
-    if ( is_wp_error( $response ) )
+    if ( is_wp_error( $response ) ){
       throw new Exception( __( 'Encountered an error while processing payment. Sorry for the inconvenience.', 'lipa_na_mpesa' ) );
-    if ( empty( $response['body'] ) )
-      throw new Exception( __( 'Mpesa\'s Response could not get any data.', 'lipa_na_mpesa' ) );
+    } elseif ( empty( $response['body'] ) ) {
+        throw new Exception( __( 'Mpesa\'s Response could not get any data.', 'lipa_na_mpesa' ) );
+    } else {
 
       $resp = json_decode($response['body'], true);
 
@@ -201,20 +202,27 @@ public function process_payment($order_id){
 
 
       // Mark as on-hold (we're awaiting the cheque)
-    $customer_order->update_status('on-hold', __( 'Awaiting payment verification', 'woocommerce' ));
+      $customer_order->update_status('on-hold', __( 'Awaiting payment verification', 'woocommerce' ));
 
-    // Reduce stock levels
-    //$customer_order->reduce_order_stock();
+      // Reduce stock levels
+      //$customer_order->reduce_order_stock();
 
-    // Remove cart
+      // Remove cart
 
-    $woocommerce->cart->empty_cart();
+      $woocommerce->cart->empty_cart();
 
-    // Return thankyou redirect
-    return array(
+      // Return thankyou redirect
+
+      return array(
         'result' => 'success',
         'redirect' => $this->get_return_url( $customer_order )
-    );
+      );
+
+
+    }
+
+
+
 
 
 
