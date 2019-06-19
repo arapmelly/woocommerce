@@ -2,3 +2,4 @@
 wp-config.php
 wp-config-sample.php
 optimus_wordpress_db.sql
+.idea/
