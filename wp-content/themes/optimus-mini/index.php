@@ -17,26 +17,13 @@ get_header();
                 <div class="num-rating tag-descriptor">4.25 <span class="total-reviews">(560 Reviews)</span></div>
             </div>
             <div class="orders-made">
-                <div class="tag-descriptor">2,500 <span class="total-reviews">Orders made</span></div>
-                <div class="tag-descriptor">510 <span class="total-reviews">Deliveries made</span></div>
+                <div class="tag-descriptor"><?php echo get_total_orders('processing'); ?><span class="total-reviews"> Orders made</span></div>
+                <div class="tag-descriptor"><?php echo get_total_orders('completed'); ?> <span class="total-reviews">Deliveries made</span></div>
             </div>
         </div>
     </section>
 
-    <section class="filter-by-category">
-        <div class="section-inner-wrapper">
-            <div class="owl-carousel owl-theme">
-                <div class="item"><h4>Whiskey</h4></div>
-                <div class="item"><h4>Wine</h4></div>
-                <div class="item"><h4>Vodka</h4></div>
-                <div class="item"><h4>Beer</h4></div>
-                <div class="item"><h4>Gin</h4></div>
-                <div class="item"><h4>Rum</h4></div>
-                <div class="item"><h4>cognac</h4></div>
-            </div>
-            <div class="custom-nav owl-nav"></div>
-        </div>
-    </section>
+   
 
 
 <?php 
@@ -53,6 +40,22 @@ $args = array(
 
 $cats = get_categories( $args );
 
+
+?>
+
+<section class="filter-by-category">
+        <div class="section-inner-wrapper">
+            <div class="owl-carousel owl-theme">
+            <?php foreach($cats as $cat) { ?>
+                <div class="item"><h4><?php echo $cat->name; ?></h4></div>
+            <?php } ?>
+                
+            </div>
+            <div class="custom-nav owl-nav"></div>
+        </div>
+    </section>
+
+<?php
 foreach($cats as $cat){ 
 
     

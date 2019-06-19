@@ -20,3 +20,24 @@ Stack trace:
 
 2019-06-19T10:08:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\pocktt-website\wp-includes\wp-db.php on line 2007
 
+2019-06-19T11:36:41+00:00 CRITICAL Object of class stdClass could not be converted to string in C:\xampp\htdocs\pocktt-website\wp-content\themes\optimus-mini\index.php on line 20
+
+2019-06-19T11:41:22+00:00 CRITICAL Uncaught Error: Cannot use object of type stdClass as array in C:\xampp\htdocs\pocktt-website\wp-content\themes\optimus-mini\functions.php:33
+Stack trace:
+#0 C:\xampp\htdocs\pocktt-website\wp-content\themes\optimus-mini\index.php(20): get_total_orders()
+#1 C:\xampp\htdocs\pocktt-website\wp-includes\template-loader.php(77): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pocktt-website\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\pocktt-website\index.php(17): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\pocktt-website\wp-content\themes\optimus-mini\functions.php on line 33
+
+2019-06-19T11:47:10+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function wc_orders_count(), 0 passed in C:\xampp\htdocs\pocktt-website\wp-content\themes\optimus-mini\functions.php on line 31 and exactly 1 expected in C:\xampp\htdocs\pocktt-website\wp-content\plugins\woocommerce\includes\wc-order-functions.php:329
+Stack trace:
+#0 C:\xampp\htdocs\pocktt-website\wp-content\themes\optimus-mini\functions.php(31): wc_orders_count()
+#1 C:\xampp\htdocs\pocktt-website\wp-content\themes\optimus-mini\index.php(20): get_total_orders()
+#2 C:\xampp\htdocs\pocktt-website\wp-includes\template-loader.php(77): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\pocktt-website\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pocktt-website\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\pocktt-website\wp-content\plugins\woocommerce\includes\wc-order-functions.php on line 329
+

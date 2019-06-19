@@ -25,4 +25,12 @@ function add_theme_scripts() {
     return $percentage.' %';
   }
 
+
+  function get_total_orders($status){
+
+    $order_count = wc_orders_count($status);
+
+    return $order_count;
+  }
+
 ?>

@@ -20,7 +20,7 @@
                                                             srcset="<?php  echo get_template_directory_uri(); ?>/images/logo-copy@2x.png 2x,<?php  echo get_template_directory_uri(); ?>/images/logo-copy@3x.png 3x"></a>
         </div>
         <div class="right">
-            <a href="<?php wc_get_cart_url(); ?>" title="shopping cart" class="shopping-cart"><span class="icon-shopping-cart-outline"/></a>
+            <a href="<?php echo ('cart'); ?>" title="shopping cart" class="shopping-cart"><span class="icon-shopping-cart-outline"/></a>
         </div>
     </div>
 </nav>
