@@ -1,6 +1,0 @@
-2019-05-18T12:12:05+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /var/www/wordpress/optimus/wp-content/plugins/mpesa-woocommerce/lipa_na_mpesa.php on line 225
-
-2019-05-18T12:12:06+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /var/www/wordpress/optimus/wp-content/plugins/mpesa-woocommerce/lipa_na_mpesa.php on line 225
-
-2019-05-18T12:12:23+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /var/www/wordpress/optimus/wp-content/plugins/mpesa-woocommerce/lipa_na_mpesa.php on line 225
-
