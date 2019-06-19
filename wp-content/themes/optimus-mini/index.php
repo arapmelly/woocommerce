@@ -39,12 +39,31 @@ get_header();
     </section>
 
 
+<?php 
 
-    <section class="products-by-category">
+$args = array(
+    'type'                     => 'product',
+    'parent'                   => get_queried_object_id(),
+    'orderby'                  => 'term_group',
+    'hide_empty'               => true,
+    'hierarchical'             => 1,
+    'taxonomy'                 => 'product_cat',
+    'pad_counts'               => false
+);
+
+$cats = get_categories( $args );
+
+foreach($cats as $cat){ 
+
+    
+?>
+
+
+<section class="products-by-category">
         <div class="products">
             <header class="category-header">
                 <div class="inner-wrapper">
-                    <h3>whiskey</h3>
+                    <h3><?php echo $cat->name; ?></h3>
                     <a href="#">View All</a>
                 </div>
             </header>
@@ -54,39 +73,21 @@ get_header();
   
 <?php 
 $query = new WC_Product_Query( array(
-    'limit' => 10,
+    'limit' => 5,
     'orderby' => 'date',
     'order' => 'DESC',
+    'category' => [$cat->slug],
     
 ) );
 $products = $query->get_products();
 
 foreach($products as $product){
+    
     ?>
 
-<div class="item card">
-                            <div class="image">
-                                
-                                <span class="caol-ila_1984"><?php echo $product->get_image(); ?></span>
-
-                               
-                                
-                            </div>
-                            <div class="content price-discount">
-                                <div class="header price"><?php echo $product->get_price_html(); ?></div>
-                                <div class="discount">30% off</div>
-                            </div>
-                            <div class="content">
-                                <div class="header"><?php echo $product->get_name(); ?></div>
-                                <div class="description">
-                                <?php echo $product->get_description(); ?>
-                                </div>
-                            </div>
-
-                            <a href="#" class="ui bottom attached button">
-                                buy
-                            </a>
-                        </div>
+    <?php 
+        include( locate_template( 'templates/product.php', false, false ) );                   
+    ?>
 
 <?php    
 }
@@ -98,150 +99,18 @@ foreach($products as $product){
 </div>
 </div>
 </div>
-   
+
+
 
     
-         <!--               
-        <div class="products">
-            <header class="category-header">
-                <div class="inner-wrapper">
-                    <h3>wine</h3>
-                    <a href="#">View All</a>
-                </div>
-            </header>
-            <div class="section-inner-wrapper">
-                <div class="products-slider">
-                    <div class="owl-carousel owl-theme ui link cards">
-                        <div class="item card">
-                            <div class="image">
-                                <img src="img/chateau-micalet-2014-copy.jpg"
-                                     srcset="img/chateau-micalet-2014-copy@2x.jpg 2x,img/chateau-micalet-2014-copy@3x.jpg 3x"
-                                     class="CHATEAU-MICALET-2014-copy">
-                            </div>
-                            <div class="content price-discount">
-                                <div class="header price">6,800 KES</div>
-                                <div class="discount">30% off</div>
-                            </div>
-                            <div class="content">
-                                <div class="header">CHATEAU MICALET 2014</div>
-                            </div>
+<?php
+}
 
-                            <a href="#" class="ui bottom attached button">
-                                buy
-                            </a>
-                        </div>
-                        <div class="item card">
-                            <div class="image">
-                                <img src="img/veronica-ortega-copy.jpg"
-                                     srcset="img/veronica-ortega-copy@2x.jpg 2x,img/veronica-ortega-copy@3x.jpg 3x"
-                                     class="VERONICA-ORTEGA-copy">
-                            </div>
-                            <div class="content price-discount">
-                                <div class="header price">6,800 KES</div>
-                                <div class="discount">30% off</div>
-                            </div>
-                            <div class="content">
-                                <div class="header">VERONICA ORTEGA QUITE 2016</div>
-                            </div>
+?>
 
-                            <a href="#" class="ui bottom attached button">
-                                buy
-                            </a>
-                        </div>
-                        <div class="item card">
-                            <div class="image">
-                                <img src="img/chateau-des-tours-brouilly-2017-copy.jpg"
-                                     srcset="img/chateau-des-tours-brouilly-2017-copy@2x.jpg 2x,img/chateau-des-tours-brouilly-2017-copy@3x.jpg 3x"
-                                     class="CHATEAU-DES-TOURS-BROUILLY-2017-copy">
-                            </div>
-                            <div class="content price-discount">
-                                <div class="header price">6,800 KES</div>
-                                <div class="discount">30% off</div>
-                            </div>
-                            <div class="content">
-                                <div class="header">CHATEAU DES TOURS 2017</div>
-                            </div>
 
-                            <a href="#" class="ui bottom attached button">
-                                buy
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="products">
-            <header class="category-header">
-                <div class="inner-wrapper">
-                    <h3>beer</h3>
-                    <a href="#">View All</a>
-                </div>
-            </header>
-            <div class="section-inner-wrapper">
-                <div class="products-slider">
-                    <div class="owl-carousel owl-theme ui link cards">
-                        <div class="item card">
-                            <div class="image">
-                                <img src="img/heineken-500-ml-can.jpg"
-                                     srcset="img/heineken-500-ml-can@2x.jpg 2x,img/heineken-500-ml-can@3x.jpg 3x"
-                                     class="Heineken-500ml-can">
-                            </div>
-                            <div class="content price-discount">
-                                <div class="header price">6,800 KES</div>
-                                <div class="discount">30% off</div>
-                            </div>
-                            <div class="content">
-                                <div class="header">Heineken lager</div>
-                            </div>
-
-                            <a href="#" class="ui bottom attached button">
-                                buy
-                            </a>
-                        </div>
-                        <div class="item card">
-                            <div class="image">
-                                <img src="img/guinness.jpg"
-                                     srcset="img/guinness@2x.jpg 2x,img/guinness@3x.jpg 3x"
-                                     class="guinness">
-                            </div>
-                            <div class="content price-discount">
-                                <div class="header price">6,800 KES</div>
-                                <div class="discount">30% off</div>
-                            </div>
-                            <div class="content">
-                                <div class="header">Guinness</div>
-                            </div>
-
-                            <a href="#" class="ui bottom attached button">
-                                buy
-                            </a>
-                        </div>
-                        <div class="item card">
-                            <div class="image">
-                                <img src="img/tusker-cidar-can-500-ml.jpg"
-                                     srcset="img/tusker-cidar-can-500-ml@2x.jpg 2x,img/tusker-cidar-can-500-ml@3x.jpg 3x"
-                                     class="Tusker-cidar-can-500ml">
-                            </div>
-                            <div class="content price-discount">
-                                <div class="header price">6,800 KES</div>
-                                <div class="discount">30% off</div>
-                            </div>
-                            <div class="content">
-                                <div class="header">Tusker cidar</div>
-                            </div>
-
-                            <a href="#" class="ui bottom attached button">
-                                buy
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
--->
+   
+     
 </main>
 
 <?php get_footer(); ?>

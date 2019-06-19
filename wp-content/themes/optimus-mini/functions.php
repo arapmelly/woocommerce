@@ -14,4 +14,15 @@ function add_theme_scripts() {
   }
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+
+  function get_percentage_discount($product){
+
+    $sale_price = $product->get_sale_price();
+    $regular_price = $product->get_regular_price();
+
+    $percentage = round((($regular_price - $sale_price)/ $regular_price) * 100);
+
+    return $percentage.' %';
+  }
+
 ?>
