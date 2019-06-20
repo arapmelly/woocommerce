@@ -1,8 +1,4 @@
 
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/main.js'; ?>"></script>
-</div>
-</div>
-
 <footer class="footer">
     <div class="inner-wrapper">
         <h3>CONTACT US</h3>
@@ -26,7 +22,6 @@
     </div>
 </footer>
 
-
-
+<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/main.js'; ?>"></script>
 </body>
 </html>
