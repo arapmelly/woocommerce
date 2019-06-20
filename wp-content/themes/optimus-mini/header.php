@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Hello World</title>
+    <title><?php echo bloginfo('sitename'); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="<?php  bloginfo('stylesheet_url'); ?>" rel="stylesheet">
 

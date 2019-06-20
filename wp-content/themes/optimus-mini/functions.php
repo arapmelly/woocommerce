@@ -1,27 +1,27 @@
 <?php
 
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-add_theme_support( 'woocommerce' );
+function customtheme_add_woocommerce_support() {
+	
+	add_theme_support( 'woocommerce' );
 }
 
-
-function add_theme_scripts() {
-    wp_enqueue_style( 'style', get_stylesheet_uri() );
-   
-  
-    wp_register_script('my_amazing_script', get_template_directory_uri('js/main.js', __FILE__), array('jquery'),'1.1', true);
- 
-    wp_enqueue_script('my_amazing_script');
-
-    
-   
-      
-  }
-  add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+add_action( 'after_setup_theme', 'customtheme_add_woocommerce_support' );
 
 
-  function get_percentage_discount($product){
+
+
+function my_function_custom_archive_description() {
+	
+	$new_description = '<p>Welcome to my shop, please be generous and buy many things, thank you.</p>';
+	return $new_description;
+}
+
+// Add the action
+add_action('woocommerce_archive_description', 'my_function_custom_archive_description');
+
+
+
+function get_percentage_discount($product){
 
     $sale_price = $product->get_sale_price();
     $regular_price = $product->get_regular_price();
@@ -39,4 +39,5 @@ function add_theme_scripts() {
     return $order_count;
   }
 
+  
 ?>
