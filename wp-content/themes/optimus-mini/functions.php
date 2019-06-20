@@ -1,5 +1,11 @@
 <?php
 
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+add_theme_support( 'woocommerce' );
+}
+
+
 function add_theme_scripts() {
     wp_enqueue_style( 'style', get_stylesheet_uri() );
    
@@ -23,6 +29,14 @@ function add_theme_scripts() {
     $percentage = round((($regular_price - $sale_price)/ $regular_price) * 100);
 
     return $percentage.' %';
+  }
+
+
+  function get_total_orders($status){
+
+    $order_count = wc_orders_count($status);
+
+    return $order_count;
   }
 
 ?>
