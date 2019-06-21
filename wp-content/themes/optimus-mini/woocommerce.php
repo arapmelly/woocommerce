@@ -91,30 +91,26 @@
 
                                     <div class="item card">
                                         <div class="image">
-
-
                                             <img src="<?php echo get_post_meta( $product->get_id(), '_primary_image', true ); ?>"
                                                  class="caol-ila_1984">
-
-
                                         </div>
+
                                         <div class="content price-discount">
-                                            <div class="header price"><?php echo wc_price( $product->get_price() ); ?></div>
+                                            <div class="header price">
+                                                <h2 class="current-price"><?php echo wc_price( $product->get_price() ); ?></h2>
 
-											<?php if ( $product->is_on_sale() ) { ?>
-                                                <div class="header price"
-                                                     style="text-decoration:line-through"><?php echo wc_price( $product->get_regular_price() ); ?></div>
-                                                <div class="discount"><?php echo get_percentage_discount( $product ); ?>
-                                                    Off
-                                                </div>
-											<?php } ?>
+												<?php if ( $product->is_on_sale() ) { ?>
+                                                    <h2 class="previous-price"><?php echo wc_price( $product->get_regular_price() ); ?></h2>
+												<?php } ?>
+                                            </div>
 
+                                            <div class="discount"><?php echo get_percentage_discount( $product ); ?>
+                                                Off
+                                            </div>
                                         </div>
+
                                         <div class="content">
                                             <div class="header"><?php echo $product->get_name(); ?></div>
-                                            <div class="description">
-												<?php echo $product->get_description(); ?>
-                                            </div>
                                         </div>
 
                                         <a href="<?php echo get_permalink( $product->get_id() ); ?>" data-quantity="1"
