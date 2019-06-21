@@ -1,9 +1,11 @@
 <?php get_header(); ?>
 
 <?php if ( is_front_page() ) { ?>
+
     <section class="shop-banner margin-top-phone-7">
-		<?php echo do_shortcode( '[shop-banner]' ); ?>
+        <img src="<?php echo get_option( 'sitebanner' ); ?>">
     </section>
+
 <?php } ?>
 
 <?php if ( is_front_page() ) { ?>
@@ -36,7 +38,7 @@
 		'hide_empty'   => true,
 		'hierarchical' => 1,
 		'taxonomy'     => 'product_cat',
-		'pad_counts'   => false
+		'pad_counts'   => false,
 	);
 
 	$cats = get_categories( $args );
@@ -59,7 +61,8 @@
 
 
     <section class="products-by-category">
-		<?php foreach ( $cats as $cat ) { ?>
+		<?php foreach ( $cats as $cat ) {
+			?>
             <div class="products">
                 <header class="category-header">
                     <div class="inner-wrapper">
@@ -72,44 +75,50 @@
                     <div class="products-slider">
                         <div class="owl-carousel owl-theme ui link cards">
 
-							<?php $query    = new WC_Product_Query( array(
+							<?php
+								$query    = new WC_Product_Query( array(
 									'limit'    => 5,
 									'orderby'  => 'date',
 									'order'    => 'DESC',
 									'category' => [ $cat->slug ],
 
 								) );
-
 								$products = $query->get_products();
 
-								foreach ( $products as $product ) { ?>
+								foreach ( $products as $product ) {
+
+									?>
 
                                     <div class="item card">
-                                        <div class="image"><?php echo $product->get_image(); ?></div>
+                                        <div class="image">
+
+
+                                            <img src="<?php echo get_post_meta( $product->get_id(), '_primary_image', true ); ?>"
+                                                 class="caol-ila_1984">
+
+
+                                        </div>
                                         <div class="content price-discount">
-                                            <div class="header price">
-                                                <h2 class="current-price"><?php echo wc_price( $product->get_price() ); ?></h2>
+                                            <div class="header price"><?php echo wc_price( $product->get_price() ); ?></div>
 
-	                                            <?php if ( $product->is_on_sale() ) { ?>
-                                                    <h2 class="previous-price"><?php echo wc_price( $product->get_regular_price() ); ?></h2>
-	                                            <?php } ?>
+											<?php if ( $product->is_on_sale() ) { ?>
+                                                <div class="header price"
+                                                     style="text-decoration:line-through"><?php echo wc_price( $product->get_regular_price() ); ?></div>
+                                                <div class="discount"><?php echo get_percentage_discount( $product ); ?>
+                                                    Off
+                                                </div>
+											<?php } ?>
 
-                                                <div class="discount"><?php echo get_percentage_discount( $product ); ?> Off </div>
-
+                                        </div>
+                                        <div class="content">
+                                            <div class="header"><?php echo $product->get_name(); ?></div>
+                                            <div class="description">
+												<?php echo $product->get_description(); ?>
                                             </div>
                                         </div>
 
-                                        <div class="content">
-                                            <div class="header"><?php echo $product->get_name(); ?></div>
-<!--                                            <div class="description">-->
-<!--												--><?php //echo $product->get_description(); ?>
-
-<!--	                                            --><?php //echo wp_trim_words($product->get_description(), 15, ' ...'); ?>
-<!--                                            </div>-->
-                                        </div>
-
-                                        <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="ui bottom attached button">buy</a>
-
+                                        <a href="<?php echo get_permalink( $product->get_id() ); ?>" data-quantity="1"
+                                           class="ui bottom attached button">buy </a>
                                     </div>
 
 								<?php } ?>
@@ -125,22 +134,12 @@
     </section>
 
 
-<?php
-
-	if ( ! is_front_page() ) {
-		woocommerce_content();
-	}
-
-?>
-
+<?php if ( ! is_front_page() ) {
+	woocommerce_content();
+} ?>
 
     </main>
 
 
 
-<?php
-
-
-	get_footer();
-
-?>
+<?php get_footer(); ?>
