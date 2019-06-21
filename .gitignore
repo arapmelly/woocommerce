@@ -5,3 +5,4 @@ optimus_wordpress_db.sql
 .idea/
 wp-content/uploads
 
+/shop.sql
