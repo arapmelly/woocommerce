@@ -14,9 +14,9 @@
  * @package       WooCommerce/Templates
  * @version       3.0.0
  */
-
+/*
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+exit; // Exit if accessed directly
 }
 
 global $product;
@@ -26,7 +26,9 @@ $heading = esc_html( apply_filters( 'woocommerce_product_additional_information_
 ?>
 
 <?php if ( $heading ) : ?>
-	<h2><?php echo $heading; ?></h2>
+<h2><?php echo $heading; ?></h2>
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+
+ */

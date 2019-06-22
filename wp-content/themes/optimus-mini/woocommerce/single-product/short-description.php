@@ -20,6 +20,7 @@ if (!defined('ABSPATH')) {
 }
 
 global $post;
+global $product;
 
 $short_description = apply_filters('woocommerce_short_description', $post->post_excerpt);
 
@@ -43,42 +44,15 @@ if (!$short_description) {
                 <div class="styled-text section-inner-wrapper">
 
                     <h2>Product description</h2>
-                    <p><?php echo $short_description; // WPCS: XSS ok.   ?></p>
+                    <p><?php echo $product->get_short_description(); // WPCS: XSS ok.           ?></p>
                 </div>
             </div>
             <div id="tab-2">
                 <div class="styled-text section-inner-wrapper">
-                    <h3>Tasting notes <span class="sub-heading">By Billy Abbott, The Whisky Exchange</span></h3>
 
-                    <p>
-                        <strong>Nose:</strong> Vanilla pods, gummi sweets, salted caramel, pineapple cubes, hay and
-                        straw. Fruit
-                        follows, along with
-                        candy necklaces, meadow flowers, green apple skins and freshly-cut pears. Anise and menthol
-                        notes hide
-                        at
-                        the back.</p>
+                    <p><?php echo $product->get_description(); // WPCS: XSS ok.           ?></p>
 
-                    <p>
-                        <strong>Palate:</strong> Oatcakes and digestive biscuits to start, with sultana-studded
-                        shortbread
-                        biscuits following on
-                        behind. Pineapple, and apple and pear pie notes develop, topped with a pinch of white pepper
-                        spice.
-                        Citrus
-                        notes wash over the pie: lemon zest and fleshy oranges. There's a late appearance icing sugar
-                        sweetness
-                        over
-                        the top and a touch of cocoa and raisin underneath.
-                    </p>
 
-                    <p><strong>Finish:</strong> Hay, butter, caramel and gentle spice.</p>
-                    <p>
-                        <strong>Comment:</strong> A perfect balance between Bunnahabhain's weighty, buttery spirit and
-                        long-aged
-                        fruity notes. The
-                        spice provides a contrast, but doesn't get too much.
-                    </p>
                 </div>
             </div>
             <div id="tab-3">
@@ -86,11 +60,11 @@ if (!$short_description) {
                     <div class="total-rating">
                         <header class="rating-header">
                             <div class="num-rating">
-                                <span class="rating">4.25</span>
-                                <div class="stars" data-score="4.5"></div>
+                                <span class="rating"><?php echo $product->get_average_rating(); ?></span>
+                                <div class="stars" data-score="<?php echo $product->get_average_rating(); ?>"></div>
                             </div>
                             <div class="rating-widget">
-                                <div class="tag-descriptor"><span class="total-reviews">560 Reviews</span></div>
+                                <div class="tag-descriptor"><span class="total-reviews"><?php echo $product->get_review_count(); ?> Reviews</span></div>
                             </div>
                         </header>
                     </div>
