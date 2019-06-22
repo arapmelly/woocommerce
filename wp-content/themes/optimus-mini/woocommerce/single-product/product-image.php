@@ -59,6 +59,6 @@ do_action( 'woocommerce_product_thumbnails' );
 
 <section class="product-image margin-top-phone-7">
 
-    <img src="<?php echo get_post_meta($product->get_id(), '_primary_image', true); ?>" class="buned27yo">
+    <img src="<?php echo get_post_meta($product->get_id(), '_product_primary_full_cdn_image', true); ?>" class="buned27yo">
 
 </section>
