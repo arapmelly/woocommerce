@@ -23,7 +23,5 @@ global $product;
 
 ?>
 
-<div class="price">
-                <h2 class="current-price"><?php echo wc_price($product->get_sale_price()); ?></h2>
-                <h2 class="previous-price" style="text-decoration: line-through;"><?php echo wc_price($product->get_regular_price()); ?></h2>
-            </div>
+
+

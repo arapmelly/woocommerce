@@ -34,6 +34,13 @@ $average = $product->get_average_rating();
         <div class="section-inner-wrapper">
             <h1 class="product-name"><?php echo $product->get_name(); ?></h1>
 
+            <div class="price">
+                    <h2 class="current-price"><?php echo wc_price($product->get_price()); ?></h2>
+                <?php if ($product->is_on_sale()) {?>
+                    <h2 class="previous-price"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                <?php }?>
+
+            </div>
 
             <div class="product-meta">
                 <div class="rating-widget">
@@ -45,9 +52,14 @@ $average = $product->get_average_rating();
                 </div>
             </div>
 
+            <?php do_action('woocommerce_before_add_to_cart_button');?>
+
             <div class="actions">
-                <a href="#" class="ui button">buy</a>
+
+                <a href="<?php echo do_shortcode('[add_to_cart_url id=<?php echo $product->get_id(); ?>]'); ?>"  class="ui button">buy</a>
             </div>
+
+            <?php do_action('woocommerce_after_add_to_cart_button');?>
 
         </div>
     </section>

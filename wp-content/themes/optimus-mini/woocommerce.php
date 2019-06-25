@@ -1,15 +1,23 @@
-<?php get_header(); ?>
+<?php get_header();?>
 
-<?php if ( is_front_page() ) { ?>
+<?php if (is_front_page()) {
+	?>
 
-    <section class="shop-banner margin-top-phone-7">
-        <img src="<?php echo get_option( 'blogprimaryimage' ); ?>">
-        <!--        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">-->
+     <section class="shop-banner margin-top-phone-7">
+
+	     <?php
+
+		     $image  = get_blog_primary_image();
+		     $srcset = $image->medium . ' , ' . $image->large;
+
+	     ?>
+
+        <img src="<?php echo $image->small ?>" srcset="<?php echo $image->small ?>">
     </section>
 
-<?php } ?>
+<?php }?>
 
-<?php if ( is_front_page() ) { ?>
+<?php if (is_front_page()) {?>
     <main class="main-content">
     <section class="business-details">
         <div class="section-inner-wrapper">
@@ -27,22 +35,22 @@
         </div>
     </section>
 
-<?php } ?>
+<?php }?>
 
 
 <?php
 
-	$args = array(
-		'type'         => 'product',
-		'parent'       => get_queried_object_id(),
-		'orderby'      => 'term_group',
-		'hide_empty'   => true,
-		'hierarchical' => 1,
-		'taxonomy'     => 'product_cat',
-		'pad_counts'   => false,
-	);
+$args = array(
+	'type' => 'product',
+	'parent' => get_queried_object_id(),
+	'orderby' => 'term_group',
+	'hide_empty' => true,
+	'hierarchical' => 1,
+	'taxonomy' => 'product_cat',
+	'pad_counts' => false,
+);
 
-	$cats = get_categories( $args );
+$cats = get_categories($args);
 
 ?>
 
@@ -79,24 +87,30 @@
                         <div class="owl-carousel owl-theme ui link cards">
 
 							<?php
-								$query    = new WC_Product_Query( array(
-									'limit'    => 5,
-									'orderby'  => 'date',
-									'order'    => 'DESC',
-									'category' => [ $cat->slug ],
+$query = new WC_Product_Query(array(
+		'limit' => 5,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'category' => [$cat->slug],
 
-								) );
-								$products = $query->get_products();
+	));
+	$products = $query->get_products();
 
-								foreach ( $products as $product ) {
+	foreach ($products as $product) {
 
-									?>
+		?>
 
                                     <div class="item card">
                                         <div class="image">
-                                            <!--    <img src="https://dummyimage.com/320x320/f01462" srcset="https://dummyimage.com/640x640/f01462 2x, https://dummyimage.com/960x960/f01462 3x">  -->
+	                                        <?php
 
-                                            <img src="<?php echo get_post_meta( $product->get_id(), '_product_primary_full_cdn_image', true ); ?>">
+		                                        $image  = get_product_primary_image( $product );
+		                                        $srcset = $image->medium . ' , ' . $image->large;
+
+	                                        ?>
+
+                                        <img src="<?php echo $image->small ?>" srcset="<?php echo $srcset; ?>"
+                                                 class="caol-ila_1984">
                                         </div>
 
                                         <div class="content price-discount">
