@@ -55,10 +55,27 @@ do_action( 'woocommerce_product_thumbnails' );
 
  */
 
+$image = get_product_primary_image($product);
+
+if (!is_null($image)) {
+	$srcset = $image->medium . ' , ' . $image->large;
+}
+
 ?>
 
 <section class="product-image margin-top-phone-7">
 
-    <img src="<?php echo get_post_meta($product->get_id(), '_product_primary_full_cdn_image', true); ?>" class="buned27yo">
+
+    <?php if (is_null($image)) {?>
+
+											<img src="" alt="no image"
+                                                 class="buned27yo">
+
+
+										 <?php } else {?>
+											<img src="<?php echo $image->small ?>" srcset="<?php echo $srcset; ?>"
+                                                 class="buned27yo">
+
+										<?php }?>
 
 </section>

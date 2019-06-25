@@ -16,6 +16,13 @@ function my_function_custom_archive_description() {
 // Add the action
 add_action('woocommerce_archive_description', 'my_function_custom_archive_description');
 
+function get_product_categories() {
+
+	$categories = get_terms(['taxonomy' => 'product_cat']);
+
+	return $categories;
+}
+
 function get_percentage_discount($product) {
 
 	$sale_price = $product->get_sale_price();
@@ -49,6 +56,15 @@ function get_blog_primary_image() {
 	$images = json_decode($images);
 
 	return $images;
+}
+
+function get_reviews_count() {
+
+	return get_comments(array(
+		'status' => 'approve',
+		'type' => 'review',
+		'count' => true,
+	));
 }
 
 ?>
