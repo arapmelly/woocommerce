@@ -1,9 +1,18 @@
 <?php get_header();?>
 
-<?php if (is_front_page()) {?>
+<?php if (is_front_page()) {
+	?>
 
-    <section class="shop-banner margin-top-phone-7">
-        <img src="<?php echo get_option('blogprimaryimage'); ?>">
+     <section class="shop-banner margin-top-phone-7">
+
+        <?php
+
+	$image = get_blog_primary_image();
+	$srcset = $image->medium . ' , ' . $image->large;
+
+	?>
+
+        <img src="<?php echo $image->small ?>" srcset="<?php echo $srcset; ?>">
     </section>
 
 <?php }?>
@@ -91,7 +100,14 @@ $query = new WC_Product_Query(array(
 
                                     <div class="item card">
                                         <div class="image">
-                                            <img src="<?php echo get_post_meta($product->get_id(), '_product_primary_full_cdn_image', true); ?>"
+                                            <?php
+
+		$image = get_product_primary_image($product);
+		$srcset = $image->medium . ' , ' . $image->large;
+
+		?>
+
+                                        <img src="<?php echo $image->small ?>" srcset="<?php echo $srcset; ?>"
                                                  class="caol-ila_1984">
                                         </div>
 
