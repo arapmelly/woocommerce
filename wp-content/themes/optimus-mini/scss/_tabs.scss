@@ -1,0 +1,43 @@
+/**
+ * TABS
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+
+.tabs {
+
+  ul.tab-items {
+    border-top: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    li {
+      background: $default-white-color;
+
+      &.active {
+        a {
+          border-bottom-color: $blue-button-color;
+        }
+      }
+
+      a {
+        border-bottom: 4px solid transparent;
+        color: $default-dark-color;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px 0;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .tabs-container {
+    margin-top: 0;
+    background: white;
+  }
+
+}
