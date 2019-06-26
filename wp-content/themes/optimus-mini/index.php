@@ -8,14 +8,14 @@ get_header();
 
      <section class="shop-banner margin-top-phone-7">
 
-        <?php
+	     <?php
 
-	$image = get_blog_primary_image();
-	$srcset = $image->medium . ' , ' . $image->large;
+		     $image  = get_blog_primary_image();
+		     $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 
-	?>
+	     ?>
 
-        <img src="<?php echo $image->small ?>" srcset="<?php echo $srcset; ?>">
+         <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px" src="<?php echo $image->small ?>" alt="">
     </section>
 
 <?php }?>

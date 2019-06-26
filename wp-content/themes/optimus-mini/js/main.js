@@ -4,6 +4,9 @@
         starType: 'i',
         score: function () {
             return $(this).attr('data-score');
+        },
+        click: function(score, evt) {
+            console.log('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
         }
     });
 

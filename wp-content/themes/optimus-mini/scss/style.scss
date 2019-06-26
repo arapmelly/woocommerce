@@ -59,11 +59,21 @@ html, body {
     }
     .logo {
       align-items: center;
+      border: 2px solid $default-dark-color;
       display: inherit;
+      font-weight: bold;
+      line-height: normal;
       justify-content: flex-start;
-      margin-left: 25px;
+      margin-left: 28px;
+      padding: 1rem 5rem;
       height: inherit;
       width: auto;
+
+      &:hover {
+        background-color: $default-dark-color;
+        color: $default-white-color;
+        opacity: 1;
+      }
     }
   }
 
@@ -99,7 +109,6 @@ html, body {
   //max-height: 600px;
   //overflow: hidden;
   //width: 100%;
-
 
   width: 100%;
   height: 0;
@@ -882,6 +891,114 @@ html, body {
 
 }
 
+// --------------------------------
+// ALL PRODUCTS BY CATEGORY PAGE
+// --------------------------------
+
+.main-content {
+  display: block;
+  position: relative;
+  margin-top: 70px;
+
+  .category-header {
+    background-color: #fcfcfc;
+    margin-bottom: 2.5rem;
+    .inner-wrapper {
+      align-items: center;
+      border-top: 1px solid #f5f5f5;
+      border-bottom: 1px solid #f5f5f5;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      position: relative;
+      padding: 0 15px;
+      margin-bottom: 5rem;
+      height: 80px;
+      max-height: 80px;
+      > * {
+        margin: 0;
+        flex: auto;
+      }
+
+      h1, h2, h3, h4 {
+        text-align: left;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+
+      a {
+        color: #4972ff;
+        text-align: right;
+        font-weight: bold;
+        &:hover {
+          color: $color-medium;
+        }
+      }
+    }
+  }
+
+  .products-category {
+    .section-inner-wrapper {
+      .cards {
+        .card {
+          width: calc((100% / 4) - 1em);
+
+          .content {
+            text-align: left;
+          }
+          .price-discount {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            align-items: center;
+            .price {
+              font-size: 12px;
+
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+
+              h1, h2, h3, h4, h5 {
+                font-size: 1.8em;
+                font-weight: bold;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: left;
+                text-transform: uppercase;
+                color: $blue-button-color;
+                margin: 0;
+              }
+
+              .previous-price {
+                color: lighten(#232428, 62%);
+                font-size: 18px;
+                text-decoration: line-through;
+                padding-left: 5rem;
+              }
+
+            }
+
+            .discount {
+              background-color: $magenta-button-color;
+              border-radius: 8px;
+              color: $default-white-color;
+              font-size: 14px;
+              font-weight: bold;
+              position: absolute;
+              padding: 8px 15px;
+              top: -65px;
+              right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// -------------------------
+// FOOTER
+// -------------------------
 .footer {
   background-color: $default-dark-color;
   color: $default-white-color;
@@ -935,6 +1052,13 @@ html, body {
 
   .main-content {
 
+    .category-header {
+      .inner-wrapper {
+        margin: 0 auto;
+        @include calcMaxWidth($desktopLarge);
+      }
+    }
+
     .products {
 
       .category-header {
@@ -952,6 +1076,13 @@ html, body {
       }
     }
 
+    .products-category {
+      .section-inner-wrapper {
+        margin: 0 auto;
+        @include calcMaxWidth($desktopLarge);
+      }
+    }
+
   }
 
 }
@@ -962,6 +1093,12 @@ html, body {
   }
 
   .main-content {
+
+    .category-header {
+      .inner-wrapper {
+        @include calcMaxWidth($tablet);
+      }
+    }
 
     .business-details {
       .section-inner-wrapper {
@@ -992,6 +1129,20 @@ html, body {
 
       }
     }
+
+    .products-category {
+      .section-inner-wrapper {
+        margin: 0 auto;
+        @include calcMaxWidth($tablet);
+
+        .cards {
+          .card {
+            width: calc((100% / 3) - 1em);
+          }
+        }
+      }
+    }
+
   }
 
 }
@@ -1002,6 +1153,14 @@ html, body {
   }
 
   .main-content {
+
+    .category-header {
+      margin-bottom: 5rem;
+
+      .inner-wrapper {
+        @include calcMaxWidth($phablet);
+      }
+    }
 
     .business-details {
       .section-inner-wrapper {
@@ -1037,6 +1196,19 @@ html, body {
 
       }
     }
+
+    .products-category {
+      .section-inner-wrapper {
+        margin: 0 auto;
+        @include calcMaxWidth($phablet);
+
+        .cards {
+          .card {
+            width: calc((100% / 2) - 1em);
+          }
+        }
+      }
+    }
   }
 
 }
@@ -1044,6 +1216,7 @@ html, body {
 @media only screen and (max-width: $phone) {
 
   .main-content {
+
 
   }
 
