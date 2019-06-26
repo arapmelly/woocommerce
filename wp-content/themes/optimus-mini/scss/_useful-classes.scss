@@ -582,7 +582,8 @@ $properties: padding padding-top padding-right padding-bottom padding-left margi
 }
 
 img {
-  max-width: 100%;
+  display: block;
+  width: 100%;
   height: auto;
 }
 

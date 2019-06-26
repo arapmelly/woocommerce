@@ -8,11 +8,12 @@
 	     <?php
 
 		     $image  = get_blog_primary_image();
-		     $srcset = $image->medium . ' , ' . $image->large;
+		     $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 
 	     ?>
 
-        <img src="<?php echo $image->small ?>" srcset="<?php echo $image->small ?>">
+         <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px" src="<?php echo $image->small ?>" alt="">
+
     </section>
 
 <?php }?>
@@ -105,12 +106,16 @@ $query = new WC_Product_Query(array(
 	                                        <?php
 
 		                                        $image  = get_product_primary_image( $product );
-		                                        $srcset = $image->medium . ' , ' . $image->large;
+//		                                        $srcset = $image->small . ' 320w' . ', ' . $image->medium . ' 480w' . ', ' . $image->large . ' 800w';
+
+		                                        $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 
 	                                        ?>
 
-                                        <img src="<?php echo $image->small ?>" srcset="<?php echo $srcset; ?>"
-                                                 class="caol-ila_1984">
+                                            <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px" src="<?php echo $image->small ?>" alt="">
+
+<!--                                            <img srcset="--><?php //echo $srcset; ?><!--" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px" src="--><?php //echo $image->small ?><!--" alt="">-->
+
                                         </div>
 
                                         <div class="content price-discount">
