@@ -73,7 +73,7 @@ function get_reviews_count() {
 	function optimus_mini_scripts() {
 		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', array( 'js' ), null, true );
 		wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugin.js', 'jquery', true );
-		wp_enqueue_script( 'main', get_template_directory_uri() . '/js/scripts.js', 'plugins', true );
+		wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', 'plugins', true );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'optimus_mini_scripts' );

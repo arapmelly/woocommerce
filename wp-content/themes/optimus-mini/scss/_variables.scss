@@ -1,5 +1,6 @@
 // FONTS
-$body-font: ('Helvetica Neue', sans-serif);
+//$body-font: ('Helvetica Neue', sans-serif);//#232428;
+$body-font: ('Lato', sans-serif);
 $body-baseline: 0.1445;
 $header-baseline: 0.1445;
 
@@ -8,7 +9,7 @@ $gh: 1rem;
 //COLORS 
 $color-medium: #202020;
 $default-button-color: #202020;
-$default-dark-color: #232428;
+$default-dark-color: rgba(32, 32, 32, 0.89);
 $default-white-color: #fff;
 $blue-button-color: #4971ff;
 $magenta-button-color: #f01462;
@@ -41,11 +42,12 @@ $blueGray: #607D8B;
 
 //WIDTH
 $max-width: calc(100vw - 15rem);
-$desktopLarge: 1240px;
-$desktop: 1240px;
+$desktopLarge: 1920px;
+$desktopmedium: 1366px;
+$desktop: 1280px;
 $tablet: 1024px;
 $phablet: 768px;
-$phone: 436px;
+$phone: 425px;
 
 
 @mixin calcMaxWidth($deviceWidth){

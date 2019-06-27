@@ -26,31 +26,31 @@
     });
 
 
-    $(".products-slider > .owl-carousel").each(function () {
-        $(this).owlCarousel({
-            margin: 15,
-            loop: false,
-            center: false,
-            nav: false,
-            dots: false,
-            autoWidth: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1024: {
-                    items: 3
-                },
-                1280: {
-                    items: 4,
-                    margin: 20
-                }
-            }
-        })
-    });
+    // $(".products-slider > .owl-carousel").each(function () {
+    //     $(this).owlCarousel({
+    //         margin: 15,
+    //         loop: false,
+    //         center: false,
+    //         nav: false,
+    //         dots: false,
+    //         autoWidth: false,
+    //         responsive: {
+    //             0: {
+    //                 items: 1
+    //             },
+    //             600: {
+    //                 items: 2
+    //             },
+    //             1024: {
+    //                 items: 3
+    //             },
+    //             1280: {
+    //                 items: 4,
+    //                 margin: 20
+    //             }
+    //         }
+    //     })
+    // });
 
 
     // $('.products-slider .owl-carousel').owlCarousel({

@@ -29,32 +29,43 @@
 <?php if ( is_product_category() ) {
 
 	wc_get_template( 'product-category.php' );
-} else {
-	?>
+
+} else { ?>
 
 
-    <div class="item card">
-        <div class="image">
-			<?php
+    <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card">
 
-				$image = get_product_primary_image( $product );
+	    <?php
 
-				if ( ! is_null( $image ) ) {
-					$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
-				}
+		    $image = get_product_primary_image( $product );
 
-			?>
-			<?php if ( is_null( $image ) ) { ?>
+		    if ( ! is_null( $image ) ) {
+			    $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+		    }
 
-                <img src="" alt="no image" class="caol-ila_1984">
+	    ?>
 
-
-			<?php } else { ?>
-                <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px" src="<?php echo $image->small ?>" alt="">
-
-			<?php } ?>
+        <div class="image" style="background-image: url(<?php echo $image->medium ?>)">
 
 
+
+
+<!--			--><?php //if ( is_null( $image ) ) { ?>
+<!---->
+<!--                <img src="" alt="no image">-->
+<!---->
+<!--			--><?php //} else { ?>
+<!---->
+<!--                <img src="--><?php //echo $image->medium ?><!--" alt="">-->
+<!--                <img src="https://images.unsplash.com/photo-1561534268-43ae92d330e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">-->
+<!---->
+<!--			--><?php //} ?>
+
+
+        </div>
+
+        <div class="content">
+            <div class="header"><?php echo $product->get_name(); ?></div>
         </div>
 
         <div class="content price-discount">
@@ -67,19 +78,11 @@
             </div>
 
 			<?php if ( $product->is_on_sale() ) { ?>
-                <div class="discount"><?php echo get_percentage_discount( $product ); ?>
-                    Off
-                </div>
+                <div class="discount"><?php echo get_percentage_discount( $product ); ?> Off</div>
 			<?php } ?>
         </div>
 
-        <div class="content">
-            <div class="header"><?php echo $product->get_name(); ?></div>
-        </div>
-
-        <a href="<?php echo get_permalink( $product->get_id() ); ?>" data-quantity="1"
-           class="ui bottom attached button">buy </a>
-    </div>
+    </a>
 
 
 <?php } ?>
