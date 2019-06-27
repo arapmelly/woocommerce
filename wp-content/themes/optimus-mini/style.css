@@ -6161,12 +6161,12 @@ html, body {
             padding-left: 5rem; }
         .main-content .products-by-category .products .products-slider .cards .card .price-discount .discount {
           background-color: #f01462;
-          border-radius: 8px;
+          border-radius: 4px;
           color: #fff;
-          font-size: 14px;
-          font-weight: bold;
+          font-size: 12px;
+          font-weight: normal;
           position: absolute;
-          padding: 8px 15px;
+          padding: 8px 10px;
           top: -95px;
           right: 10px; }
 

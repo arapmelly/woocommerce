@@ -66,6 +66,7 @@
 
         <div class="content">
             <div class="header"><?php echo $product->get_name(); ?></div>
+            <div class="meta">This is a product category</div>
         </div>
 
         <div class="content price-discount">
