@@ -44,24 +44,26 @@ if (!$short_description) {
                 <div class="styled-text section-inner-wrapper">
 
                     <h2>Product description</h2>
-                    <p><?php echo $product->get_short_description(); // WPCS: XSS ok.           ?></p>
+                    <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                    ?></p>
                 </div>
             </div>
             <div id="tab-2">
                 <div class="styled-text section-inner-wrapper">
 
-                    <p><?php echo $product->get_description(); // WPCS: XSS ok.           ?></p>
+                    <p><?php echo $product->get_description(); // WPCS: XSS ok.                                    ?></p>
 
 
                 </div>
             </div>
             <div id="tab-3">
                 <div class="reviews">
+
+
                     <div class="total-rating">
                         <header class="rating-header">
                             <div class="num-rating">
                                 <span class="rating"><?php echo $product->get_average_rating(); ?></span>
-                                <div class="stars" data-score="<?php echo $product->get_average_rating(); ?>"></div>
+                                <div class="stars" data-score="0"></div>
                             </div>
                             <div class="rating-widget">
                                 <div class="tag-descriptor"><span class="total-reviews"><?php echo $product->get_review_count(); ?> Reviews</span></div>
@@ -70,54 +72,33 @@ if (!$short_description) {
                     </div>
 
                     <div class="section-inner-wrapper">
-                        <div class="item-review">
+
+                        <?php $reviews = get_approved_comments($product->get_id());?>
+
+                        <?php foreach ($reviews as $review) {?>
+
+                            <div class="item-review">
+                            <!--
                             <div class="image">
                                 <img src="img/review/adult-bed-bedroom-breakfast-364362.png"
                                      srcset="img/review/adult-bed-bedroom-breakfast-364362@2x.png 2x, img/review/adult-bed-bedroom-breakfast-364362@3x.png 3x"
                                      class="adult-bed-bedroom-breakfast-364362">
                             </div>
+                            -->
                             <div class="review">
                                 <div class="inner">
-                                    <h3>Jane Doe</h3>
+                                    <h3><?php echo $review->comment_author; ?></h3>
                                     <!--<p>When will the discount be?</p>-->
-                                    <p>Nose: Vanilla pods, gummi sweets, salted caramel, pineapple cubes, hay and straw. Fruit
-                                        follows, along with candy necklaces, meadow flowers, green apple skins and freshly-cut
-                                        pears. Anise and menthol notes hide at the back.</p>
+                                    <p><?php echo $review->comment_content; ?></p>
                                 </div>
-                                <div class="date-time"><span class="icon-clock-outline"></span><span>01:34 PM</span></div>
+                                <div class="date-time"><span class="icon-clock-outline"></span><span><?php echo $review->comment_date; ?></span></div>
                             </div>
 
                         </div>
-                        <div class="item-review">
-                            <div class="image">
-                                <img src="img/review/adult-bed-bedroom-breakfast-364362.png"
-                                     srcset="img/review/adult-bed-bedroom-breakfast-364362@2x.png 2x, img/review/adult-bed-bedroom-breakfast-364362@3x.png 3x"
-                                     class="adult-bed-bedroom-breakfast-364362">
-                            </div>
-                            <div class="review">
-                                <div class="inner">
-                                    <h3>Jane Doe</h3>
-                                    <p>When will the discount be?</p>
-                                </div>
-                                <div class="date-time"><span class="icon-clock-outline"></span><span>01:34 PM</span></div>
-                            </div>
 
-                        </div>
-                        <div class="item-review">
-                            <div class="image">
-                                <img src="img/review/adult-bed-bedroom-breakfast-364362.png"
-                                     srcset="img/review/adult-bed-bedroom-breakfast-364362@2x.png 2x, img/review/adult-bed-bedroom-breakfast-364362@3x.png 3x"
-                                     class="adult-bed-bedroom-breakfast-364362">
-                            </div>
-                            <div class="review">
-                                <div class="inner">
-                                    <h3>Jane Doe</h3>
-                                    <p>When will the discount be?</p>
-                                </div>
-                                <div class="date-time"><span class="icon-clock-outline"></span><span class="time">01:34 PM</span>
-                                </div>
-                            </div>
-                        </div>
+                        <?php }?>
+
+
 
                         <div class="review-textarea">
                             <form method="post">
@@ -138,3 +119,25 @@ if (!$short_description) {
             </div>
         </div>
     </div>
+
+
+    <script type="text/javascript" defer>
+
+        // $( document ).ready(function() {
+        //     $('.stars').raty({
+        //             starType: 'i',
+        //             score: function () {
+        //                 return $(this).attr('data-score');
+        //             },
+        //             click: function(score, evt) {
+        //                 console.log('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
+        //             }
+        //         });
+        // });
+
+
+        // (function ($) {
+        // })();
+
+
+    </script>

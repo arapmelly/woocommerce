@@ -60,7 +60,7 @@ do_action('woocommerce_before_single_product_summary');
 do_action('woocommerce_single_product_summary');
 
 //do_action('woocommerce_show_product_images');
-//do_action('woocommerce_template_single_title');
+//do_action('woocommerce_template_single_rating');
 
 ?>
 	</div>

@@ -1,104 +1,151 @@
-<?php
-	get_header();
-
-?>
-
-<?php if ( is_front_page() ) {
+<?php if (is_front_page()) {
 	?>
 
-	<section class="shop-banner margin-top-phone-7">
+     <section class="shop-banner margin-top-phone-7">
 
-		<?php
+	     <?php
 
-			$image  = get_blog_primary_image();
-			$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+		     $image  = get_blog_primary_image();
+		     $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 
+	     ?>
+
+         <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px"
+              src="<?php echo $image->small ?>" alt="">
+    </section>
+
+
+    <main class="main-content">
+    <section class="business-details">
+        <div class="section-inner-wrapper">
+            <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
+            <div class="rating-widget">
+                <div class="stars" data-score="4.5"></div>
+                <div class="num-rating tag-descriptor">4.25 <span class="total-reviews">(<?php echo get_reviews_count(); ?> Reviews)</span></div>
+            </div>
+            <div class="orders-made">
+                <div class="tag-descriptor"><?php echo get_total_orders('complete'); ?> <span class="total-reviews">Orders made</span>
+                </div>
+                <div class="tag-descriptor"><?php echo get_total_orders('on-hold'); ?> <span class="total-reviews">Deliveries made</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="filter-by-category">
+        <div class="section-inner-wrapper">
+            <div class="owl-carousel owl-theme">
+
+                <?php $cats = get_product_categories();?>
+                <?php foreach ($cats as $cat) {?>
+                    <div class="item">
+                        <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">
+                            <h4><?php echo $cat->name; ?></h4></a>
+                    </div>
+                <?php }?>
+            </div>
+            <div class="custom-nav owl-nav"></div>
+        </div>
+    </section>
+
+    <section class="products-by-category">
+
+    	<?php $cats = get_product_categories();?>
+        <?php foreach ($cats as $cat) {
 		?>
+            <div class="products">
+                <header class="category-header">
+                    <div class="inner-wrapper">
+                        <h3><?php echo $cat->name; ?> </h3>
+                        <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">View All</a>
+                    </div>
+                </header>
 
-		<img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px"
-		     src="<?php echo $image->small ?>" alt="">
-	</section>
+                <div class="section-inner-wrapper">
+                    <div class="products-slider">
+                        <div class="owl-carousel owl-theme ui link cards">
 
-<?php } ?>
+                            <?php
+$query = new WC_Product_Query(array(
+			'limit' => 4,
+			'orderby' => 'date',
+			'order' => 'DESC',
+			'category' => [$cat->slug],
 
-<?php if ( is_front_page() ) { ?>
-	<main class="main-content margin-0">
-	<section class="business-details">
-		<div class="section-inner-wrapper">
-			<h1 class="business-name"><?php echo get_option( 'blogname' ); ?></h1>
-			<div class="rating-widget">
-				<div class="stars" data-score="4.5"></div>
-				<div class="num-rating tag-descriptor">4.25 <span
-						class="total-reviews">(<?php echo get_reviews_count(); ?> Reviews)</span></div>
-			</div>
-			<div class="orders-made">
-				<div class="tag-descriptor"><?php echo get_total_orders( 'complete' ); ?> <span class="total-reviews">Orders made</span>
-				</div>
-				<div class="tag-descriptor"><?php echo get_total_orders( 'on-hold' ); ?> <span class="total-reviews">Deliveries made</span>
-				</div>
-			</div>
-		</div>
-	</section>
+		));
+		$products = $query->get_products();
 
-<?php } ?>
+		foreach ($products as $product) {
 
+			?>
 
-	<section class="filter-by-category">
-		<div class="section-inner-wrapper">
-			<div class="owl-carousel owl-theme">
+			<div class="item card">
+                                        <div class="image">
+                                            <?php
 
-				<?php $cats = get_product_categories(); ?>
-				<?php foreach ( $cats as $cat ) { ?>
-					<div class="item">
-						<a href="<?php echo get_term_link( $cat->term_taxonomy_id, 'product_cat' ); ?>">
-							<h4><?php echo $cat->name; ?></h4></a>
-					</div>
-				<?php } ?>
-			</div>
-			<div class="custom-nav owl-nav"></div>
-		</div>
-	</section>
+			$image = get_product_primary_image($product);
+
+			if (!is_null($image)) {
+				$srcset = $image->medium . ' , ' . $image->large;
+			}
+
+			?>
+										<?php if (is_null($image)) {?>
+
+											<img src="" alt="no image"
+                                                 class="caol-ila_1984">
 
 
-	<section class="products-by-category">
-		<?php foreach ( $cats as $cat ) { ?>
-			<div class="products">
-				<header class="category-header">
-					<div class="inner-wrapper">
-						<h3><?php echo $cat->name; ?> </h3>
-						<a href="<?php echo get_term_link( $cat->term_taxonomy_id, 'product_cat' ); ?>">View All</a>
-					</div>
-				</header>
+										 <?php } else {?>
+											<img src="<?php echo $image->small ?>" srcset="<?php echo $srcset; ?>"
+                                                 class="caol-ila_1984">
 
-				<div class="section-inner-wrapper">
-					<div class="products-slider">
-						<div class="ui link cards">
+										<?php }?>
 
-							<?php
-								$query    = new WC_Product_Query( array(
-									'limit'    => 5,
-									'orderby'  => 'date',
-									'order'    => 'DESC',
-									'category' => [ $cat->slug ],
 
-								) );
-								$products = $query->get_products();
 
-								foreach ( $products as $product ) {
+                                        </div>
 
-									wc_get_template_part( 'content', 'product' );
+                                        <div class="content price-discount">
+                                            <div class="header price">
+                                                <h2 class="current-price"><?php echo wc_price($product->get_price()); ?></h2>
 
-									?>
-								<?php } ?>
+												<?php if ($product->is_on_sale()) {?>
+                                                    <h2 class="previous-price"><?php echo wc_price($product->get_regular_price()); ?></h2>
+												<?php }?>
+                                            </div>
 
-						</div> <!-- end of owl-carousel -->
-					</div> <!-- end of products slider -->
-				</div> <!-- end of inner wrapper -->
-			</div>    <!-- end of products -->
-		<?php } ?>
+                                            <?php if ($product->is_on_sale()) {?>
+                                            <div class="discount"><?php echo get_percentage_discount($product); ?>
+                                                Off
+                                            </div>
+                                            <?php }?>
+                                        </div>
 
-	</section>
+                                        <div class="content">
+                                            <div class="header"><?php echo $product->get_name(); ?></div>
+                                        </div>
 
-	</main>
+                                        <a href="<?php echo get_permalink($product->get_id()); ?>" data-quantity="1"
+                                           class="ui bottom attached button">buy </a>
+                                    </div>
 
-<?php get_footer(); ?>
+
+
+                                <?php }?>
+
+                        </div> <!-- end of owl-carousel -->
+                    </div> <!-- end of products slider -->
+                </div> <!-- end of inner wrapper -->
+
+
+            </div>    <!-- end of products -->
+        <?php }?>
+
+    </section>
+
+
+
+
+<?php }?>

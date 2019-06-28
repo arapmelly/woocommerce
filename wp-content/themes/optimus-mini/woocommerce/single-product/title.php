@@ -42,7 +42,9 @@ $average = $product->get_average_rating();
 
             </div>
 
-            <div class="product-meta">
+            <?php if ($average >= 3) {?>
+
+                <div class="product-meta">
                 <div class="rating-widget">
                     <div class="stars" data-score="<?php echo $average; ?>"></div>
                 </div>
@@ -52,7 +54,38 @@ $average = $product->get_average_rating();
                 </div>
             </div>
 
+
+            <?php }?>
+
+
+
             <?php do_action('woocommerce_before_add_to_cart_button');?>
+
+
+            <?php $attributes = get_prod_attributes($product);?>
+
+            <?php if (count($attributes) > 0) {
+	?>
+
+                <?php
+
+	foreach ($attributes as $key => $attribute) {?>
+
+                      <label><?php echo $key; ?></label>
+		              <select>
+                        <?php $values = explode(',', $attribute);?>
+                        <?php foreach ($values as $value) {?>
+                            <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+                        <?php }?>
+
+                      </select>
+
+
+
+	           <?php }?>
+
+
+           <?php }?>
 
             <div class="actions">
 
@@ -63,3 +96,4 @@ $average = $product->get_average_rating();
 
         </div>
     </section>
+

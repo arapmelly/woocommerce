@@ -15,12 +15,9 @@
  * @version 2.4.0
  */
 
-/*
-if ( ! defined( 'ABSPATH' ) ) {
-exit;
+if (!defined('ABSPATH')) {
+	exit;
 }
-
- */
 
 /**
  * Filter tabs and allow third parties to add their own.
