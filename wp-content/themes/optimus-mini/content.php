@@ -1,32 +1,33 @@
-<?php if (is_front_page()) {
+<?php if ( is_front_page() ) {
 	?>
 
-     <section class="shop-banner margin-top-phone-7">
+    <section class="shop-banner margin-top-phone-7">
 
-	     <?php
+		<?php
 
-		     $image  = get_blog_primary_image();
-		     $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+			$image  = get_blog_primary_image();
+			$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 
-	     ?>
+		?>
 
-         <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px"
-              src="<?php echo $image->small ?>" alt="">
+        <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px"
+             src="<?php echo $image->small ?>" alt="">
     </section>
 
 
     <main class="main-content">
     <section class="business-details">
         <div class="section-inner-wrapper">
-            <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
+            <h1 class="business-name"><?php echo get_option( 'blogname' ); ?></h1>
             <div class="rating-widget">
                 <div class="stars" data-score="4.5"></div>
-                <div class="num-rating tag-descriptor">4.25 <span class="total-reviews">(<?php echo get_reviews_count(); ?> Reviews)</span></div>
+                <div class="num-rating tag-descriptor">4.25 <span
+                            class="total-reviews">(<?php echo get_reviews_count(); ?> Reviews)</span></div>
             </div>
             <div class="orders-made">
-                <div class="tag-descriptor"><?php echo get_total_orders('complete'); ?> <span class="total-reviews">Orders made</span>
+                <div class="tag-descriptor"><?php echo get_total_orders( 'complete' ); ?> <span class="total-reviews">Orders made</span>
                 </div>
-                <div class="tag-descriptor"><?php echo get_total_orders('on-hold'); ?> <span class="total-reviews">Deliveries made</span>
+                <div class="tag-descriptor"><?php echo get_total_orders( 'on-hold' ); ?> <span class="total-reviews">Deliveries made</span>
                 </div>
             </div>
         </div>
@@ -37,13 +38,13 @@
         <div class="section-inner-wrapper">
             <div class="owl-carousel owl-theme">
 
-                <?php $cats = get_product_categories();?>
-                <?php foreach ($cats as $cat) {?>
+				<?php $cats = get_product_categories(); ?>
+				<?php foreach ( $cats as $cat ) { ?>
                     <div class="item">
-                        <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">
+                        <a href="<?php echo get_term_link( $cat->term_taxonomy_id, 'product_cat' ); ?>">
                             <h4><?php echo $cat->name; ?></h4></a>
                     </div>
-                <?php }?>
+				<?php } ?>
             </div>
             <div class="custom-nav owl-nav"></div>
         </div>
@@ -51,14 +52,14 @@
 
     <section class="products-by-category">
 
-    	<?php $cats = get_product_categories();?>
-        <?php foreach ($cats as $cat) {
-		?>
+		<?php $cats = get_product_categories(); ?>
+		<?php foreach ( $cats as $cat ) {
+			?>
             <div class="products">
                 <header class="category-header">
                     <div class="inner-wrapper">
                         <h3><?php echo $cat->name; ?> </h3>
-                        <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">View All</a>
+                        <a href="<?php echo get_term_link( $cat->term_taxonomy_id, 'product_cat' ); ?>">View All</a>
                     </div>
                 </header>
 
@@ -66,74 +67,56 @@
                     <div class="products-slider">
                         <div class="owl-carousel owl-theme ui link cards">
 
-                            <?php
-$query = new WC_Product_Query(array(
-			'limit' => 4,
-			'orderby' => 'date',
-			'order' => 'DESC',
-			'category' => [$cat->slug],
+							<?php
+								$query    = new WC_Product_Query( array(
+									'limit'    => 4,
+									'orderby'  => 'date',
+									'order'    => 'DESC',
+									'category' => [ $cat->slug ],
 
-		));
-		$products = $query->get_products();
+								) );
+								$products = $query->get_products();
 
-		foreach ($products as $product) {
+								foreach ( $products as $product ) {
 
-			?>
+									?>
 
-			<div class="item card">
-                                        <div class="image">
-                                            <?php
+                                    <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card">
 
-			$image = get_product_primary_image($product);
+	                                    <?php
 
-			if (!is_null($image)) {
-				$srcset = $image->medium . ' , ' . $image->large;
-			}
+		                                    $image = get_product_primary_image( $product );
 
-			?>
-										<?php if (is_null($image)) {?>
+		                                    if ( ! is_null( $image ) ) {
+			                                    $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+		                                    }
 
-											<img src="" alt="no image"
-                                                 class="caol-ila_1984">
+	                                    ?>
 
+                                        <div class="image" style="background-image: url(<?php echo $image->medium ?>)"></div>
 
-										 <?php } else {?>
-											<img src="<?php echo $image->small ?>" srcset="<?php echo $srcset; ?>"
-                                                 class="caol-ila_1984">
-
-										<?php }?>
-
-
-
+                                        <div class="content">
+                                            <div class="header"><?php echo $product->get_name(); ?></div>
+                                            <div class="meta">This is a product category</div>
                                         </div>
 
                                         <div class="content price-discount">
                                             <div class="header price">
-                                                <h2 class="current-price"><?php echo wc_price($product->get_price()); ?></h2>
+                                                <h2 class="current-price"><?php echo wc_price( $product->get_price() ); ?></h2>
 
-												<?php if ($product->is_on_sale()) {?>
-                                                    <h2 class="previous-price"><?php echo wc_price($product->get_regular_price()); ?></h2>
-												<?php }?>
+			                                    <?php if ( $product->is_on_sale() ) { ?>
+                                                    <h2 class="previous-price"><?php echo wc_price( $product->get_regular_price() ); ?></h2>
+			                                    <?php } ?>
                                             </div>
 
-                                            <?php if ($product->is_on_sale()) {?>
-                                            <div class="discount"><?php echo get_percentage_discount($product); ?>
-                                                Off
-                                            </div>
-                                            <?php }?>
+		                                    <?php if ( $product->is_on_sale() ) { ?>
+                                                <div class="discount"><?php echo get_percentage_discount( $product ); ?> Off</div>
+		                                    <?php } ?>
                                         </div>
-
-                                        <div class="content">
-                                            <div class="header"><?php echo $product->get_name(); ?></div>
-                                        </div>
-
-                                        <a href="<?php echo get_permalink($product->get_id()); ?>" data-quantity="1"
-                                           class="ui bottom attached button">buy </a>
-                                    </div>
+                                    </a>
 
 
-
-                                <?php }?>
+								<?php } ?>
 
                         </div> <!-- end of owl-carousel -->
                     </div> <!-- end of products slider -->
@@ -141,11 +124,11 @@ $query = new WC_Product_Query(array(
 
 
             </div>    <!-- end of products -->
-        <?php }?>
+		<?php } ?>
 
     </section>
 
 
 
 
-<?php }?>
+<?php } ?>

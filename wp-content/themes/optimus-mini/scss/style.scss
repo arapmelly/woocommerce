@@ -6,8 +6,6 @@ Author URI:   https://squaddigital.com/
 Description:  This is the official optimus mini ecommerce theme
 Version:      1.0.0
 */
-
-
 @import "reset";
 @import "variables";
 @import "fonts";
@@ -202,18 +200,14 @@ html, body {
       margin: 0 auto;
       position: relative;
       width: $max-width;
-      .inner-wrapper {
-        width: calc(100% - 75px);
-        display: flex;
-        align-items: center;
 
-        .owl-carousel {
-          width: 100%;
-          .owl-stage-outer {
-            width: 100%;
-            .owl-stage {
-              min-width: 100%;
-            }
+      .owl-carousel {
+        width: 100%;
+        .owl-stage-outer {
+          width: calc(100% - 75px);
+          margin: 0 auto;
+          .owl-stage {
+            min-width: 100%;
           }
         }
       }
@@ -404,8 +398,11 @@ html, body {
   display: table;
   //max-height: 450px;
 
-  height: 195px;
-  max-height: 195px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 305px;
+  max-height: 305px;
 
   width: 100%;
 
@@ -422,18 +419,20 @@ html, body {
   .product-details {
 
     .product-name {
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 18px;
+      font-weight: normal;
       color: $color-medium;
     }
+
 
     .price {
       display: flex;
       flex-direction: row;
       align-items: center;
+      font-size: 14px;
       h1, h2, h3, h4, h5 {
-        font-size: 30px;
-        font-weight: bold;
+        font-size: 1.2em;
+        font-weight: 400;
         line-height: normal;
         letter-spacing: normal;
         text-align: left;
@@ -442,10 +441,10 @@ html, body {
       }
 
       .previous-price {
-        color: #232428;
-        font-size: 18px;
+        color: #898c98;
+        font-size: 1.1em;
         text-decoration: line-through;
-        padding-left: 5rem;
+        padding-left: 1rem;
       }
     }
 
@@ -1474,21 +1473,21 @@ html, body {
     }
 
     .products-category {
-        .section-inner-wrapper {
-          margin: 0 auto;
-          @include calcMaxWidth($phone);
+      .section-inner-wrapper {
+        margin: 0 auto;
+        @include calcMaxWidth($phone);
 
-          .cards {
-            .card {
-              .price-discount {
-                .discount {
-                  top: -150px;
-                }
+        .cards {
+          .card {
+            .price-discount {
+              .discount {
+                top: -150px;
               }
             }
           }
         }
       }
+    }
 
   }
 

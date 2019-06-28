@@ -6054,16 +6054,13 @@ html, body {
       margin: 0 auto;
       position: relative;
       width: calc(100vw - 15rem); }
-      .main-content .filter-by-category .section-inner-wrapper .inner-wrapper {
-        width: calc(100% - 75px);
-        display: flex;
-        align-items: center; }
-        .main-content .filter-by-category .section-inner-wrapper .inner-wrapper .owl-carousel {
-          width: 100%; }
-          .main-content .filter-by-category .section-inner-wrapper .inner-wrapper .owl-carousel .owl-stage-outer {
-            width: 100%; }
-            .main-content .filter-by-category .section-inner-wrapper .inner-wrapper .owl-carousel .owl-stage-outer .owl-stage {
-              min-width: 100%; }
+      .main-content .filter-by-category .section-inner-wrapper .owl-carousel {
+        width: 100%; }
+        .main-content .filter-by-category .section-inner-wrapper .owl-carousel .owl-stage-outer {
+          width: calc(100% - 75px);
+          margin: 0 auto; }
+          .main-content .filter-by-category .section-inner-wrapper .owl-carousel .owl-stage-outer .owl-stage {
+            min-width: 100%; }
       .main-content .filter-by-category .section-inner-wrapper .owl-nav {
         display: flex;
         flex-direction: row;
@@ -6185,8 +6182,11 @@ html, body {
 
 .product-image {
   display: table;
-  height: 195px;
-  max-height: 195px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 305px;
+  max-height: 305px;
   width: 100%; }
   .product-image img {
     height: auto;
@@ -6196,26 +6196,27 @@ html, body {
   display: block;
   position: relative; }
   .main-content .product-details .product-name {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: normal;
     color: #202020; }
   .main-content .product-details .price {
     display: flex;
     flex-direction: row;
-    align-items: center; }
+    align-items: center;
+    font-size: 14px; }
     .main-content .product-details .price h1, .main-content .product-details .price h2, .main-content .product-details .price h3, .main-content .product-details .price h4, .main-content .product-details .price h5 {
-      font-size: 30px;
-      font-weight: bold;
+      font-size: 1.2em;
+      font-weight: 400;
       line-height: normal;
       letter-spacing: normal;
       text-align: left;
       text-transform: uppercase;
       color: #4971ff; }
     .main-content .product-details .price .previous-price {
-      color: #232428;
-      font-size: 18px;
+      color: #898c98;
+      font-size: 1.1em;
       text-decoration: line-through;
-      padding-left: 5rem; }
+      padding-left: 1rem; }
   .main-content .product-details .product-meta {
     align-items: flex-start;
     display: flex;

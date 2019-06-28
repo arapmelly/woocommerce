@@ -45,24 +45,7 @@
 
 	    ?>
 
-        <div class="image" style="background-image: url(<?php echo $image->medium ?>)">
-
-
-
-
-<!--			--><?php //if ( is_null( $image ) ) { ?>
-<!---->
-<!--                <img src="" alt="no image">-->
-<!---->
-<!--			--><?php //} else { ?>
-<!---->
-<!--                <img src="--><?php //echo $image->medium ?><!--" alt="">-->
-<!--                <img src="https://images.unsplash.com/photo-1561534268-43ae92d330e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">-->
-<!---->
-<!--			--><?php //} ?>
-
-
-        </div>
+        <div class="image" style="background-image: url(<?php echo $image->medium ?>)"></div>
 
         <div class="content">
             <div class="header"><?php echo $product->get_name(); ?></div>
