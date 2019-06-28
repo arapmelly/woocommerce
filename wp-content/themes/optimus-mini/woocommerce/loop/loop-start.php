@@ -21,4 +21,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div class="products-category columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
     <div class="section-inner-wrapper">
-        <div class="ui link stackable cards">
+        <div class="ui link cards">

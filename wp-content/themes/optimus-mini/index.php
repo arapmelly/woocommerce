@@ -22,7 +22,7 @@
 <?php } ?>
 
 <?php if ( is_front_page() ) { ?>
-    <main class="main-content">
+    <main class="main-content margin-0">
     <section class="business-details">
         <div class="section-inner-wrapper">
             <h1 class="business-name"><?php echo get_option( 'blogname' ); ?></h1>

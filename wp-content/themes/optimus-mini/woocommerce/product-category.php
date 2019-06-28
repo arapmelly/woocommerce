@@ -26,30 +26,23 @@
 ?>
 
 
-<div class="card">
-    <div class="image">
-		<?php
+<a class="card" href="<?php echo get_permalink( $product->get_id() ); ?>">
 
-			$image = get_product_primary_image( $product );
+	<?php
 
-			if ( ! is_null( $image ) ) {
-				$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
-			}
+		$image = get_product_primary_image( $product );
 
-		?>
-		<?php if ( is_null( $image ) ) { ?>
+		if ( ! is_null( $image ) ) {
+			$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+		}
 
-            <img src="" alt="no image"
-                 class="caol-ila_1984">
+	?>
 
+    <div class="image" style="background-image: url(<?php echo $image->medium ?>)"></div>
 
-		<?php } else { ?>
-
-            <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px" src="<?php echo $image->small ?>" alt="">
-
-		<?php } ?>
-
-
+    <div class="content">
+        <div class="header"><?php echo $product->get_name(); ?></div>
+        <div class="meta">This is a product category</div>
     </div>
 
     <div class="content price-discount">
@@ -62,15 +55,8 @@
         </div>
 
 		<?php if ( $product->is_on_sale() ) { ?>
-            <div class="discount"><?php echo get_percentage_discount( $product ); ?>
-                Off
-            </div>
+            <div class="discount"><?php echo get_percentage_discount( $product ); ?> Off</div>
 		<?php } ?>
     </div>
 
-    <div class="content">
-        <div class="header"><?php echo $product->get_name(); ?></div>
-    </div>
-
-    <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="ui bottom attached button">buy </a>
-</div>
+</a>

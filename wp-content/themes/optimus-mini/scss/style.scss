@@ -13,14 +13,16 @@ html, body {
   background-color: $default-white-color;
   box-sizing: border-box;
   color: #000;
-  display: block;
+  display: flex;
   font-family: $body-font;
   margin: 0;
   padding: 0;
   position: relative;
   overflow-x: hidden;
   width: 100%;
+  height: 100vh;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 .navigation {
@@ -132,6 +134,7 @@ html, body {
 .main-content {
   display: block;
   position: relative;
+  flex: 1 0 auto;
 
   .section-inner-wrapper {
     padding: 0 15px;
@@ -145,8 +148,10 @@ html, body {
       padding: 3rem 2.5rem;
 
       .business-name {
-        font-weight: bold;
         color: $color-medium;
+        font-weight: normal;
+        font-size: 1.7em;
+        line-height: 1.7em;
       }
 
       .rating-widget {
@@ -305,14 +310,14 @@ html, body {
             margin-top: 5px;
             margin-left: 5px;
             margin-right: 5px;
-            width: calc((100% / 5) - 10px);
+            width: calc((100% / 4) - 10px);
 
             .image {
               background-size: cover;
-              background-position: top;
+              background-position: center center;
               background-repeat: no-repeat;
-              height: 250px;
-              max-height: 250px;
+              height: 305px;
+              max-height: 305px;
             }
 
             .content {
@@ -331,7 +336,7 @@ html, body {
               padding-top: 0;
 
               .price {
-                font-size: 12px;
+                font-size: 14px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -355,7 +360,7 @@ html, body {
                   color: lighten(#232428, 42%);
                   font-size: 1.1em;
                   text-decoration: line-through;
-                  padding-left: 5rem;
+                  padding-left: 1rem;
                 }
 
               }
@@ -387,7 +392,11 @@ html, body {
 
 .product-image {
   display: table;
-  max-height: 450px;
+  //max-height: 450px;
+
+  height: 195px;
+  max-height: 195px;
+
   width: 100%;
 
   img {
@@ -955,52 +964,73 @@ html, body {
     .section-inner-wrapper {
       .cards {
         .card {
-          width: calc((100% / 4) - 1em);
+          margin-top: 5px;
+          margin-left: 5px;
+          margin-right: 5px;
+          width: calc((100% / 4) - 10px);
+
+          .image {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 305px;
+            max-height: 305px;
+          }
 
           .content {
             text-align: left;
+            font-size: 12px;
+            .header {
+              font-weight: normal;
+            }
           }
           .price-discount {
             display: flex;
             flex-direction: row;
             position: relative;
             align-items: center;
-            .price {
-              font-size: 12px;
+            border: none;
+            padding-top: 0;
 
+            .price {
+              font-size: 14px;
               display: flex;
               flex-direction: row;
               align-items: center;
 
               h1, h2, h3, h4, h5 {
-                font-size: 1.8em;
-                font-weight: bold;
+                font-size: 1.2em;
+                font-weight: 400;
                 line-height: normal;
                 letter-spacing: normal;
                 text-align: left;
-                text-transform: uppercase;
+                text-transform: capitalize;
                 color: $blue-button-color;
                 margin: 0;
               }
 
+              .current-price {
+                font-weight: 700;
+              }
+
               .previous-price {
-                color: lighten(#232428, 62%);
-                font-size: 18px;
+                color: lighten(#232428, 42%);
+                font-size: 1.1em;
                 text-decoration: line-through;
-                padding-left: 5rem;
+                padding-left: 1rem;
               }
 
             }
 
             .discount {
               background-color: $magenta-button-color;
-              border-radius: 8px;
+              border-radius: 4px;
               color: $default-white-color;
-              font-size: 14px;
-              font-weight: bold;
+              font-size: 12px;
+              font-weight: normal;
               position: absolute;
-              padding: 8px 15px;
-              top: -65px;
+              padding: 8px 10px;
+              top: -95px;
               right: 10px;
             }
           }
@@ -1013,12 +1043,16 @@ html, body {
 // -------------------------
 // FOOTER
 // -------------------------
+
 .footer {
   background-color: $default-dark-color;
   color: $default-white-color;
   display: block;
+  flex-shrink: 0;
   margin-top: 20px;
   position: relative;
+  width: 100%;
+
   .inner-wrapper {
     color: inherit;
     padding: 25px 15px;
@@ -1113,7 +1147,7 @@ html, body {
 
   .main-content {
 
-    .products {
+    .products, .products-category {
       .section-inner-wrapper {
         .products-slider {
           .cards {
@@ -1131,12 +1165,22 @@ html, body {
 @media only screen and (max-width: $desktop) {
   .main-content {
 
-    .products {
+    .products, .products-category {
       .section-inner-wrapper {
         .products-slider {
           .cards {
             .card {
               width: calc((100% / 4) - 10px);
+              .image {
+                height: 250px;
+                max-height: 250px;
+              }
+
+              .price-discount {
+                .discount {
+                  top: -115px;
+                }
+              }
             }
           }
         }
@@ -1180,26 +1224,52 @@ html, body {
         .inner-wrapper {
           @include calcMaxWidth($tablet);
         }
-
       }
+    }
 
-      .section-inner-wrapper {
-        @include calcMaxWidth($tablet);
+    .section-inner-wrapper {
+      @include calcMaxWidth($tablet);
 
-        .products-slider {
-          .cards {
-            .card {
-              width: calc((100% / 4) - 10px);
+      .products-slider {
+        .cards {
+          .card {
+            width: calc((100% / 4) - 10px);
+
+            .image {
+              height: 234.750px;
+              max-height: 234.750px;
+            }
+
+            .price-discount {
+              .discount {
+                top: -105px;
+              }
             }
           }
         }
-
       }
+    }
 
-      .products-category {
-        .section-inner-wrapper {
-          margin: 0 auto;
-          @include calcMaxWidth($tablet);
+    .products-category {
+      .section-inner-wrapper {
+        margin: 0 auto;
+        @include calcMaxWidth($tablet);
+
+        .cards {
+          .card {
+            width: calc((100% / 4) - 10px);
+
+            .image {
+              height: 234.750px;
+              max-height: 234.750px;
+            }
+
+            .price-discount {
+              .discount {
+                top: -115px;
+              }
+            }
+          }
         }
       }
     }
@@ -1258,19 +1328,36 @@ html, body {
         .products-slider {
           .cards {
             .card {
-              width: calc((100% / 3) - 10px);
+              width: calc((100% / 2) - 10px);
+              .image {
+                height: 366.500px;
+                max-height: 366.500px;
+              }
+
             }
           }
         }
       }
+    }
 
-      .products-category {
-        .section-inner-wrapper {
-          margin: 0 auto;
-          @include calcMaxWidth($phablet);
+    .products-category {
+      .section-inner-wrapper {
+        margin: 0 auto;
+        @include calcMaxWidth($phablet);
+
+        .cards {
+          .card {
+            width: calc((100% / 2) - 10px);
+            .image {
+              height: 366.500px;
+              max-height: 366.500px;
+            }
+
+          }
         }
       }
     }
+
   }
 
 }
@@ -1289,12 +1376,110 @@ html, body {
           .cards {
             .card {
               width: calc((100% / 2) - 10px);
+
+              .image {
+                height: 195px;
+                max-height: 195px;
+              }
+
+              .price-discount {
+                .discount {
+                  top: -120px;
+
+                }
+
+                .price {
+                  flex-direction: column;
+                  align-items: flex-start;
+
+                  .previous-price {
+                    padding-left: 0;
+                    padding-top: 1rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .products-category {
+      .section-inner-wrapper {
+        margin: 0 auto;
+        @include calcMaxWidth($phone);
+
+        .cards {
+          .card {
+            width: calc((100% / 2) - 10px);
+            .image {
+              height: 195px;
+              max-height: 195px;
+            }
+
+            .price-discount {
+              .discount {
+                top: -120px;
+
+              }
+
+              .price {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .previous-price {
+                  padding-left: 0;
+                  padding-top: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 375px) {
+  .main-content {
+
+    .products {
+
+      .section-inner-wrapper {
+        .products-slider {
+          .cards {
+            .card {
+              .price-discount {
+                .discount {
+                  top: -150px;
+
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .products-category {
+        .section-inner-wrapper {
+          margin: 0 auto;
+          @include calcMaxWidth($phone);
+
+          .cards {
+            .card {
+              .price-discount {
+                .discount {
+                  top: -150px;
+                }
+              }
             }
           }
         }
       }
 
-    }
   }
 
 }

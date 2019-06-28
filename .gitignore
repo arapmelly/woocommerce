@@ -9,3 +9,4 @@ wp-content/uploads
 shop.sql
 /wp-content/themes/optimus-mini/woocommerce_.php
 wp-content/themes/optimus-mini/scss/.DS_Store
+/wp-content/themes/optimus-mini/js/new-plugins.js
