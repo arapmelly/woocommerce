@@ -6667,16 +6667,16 @@ html, body {
     padding-top: 40%; }
 
   .main-content .category-header .inner-wrapper {
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 5rem) !important; }
   .main-content .business-details .section-inner-wrapper {
     margin: 0 auto;
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 5rem) !important; }
   .main-content .filter-by-category .section-inner-wrapper {
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 5rem) !important; }
   .main-content .products .category-header .inner-wrapper {
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 5rem) !important; }
   .main-content .section-inner-wrapper {
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 5rem) !important; }
     .main-content .section-inner-wrapper .products-slider .cards .card {
       width: calc((100% / 4) - 10px); }
       .main-content .section-inner-wrapper .products-slider .cards .card .image {
@@ -6686,7 +6686,7 @@ html, body {
         top: -105px; }
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 5rem) !important; }
     .main-content .products-category .section-inner-wrapper .cards .card {
       width: calc((100% / 4) - 10px); }
       .main-content .products-category .section-inner-wrapper .cards .card .image {
