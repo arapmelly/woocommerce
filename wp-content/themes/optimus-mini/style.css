@@ -1,11 +1,3 @@
-/*
-Theme Name:   Optimus Mini
-Theme URI:    https://optimus.site
-Author:       Squad Digital
-Author URI:   https://squaddigital.com/
-Description:  This is the official optimus mini ecommerce theme  
-Version:      1.0.0
-*/
 @charset "UTF-8";
 /* CSS RESET */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Roboto:300,400,500,700&display=swap");
@@ -4948,18 +4940,18 @@ img {
   100% {
     opacity: 0; } }
 /*
- *  Owl Carousel - Auto Height Plugin
+ * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
   transition: height 500ms ease-in-out; }
 
 /*
- *  Owl Carousel - Lazy Load Plugin
+ * 	Owl Carousel - Lazy Load Plugin
  */
 .owl-carousel .owl-item {
   /**
-    This is introduced due to a bug in IE11 where lazy loading combined with autoheight plugin causes a wrong
-    calculation of the height of the owl-item that breaks page layouts
+  	This is introduced due to a bug in IE11 where lazy loading combined with autoheight plugin causes a wrong
+  	calculation of the height of the owl-item that breaks page layouts
    */ }
   .owl-carousel .owl-item .owl-lazy {
     opacity: 0;
@@ -4970,7 +4962,7 @@ img {
     transform-style: preserve-3d; }
 
 /*
- *  Owl Carousel - Video Plugin
+ * 	Owl Carousel - Video Plugin
  */
 .owl-carousel .owl-video-wrapper {
   position: relative;
@@ -5008,7 +5000,7 @@ img {
   width: 100%; }
 
 /*
- *  Default theme - Owl Carousel CSS File
+ * 	Default theme - Owl Carousel CSS File
  */
 .owl-theme .owl-nav {
   margin-top: 10px;
