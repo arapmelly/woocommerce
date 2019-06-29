@@ -55,13 +55,21 @@
 
 	 */
 
+
 	$image = get_product_primary_image( $product );
 
 	if ( ! is_null( $image ) ) {
-		$srcset = $image->medium . ' , ' . $image->large;
+		$srcSet = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 	}
+
 
 ?>
 
-    <section class="product-image margin-top-phone-7"
-             style="background-image: url(<?php echo $image->medium ?>)"></section>
+<section class="product-image">
+
+    <img alt=""
+         src="<?php echo $image->small; ?>"
+         srcset="<?php echo $srcSet; ?>"
+         class="responsive" style="cursor: pointer;">
+
+</section>
