@@ -15,7 +15,7 @@
     </section>
 
 
-    <main class="main-content margin-0">
+    <main class="main-content">
     <section class="business-details">
         <div class="section-inner-wrapper">
             <h1 class="business-name"><?php echo get_option( 'blogname' ); ?></h1>
@@ -53,8 +53,7 @@
     <section class="products-by-category">
 
 		<?php $cats = get_product_categories(); ?>
-		<?php foreach ( $cats as $cat ) {
-			?>
+		<?php foreach ( $cats as $cat ) { ?>
             <div class="products">
                 <header class="category-header">
                     <div class="inner-wrapper">
@@ -76,51 +75,76 @@
 
 								) );
 								$products = $query->get_products();
+								$itemWidth = "";
 
+//								var_dump($products);
+                                $productsLoopCounter = 1;
 								foreach ( $products as $product ) {
 
-									?>
+                                    if ( count( $products ) == 1 ) {
 
-                                    <a class="card" href="<?php echo get_permalink( $product->get_id() ); ?>">
+                                        $itemWidth = "full-width";
 
-										<?php
+                                    } elseif ( count( $products ) > 1 ) {
+                                        if ( count( $products ) == 3 ) {
+                                            $itemWidth = "full-width";
+                                        }
+                                    }
 
-											$image = get_product_primary_image( $product );
+//                                    echo key( $products );
+                                //echo count( $products );
 
-											if ( ! is_null( $image ) ) {
-												$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
-											}
+                                    if ( $productsLoopCounter == count($products) && count($products) == 3) { ?>
 
-										?>
+                                        <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card <?php echo $itemWidth; ?>">
 
-                                        <div class="image"
-                                             style="background-image: url(<?php echo $image->medium ?>)"></div>
+                                    <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1){
+                                        ?>
+                                            <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card <?php echo $itemWidth; ?>">
+                                            <?php
+                                    }else { ?>
+                                        <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card">
+                                    <?php } ?>
 
-                                        <div class="content">
-                                            <div class="header"><?php echo $product->get_name(); ?></div>
-                                            <div class="meta"><?php echo $cat->name; ?></div>
-                                        </div>
+                                    <?php
 
-                                        <div class="content price-discount">
-                                            <div class="header price">
-                                                <h2 class="current-price"><?php echo wc_price( $product->get_price() ); ?></h2>
+                                        $image = get_product_primary_image( $product );
 
-												<?php if ( $product->is_on_sale() ) { ?>
-                                                    <h2 class="previous-price"><?php echo wc_price( $product->get_regular_price() ); ?></h2>
-												<?php } ?>
-                                            </div>
+                                        if ( ! is_null( $image ) ) {
+                                            $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+                                        }
+
+                                    ?>
+
+                                    <div class="image"
+                                         style="background-image: url(<?php echo $image->medium ?>)"></div>
+
+                                    <div class="content">
+                                        <div class="header"><?php echo $product->get_name(); ?></div>
+                                        <div class="meta">This is a product category</div>
+                                    </div>
+
+                                    <div class="content price-discount">
+                                        <div class="header price">
+                                            <h2 class="current-price"><?php echo wc_price( $product->get_price() ); ?></h2>
 
 											<?php if ( $product->is_on_sale() ) { ?>
-                                                <div class="discount"><?php echo get_percentage_discount( $product ); ?>
-                                                    Off
-                                                </div>
+                                                <h2 class="previous-price"><?php echo wc_price( $product->get_regular_price() ); ?></h2>
 											<?php } ?>
                                         </div>
 
-                                    </a>
+										<?php if ( $product->is_on_sale() ) { ?>
+                                            <div class="discount"><?php echo get_percentage_discount( $product ); ?>
+                                                Off
+                                            </div>
+										<?php } ?>
+                                    </div>
+                                </a>
 
 
-								<?php } ?>
+								<?php
+									$productsLoopCounter++;
+								} ?>
 
                         </div> <!-- end of owl-carousel -->
                     </div> <!-- end of products slider -->

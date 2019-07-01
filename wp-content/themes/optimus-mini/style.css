@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+Theme Name:   Optimus Mini
+Theme URI:    https://optimus.site
+Author:       Squad Digital
+Author URI:   https://squaddigital.com/
+Description:  This is the official optimus mini ecommerce theme
+Version:      1.0.0
+*/
 /* CSS RESET */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,700|Roboto:300,400,500,700&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, hr, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -6062,16 +6070,13 @@ html, body {
       margin: 0 auto;
       position: relative;
       width: calc(100vw - 15rem); }
-      .main-content .filter-by-category .section-inner-wrapper .inner-wrapper {
-        width: calc(100% - 75px);
-        display: flex;
-        align-items: center; }
-        .main-content .filter-by-category .section-inner-wrapper .inner-wrapper .owl-carousel {
-          width: 100%; }
-          .main-content .filter-by-category .section-inner-wrapper .inner-wrapper .owl-carousel .owl-stage-outer {
-            width: 100%; }
-            .main-content .filter-by-category .section-inner-wrapper .inner-wrapper .owl-carousel .owl-stage-outer .owl-stage {
-              min-width: 100%; }
+      .main-content .filter-by-category .section-inner-wrapper .owl-carousel {
+        width: 100%; }
+        .main-content .filter-by-category .section-inner-wrapper .owl-carousel .owl-stage-outer {
+          width: calc(100% - 75px);
+          margin: 0 auto; }
+          .main-content .filter-by-category .section-inner-wrapper .owl-carousel .owl-stage-outer .owl-stage {
+            min-width: 100%; }
       .main-content .filter-by-category .section-inner-wrapper .owl-nav {
         display: flex;
         flex-direction: row;
@@ -6145,6 +6150,7 @@ html, body {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+        border-radius: inherit;
         height: 305px;
         max-height: 305px; }
       .main-content .products-by-category .products .products-slider .cards .card .content {
@@ -6191,214 +6197,100 @@ html, body {
           top: -95px;
           right: 10px; }
 
-.product-image {
-  display: table;
-  height: 195px;
-  max-height: 195px;
-  width: 100%; }
-  .product-image img {
-    height: auto;
-    width: 100%; }
-
 .main-content {
   display: block;
   position: relative; }
-  .main-content .product-details .product-name {
-    font-size: 22px;
-    font-weight: bold;
-    color: #202020; }
-  .main-content .product-details .price {
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
-    .main-content .product-details .price h1, .main-content .product-details .price h2, .main-content .product-details .price h3, .main-content .product-details .price h4, .main-content .product-details .price h5 {
-      font-size: 30px;
-      font-weight: bold;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: left;
-      text-transform: uppercase;
-      color: #4971ff; }
-    .main-content .product-details .price .previous-price {
-      color: #232428;
-      font-size: 18px;
-      text-decoration: line-through;
-      padding-left: 5rem; }
-  .main-content .product-details .product-meta {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column; }
-    .main-content .product-details .product-meta .rating-widget {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 2rem; }
-      .main-content .product-details .product-meta .rating-widget div:first-child {
-        margin-right: 3rem; }
-    .main-content .product-details .product-meta .orders-made {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 2rem; }
-  .main-content .product-details .actions {
-    display: block;
-    margin-top: 20px;
-    width: 100%; }
-    .main-content .product-details .actions a.button {
-      background-color: rgba(32, 32, 32, 0.89);
-      border-radius: 8px;
-      text-transform: uppercase;
-      padding: 20px;
-      width: 100%; }
-  .main-content .product-description {
-    margin: 20px 0; }
-    .main-content .product-description h2 {
-      font-size: 22px; }
-    .main-content .product-description h1, .main-content .product-description h2, .main-content .product-description h3, .main-content .product-description h4, .main-content .product-description h5, .main-content .product-description h6 {
-      font-weight: bold; }
-      .main-content .product-description h1 .sub-heading, .main-content .product-description h2 .sub-heading, .main-content .product-description h3 .sub-heading, .main-content .product-description h4 .sub-heading, .main-content .product-description h5 .sub-heading, .main-content .product-description h6 .sub-heading {
-        font-weight: normal;
-        font-size: 0.8em;
-        display: table;
-        margin-top: 2rem; }
-    .main-content .product-description p {
-      font-size: 16px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.6363636364;
-      letter-spacing: normal;
-      text-align: left;
-      color: rgba(32, 32, 32, 0.89);
-      margin-bottom: 2rem; }
-  .main-content .ratings-chart .section-inner-wrapper .rating-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between; }
-    .main-content .ratings-chart .section-inner-wrapper .rating-header .num-rating {
-      font-size: 36px;
-      font-weight: bold; }
-    .main-content .ratings-chart .section-inner-wrapper .rating-header .rating-widget {
-      align-items: flex-start;
-      align-self: flex-end;
-      justify-items: flex-end;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 2rem; }
-      .main-content .ratings-chart .section-inner-wrapper .rating-header .rating-widget div:first-child {
-        margin-right: 3rem; }
-  .main-content .reviews .reviews-header .inner-wrapper {
-    align-items: center;
-    background-color: #fcfcfc;
-    border-top: 1px solid #f5f5f5;
-    border-bottom: 1px solid #f5f5f5;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    position: relative;
+  .main-content .product {
+    margin: 0 auto;
     padding: 0 15px;
-    margin-bottom: 5rem;
-    margin-top: 5rem;
-    height: 80px;
-    max-height: 80px; }
-    .main-content .reviews .reviews-header .inner-wrapper .total-reviews {
-      color: rgba(32, 32, 32, 0.89);
-      font-size: 22px;
-      font-weight: bold; }
-  .main-content .reviews .section-inner-wrapper .item-review {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 1px solid #f5f5f5;
-    padding: 15px 0; }
-    .main-content .reviews .section-inner-wrapper .item-review .image {
-      border-radius: 40px;
-      flex: none;
-      align-self: flex-start;
-      height: 16px;
-      width: 16px; }
-    .main-content .reviews .section-inner-wrapper .item-review .review {
-      display: inherit;
-      flex-direction: column;
-      justify-content: flex-start;
-      flex: auto;
-      margin-left: 15px; }
-      .main-content .reviews .section-inner-wrapper .item-review .review .inner {
-        display: inherit;
-        flex-direction: column; }
-        .main-content .reviews .section-inner-wrapper .item-review .review .inner h1, .main-content .reviews .section-inner-wrapper .item-review .review .inner h2, .main-content .reviews .section-inner-wrapper .item-review .review .inner h3, .main-content .reviews .section-inner-wrapper .item-review .review .inner h4, .main-content .reviews .section-inner-wrapper .item-review .review .inner h5 {
-          margin: 0;
-          font-weight: bold;
-          font-size: 18px; }
-        .main-content .reviews .section-inner-wrapper .item-review .review .inner p {
-          font-size: 14px;
-          margin: 0; }
-      .main-content .reviews .section-inner-wrapper .item-review .review .date-time {
-        color: #b7b7b7;
-        display: flex;
-        align-items: center;
-        font-size: 12px;
-        font-weight: normal;
-        line-height: normal;
-        margin-top: 5px;
-        padding: 10px 0;
-        width: 100%; }
-        .main-content .reviews .section-inner-wrapper .item-review .review .date-time span.icon-clock-outline {
-          margin-right: 2.5px; }
-        .main-content .reviews .section-inner-wrapper .item-review .review .date-time span.time {
-          font-size: 12px;
-          font-weight: normal;
-          line-height: normal; }
-  .main-content .reviews .section-inner-wrapper .review-textarea {
-    margin-top: 50px;
-    margin-bottom: 25px; }
-    .main-content .reviews .section-inner-wrapper .review-textarea form {
+    width: calc(100vw - 15rem); }
+    .main-content .product .product-top-section {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%; }
-      .main-content .reviews .section-inner-wrapper .review-textarea form .form-input {
-        width: calc(100% - 85px); }
-        .main-content .reviews .section-inner-wrapper .review-textarea form .form-input .post-review {
-          color: #b7b7b7;
-          border-radius: 50px;
-          border: solid 1px #ebebeb;
-          background-color: #ffffff;
-          font-size: 16px;
-          padding: 2rem 4rem;
-          height: 70px;
-          max-height: 70px;
-          width: 100%; }
-      .main-content .reviews .section-inner-wrapper .review-textarea form .submit-review {
-        margin-left: 15px;
-        height: 70px;
-        max-height: 70px;
-        width: 70px; }
-        .main-content .reviews .section-inner-wrapper .review-textarea form .submit-review button {
-          border-radius: 50%;
+      flex-direction: row; }
+      .main-content .product .product-top-section .product-image {
+        border-radius: 0.28571429rem;
+        display: block;
+        width: calc(100% * 0.5); }
+        .main-content .product .product-top-section .product-image .prod-image {
+          display: table;
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
           height: inherit;
-          width: inherit;
-          transition: 0.3s; }
-          .main-content .reviews .section-inner-wrapper .review-textarea form .submit-review button span {
-            font-size: 3.5em; }
-          .main-content .reviews .section-inner-wrapper .review-textarea form .submit-review button:hover {
-            background-color: rgba(32, 32, 32, 0.89); }
-  .main-content .tabs {
-    margin-top: 25px; }
-    .main-content .tabs .styled-text {
+          width: 100%; }
+        .main-content .product .product-top-section .product-image img {
+          border-radius: inherit;
+          height: auto;
+          width: 100%; }
+      .main-content .product .product-top-section .product-details {
+        width: calc(100% * 0.5); }
+        .main-content .product .product-top-section .product-details .section-inner-wrapper {
+          position: relative;
+          height: 100%;
+          width: 100% !important; }
+        .main-content .product .product-top-section .product-details .product-name {
+          font-size: 21px;
+          font-weight: 500;
+          color: #202020; }
+        .main-content .product .product-top-section .product-details .price {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 14px; }
+          .main-content .product .product-top-section .product-details .price h1, .main-content .product .product-top-section .product-details .price h2, .main-content .product .product-top-section .product-details .price h3, .main-content .product .product-top-section .product-details .price h4, .main-content .product .product-top-section .product-details .price h5 {
+            font-size: 1.2em;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            text-transform: uppercase;
+            color: #4971ff; }
+          .main-content .product .product-top-section .product-details .price .previous-price {
+            color: #898c98;
+            font-size: 1.1em;
+            text-decoration: line-through;
+            padding-left: 1rem; }
+        .main-content .product .product-top-section .product-details .product-meta {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column; }
+          .main-content .product .product-top-section .product-details .product-meta .rating-widget {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2rem; }
+            .main-content .product .product-top-section .product-details .product-meta .rating-widget div:first-child {
+              margin-right: 3rem; }
+          .main-content .product .product-top-section .product-details .product-meta .orders-made {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2rem; }
+        .main-content .product .product-top-section .product-details .actions {
+          display: block;
+          margin-top: 20px;
+          width: 100%;
+          position: absolute;
+          bottom: 0; }
+          .main-content .product .product-top-section .product-details .actions a.button {
+            background-color: rgba(32, 32, 32, 0.89);
+            border-radius: 8px;
+            text-transform: uppercase;
+            padding: 20px;
+            width: 100%; }
+    .main-content .product .product-description {
       margin: 20px 0; }
-      .main-content .tabs .styled-text h2 {
+      .main-content .product .product-description h2 {
         font-size: 22px; }
-      .main-content .tabs .styled-text h1, .main-content .tabs .styled-text h2, .main-content .tabs .styled-text h3, .main-content .tabs .styled-text h4, .main-content .tabs .styled-text h5, .main-content .tabs .styled-text h6 {
+      .main-content .product .product-description h1, .main-content .product .product-description h2, .main-content .product .product-description h3, .main-content .product .product-description h4, .main-content .product .product-description h5, .main-content .product .product-description h6 {
         font-weight: bold; }
-        .main-content .tabs .styled-text h1 .sub-heading, .main-content .tabs .styled-text h2 .sub-heading, .main-content .tabs .styled-text h3 .sub-heading, .main-content .tabs .styled-text h4 .sub-heading, .main-content .tabs .styled-text h5 .sub-heading, .main-content .tabs .styled-text h6 .sub-heading {
+        .main-content .product .product-description h1 .sub-heading, .main-content .product .product-description h2 .sub-heading, .main-content .product .product-description h3 .sub-heading, .main-content .product .product-description h4 .sub-heading, .main-content .product .product-description h5 .sub-heading, .main-content .product .product-description h6 .sub-heading {
           font-weight: normal;
-          font-size: 0.65em;
+          font-size: 0.8em;
           display: table;
           margin-top: 2rem; }
-      .main-content .tabs .styled-text p {
-        font-size: 14px;
+      .main-content .product .product-description p {
+        font-size: 16px;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
@@ -6407,7 +6299,24 @@ html, body {
         text-align: left;
         color: rgba(32, 32, 32, 0.89);
         margin-bottom: 2rem; }
-    .main-content .tabs .reviews .reviews-header .inner-wrapper {
+    .main-content .product .ratings-chart .section-inner-wrapper .rating-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between; }
+      .main-content .product .ratings-chart .section-inner-wrapper .rating-header .num-rating {
+        font-size: 36px;
+        font-weight: bold; }
+      .main-content .product .ratings-chart .section-inner-wrapper .rating-header .rating-widget {
+        align-items: flex-start;
+        align-self: flex-end;
+        justify-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem; }
+        .main-content .product .ratings-chart .section-inner-wrapper .rating-header .rating-widget div:first-child {
+          margin-right: 3rem; }
+    .main-content .product .reviews .reviews-header .inner-wrapper {
       align-items: center;
       background-color: #fcfcfc;
       border-top: 1px solid #f5f5f5;
@@ -6418,70 +6327,42 @@ html, body {
       position: relative;
       padding: 0 15px;
       margin-bottom: 5rem;
-      margin-top: 0;
+      margin-top: 5rem;
       height: 80px;
       max-height: 80px; }
-      .main-content .tabs .reviews .reviews-header .inner-wrapper .total-reviews {
+      .main-content .product .reviews .reviews-header .inner-wrapper .total-reviews {
         color: rgba(32, 32, 32, 0.89);
         font-size: 22px;
         font-weight: bold; }
-    .main-content .tabs .reviews .total-rating {
-      background-color: #fcfcfc;
-      border-top: 1px solid #f5f5f5;
-      border-bottom: 1px solid #f5f5f5; }
-      .main-content .tabs .reviews .total-rating .rating-header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 8px 15px; }
-        .main-content .tabs .reviews .total-rating .rating-header .num-rating {
-          font-size: 36px;
-          font-weight: bold; }
-          .main-content .tabs .reviews .total-rating .rating-header .num-rating .stars {
-            font-size: 10px; }
-        .main-content .tabs .reviews .total-rating .rating-header .rating-widget {
-          display: flex;
-          flex-direction: column;
-          justify-items: center;
-          margin-bottom: 2rem; }
-          .main-content .tabs .reviews .total-rating .rating-header .rating-widget .tag-descriptor {
-            margin-right: 0;
-            display: inherit;
-            justify-content: center; }
-            .main-content .tabs .reviews .total-rating .rating-header .rating-widget .tag-descriptor span.total-reviews {
-              font-weight: bold;
-              font-size: 22px;
-              padding-bottom: 15px; }
-    .main-content .tabs .reviews .section-inner-wrapper .item-review {
+    .main-content .product .reviews .section-inner-wrapper .item-review {
       display: flex;
       flex-direction: row;
       align-items: center;
       border-bottom: 1px solid #f5f5f5;
       padding: 15px 0; }
-      .main-content .tabs .reviews .section-inner-wrapper .item-review .image {
+      .main-content .product .reviews .section-inner-wrapper .item-review .image {
         border-radius: 40px;
         flex: none;
         align-self: flex-start;
-        height: 30px;
-        width: 30px; }
-      .main-content .tabs .reviews .section-inner-wrapper .item-review .review {
+        height: 16px;
+        width: 16px; }
+      .main-content .product .reviews .section-inner-wrapper .item-review .review {
         display: inherit;
         flex-direction: column;
         justify-content: flex-start;
         flex: auto;
         margin-left: 15px; }
-        .main-content .tabs .reviews .section-inner-wrapper .item-review .review .inner {
+        .main-content .product .reviews .section-inner-wrapper .item-review .review .inner {
           display: inherit;
           flex-direction: column; }
-          .main-content .tabs .reviews .section-inner-wrapper .item-review .review .inner h1, .main-content .tabs .reviews .section-inner-wrapper .item-review .review .inner h2, .main-content .tabs .reviews .section-inner-wrapper .item-review .review .inner h3, .main-content .tabs .reviews .section-inner-wrapper .item-review .review .inner h4, .main-content .tabs .reviews .section-inner-wrapper .item-review .review .inner h5 {
+          .main-content .product .reviews .section-inner-wrapper .item-review .review .inner h1, .main-content .product .reviews .section-inner-wrapper .item-review .review .inner h2, .main-content .product .reviews .section-inner-wrapper .item-review .review .inner h3, .main-content .product .reviews .section-inner-wrapper .item-review .review .inner h4, .main-content .product .reviews .section-inner-wrapper .item-review .review .inner h5 {
             margin: 0;
             font-weight: bold;
             font-size: 18px; }
-          .main-content .tabs .reviews .section-inner-wrapper .item-review .review .inner p {
+          .main-content .product .reviews .section-inner-wrapper .item-review .review .inner p {
             font-size: 14px;
             margin: 0; }
-        .main-content .tabs .reviews .section-inner-wrapper .item-review .review .date-time {
+        .main-content .product .reviews .section-inner-wrapper .item-review .review .date-time {
           color: #b7b7b7;
           display: flex;
           align-items: center;
@@ -6491,47 +6372,203 @@ html, body {
           margin-top: 5px;
           padding: 10px 0;
           width: 100%; }
-          .main-content .tabs .reviews .section-inner-wrapper .item-review .review .date-time span.icon-clock-outline {
+          .main-content .product .reviews .section-inner-wrapper .item-review .review .date-time span.icon-clock-outline {
             margin-right: 2.5px; }
-          .main-content .tabs .reviews .section-inner-wrapper .item-review .review .date-time span.time {
+          .main-content .product .reviews .section-inner-wrapper .item-review .review .date-time span.time {
             font-size: 12px;
             font-weight: normal;
             line-height: normal; }
-    .main-content .tabs .reviews .section-inner-wrapper .review-textarea {
-      margin-top: 25px;
+    .main-content .product .reviews .section-inner-wrapper .review-textarea {
+      margin-top: 50px;
       margin-bottom: 25px; }
-      .main-content .tabs .reviews .section-inner-wrapper .review-textarea form {
+      .main-content .product .reviews .section-inner-wrapper .review-textarea form {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%; }
-        .main-content .tabs .reviews .section-inner-wrapper .review-textarea form .form-input {
+        .main-content .product .reviews .section-inner-wrapper .review-textarea form .form-input {
           width: calc(100% - 85px); }
-          .main-content .tabs .reviews .section-inner-wrapper .review-textarea form .form-input .post-review {
+          .main-content .product .reviews .section-inner-wrapper .review-textarea form .form-input .post-review {
             color: #b7b7b7;
-            border-radius: 8px;
+            border-radius: 50px;
             border: solid 1px #ebebeb;
             background-color: #ffffff;
-            font-size: 14px;
-            padding: 2rem;
-            font-weight: 300;
+            font-size: 16px;
+            padding: 2rem 4rem;
             height: 70px;
             max-height: 70px;
             width: 100%; }
-        .main-content .tabs .reviews .section-inner-wrapper .review-textarea form .submit-review {
+        .main-content .product .reviews .section-inner-wrapper .review-textarea form .submit-review {
           margin-left: 15px;
           height: 70px;
           max-height: 70px;
           width: 70px; }
-          .main-content .tabs .reviews .section-inner-wrapper .review-textarea form .submit-review button {
+          .main-content .product .reviews .section-inner-wrapper .review-textarea form .submit-review button {
             border-radius: 50%;
             height: inherit;
             width: inherit;
             transition: 0.3s; }
-            .main-content .tabs .reviews .section-inner-wrapper .review-textarea form .submit-review button span {
+            .main-content .product .reviews .section-inner-wrapper .review-textarea form .submit-review button span {
               font-size: 3.5em; }
-            .main-content .tabs .reviews .section-inner-wrapper .review-textarea form .submit-review button:hover {
+            .main-content .product .reviews .section-inner-wrapper .review-textarea form .submit-review button:hover {
               background-color: rgba(32, 32, 32, 0.89); }
+    .main-content .product .tabs {
+      margin-top: 25px; }
+      .main-content .product .tabs .styled-text {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.6363636364;
+        letter-spacing: normal;
+        text-align: left;
+        color: rgba(32, 32, 32, 0.89);
+        margin: 20px 0;
+        width: 70% !important; }
+        .main-content .product .tabs .styled-text h2 {
+          font-size: 22px; }
+        .main-content .product .tabs .styled-text h1, .main-content .product .tabs .styled-text h2, .main-content .product .tabs .styled-text h3, .main-content .product .tabs .styled-text h4, .main-content .product .tabs .styled-text h5, .main-content .product .tabs .styled-text h6 {
+          font-weight: bold; }
+          .main-content .product .tabs .styled-text h1 .sub-heading, .main-content .product .tabs .styled-text h2 .sub-heading, .main-content .product .tabs .styled-text h3 .sub-heading, .main-content .product .tabs .styled-text h4 .sub-heading, .main-content .product .tabs .styled-text h5 .sub-heading, .main-content .product .tabs .styled-text h6 .sub-heading {
+            font-weight: normal;
+            font-size: 0.65em;
+            display: table;
+            margin-top: 2rem; }
+        .main-content .product .tabs .styled-text p {
+          font-size: 14px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.6363636364;
+          letter-spacing: normal;
+          text-align: left;
+          color: rgba(32, 32, 32, 0.89);
+          margin-bottom: 2rem; }
+      .main-content .product .tabs .reviews .reviews-header .inner-wrapper {
+        align-items: center;
+        background-color: #fcfcfc;
+        border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        position: relative;
+        padding: 0 15px;
+        margin-bottom: 5rem;
+        margin-top: 0;
+        height: 80px;
+        max-height: 80px; }
+        .main-content .product .tabs .reviews .reviews-header .inner-wrapper .total-reviews {
+          color: rgba(32, 32, 32, 0.89);
+          font-size: 22px;
+          font-weight: bold; }
+      .main-content .product .tabs .reviews .total-rating {
+        background-color: #fcfcfc;
+        border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5; }
+        .main-content .product .tabs .reviews .total-rating .rating-header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 8px 15px; }
+          .main-content .product .tabs .reviews .total-rating .rating-header .num-rating {
+            font-size: 36px;
+            font-weight: bold; }
+            .main-content .product .tabs .reviews .total-rating .rating-header .num-rating .stars {
+              font-size: 10px; }
+          .main-content .product .tabs .reviews .total-rating .rating-header .rating-widget {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            margin-bottom: 2rem; }
+            .main-content .product .tabs .reviews .total-rating .rating-header .rating-widget .tag-descriptor {
+              margin-right: 0;
+              display: inherit;
+              justify-content: center; }
+              .main-content .product .tabs .reviews .total-rating .rating-header .rating-widget .tag-descriptor span.total-reviews {
+                font-weight: bold;
+                font-size: 22px;
+                padding-bottom: 15px; }
+      .main-content .product .tabs .reviews .section-inner-wrapper .item-review {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px solid #f5f5f5;
+        padding: 15px 0; }
+        .main-content .product .tabs .reviews .section-inner-wrapper .item-review .image {
+          border-radius: 40px;
+          flex: none;
+          align-self: flex-start;
+          height: 30px;
+          width: 30px; }
+        .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review {
+          display: inherit;
+          flex-direction: column;
+          justify-content: flex-start;
+          flex: auto;
+          margin-left: 15px; }
+          .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .inner {
+            display: inherit;
+            flex-direction: column; }
+            .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .inner h1, .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .inner h2, .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .inner h3, .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .inner h4, .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .inner h5 {
+              margin: 0;
+              font-weight: bold;
+              font-size: 18px; }
+            .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .inner p {
+              font-size: 14px;
+              margin: 0; }
+          .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .date-time {
+            color: #b7b7b7;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: normal;
+            margin-top: 5px;
+            padding: 10px 0;
+            width: 100%; }
+            .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .date-time span.icon-clock-outline {
+              margin-right: 2.5px; }
+            .main-content .product .tabs .reviews .section-inner-wrapper .item-review .review .date-time span.time {
+              font-size: 12px;
+              font-weight: normal;
+              line-height: normal; }
+      .main-content .product .tabs .reviews .section-inner-wrapper .review-textarea {
+        margin-top: 25px;
+        margin-bottom: 25px; }
+        .main-content .product .tabs .reviews .section-inner-wrapper .review-textarea form {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%; }
+          .main-content .product .tabs .reviews .section-inner-wrapper .review-textarea form .form-input {
+            width: calc(100% - 85px); }
+            .main-content .product .tabs .reviews .section-inner-wrapper .review-textarea form .form-input .post-review {
+              color: #b7b7b7;
+              border-radius: 8px;
+              border: solid 1px #ebebeb;
+              background-color: #ffffff;
+              font-size: 14px;
+              padding: 2rem;
+              font-weight: 300;
+              height: 70px;
+              max-height: 70px;
+              width: 100%; }
+          .main-content .product .tabs .reviews .section-inner-wrapper .review-textarea form .submit-review {
+            margin-left: 15px;
+            height: 70px;
+            max-height: 70px;
+            width: 70px; }
+            .main-content .product .tabs .reviews .section-inner-wrapper .review-textarea form .submit-review button {
+              border-radius: 50%;
+              height: inherit;
+              width: inherit;
+              transition: 0.3s; }
+              .main-content .product .tabs .reviews .section-inner-wrapper .review-textarea form .submit-review button span {
+                font-size: 3.5em; }
+              .main-content .product .tabs .reviews .section-inner-wrapper .review-textarea form .submit-review button:hover {
+                background-color: rgba(32, 32, 32, 0.89); }
 
 .main-content {
   display: block;
@@ -6682,17 +6719,20 @@ html, body {
   .shop-banner {
     padding-top: 40%; }
 
+  .full-width {
+    width: 100% !important; }
+
   .main-content .category-header .inner-wrapper {
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 12.5rem) !important; }
   .main-content .business-details .section-inner-wrapper {
     margin: 0 auto;
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 12.5rem) !important; }
   .main-content .filter-by-category .section-inner-wrapper {
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 12.5rem) !important; }
   .main-content .products .category-header .inner-wrapper {
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 12.5rem) !important; }
   .main-content .section-inner-wrapper {
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 12.5rem) !important; }
     .main-content .section-inner-wrapper .products-slider .cards .card {
       width: calc((100% / 4) - 10px); }
       .main-content .section-inner-wrapper .products-slider .cards .card .image {
@@ -6702,14 +6742,33 @@ html, body {
         top: -105px; }
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
-    width: calc(100vw - 5rem); }
+    width: calc(100vw - 12.5rem) !important; }
     .main-content .products-category .section-inner-wrapper .cards .card {
       width: calc((100% / 4) - 10px); }
       .main-content .products-category .section-inner-wrapper .cards .card .image {
         height: 234.750px;
         max-height: 234.750px; }
       .main-content .products-category .section-inner-wrapper .cards .card .price-discount .discount {
-        top: -115px; } }
+        top: -115px; }
+  .main-content .product {
+    width: calc(100vw - 12.5rem) !important; }
+    .main-content .product .product-top-section {
+      flex-direction: column; }
+      .main-content .product .product-top-section .product-image {
+        width: 100%; }
+      .main-content .product .product-top-section .product-details {
+        margin-top: 25px;
+        width: 100%; }
+        .main-content .product .product-top-section .product-details .product-name {
+          font-size: 21px;
+          font-weight: 500; }
+        .main-content .product .product-top-section .product-details .actions {
+          position: unset;
+          bottom: unset; }
+    .main-content .product .tabs .styled-text {
+      font-size: 14px;
+      margin: 20px 0;
+      width: 100% !important; } }
 @media only screen and (max-width: 768px) {
   .shop-banner {
     padding-top: 50%; }
@@ -6717,18 +6776,18 @@ html, body {
   .main-content .category-header {
     margin-bottom: 5rem; }
     .main-content .category-header .inner-wrapper {
-      width: 100%; }
+      width: 100% !important; }
   .main-content .business-details .section-inner-wrapper {
     margin: 0 auto;
-    width: 100%; }
+    width: 100% !important; }
   .main-content .filter-by-category .section-inner-wrapper {
-    width: 100%; }
+    width: 100% !important; }
     .main-content .filter-by-category .section-inner-wrapper .owl-nav button.owl-prev, .main-content .filter-by-category .section-inner-wrapper .owl-nav button.owl-next {
       font-size: 4rem; }
   .main-content .products .category-header .inner-wrapper {
-    width: 100%; }
+    width: 100% !important; }
   .main-content .products .section-inner-wrapper {
-    width: 100%; }
+    width: 100% !important; }
     .main-content .products .section-inner-wrapper .products-slider .cards .card {
       width: calc((100% / 2) - 10px); }
       .main-content .products .section-inner-wrapper .products-slider .cards .card .image {
@@ -6736,16 +6795,18 @@ html, body {
         max-height: 366.500px; }
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
-    width: 100%; }
+    width: 100% !important; }
     .main-content .products-category .section-inner-wrapper .cards .card {
       width: calc((100% / 2) - 10px); }
       .main-content .products-category .section-inner-wrapper .cards .card .image {
         height: 366.500px;
-        max-height: 366.500px; } }
+        max-height: 366.500px; }
+  .main-content .product {
+    width: 100% !important; } }
 @media only screen and (max-width: 425px) {
   .main-content .products .section-inner-wrapper {
     margin: 0 auto;
-    width: 100%; }
+    width: 100% !important; }
     .main-content .products .section-inner-wrapper .products-slider .cards .card {
       width: calc((100% / 2) - 10px); }
       .main-content .products .section-inner-wrapper .products-slider .cards .card .image {
@@ -6761,7 +6822,7 @@ html, body {
           padding-top: 1rem; }
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
-    width: 100%; }
+    width: 100% !important; }
     .main-content .products-category .section-inner-wrapper .cards .card {
       width: calc((100% / 2) - 10px); }
       .main-content .products-category .section-inner-wrapper .cards .card .image {
@@ -6780,7 +6841,7 @@ html, body {
     top: -150px; }
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
-    width: 100%; }
+    width: 100% !important; }
     .main-content .products-category .section-inner-wrapper .cards .card .price-discount .discount {
       top: -150px; } }
 
