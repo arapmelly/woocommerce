@@ -109,4 +109,24 @@ function optimus_mini_scripts() {
 
 add_action('wp_enqueue_scripts', 'optimus_mini_scripts');
 
+add_action('woocommerce_order_details_after_customer_details', 'custom_process_order', 10, 1);
+function custom_process_order($order_id) {
+	$order = new WC_Order($order_id);
+
+	$order_number = $order->get_id();
+
+	$phone = '254728510140';
+
+	$text = 'Hi! I have made an order on your shop. My order number is ' . $order_number . ' Kindly update when this will be delivered.';
+
+	$link = 'https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $text;
+
+	?>
+
+	<button><a href="<?php echo $link; ?>" target="_blank"> Send Whatsapp Message</a></button>
+
+	<?php
+
+}
+
 ?>
