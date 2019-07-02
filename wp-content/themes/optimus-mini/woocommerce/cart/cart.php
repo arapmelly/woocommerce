@@ -37,22 +37,16 @@
 
                     <div class="image">
 
-                        <a href="#"><img alt="" src="https://pocktt-test.fra1.cdn.digitaloceanspaces.com/T29rMspKlqd7ryW6bUC0.jpg" srcset="https://pocktt-test.fra1.cdn.digitaloceanspaces.com/T29rMspKlqd7ryW6bUC0.jpg 425w, https://pocktt-test.fra1.cdn.digitaloceanspaces.com/cDMavnZOnHN83lZXGumg.jpg 768w, https://pocktt-test.fra1.cdn.digitaloceanspaces.com/IXeJ04TSg8JZkHpbQjS5.jpg 1920w" class="responsive" style="cursor: pointer;"></a>
+                        <a href="#">
+							<?php
+								$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
-<!--                        <img alt=""-->
-<!--                             src="--><?php //echo $image->small; ?><!--"-->
-<!--                             srcset="--><?php //echo $srcSet; ?><!--"-->
-<!--                             class="responsive" style="cursor: pointer;">-->
-
-<!--						--><?php
-//							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-//
-//							if ( ! $product_permalink ) {
-//								echo $thumbnail; // PHPCS: XSS ok.
-//							} else {
-//								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
-//							}
-//						?>
+								if ( ! $product_permalink ) {
+									echo $thumbnail; // PHPCS: XSS ok.
+								} else {
+									printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+								}
+							?>
                     </div>
                 </li>
 
@@ -106,16 +100,16 @@
                 </li>
 
                 <li class="product-remove">
-		            <?php
-			            // @codingStandardsIgnoreLine
-			            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-				            '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-				            esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-				            __( 'Remove this item', 'woocommerce' ),
-				            esc_attr( $product_id ),
-				            esc_attr( $_product->get_sku() )
-			            ), $cart_item_key );
-		            ?>
+					<?php
+						// @codingStandardsIgnoreLine
+						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><span>&times;</span></a>',
+							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+							__( 'Remove this item', 'woocommerce' ),
+							esc_attr( $product_id ),
+							esc_attr( $_product->get_sku() )
+						), $cart_item_key );
+					?>
                 </li>
             </ul>
 			<?php
@@ -123,4 +117,16 @@
 	} ?>
 
 </div>
+
+<?php
+	/**
+	 * Cart collaterals hook.
+	 *
+	 * @hooked woocommerce_cross_sell_display
+	 * @hooked woocommerce_cart_totals - 10
+	 */
+	do_action( 'woocommerce_cart_collaterals' );
+?>
+
+<?php do_action( 'woocommerce_after_cart' ); ?>
 
