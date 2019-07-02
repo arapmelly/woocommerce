@@ -114,7 +114,9 @@ function custom_process_order($order_id) {
 
 	$order_number = $order->get_id();
 
-	$phone = '254728510140';
+	//$phone = '254728510140';
+
+	$phone = get_option('blogprimaryphonenumber');
 
 	$text = 'Hi! I have made an order on your shop. My order number is ' . $order_number . ' Kindly update when this will be delivered.';
 
