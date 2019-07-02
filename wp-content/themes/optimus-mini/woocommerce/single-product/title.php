@@ -88,6 +88,32 @@ $average = $product->get_average_rating();
 
 		<?php }?>
 
+
+
+		<?php $variations = json_decode(get_product_variations($product));?>
+
+		<?php if (count($variations) > 0) {
+	?>
+
+
+
+
+
+                <label>Variation</label>
+                <select>
+					<?php foreach ($variations as $variation) {?>
+
+                        <option value="<?php echo $variation->name; ?>"><?php echo $variation->name; ?></option>
+					<?php }?>
+
+                </select>
+
+
+
+
+
+		<?php }?>
+
         <div class="actions">
 
             <a href="<?php echo do_shortcode('[add_to_cart_url id=<?php echo $product->get_id(); ?>]'); ?>"

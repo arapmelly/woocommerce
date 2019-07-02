@@ -105,7 +105,6 @@ function layout_cart_page() {
 
 add_action('woocommerce_before_cart', 'layout_cart_page');
 
-
 //	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 //	add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5);
 
@@ -126,6 +125,14 @@ function custom_process_order($order_id) {
 	<button><a href="<?php echo $link; ?>" target="_blank"> Send Whatsapp Message</a></button>
 
 	<?php
+
+}
+
+function get_product_variations($product) {
+
+	$variations = get_post_meta($product->get_id(), '_product_variations', true);
+
+	return $variations;
 
 }
 
