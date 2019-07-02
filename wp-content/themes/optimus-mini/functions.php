@@ -98,12 +98,14 @@ function get_prod_attributes($product) {
 	return $formatted_attributes;
 }
 
+/*
 function layout_cart_page() {
 
-	echo '<span style="margin-top: 200px"> <p>This is the cart page</p></span>';
+echo '<span style="margin-top: 200px"> <p>This is the cart page</p></span>';
 }
 
 add_action('woocommerce_before_cart', 'layout_cart_page');
+ */
 
 //	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 //	add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5);
