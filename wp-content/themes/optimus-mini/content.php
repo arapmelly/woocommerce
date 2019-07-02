@@ -98,11 +98,11 @@
 
                                         <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card <?php echo $itemWidth; ?>">
 
-                                    <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1){
-                                        ?>
+                                    <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1){ ?>
                                             <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card <?php echo $itemWidth; ?>">
-                                            <?php
-                                    }else { ?>
+
+                                    <?php }else { ?>
+
                                         <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card">
                                     <?php } ?>
 
@@ -116,8 +116,7 @@
 
                                     ?>
 
-                                    <div class="image"
-                                         style="background-image: url(<?php echo $image->medium ?>)"></div>
+                                    <div class="image" style="background-image: url(<?php echo $image->medium ?>)"></div>
 
                                     <div class="content">
                                         <div class="header"><?php echo $product->get_name(); ?></div>
