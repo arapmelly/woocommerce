@@ -16,6 +16,7 @@ Version:      1.0.0
 @import "owlcarousel/owl.carousel";
 @import "card";
 @import "table";
+@import "form";
 @import "tabs";
 
 html, body {
@@ -131,6 +132,10 @@ html, body {
   }
 
 }
+
+// -------------------------
+// CART PAGE
+// -------------------------
 
 .woocommerce-cart {
   .woocommerce {
@@ -275,6 +280,66 @@ html, body {
     }
   }
 }
+
+// -------------------------
+// CHECKOUT PAGE
+// -------------------------
+
+.woocommerce-checkout {
+  .woocommerce {
+    margin: 70px auto 0 auto;
+    width: $max-width;
+    padding: 3rem 1rem;
+
+    form.checkout {
+      .woocommerce-billing-fields {
+        font-size: 14px;
+        header {
+          background-color: #f9fafb;
+          padding: .825em;
+
+          h1, h2, h3, h4, h5 {
+            font-size: 1.3em;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            text-transform: capitalize;
+            color: $default-dark-color;
+            margin: 0;
+          }
+        }
+
+        .woocommerce-billing-fields__field-wrapper {
+          margin: 2rem 0;
+        }
+      }
+
+      .woocommerce-checkout-review-order {
+        font-size: 14px;
+        header {
+          background-color: #f9fafb;
+          padding: .825em;
+
+          h1, h2, h3, h4, h5 {
+            font-size: 1.3em;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            text-transform: capitalize;
+            color: $default-dark-color;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// -------------------------
+// MAIN SITE STYLES
+// -------------------------
 
 .main-content {
   display: block;
