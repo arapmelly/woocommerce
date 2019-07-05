@@ -100,6 +100,7 @@ function get_prod_attributes($product) {
 
 /*
 function layout_cart_page() {
+	add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
 
 echo '<span style="margin-top: 200px"> <p>This is the cart page</p></span>';
 }
@@ -109,6 +110,23 @@ add_action('woocommerce_before_cart', 'layout_cart_page');
 
 //	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 //	add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5);
+	function custom_override_checkout_fields($fields) {
+		//($fields['billing']['billing_last_name']);
+		unset($fields['billing']['billing_company']);
+		unset($fields['billing']['billing_address_1']);
+		unset($fields['billing']['billing_address_2']);
+		unset($fields['billing']['billing_city']);
+		unset($fields['billing']['billing_postcode']);
+		unset($fields['billing']['billing_country']);
+		unset($fields['billing']['billing_state']);
+		//unset($fields['billing']['billing_phone']);
+		unset($fields['order']['order_comments']);
+		//unset($fields['billing']['billing_email']);
+		//unset($fields['account']['account_username']);
+		//unset($fields['account']['account_password']);
+		//unset($fields['account']['account_password-2']);
+		return $fields;
+	}
 
 add_action('woocommerce_order_details_after_customer_details', 'custom_process_order', 10, 1);
 function custom_process_order($order_id) {

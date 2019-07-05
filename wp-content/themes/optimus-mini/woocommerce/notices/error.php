@@ -25,7 +25,7 @@ if (!$messages) {
 
 ?>
 
-<section class="product-image margin-top-phone-7">
+<section class="product-image">
 
 <ul class="woocommerce-error" role="alert">
 	<?php foreach ($messages as $message): ?>
