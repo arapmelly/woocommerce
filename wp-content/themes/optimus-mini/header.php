@@ -11,6 +11,8 @@
 
 <body <?php body_class();?>>
 
+<!--<div id="wrapper">-->
+
 <!-- Panel Top #library/panel/panel-top-10.html -->
 <nav class="navigation panel top  white">
     <div class="sections">

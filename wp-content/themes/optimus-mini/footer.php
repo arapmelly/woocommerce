@@ -1,4 +1,4 @@
-
+<!--</div>-->
 <footer class="footer">
     <div class="inner-wrapper">
         <h3>CONTACT US</h3>
