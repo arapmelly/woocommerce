@@ -98,8 +98,18 @@ function get_prod_attributes($product) {
 	return $formatted_attributes;
 }
 
+/*
+function layout_cart_page() {
 	add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
 
+echo '<span style="margin-top: 200px"> <p>This is the cart page</p></span>';
+}
+
+add_action('woocommerce_before_cart', 'layout_cart_page');
+ */
+
+//	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+//	add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5);
 	function custom_override_checkout_fields($fields) {
 		//($fields['billing']['billing_last_name']);
 		unset($fields['billing']['billing_company']);
@@ -117,5 +127,35 @@ function get_prod_attributes($product) {
 		//unset($fields['account']['account_password-2']);
 		return $fields;
 	}
+
+add_action('woocommerce_order_details_after_customer_details', 'custom_process_order', 10, 1);
+function custom_process_order($order_id) {
+	$order = new WC_Order($order_id);
+
+	$order_number = $order->get_id();
+
+	//$phone = '254728510140';
+
+	$phone = get_option('blogprimaryphonenumber');
+
+	$text = 'Hi! I have made an order on your shop. My order number is ' . $order_number . ' Kindly update when this will be delivered.';
+
+	$link = 'https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $text;
+
+	?>
+
+	<button><a href="<?php echo $link; ?>" target="_blank"> Send Whatsapp Message</a></button>
+
+	<?php
+
+}
+
+function get_product_variations($product) {
+
+	$variations = get_post_meta($product->get_id(), '_product_variations', true);
+
+	return $variations;
+
+}
 
 ?>
