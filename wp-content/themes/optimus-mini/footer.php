@@ -1,4 +1,4 @@
-<!--</div>-->
+</div> <!-- Wrapper -->
 <footer class="footer">
     <div class="inner-wrapper">
         <h3>CONTACT US</h3>
@@ -6,7 +6,6 @@
             <li><span>Phone:</span> <a href="tel:<?php echo get_option('blogprimaryphonenumber'); ?>"> <?php echo get_option('blogprimaryphonenumber'); ?></a></li>
             <li><span>Email:</span> <a href="mailto:<?php echo get_option('admin_email'); ?>"><?php echo get_option('admin_email'); ?></a></li>
             <li><span>Address:</span> <?php echo get_option('blogprimaryaddress'); ?></li>
-           <!-- <li>P. O. Box 0000 GPO 00100 <br>Nairobi ,Kenya</li> -->
         </ul>
 
         <div class="copyright">

@@ -11,13 +11,13 @@
 
 <body <?php body_class();?>>
 
-<!--<div id="wrapper">-->
+<div id="wrapper">
 
 <!-- Panel Top #library/panel/panel-top-10.html -->
 <nav class="navigation panel top  white">
     <div class="sections">
         <div class="left">
-            <a href="#" title="menu toggle" class="menu actionButton sidebarTrigger"><span
+            <a href="#" title="menu toggle" class="menu actionButton toggle sidebarTrigger"><span
                         class="icon-menu-outline"></span></a>
             <a href="<?php echo get_site_url(); ?>" title="shop logo" class="logo">
 
@@ -29,3 +29,53 @@
         </div>
     </div>
 </nav>
+
+
+<!-- Sidebar -->
+<div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+            <form method="post" action="#">
+                <input type="text" name="query" id="query" placeholder="Search" />
+            </form>
+        </section>
+
+        <!-- Menu -->
+        <nav id="menu">
+<!--            <header class="major">-->
+<!--                <h2>Menu</h2>-->
+<!--            </header>-->
+            <ul>
+                <li><a href="/optimus_mini">Homepage</a></li>
+                <li><a href="shop">Shop</a></li>
+                <li><a href="#">Elements</a></li>
+                <li>
+                    <span class="opener">Submenu</span>
+                    <ul>
+                        <li><a href="#">Lorem Dolor</a></li>
+                        <li><a href="#">Ipsum Adipiscing</a></li>
+                        <li><a href="#">Tempus Magna</a></li>
+                        <li><a href="#">Feugiat Veroeros</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Etiam Dolore</a></li>
+                <li><a href="#">Adipiscing</a></li>
+                <li>
+                    <span class="opener">Another Submenu</span>
+                    <ul>
+                        <li><a href="#">Lorem Dolor</a></li>
+                        <li><a href="#">Ipsum Adipiscing</a></li>
+                        <li><a href="#">Tempus Magna</a></li>
+                        <li><a href="#">Feugiat Veroeros</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Maximus Erat</a></li>
+                <li><a href="#">Sapien Mauris</a></li>
+                <li><a href="#">Amet Lacinia</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</div>

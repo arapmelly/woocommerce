@@ -14,7 +14,7 @@
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: 'Font Awesome 5 Free';
+  font-family: 'icomoon' !important;
   font-weight: 900;
 }
 
@@ -24,7 +24,7 @@
   -ms-transform: scaleX(-1);
   transform: scaleX(-1);
   color: #7f888f;
-  content: '\f002';
+  content: '\e900';
   cursor: default;
   display: block;
   font-size: 1.5em;
@@ -57,6 +57,7 @@
   transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   background-color: #f5f6f7;
   font-size: 0.9em;
+  padding-top: 70px;
   position: relative;
   width: 26em;
 }
@@ -93,6 +94,26 @@
   margin: -2.22222em 0 4.44444em -2.22222em;
   padding: 2.22222em;
   width: calc(100% + 4.44444em);
+}
+
+#sidebar > .inner > .alt form input[type="text"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  border-radius: 0.375em;
+  border: solid 1px rgba(210, 215, 217, 0.75);
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 1em;
+  padding-right: 2.75em;
+  text-decoration: none;
+  height: 3.75em;
+  width: 100%;
 }
 
 #sidebar .toggle {
@@ -184,11 +205,12 @@
 @media screen and (max-width: 1280px) {
 
   #sidebar {
-    box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
+    //box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
     height: 100%;
     left: 0;
     position: fixed;
-    top: 0;
+    top: 70px;
+    padding-top: 0;
     z-index: 10000;
   }
 
@@ -264,7 +286,7 @@
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #f56a6a;
+  border-bottom: solid 5px $blue-button-color;
   padding: 6em 0 1em 0;
   position: relative;
 }
@@ -342,7 +364,7 @@
 }
 
 #menu ul a:hover, #menu ul span:hover {
-  color: #f56a6a;
+  color: $blue-button-color;
 }
 
 #menu ul a.opener, #menu ul span.opener {
@@ -364,7 +386,7 @@
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: 'Font Awesome 5 Free';
+  font-family: 'icomoon' !important;
   font-weight: 900;
 }
 
@@ -374,13 +396,13 @@
   -ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
   color: #9fa3a6;
-  content: '\f078';
+  content: '\e905';
   position: absolute;
   right: 0;
 }
 
 #menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
-  color: #f56a6a;
+  color: $blue-button-color;
 }
 
 #menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
