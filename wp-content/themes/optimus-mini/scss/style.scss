@@ -20,8 +20,6 @@ Version:      1.0.0
 @import "form";
 @import "tabs";
 
-
-
 html, body {
   background-color: $default-white-color;
   box-sizing: border-box;
@@ -157,6 +155,205 @@ html, body {
     height: auto;
   }
 
+}
+
+// -------------------------
+// ABOUT US PAGE
+// -------------------------
+
+.about-us {
+  display: block;
+  font-size: 14px;
+  position: relative;
+  margin-top: 70px;
+  margin-bottom: 25px;
+  width: 100%;
+  .section-inner-wrapper {
+    font-size: inherit;
+    margin: 0 auto;
+    width: calc(100vw - 15rem);
+    padding: 3rem 2.5rem;
+
+    .container{
+      width: 70%;
+
+      ul {
+        list-style: disc;
+        margin: 0 0 2em 0;
+        padding-left: 1em;
+        font-weight: 300;
+        li {
+          list-style-type: inherit;
+          padding-left: 0.5em;
+        }
+      }
+
+      ol {
+        list-style: decimal;
+        margin: 0 0 2em 0;
+        padding-left: 1.25em;
+        font-weight: 300;
+        li {
+          list-style-type: inherit;
+          padding-left: 0.25em;
+        }
+      }
+
+      ul {
+        &.icons {
+          cursor: default;
+          list-style: none;
+          padding-left: 0;
+          li {
+            display: inline-block;
+            padding: 0 1em 0 0;
+          }
+        }
+      }
+
+      dl {
+        margin: 0 0 2em 0;
+        dt {
+          display: block;
+          font-weight: 600;
+          margin: 0 0 1em 0;
+        }
+
+        dd {
+          margin-left: 2em;
+        }
+      }
+
+      blockquote {
+        padding: 1em;
+        border-left: 2px solid;
+        background-color: #f0f0f0;
+        margin: 2em 0;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+      }
+
+      .wp-block-cover {
+        width: calc((100% / 4) - 30px);
+        max-height: 360px;
+        height: 360px;
+        float: left;
+        margin-right: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        z-index: 1;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.has-background-dim {
+          &:after {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.45);
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+          }
+
+          p {
+            color: $default-white-color;
+            display: block;
+            padding: 0 15px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 3;
+          }
+
+        }
+
+      }
+
+      .box {
+        border-radius: 0.375em;
+        border: solid 1px rgba(210, 215, 217, 0.75);
+        margin-bottom: 2em;
+        padding: 1.5em;
+      }
+
+      /* Table */
+
+      .table-wrapper {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+      }
+
+      table {
+        margin: 0 0 2em 0;
+        width: 100%;
+        thead {
+          border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+          th {
+            color: #3d4449;
+            font-size: 0.9em;
+            font-weight: 600;
+            padding: 0 0.75em 0.75em 0.75em;
+            text-align: left;
+          }
+        }
+        tbody {
+          tr {
+            border: solid 1px rgba(210, 215, 217, 0.75);
+            border-left: 0;
+            border-right: 0;
+
+            &:nth-child(2n + 1) {
+              background-color: rgba(230, 235, 237, 0.25);
+            }
+
+            td {
+              padding: 0.75em 0.75em;
+            }
+          }
+        }
+
+        tfoot {
+          border-top: solid 2px rgba(210, 215, 217, 0.75);
+        }
+
+        &.alt {
+          border-collapse: separate;
+          thead {
+            border-bottom: 0;
+          }
+          tbody {
+            tr {
+              td {
+                border: solid 1px rgba(210, 215, 217, 0.75);
+                border-left-width: 0;
+                border-top-width: 0;
+                &:first-child {
+                  border-left-width: 1px;
+                  td {
+                    border-top-width: 1px;
+                  }
+                }
+              }
+            }
+          }
+          tfoot {
+            border-top: 0;
+          }
+        }
+      }
+    }
+
+  }
 }
 
 // -------------------------
@@ -482,7 +679,7 @@ html, body {
         }
       }
 
-      .woocommerce-customer-details{
+      .woocommerce-customer-details {
         margin-top: 15px;
         header {
           background-color: darken(#f9fafb, 2%);
@@ -501,13 +698,13 @@ html, body {
             margin: 0;
           }
         }
-        address{
+        address {
           background-color: darken(#f9fafb, 2%);
           border: 1px solid rgba(34, 36, 38, .1);
           text-align: left;
           padding: 1.5em;
           font-size: 14px;
-          p{
+          p {
             font-size: 1.2em;
             margin: 0;
             padding: 0;
@@ -532,8 +729,8 @@ html, body {
     padding: 0 15px;
   }
 
-  .woocommerce-notices-wrapper{
-    .product-image{
+  .woocommerce-notices-wrapper {
+    .product-image {
       .woocommerce-message {
         background-color: lighten($green, 45%);
         border: 1px solid darken($green, 10%);
@@ -622,14 +819,14 @@ html, body {
           margin: 0 auto;
           .owl-stage {
             min-width: 100%;
-            .owl-item{
-              .item{
-                a{
+            .owl-item {
+              .item {
+                a {
                   display: block;
                 }
               }
 
-              &:hover{
+              &:hover {
                 color: $blue-button-color;
 
               }
@@ -825,7 +1022,6 @@ html, body {
   display: block;
   position: relative;
 
-
   .product {
     margin: 0 auto;
     //padding: 0 15px;
@@ -861,7 +1057,6 @@ html, body {
       .product-details {
 
         width: calc(100% * 0.5);
-
 
         .section-inner-wrapper {
           position: relative;
@@ -1673,8 +1868,8 @@ html, body {
 
   .main-content {
 
-    .woocommerce-notices-wrapper{
-      .product-image{
+    .woocommerce-notices-wrapper {
+      .product-image {
         padding: 0 15px;
         .woocommerce-message {
           width: 100%;
@@ -1970,7 +2165,7 @@ html, body {
     }
   }
 
-  .woocommerce-cart, .woocommerce-checkout  {
+  .woocommerce-cart, .woocommerce-checkout {
     .woocommerce {
       width: calc(100vw - 3rem);
     }
