@@ -622,6 +622,18 @@ html, body {
           margin: 0 auto;
           .owl-stage {
             min-width: 100%;
+            .owl-item{
+              .item{
+                a{
+                  display: block;
+                }
+              }
+
+              &:hover{
+                color: $blue-button-color;
+
+              }
+            }
           }
         }
       }

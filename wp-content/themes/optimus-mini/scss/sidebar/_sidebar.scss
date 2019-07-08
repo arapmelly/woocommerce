@@ -147,12 +147,12 @@
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: 'Font Awesome 5 Free';
+  font-family: 'icomoon' !important;
   font-weight: 900;
 }
 
 #sidebar .toggle:before {
-  content: '\f0c9';
+  content: '\e903';
   font-size: 2rem;
   height: inherit;
   left: 0;
@@ -302,7 +302,7 @@
 #header .logo {
   border-bottom: 0;
   color: inherit;
-  font-family: "Roboto Slab", serif;
+  font-family: $body-font;
   font-size: 1.125em;
 }
 
@@ -351,7 +351,7 @@
   list-style: none;
   margin-bottom: 0;
   padding: 0;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 
 #menu ul a, #menu ul span {
