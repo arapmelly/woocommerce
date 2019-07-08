@@ -7,7 +7,7 @@
 	 * @since Spacious 1.0
 	 */
 	get_header(); ?>
-
+<div id="main" class="main-wrapper">
 
 <?php if ( have_posts() ): ?>
 
@@ -33,5 +33,6 @@
 
 <?php endif; ?>
 
+</div>
 
 <?php get_footer(); ?>
