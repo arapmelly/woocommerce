@@ -14,8 +14,8 @@
              src="<?php echo $image->small ?>" alt="">
     </section>
 
-
     <main class="main-content">
+
     <section class="business-details">
         <div class="section-inner-wrapper">
             <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
@@ -32,7 +32,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="filter-by-category">
         <div class="section-inner-wrapper">
@@ -160,8 +159,5 @@
 		<?php }?>
 
     </section>
-
-
-
 
 <?php }?>
