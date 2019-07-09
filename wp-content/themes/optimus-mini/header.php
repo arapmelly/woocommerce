@@ -32,7 +32,7 @@
 
 
 <!-- Sidebar -->
-<div id="sidebar">
+<div id="sidebar" class="inactive">
     <div class="inner">
 
         <!-- Search -->
@@ -50,7 +50,8 @@
             <ul>
                 <li><a href="/optimus_mini">Homepage</a></li>
                 <li><a href="shop">Shop</a></li>
-                <li><a href="#">Elements</a></li>
+                <li><a href="about-us">About Us</a></li>
+                <li><a href="contact-us">Contact Us</a></li>
                 <li>
                     <span class="opener">Submenu</span>
                     <ul>
