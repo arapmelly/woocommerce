@@ -31,6 +31,7 @@ if (!defined('ABSPATH')) {
                         <h2><?php _e('Cart Total', 'woocommerce');?></h2>
                     </th>
 
+
                 </tr>
             </thead>
             <tbody>
@@ -84,12 +85,12 @@ if (!defined('ABSPATH')) {
 	: '';
 
 	if ('itemized' === get_option('woocommerce_tax_total_display')): ?>
-						            <?php foreach (WC()->cart->get_tax_totals() as $code => $tax): ?>
-				                        <tr class="tax-rate tax-rate-<?php echo sanitize_title($code); ?>">
-				                            <td><?php echo esc_html($tax->label) . $estimated_text; ?></td>
-				                            <td data-title="<?php echo esc_attr($tax->label); ?>"><?php echo wp_kses_post($tax->formatted_amount); ?></td>
-				                        </tr>
-						            <?php endforeach;?>
+													            <?php foreach (WC()->cart->get_tax_totals() as $code => $tax): ?>
+											                        <tr class="tax-rate tax-rate-<?php echo sanitize_title($code); ?>">
+											                            <td><?php echo esc_html($tax->label) . $estimated_text; ?></td>
+											                            <td data-title="<?php echo esc_attr($tax->label); ?>"><?php echo wp_kses_post($tax->formatted_amount); ?></td>
+											                        </tr>
+													            <?php endforeach;?>
 	            <?php else: ?>
                     <tr class="tax-total">
                         <td><?php echo esc_html(WC()->countries->tax_or_vat()) . $estimated_text; ?></td>
@@ -118,3 +119,5 @@ if (!defined('ABSPATH')) {
     </div>
 
 </div>
+
+
