@@ -19,6 +19,9 @@
     <section class="business-details">
         <div class="section-inner-wrapper">
             <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
+
+            <?php if (get_reviews_count() >= 100) {?>
+
             <div class="rating-widget">
                 <div class="stars" data-score="4.5"></div>
                 <div class="num-rating tag-descriptor">4.25 <span
@@ -30,6 +33,10 @@
                 <div class="tag-descriptor"><?php echo get_total_orders('on-hold'); ?> <span class="total-reviews">Deliveries made</span>
                 </div>
             </div>
+
+
+            <?php }?>
+
         </div>
     </section>
 
