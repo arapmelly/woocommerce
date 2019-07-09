@@ -3,9 +3,9 @@
     <div class="inner-wrapper">
         <h3>CONTACT US</h3>
         <ul>
-            <li><span>Phone:</span> <a href="tel:<?php echo get_option('blogprimaryphonenumber'); ?>"> <?php echo get_option('blogprimaryphonenumber'); ?></a></li>
-            <li><span>Email:</span> <a href="mailto:<?php echo get_option('admin_email'); ?>"><?php echo get_option('admin_email'); ?></a></li>
-            <li><span>Address:</span> <?php echo get_option('blogprimaryaddress'); ?></li>
+	        <?php if (get_option('blogprimaryphonenumber')) { ?><li><span>Phone:</span> <a href="tel:<?php echo get_option('blogprimaryphonenumber'); ?>"> <?php echo get_option('blogprimaryphonenumber'); ?></a></li><?php } ?>
+	        <?php if (get_option('admin_email')) { ?><li><span>Email:</span> <a href="mailto:<?php echo get_option('admin_email'); ?>"><?php echo get_option('admin_email'); ?></a></li><?php } ?>
+            <?php if (get_option('blogprimaryaddress')) { ?><li><span>Address:</span> <?php echo get_option('blogprimaryaddress'); ?></li><?php } ?>
         </ul>
 
         <div class="copyright">
