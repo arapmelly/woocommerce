@@ -30,20 +30,35 @@ $average = $product->get_average_rating();
 <section class="product-details">
     <div class="section-inner-wrapper">
         <h1 class="product-name"><?php echo $product->get_name(); ?></h1>
-        <div class="price">
-            <h2 class="current-price"><?php echo $product->get_price_html(); ?></h2>
-        </div>
-
         <!-- <div class="price">
-        	<?php //if ($product->get_sale_price() <= 0) {?>
-        		<h2 class="current-price" id="productPrice"><?php //echo wc_price($product->get_price_html()); ?></h2>
-        	<?php //}?>
-
-			<?php //if ($product->get_sale_price() > 0) {?>
-                <h2 class="previous-price" id="productPrice"><?php //echo wc_price($product->get_price_html()); ?></h2>
-			<?php //}?>
-
+            <h2 class="current-price"><?php //echo $product->get_price_html(); ?></h2>
         </div> -->
+
+
+
+
+        <div class="price">
+
+            <?php if ($product->is_type('variable')) {
+	?>
+
+                <h2 class="current-price" id="productPrice"><?php echo get_woocommerce_currency_symbol();
+	echo get_post_meta($product->get_id(), '_price', true) ?></h2>
+
+            <?php } else {?>
+        	<?php if ($product->get_sale_price() <= 0) {?>
+        		<h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+        	<?php }?>
+
+			<?php if ($product->get_sale_price() > 0) {?>
+                <h2 class="previous-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+
+                <h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_sale_price()); ?></h2>
+			<?php }?>
+
+            <?php }?>
+
+        </div>
 
 		<?php if ($average >= 3) {?>
 
