@@ -77,7 +77,6 @@
 								$products = $query->get_products();
 								$itemWidth = "";
 
-//								var_dump($products);
                                 $productsLoopCounter = 1;
 								foreach ( $products as $product ) {
 
@@ -90,9 +89,6 @@
                                             $itemWidth = "full-width";
                                         }
                                     }
-
-//                                    echo key( $products );
-                                //echo count( $products );
 
                                     if ( $productsLoopCounter == count($products) && count($products) == 3) { ?>
 
