@@ -20,6 +20,7 @@ Version:      1.0.0
 @import "form";
 @import "tabs";
 
+
 html, body {
   background-color: $default-white-color;
   box-sizing: border-box;
@@ -626,13 +627,19 @@ html, body {
           align-content: center;
           justify-content: center;
           flex-wrap: wrap;
-          flex-grow: 1;
+          flex-grow: 0;
           padding: .825em;
           border: 1px solid rgba(34, 36, 38, .1);
           border-left: none;
           &:first-child {
             border-left: 1px solid rgba(34, 36, 38, .1);
           }
+
+          .image {
+            width: 100px;
+            max-width: 100px;
+          }
+
 
           &.left-column {
             flex-grow: 0;
@@ -650,6 +657,7 @@ html, body {
             font-size: 14px;
             align-content: flex-start;
             justify-content: flex-start;
+            flex-grow: 1;
 
             h1, h2, h3, h4, h5 {
               font-size: 1.2em;

@@ -64,13 +64,7 @@ if (empty($product) || !$product->is_visible()) {
         <div class="content price-discount">
             <div class="header price">
 
-            	<?php if ($product->get_sale_price() <= 0) {?>
-                <h2 class="current-price"><?php echo wc_price($product->get_regular_price()); ?></h2>
-            <?php }?>
-
-				<?php if ($product->get_sale_price() > 0) {?>
-                    <h2 class="previous-price"><?php echo wc_price($product->get_regular_price()); ?></h2>
-				<?php }?>
+            	<h2 class="current-price"><?php echo $product->get_price_html(); ?></h2>
             </div>
 
 			<?php if ($product->get_sale_price() > 0) {?>

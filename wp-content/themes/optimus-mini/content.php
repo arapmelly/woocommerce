@@ -19,6 +19,9 @@
     <section class="business-details">
         <div class="section-inner-wrapper">
             <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
+
+            <?php if (get_reviews_count() >= 100) {?>
+
             <div class="rating-widget">
                 <div class="stars" data-score="4.5"></div>
                 <div class="num-rating tag-descriptor">4.25 <span
@@ -30,6 +33,10 @@
                 <div class="tag-descriptor"><?php echo get_total_orders('on-hold'); ?> <span class="total-reviews">Deliveries made</span>
                 </div>
             </div>
+
+
+            <?php }?>
+
         </div>
     </section>
 
@@ -122,16 +129,9 @@
 
                                         <div class="content price-discount">
                                             <div class="header price">
-                                                <?php if ($product->get_sale_price() <= 0) {?>
 
-                                                    <h2 class="current-price"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                                                <h2 class="current-price"><?php echo $product->get_price_html(); ?></h2>
 
-                                                <?php }?>
-
-
-												<?php if ($product->get_sale_price() > 0) {?>
-                                                    <h2 class="previous-price"><?php echo wc_price($product->get_regular_price()); ?></h2>
-												<?php }?>
                                             </div>
 
 											<?php if ($product->get_sale_price() > 0) {?>
