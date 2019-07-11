@@ -14,11 +14,14 @@ Version:      1.0.0
 @import "colors";
 @import "useful-classes";
 @import "owlcarousel/owl.carousel";
+@import "fotorama/fotorama";
 @import "sidebar";
 @import "card";
 @import "table";
 @import "form";
 @import "tabs";
+@import "fancybox";
+
 
 
 html, body {
@@ -31,9 +34,6 @@ html, body {
   position: relative;
   overflow-x: hidden;
   width: 100%;
-  //height: 100vh;
-  //min-height: 100vh;
-  //flex-direction: column;
 }
 
 .navigation {

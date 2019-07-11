@@ -68,8 +68,21 @@
 <section class="product-image">
 
     <img alt=""
-         src="<?php echo $image->small; ?>"
+         src="<?php echo $image->large; ?>"
          srcset="<?php echo $srcSet; ?>"
          class="responsive" style="cursor: pointer;">
+
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-2.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-3.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-5.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-6.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-7.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-8.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-9.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-10.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-12.jpg" />-->
+<!--    <img src="http://sachinchoolur.github.io/lightslider/img/cS-13.jpg" />-->
 
 </section>
