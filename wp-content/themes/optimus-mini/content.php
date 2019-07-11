@@ -130,9 +130,36 @@
                                         <div class="content price-discount">
                                             <div class="header price">
 
-                                                <h2 class="current-price"><?php echo $product->get_price_html(); ?></h2>
 
-                                            </div>
+                                                 <?php if ($product->is_type('variable')) {
+				?>
+
+                <h2 class="current-price" id="productPrice"><?php echo get_woocommerce_currency_symbol();
+				echo get_post_meta($product->get_id(), '_price', true) ?></h2>
+
+            <?php } else {?>
+            <?php if ($product->get_sale_price() <= 0) {?>
+                <h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+            <?php }?>
+
+            <?php if ($product->get_sale_price() > 0) {?>
+                <h2 class="previous-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+
+                <h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_sale_price()); ?></h2>
+            <?php }?>
+
+            <?php }?>
+
+
+
+               <!--  <?php //if ($product->get_sale_price() <= 0) {?>
+                <h2 class="current-price"><?php //echo wc_price($product->get_regular_price()); ?></h2>
+            <?php //}?>
+
+                <?php //if ($product->get_sale_price() > 0) {?>
+                    <h2 class="previous-price"><?php //echo wc_price($product->get_regular_price()); ?></h2>
+                <?php //}?> -->
+            </div>
 
 											<?php if ($product->get_sale_price() > 0) {?>
                                                 <div class="discount"><?php echo get_percentage_discount($product); ?>

@@ -48,33 +48,25 @@
 <!--                <h2>Menu</h2>-->
 <!--            </header>-->
             <ul>
-                <li><a href="/optimus_mini">Homepage</a></li>
-                <li><a href="shop">Shop</a></li>
-                <li><a href="about-us">About Us</a></li>
-                <li><a href="contact-us">Contact Us</a></li>
+                <li><a href="<?php echo get_site_url(); ?>">Homepage</a></li>
+
+                <li><a href="<?php echo get_permalink(get_page_by_path('about')); ?>">About Us</a></li>
+
                 <li>
-                    <span class="opener">Submenu</span>
+                    <span class="opener">Categories</span>
                     <ul>
-                        <li><a href="#">Lorem Dolor</a></li>
-                        <li><a href="#">Ipsum Adipiscing</a></li>
-                        <li><a href="#">Tempus Magna</a></li>
-                        <li><a href="#">Feugiat Veroeros</a></li>
+                        <?php $cats = get_product_categories();?>
+                        <?php foreach ($cats as $cat) {?>
+                            <li>
+                                <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>"><?php echo $cat->name; ?></a>
+                            </li>
+                        <?php }?>
+
+
                     </ul>
                 </li>
-                <li><a href="#">Etiam Dolore</a></li>
-                <li><a href="#">Adipiscing</a></li>
-                <li>
-                    <span class="opener">Another Submenu</span>
-                    <ul>
-                        <li><a href="#">Lorem Dolor</a></li>
-                        <li><a href="#">Ipsum Adipiscing</a></li>
-                        <li><a href="#">Tempus Magna</a></li>
-                        <li><a href="#">Feugiat Veroeros</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Maximus Erat</a></li>
-                <li><a href="#">Sapien Mauris</a></li>
-                <li><a href="#">Amet Lacinia</a></li>
+                <li><a href="<?php echo get_permalink(get_page_by_path('contact')); ?>">Contact Us</a></li>
+
             </ul>
         </nav>
 
