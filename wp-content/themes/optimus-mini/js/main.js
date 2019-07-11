@@ -4,7 +4,7 @@
         score: function () {
             return $(this).attr('data-score');
         },
-        click: function(score, evt) {
+        click: function (score, evt) {
             console.log('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
         }
     });
@@ -24,27 +24,27 @@
         navText: ["<span class='icon-chevron-left-outline'/>", "<span class='icon-chevron-right-outline'/>"]
     });
 
-    var	$window = $(window),
+    var $window = $(window),
         $head = $('head'),
         $body = $('body');
 
     // Breakpoints.
     breakpoints({
-        xlarge:   [ '1281px',  '1680px' ],
-        large:    [ '981px',   '1280px' ],
-        medium:   [ '737px',   '980px'  ],
-        small:    [ '481px',   '736px'  ],
-        xsmall:   [ '361px',   '480px'  ],
-        xxsmall:  [ null,      '360px'  ],
-        'xlarge-to-max':    '(min-width: 1681px)',
-        'small-to-xlarge':  '(min-width: 481px) and (max-width: 1680px)'
+        xlarge: ['1281px', '1680px'],
+        large: ['981px', '1280px'],
+        medium: ['737px', '980px'],
+        small: ['481px', '736px'],
+        xsmall: ['361px', '480px'],
+        xxsmall: [null, '360px'],
+        'xlarge-to-max': '(min-width: 1681px)',
+        'small-to-xlarge': '(min-width: 481px) and (max-width: 1680px)'
     });
 
     // Stops animations/transitions until the page has ...
 
     // ... loaded.
-    $window.on('load', function() {
-        window.setTimeout(function() {
+    $window.on('load', function () {
+        window.setTimeout(function () {
             $body.removeClass('is-preload');
         }, 100);
     });
@@ -52,7 +52,7 @@
     // ... stopped resizing.
     var resizeTimeout;
 
-    $window.on('resize', function() {
+    $window.on('resize', function () {
 
         // Mark as resizing.
         $body.addClass('is-resizing');
@@ -60,7 +60,7 @@
         // Unmark after delay.
         clearTimeout(resizeTimeout);
 
-        resizeTimeout = setTimeout(function() {
+        resizeTimeout = setTimeout(function () {
             $body.removeClass('is-resizing');
         }, 100);
 
@@ -92,18 +92,18 @@
         $sidebar_inner = $sidebar.children('.inner');
 
     // Inactive by default on <= large.
-    breakpoints.on('<=large', function() {
+    breakpoints.on('<=large', function () {
         $sidebar.addClass('inactive');
     });
 
-    breakpoints.on('>large', function() {
+    breakpoints.on('>large', function () {
         // $sidebar.removeClass('inactive');
         $sidebar.addClass('inactive');
     });
 
     // Hack: Workaround for Chrome/Android scrollbar position bug.
     if (browser.os === 'android'
-        &&	browser.name === 'chrome')
+        && browser.name === 'chrome')
         $('<style>#sidebar .inner::-webkit-scrollbar { display: none; }</style>')
             .appendTo($head);
 
@@ -134,7 +134,7 @@
     // Events.
 
     // Link clicks.
-    $sidebar.on('click', 'a', function(event) {
+    $sidebar.on('click', 'a', function (event) {
 
         // >large? Bail.
         if (breakpoints.active('>large'))
@@ -157,7 +157,7 @@
         $sidebar.addClass('inactive');
 
         // Redirect to href.
-        setTimeout(function() {
+        setTimeout(function () {
 
             if (target == '_blank')
                 window.open(href);
@@ -169,7 +169,7 @@
     });
 
     // Prevent certain events inside the panel from bubbling.
-    $sidebar.on('click touchend touchstart touchmove', function(event) {
+    $sidebar.on('click touchend touchstart touchmove', function (event) {
 
         // >large? Bail.
         if (breakpoints.active('>large'))
@@ -181,7 +181,7 @@
     });
 
     // Hide panel on body click/tap.
-    $body.on('click touchend', function(event) {
+    $body.on('click touchend', function (event) {
 
         // >large? Bail.
         if (breakpoints.active('>large'))
@@ -196,7 +196,7 @@
     // Note: If you do anything to change the height of the sidebar's content, be sure to
     // trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.
 
-    $window.on('load.sidebar-lock', function() {
+    $window.on('load.sidebar-lock', function () {
 
         var sh, wh, st;
 
@@ -205,7 +205,7 @@
             $window.scrollTop(0);
 
         $window
-            .on('scroll.sidebar-lock', function() {
+            .on('scroll.sidebar-lock', function () {
 
                 var x, y;
 
@@ -249,7 +249,7 @@
                 }
 
             })
-            .on('resize.sidebar-lock', function() {
+            .on('resize.sidebar-lock', function () {
 
                 // Calculate heights.
                 wh = $window.height();
@@ -268,11 +268,11 @@
         $menu_openers = $menu.children('ul').find('.opener');
 
     // Openers.
-    $menu_openers.each(function() {
+    $menu_openers.each(function () {
 
         var $this = $(this);
 
-        $this.on('click', function(event) {
+        $this.on('click', function (event) {
 
             // Prevent default.
             event.preventDefault();
@@ -294,6 +294,11 @@
         allowfullscreen: true,
         nav: 'thumbs'
     });
+
+    $('select').select2({
+        minimumResultsForSearch: 10 // at least 10 results must be displayed
+    });
+
 
 
     // $(".products-slider > .owl-carousel").each(function () {
@@ -345,5 +350,10 @@
     //     }
     // });
 
+    $(".scroll-to").on("click", function(){
+        $("html, body").animate({
+            scrollTop: $('.scroll-to').offset().top
+        }, 1300);
+    });
 
 })(jQuery);
