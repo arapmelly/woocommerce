@@ -36,6 +36,26 @@
 
 <section class="product-details">
     <div class="section-inner-wrapper">
+
+
+        <?php if ($average >= 3) {?>
+
+            <div class="product-meta">
+                <div class="rating-widget">
+                    <div class="stars" data-score="<?php echo $average; ?>"></div>
+                </div>
+                <div class="orders-made">
+                    <div class="num-rating tag-descriptor"><?php echo $average; ?> <span
+                                class="total-reviews">(<?php echo $review_count; ?> Reviews)</span></div>
+                    <div class="tag-descriptor"><?php echo $rating_count; ?> <span
+                                class="total-reviews">Orders made</span></div>
+                </div>
+            </div>
+
+
+        <?php }?>
+
+
         <h1 class="product-name"><?php echo $product->get_name(); ?></h1>
         <!-- <div class="price">
             <h2 class="current-price"><?php //echo $product->get_price_html(); ?></h2>

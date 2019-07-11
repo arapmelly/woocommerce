@@ -57,9 +57,12 @@
                     <ul>
                         <?php $cats = get_product_categories();?>
                         <?php foreach ($cats as $cat) {?>
+                            <?php if ($cat->name != 'Uncategorized') {?>
                             <li>
                                 <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>"><?php echo $cat->name; ?></a>
                             </li>
+
+                            <?php }?>
                         <?php }?>
 
 
