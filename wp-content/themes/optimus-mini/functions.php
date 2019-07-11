@@ -178,12 +178,16 @@ function get_product_variations($product) {
 
 }
 
-add_action('added_post_meta', 'auto_create_var', 10, 4);
+add_action('updated_post_meta', 'auto_create_var', 10, 4);
 
 function auto_create_var($post_id) {
 	//check if post type is product
 	if (get_post_type($post_id) == 'product') {
 		$product = wc_get_product($post_id);
+
+		/*if ($product->is_type('variable')) {
+			create_product_var($product);
+		}*/
 
 		//check if product has product variations
 		$variations = get_post_meta($product->get_id(), '_product_variations', true);
