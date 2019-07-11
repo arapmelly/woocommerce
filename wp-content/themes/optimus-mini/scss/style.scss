@@ -20,9 +20,7 @@ Version:      1.0.0
 @import "table";
 @import "form";
 @import "tabs";
-@import "fancybox";
-
-
+//@import "fancybox";
 
 html, body {
   background-color: $default-white-color;
@@ -847,7 +845,7 @@ html, body {
                   margin-bottom: 1em;
                   label {
                     display: block;
-                    margin: 0em 0em 0.28571429rem 0em;
+                    margin: 0 0 0.28571429rem 0;
                     color: rgba(0, 0, 0, 0.87);
                     font-size: 0.92857143em;
                     font-weight: bold;

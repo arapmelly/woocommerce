@@ -26,7 +26,6 @@ $blue: mix(#00d1ff, #008ed6);
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
-  //background: #000;
 }
 
 .fotorama--fullscreen {
@@ -37,14 +36,14 @@ $blue: mix(#00d1ff, #008ed6);
   bottom: 0 !important;
   float: none !important;
   z-index: 2147483647 !important;
-  background: lighten(#000000, 30%);
+  //background: lighten(#000000, 30%);
   width: 100% !important;
   height: 100% !important;
   margin: 0 !important;
   @extend %image-reset;
   .fotorama__stage,
   .fotorama__nav {
-    background: #000;
+    background: lighten(rgba(0, 0, 0, 0.6), 10%);
   }
 }
 
@@ -61,14 +60,6 @@ $blue: mix(#00d1ff, #008ed6);
     direction: rtl;
   }
 }
-
-//.fotorama__wrap,
-//.fotorama__stage,
-//.fotorama__stage__shaft,
-//.fotorama__stage__frame,
-//.fotorama__img {
-//
-//}
 
 .fotorama__stage,
 .fotorama__nav {
