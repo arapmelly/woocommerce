@@ -85,17 +85,6 @@ $gallery_images = get_product_images($product);
 
          <?php }?>
 
-    <!-- <img src="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-2.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-3.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-5.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-6.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-7.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-8.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-9.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-10.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-12.jpg" />
-    <img src="http://sachinchoolur.github.io/lightslider/img/cS-13.jpg" /> -->
+
 
 </section>
