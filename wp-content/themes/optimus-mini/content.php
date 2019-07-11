@@ -74,54 +74,50 @@
                         <div class="ui link cards">
 
 							<?php
-$query = new WC_Product_Query(array(
-			'limit' => 4,
-			'orderby' => 'date',
-			'order' => 'DESC',
-			'category' => [$cat->slug],
+								$query    = new WC_Product_Query( array(
+									'limit'    => 4,
+									'orderby'  => 'date',
+									'order'    => 'DESC',
+									'category' => [ $cat->slug ],
 
-		));
-		$products = $query->get_products();
-		$itemWidth = "";
+								) );
+								$products = $query->get_products();
+								$itemWidth = "";
 
-//								var_dump($products);
-		$productsLoopCounter = 1;
-		foreach ($products as $product) {
+                                $productsLoopCounter = 1;
+								foreach ( $products as $product ) {
 
-			if (count($products) == 1) {
+                                    if ( count( $products ) == 1 ) {
 
-				$itemWidth = "full-width";
+                                        $itemWidth = "full-width";
 
-			} elseif (count($products) > 1) {
-				if (count($products) == 3) {
-					$itemWidth = "full-width";
-				}
-			}
+                                    } elseif ( count( $products ) > 1 ) {
+                                        if ( count( $products ) == 3 ) {
+                                            $itemWidth = "full-width";
+                                        }
+                                    }
 
-//                                    echo key( $products );
-			//echo count( $products );
+                                    if ( $productsLoopCounter == count($products) && count($products) == 3) { ?>
 
-			if ($productsLoopCounter == count($products) && count($products) == 3) {?>
+                                        <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card <?php echo $itemWidth; ?>">
 
-                                        <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>">
+                                    <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1){ ?>
+                                            <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card <?php echo $itemWidth; ?>">
 
-                                    <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1) {?>
-                                            <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>">
+                                    <?php }else { ?>
 
-                                    <?php } else {?>
-
-                                        <a href="<?php echo get_permalink($product->get_id()); ?>" class="card">
-                                    <?php }?>
+                                        <a href="<?php echo get_permalink( $product->get_id() ); ?>" class="card">
+                                    <?php } ?>
 
                                     <?php
 
-			$image = get_product_primary_image($product);
+                                        $image = get_product_primary_image( $product );
 
-			if (!is_null($image)) {
-				$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
-			}
+                                        if ( ! is_null( $image ) ) {
+                                            $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+                                        }
 
-			?>
+                                    ?>
 
                                     <div class="image"
                                          style="background-image: url(<?php echo $image->medium ?>)"></div>
