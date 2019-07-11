@@ -288,6 +288,17 @@
 
     });
 
+    $('.product-image').fotorama({
+        width: '100%',
+        maxwidth: '100%',
+        allowfullscreen: true,
+        nav: 'thumbs'
+    });
+
+    // $('[data-fancybox="gallery"]').fancybox({
+    //     // Options will go here
+    // });
+
 
     // $(".products-slider > .owl-carousel").each(function () {
     //     $(this).owlCarousel({
