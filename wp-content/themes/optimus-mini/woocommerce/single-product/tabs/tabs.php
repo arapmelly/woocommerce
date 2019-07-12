@@ -1,40 +1,39 @@
 <?php
-	/**
-	 * Single Product tabs
-	 *
-	 * This template can be overridden by copying it to yourtheme/woocommerce/single-product/tabs/tabs.php.
-	 *
-	 * HOWEVER, on occasion WooCommerce will need to update template files and you
-	 * (the theme developer) will need to copy the new files to your theme to
-	 * maintain compatibility. We try to do this as little as possible, but it does
-	 * happen. When this occurs the version of the template file will be bumped and
-	 * the readme will list any important changes.
-	 *
-	 * @see    https://docs.woocommerce.com/document/template-structure/
-	 * @package WooCommerce/Templates
-	 * @version 2.4.0
-	 */
+/**
+ * Single Product tabs
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product/tabs/tabs.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see    https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates
+ * @version 2.4.0
+ */
 
-	if ( ! defined( 'ABSPATH' ) ) {
-		exit;
-	}
+if (!defined('ABSPATH')) {
+	exit;
+}
 
-	/**
-	 * Filter tabs and allow third parties to add their own.
-	 *
-	 * Each tab is an array containing title, callback and priority.
-	 * @see woocommerce_default_product_tabs()
-	 */
+/**
+ * Filter tabs and allow third parties to add their own.
+ *
+ * Each tab is an array containing title, callback and priority.
+ * @see woocommerce_default_product_tabs()
+ */
 
+global $post;
+global $product;
 
-	global $post;
-	global $product;
+$short_description = apply_filters('woocommerce_short_description', $post->post_excerpt);
 
-	$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
-
-	if ( ! $short_description ) {
-		return;
-	}
+if (!$short_description) {
+	return;
+}
 
 ?>
 
@@ -52,13 +51,13 @@
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                    ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                ?></p>
             </div>
         </div>
         <div id="tab-2">
             <div class="styled-text section-inner-wrapper">
 
-                <p><?php echo $product->get_description(); // WPCS: XSS ok.                                    ?></p>
+                <p><?php echo $product->get_description(); // WPCS: XSS ok.                                                                ?></p>
 
 
             </div>
@@ -83,9 +82,9 @@
 
                 <div class="section-inner-wrapper">
 
-					<?php $reviews = get_approved_comments( $product->get_id() ); ?>
+					<?php $reviews = get_approved_comments($product->get_id());?>
 
-					<?php foreach ( $reviews as $review ) { ?>
+					<?php foreach ($reviews as $review) {?>
 
                         <div class="item-review">
                             <!--
@@ -108,13 +107,13 @@
 
                         </div>
 
-					<?php } ?>
+					<?php }?>
 
 
-                    <div class="review-textarea">
+                    <!-- <div class="review-textarea">
                         <form method="post">
                             <div class="form-input">
-                                <!--<input id="postReview" class="post-review" placeholder="Write a review">-->
+
 
                                 <textarea rows="4" class="post-review" placeholder="Write a review"></textarea>
                             </div>
@@ -124,7 +123,57 @@
                                 </button>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
+
+                    <div id="review_form">
+                    <div id="respond" class="comment-respond">
+        <span id="reply-title" class="comment-reply-title">Add a review
+
+        </span>
+
+        <form  action="<?php echo get_site_url() . '/wp-comments-post.php'; ?>" method="post" id="commentform" class="comment-form" >
+                <!-- <p class="comment-notes">
+                    <span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
+                </p> -->
+
+                <div class="comment-form-rating">
+                    <label for="rating">Your rating</label>
+                    <select name="rating" id="rating" required="">
+                        <option value="">Rate…</option>
+                        <option value="5">Perfect</option>
+                        <option value="4">Good</option>
+                        <option value="3">Average</option>
+                        <option value="2">Not that bad</option>
+                        <option value="1">Very poor</option>
+                    </select>
+                </div>
+                    <p class="comment-form-comment">
+                        <label for="comment">Your review&nbsp;<span class="required">*</span></label>
+                        <textarea id="comment" name="comment" cols="45" rows="8" required=""></textarea>
+                    </p>
+                    <p class="comment-form-author">
+                        <label for="author">Name&nbsp;<span class="required">*</span></label>
+                        <input id="author" name="author" type="text" value="" size="30" required="">
+                    </p>
+<p class="comment-form-email">
+    <label for="email">Email&nbsp;<span class="required">*</span></label>
+    <input id="email" name="email" type="email" value="" size="30" required="">
+</p>
+<!-- <p class="comment-form-cookies-consent">
+    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+    <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
+</p> -->
+<p class="form-submit">
+
+    <input type="hidden" name="comment_post_ID" value="<?php echo $product->get_id(); ?>" id="comment_post_ID">
+    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+
+    <input type="submit" id="submit" class="submit" value="Submit" onClick="submitReview()">
+</p>            </form>
+            </div><!-- #respond -->
+                </div>
+
+
 
                 </div>
             </div>
@@ -133,23 +182,30 @@
 </div>
 
 
-<script type="text/javascript" defer>
+<script type="text/javascript">
 
-    // $( document ).ready(function() {
-    //     $('.stars').raty({
-    //             starType: 'i',
-    //             score: function () {
-    //                 return $(this).attr('data-score');
-    //             },
-    //             click: function(score, evt) {
-    //                 console.log('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
-    //             }
-    //         });
-    // });
+    function submitReview(){
+
+        console.log('we here right now');
+
+       /*
+       var rating = document.getElementById('rating').value;
+        var comment = document.getElementById('comment').value;
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var comment_post_ID = document.getElementById('comment_post_ID').value;
 
 
-    // (function ($) {
-    // })();
+        console.log(rating);
+        console.log(comment);
+        */
+
+
+    }
+
+
+
+
 
 
 </script>
