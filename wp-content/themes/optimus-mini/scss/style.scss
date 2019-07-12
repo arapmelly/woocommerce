@@ -1413,7 +1413,8 @@ html, body {
           }
 
           .actions {
-            display: block;
+            display: flex;
+            font-size: 12px;
             margin-top: 20px;
             width: 100%;
 
@@ -1427,6 +1428,24 @@ html, body {
               &:hover {
                 background-color: $default-dark-color;
               }
+
+              &:last-child {
+                border: 1px solid $default-dark-color;
+                color: $default-dark-color;
+                background-color: transparent;
+                &:hover {
+                  color: $default-white-color;
+                  background-color: $default-dark-color;
+                  opacity: 1;
+                }
+              }
+            }
+
+            .talk-to-seller-button {
+              a {
+                line-height: 9px;
+              }
+
             }
 
           }
@@ -1450,6 +1469,39 @@ html, body {
                 }
               }
 
+            }
+          }
+
+          .share-btn {
+            margin-top: 2em;
+
+            .share-icons {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              margin-top: 1em;
+              a {
+                border: 1px solid $default-dark-color;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                justify-items: center;
+                padding: 1em;
+                margin-right: .5em;
+                height: 40px;
+                width: 40px;
+
+                &:last-child {
+                  margin: 0;
+                }
+
+                &:hover {
+                  border-color: $blue-button-color;
+                  color: $blue-button-color;
+                }
+              }
             }
           }
         }
@@ -2226,9 +2278,6 @@ html, body {
     }
 
     .section-inner-wrapper {
-      //padding: 0;
-      //margin: 0 auto;
-      //@include calcMaxWidth($tablet);
 
       .products-slider {
         .cards {
@@ -2248,6 +2297,7 @@ html, body {
           }
         }
       }
+
     }
 
     .products-category {
@@ -2293,12 +2343,25 @@ html, body {
             font-weight: 500;
           }
 
-          .actions {
-            position: unset;
-            bottom: unset;
-          }
+          .section-inner-wrapper {
+            .actions {
+              justify-content: space-between;
+              font-size: 10px;
+              .variations_button, .talk-to-seller-button {
+                width: calc(50% - 0.25em);
 
+                a.button, button {
+                  width: 100% !important;
+                }
+              }
+            }
+
+            .share-btn {
+              margin-top: 1em;
+            }
+          }
         }
+
       }
 
       .tabs {

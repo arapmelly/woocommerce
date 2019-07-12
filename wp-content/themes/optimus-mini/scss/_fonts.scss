@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?1e4xg9');
-  src:  url('fonts/icomoon.eot?1e4xg9#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?1e4xg9') format('truetype'),
-  url('fonts/icomoon.woff?1e4xg9') format('woff'),
-  url('fonts/icomoon.svg?1e4xg9#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ginfo3');
+  src:  url('fonts/icomoon.eot?ginfo3#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?ginfo3') format('truetype'),
+  url('fonts/icomoon.woff?ginfo3') format('woff'),
+  url('fonts/icomoon.svg?ginfo3#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-email:before {
+  content: "\e910";
+}
+.icon-link-2:before {
+  content: "\e911";
+}
+.icon-twitter:before {
+  content: "\e912";
+}
+.icon-facebook:before {
+  content: "\e913";
+}
 .icon-collapse-outline:before {
   content: "\e90e";
 }
@@ -74,6 +86,7 @@
 .icon-star:before {
   content: "\e90d";
 }
+
 
 @font-face {
   font-family: "raty";

@@ -299,58 +299,7 @@
         minimumResultsForSearch: 10 // at least 10 results must be displayed
     });
 
-
-
-    // $(".products-slider > .owl-carousel").each(function () {
-    //     $(this).owlCarousel({
-    //         margin: 15,
-    //         loop: false,
-    //         center: false,
-    //         nav: false,
-    //         dots: false,
-    //         autoWidth: false,
-    //         responsive: {
-    //             0: {
-    //                 items: 1
-    //             },
-    //             600: {
-    //                 items: 2
-    //             },
-    //             1024: {
-    //                 items: 3
-    //             },
-    //             1280: {
-    //                 items: 4,
-    //                 margin: 20
-    //             }
-    //         }
-    //     })
-    // });
-
-
-    // $('.products-slider .owl-carousel').owlCarousel({
-    //     items: 4,
-    //     loop: false,
-    //     margin: 5,
-    //     center: false,
-    //     nav: false,
-    //     dots: false,
-    //
-    //     responsive: {
-    //         0: {
-    //             items: 2,
-    //             autoWidth: true,
-    //         },
-    //         // 600: {
-    //         //     items: 3
-    //         // },
-    //         // 1000: {
-    //         //     items: 5
-    //         // }
-    //     }
-    // });
-
-    $(".scroll-to").on("click", function(){
+    $(".scroll-to").on("click", function () {
         $("html, body").animate({
             scrollTop: $('.scroll-to').offset().top
         }, 1300);
