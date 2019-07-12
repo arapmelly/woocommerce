@@ -170,6 +170,18 @@ function custom_process_order($order_id) {
 
 }
 
+function contact_seller_link($product) {
+
+	$phone = get_option('blogprimaryphonenumber');
+
+	$text = 'Hi! I would like to enquire about this product -' . $product->get_name() . ' Kindly get back to me.';
+
+	$link = 'https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $text;
+
+	return $link;
+
+}
+
 function get_product_variations($product) {
 
 	$variations = get_post_meta($product->get_id(), '_product_variations', true);

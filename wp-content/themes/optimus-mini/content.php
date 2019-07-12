@@ -3,7 +3,7 @@
 
     <section class="shop-banner margin-top-phone-7">
 
-		<?php
+        <?php
 
 	$image = get_blog_primary_image();
 	$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
@@ -22,17 +22,19 @@
 
             <?php if (get_reviews_count() >= 100) {?>
 
-            <div class="rating-widget">
-                <div class="stars" data-score="4.5"></div>
-                <div class="num-rating tag-descriptor">4.25 <span
-                            class="total-reviews">(<?php echo get_reviews_count(); ?> Reviews)</span></div>
-            </div>
-            <div class="orders-made">
-                <div class="tag-descriptor"><?php echo get_total_orders('complete'); ?> <span class="total-reviews">Orders made</span>
+                <div class="rating-widget">
+                    <div class="stars" data-score="4.5"></div>
+                    <div class="num-rating tag-descriptor">4.25 <span
+                                class="total-reviews">(<?php echo get_reviews_count(); ?> Reviews)</span></div>
                 </div>
-                <div class="tag-descriptor"><?php echo get_total_orders('on-hold'); ?> <span class="total-reviews">Deliveries made</span>
+                <div class="orders-made">
+                    <div class="tag-descriptor"><?php echo get_total_orders('complete'); ?> <span
+                                class="total-reviews">Orders made</span>
+                    </div>
+                    <div class="tag-descriptor"><?php echo get_total_orders('on-hold'); ?> <span
+                                class="total-reviews">Deliveries made</span>
+                    </div>
                 </div>
-            </div>
 
 
             <?php }?>
@@ -44,15 +46,13 @@
         <div class="section-inner-wrapper">
             <div class="owl-carousel owl-theme">
 
-				<?php $cats = get_product_categories();?>
-				<?php foreach ($cats as $cat) {?>
-                    <?php if ($cat->name != 'Uncategorized') {?>
+                <?php $cats = get_product_categories();?>
+                <?php foreach ($cats as $cat) {?>
                     <div class="item">
                         <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">
                             <h4><?php echo $cat->name; ?></h4></a>
                     </div>
-                    <?php }?>
-				<?php }?>
+                <?php }?>
             </div>
             <div class="custom-nav owl-nav"></div>
         </div>
@@ -60,16 +60,14 @@
 
     <section class="products-by-category">
 
-		<?php $cats = get_product_categories();?>
-		<?php foreach ($cats as $cat) {
+        <?php $cats = get_product_categories();?>
+        <?php foreach ($cats as $cat) {
 		?>
             <div class="products">
                 <header class="category-header">
                     <div class="inner-wrapper">
-
                         <h3><?php echo $cat->name; ?> </h3>
                         <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">View All</a>
-
                     </div>
                 </header>
 
@@ -77,7 +75,7 @@
                     <div class="products-slider">
                         <div class="ui link cards">
 
-							<?php
+                            <?php
 $query = new WC_Product_Query(array(
 			'limit' => 4,
 			'orderby' => 'date',
@@ -103,17 +101,19 @@ $query = new WC_Product_Query(array(
 
 			if ($productsLoopCounter == count($products) && count($products) == 3) {?>
 
-                                        <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>">
+                            <a href="<?php echo get_permalink($product->get_id()); ?>"
+                               class="card <?php echo $itemWidth; ?>">
 
-                                    <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1) {?>
-                                            <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>">
+                                <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1) {?>
+                                <a href="<?php echo get_permalink($product->get_id()); ?>"
+                                   class="card <?php echo $itemWidth; ?>">
 
                                     <?php } else {?>
 
-                                        <a href="<?php echo get_permalink($product->get_id()); ?>" class="card">
-                                    <?php }?>
+                                    <a href="<?php echo get_permalink($product->get_id()); ?>" class="card">
+                                        <?php }?>
 
-                                    <?php
+                                        <?php
 
 			$image = get_product_primary_image($product);
 
@@ -123,8 +123,8 @@ $query = new WC_Product_Query(array(
 
 			?>
 
-                                    <div class="image"
-                                         style="background-image: url(<?php echo $image->medium ?>)"></div>
+                                        <div class="image"
+                                             style="background-image: url(<?php echo $image->medium ?>)"></div>
 
                                         <div class="content">
                                             <div class="header"><?php echo $product->get_name(); ?></div>
@@ -135,47 +135,52 @@ $query = new WC_Product_Query(array(
                                             <div class="header price">
 
 
-                                                 <?php if ($product->is_type('variable')) {
+                                                <?php if ($product->is_type('variable')) {
 				?>
 
-                <h2 class="current-price" id="productPrice"><?php echo get_woocommerce_currency_symbol();
+                                                    <h2 class="current-price"
+                                                        id="productPrice"><?php echo get_woocommerce_currency_symbol();
 				echo get_post_meta($product->get_id(), '_price', true) ?></h2>
 
-            <?php } else {?>
-            <?php if ($product->get_sale_price() <= 0) {?>
-                <h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
-            <?php }?>
+                                                <?php } else {?>
+                                                    <?php if ($product->get_sale_price() <= 0) {?>
+                                                        <h2 class="current-price"
+                                                            id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                                                    <?php }?>
 
-            <?php if ($product->get_sale_price() > 0) {?>
-                <h2 class="previous-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                                                    <?php if ($product->get_sale_price() > 0) {?>
 
-                <h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_sale_price()); ?></h2>
-            <?php }?>
+                                                        <h2 class="current-price"
+                                                            id="product_price"><?php echo wc_price($product->get_sale_price()); ?></h2>
 
-            <?php }?>
+                                                        <h2 class="previous-price"
+                                                            id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                                                    <?php }?>
+
+                                                <?php }?>
+
+<!--                                                --><?php //if ( $product->get_sale_price() <= 0 ) { ?>
+<!--                                                    <h2 class="current-price">--><?php //echo wc_price( $product->get_regular_price() ); ?><!--</h2>-->
+<!--                                                --><?php //} ?>
+<!---->
+<!--                                                --><?php //if ( $product->get_sale_price() > 0 ) { ?>
+<!--                                                    <h2 class="previous-price">--><?php //echo wc_price( $product->get_regular_price() ); ?><!--</h2>-->
+<!--                                                --><?php //} ?>
 
 
+                                            </div>
 
-               <!--  <?php //if ($product->get_sale_price() <= 0) {?>
-                <h2 class="current-price"><?php //echo wc_price($product->get_regular_price()); ?></h2>
-            <?php //}?>
-
-                <?php //if ($product->get_sale_price() > 0) {?>
-                    <h2 class="previous-price"><?php //echo wc_price($product->get_regular_price()); ?></h2>
-                <?php //}?> -->
-            </div>
-
-											<?php if ($product->get_sale_price() > 0) {?>
+                                            <?php if ($product->get_sale_price() > 0) {?>
                                                 <div class="discount"><?php echo get_percentage_discount($product); ?>
                                                     Off
                                                 </div>
-											<?php }?>
+                                            <?php }?>
                                         </div>
 
                                     </a>
 
 
-								<?php }?>
+                                    <?php }?>
 
                         </div> <!-- end of owl-carousel -->
                     </div> <!-- end of products slider -->
@@ -183,7 +188,7 @@ $query = new WC_Product_Query(array(
 
 
             </div>    <!-- end of products -->
-		<?php }?>
+        <?php }?>
 
     </section>
 

@@ -20,6 +20,7 @@ Version:      1.0.0
 @import "table";
 @import "form";
 @import "tabs";
+@import "dropdown/core";
 
 html, body {
   background-color: $default-white-color;
@@ -637,7 +638,6 @@ html, body {
             max-width: 100px;
           }
 
-
           &.left-column {
             flex-grow: 0;
             .image {
@@ -760,6 +760,32 @@ html, body {
 // -------------------------
 // CHECKOUT PAGE
 // -------------------------
+
+.single-product {
+  .woocommerce-notices-wrapper {
+    .product-notice {
+      margin: 0 auto;
+      padding: 0;
+      width: calc(100vw - 15rem);
+
+      .woocommerce-error {
+        li {
+          color: $red;
+          border: 1px solid $red;
+          padding: 0.825em;
+          margin-bottom: 0.825em;
+          strong {
+            //font-weight: 500;
+            color: darken($red, 15%);
+
+          }
+        }
+
+      }
+    }
+
+  }
+}
 
 .woocommerce-checkout {
   .woocommerce {
@@ -983,7 +1009,7 @@ html, body {
   }
 
   .woocommerce-notices-wrapper {
-    .product-image {
+    .product-notice {
       .woocommerce-message {
         background-color: lighten($green, 45%);
         border: 1px solid darken($green, 10%);
@@ -1308,85 +1334,176 @@ html, body {
       }
 
       .product-details {
-
         width: calc(100% * 0.5);
 
         .section-inner-wrapper {
           position: relative;
           height: 100%;
           width: 100%;
-        }
 
-        .product-name {
-          font-size: 21px;
-          font-weight: 500;
-          color: $color-medium;
-        }
-
-        .price {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          font-size: 14px;
-          h1, h2, h3, h4, h5 {
-            font-size: 1.2em;
+          .product-name {
+            font-size: 28px;
             font-weight: 400;
-            line-height: normal;
-            letter-spacing: normal;
-            text-align: left;
-            text-transform: uppercase;
-            color: $blue-button-color;
+            color: $color-medium;
           }
 
-          .previous-price {
-            color: #898c98;
-            font-size: 1.1em;
-            text-decoration: line-through;
-            padding-left: 1rem;
-          }
-        }
-
-        .product-meta {
-          align-items: flex-start;
-          display: flex;
-          flex-direction: column;
-
-          .rating-widget {
-            align-items: center;
+          .price {
             display: flex;
             flex-direction: row;
-            margin-bottom: 2rem;
+            align-items: center;
+            font-size: 14px;
+            h1, h2, h3, h4, h5 {
+              font-size: 1.2em;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: normal;
+              text-align: left;
+              text-transform: capitalize;
+              color: $blue-button-color;
+            }
 
-            div {
-              &:first-child {
-                margin-right: 3rem;
-              }
+            .previous-price {
+              color: #898c98;
+              font-size: 1.1em;
+              text-decoration: line-through;
+              padding-left: 1rem;
+              font-weight: 400;
             }
           }
 
-          .orders-made {
-            align-items: center;
+          .poduct-desc {
+            font-size: 12px;
+            p {
+              font-size: 1.15em;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.6363636364;
+              letter-spacing: normal;
+              text-align: left;
+              color: $default-dark-color;
+              margin-bottom: 2rem;
+            }
+          }
+
+          .product-meta {
+            align-items: flex-start;
             display: flex;
-            flex-direction: row;
-            margin-bottom: 2rem;
+            flex-direction: column;
+
+            .rating-widget {
+              align-items: center;
+              display: flex;
+              flex-direction: row;
+              margin-bottom: 2rem;
+
+              div {
+                &:first-child {
+                  margin-right: 3rem;
+                }
+              }
+            }
+
+            .orders-made {
+              align-items: center;
+              display: flex;
+              flex-direction: row;
+              margin-bottom: 2rem;
+            }
           }
-        }
 
-        .actions {
-          display: block;
-          margin-top: 20px;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-
-          a.button {
-            background-color: $default-dark-color;
-            border-radius: 8px;
-            text-transform: uppercase;
-            padding: 20px;
+          .actions {
+            display: flex;
+            font-size: 12px;
+            margin-top: 20px;
             width: 100%;
+
+            a.button, button {
+              background-color: $blue-button-color;
+              border-radius: 4px;
+              text-transform: uppercase;
+              padding: 20px;
+              width: 260px;
+
+              &:hover {
+                background-color: $default-dark-color;
+              }
+
+              &:last-child {
+                border: 1px solid $default-dark-color;
+                color: $default-dark-color;
+                background-color: transparent;
+                &:hover {
+                  color: $default-white-color;
+                  background-color: $default-dark-color;
+                  opacity: 1;
+                }
+              }
+            }
+
+            .talk-to-seller-button {
+              a {
+                line-height: 9px;
+              }
+
+            }
+
           }
 
+          .product-variation {
+            form {
+              &.variations_form {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                .variations {
+                  width: 100%;
+
+                  .field {
+                    font-size: 14px;
+                    label {
+                      text-transform: capitalize;
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+
+          .share-btn {
+            margin-top: 2em;
+
+            .share-icons {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              margin-top: 1em;
+              a {
+                border: 1px solid $default-dark-color;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                justify-items: center;
+                padding: 1em;
+                margin-right: .5em;
+                height: 40px;
+                width: 40px;
+
+                &:last-child {
+                  margin: 0;
+                }
+
+                &:hover {
+                  border-color: $blue-button-color;
+                  color: $blue-button-color;
+                }
+              }
+            }
+          }
         }
 
       }
@@ -2122,7 +2239,7 @@ html, body {
   .main-content {
 
     .woocommerce-notices-wrapper {
-      .product-image {
+      .product-notice {
         padding: 0 15px;
         .woocommerce-message {
           width: 100%;
@@ -2161,9 +2278,6 @@ html, body {
     }
 
     .section-inner-wrapper {
-      //padding: 0;
-      //margin: 0 auto;
-      //@include calcMaxWidth($tablet);
 
       .products-slider {
         .cards {
@@ -2183,6 +2297,7 @@ html, body {
           }
         }
       }
+
     }
 
     .products-category {
@@ -2228,12 +2343,25 @@ html, body {
             font-weight: 500;
           }
 
-          .actions {
-            position: unset;
-            bottom: unset;
-          }
+          .section-inner-wrapper {
+            .actions {
+              justify-content: space-between;
+              font-size: 10px;
+              .variations_button, .talk-to-seller-button {
+                width: calc(50% - 0.25em);
 
+                a.button, button {
+                  width: 100% !important;
+                }
+              }
+            }
+
+            .share-btn {
+              margin-top: 1em;
+            }
+          }
         }
+
       }
 
       .tabs {
