@@ -39,3 +39,4 @@ do_action('woocommerce_after_add_to_cart_quantity');
 	<?php $link = contact_seller_link($product);?>
 <a class="button" href="<?php echo $link; ?>"> Message Seller</a>
 </div>
+
