@@ -48,10 +48,12 @@
 
                 <?php $cats = get_product_categories();?>
                 <?php foreach ($cats as $cat) {?>
+                    <?php if ($cat->name != 'Uncategorized') {?>
                     <div class="item">
                         <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">
                             <h4><?php echo $cat->name; ?></h4></a>
                     </div>
+                    <?php }?>
                 <?php }?>
             </div>
             <div class="custom-nav owl-nav"></div>
