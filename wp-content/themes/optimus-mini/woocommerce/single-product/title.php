@@ -59,7 +59,7 @@ if (!$short_description) {
         <!-- <div class="price">
             <h2 class="current-price"><?php //echo $product->get_price_html(); ?></h2>
         </div> -->
-
+<?php //create_product_var($product);?>
 
         <div class="price">
 

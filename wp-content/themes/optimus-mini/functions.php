@@ -227,18 +227,59 @@ function create_product_var($product) {
 
 	}
 
-	$var_string = implode('|', $variants);
+	//get all existing attributes
+	$attributes = $product->get_attributes();
 
-	$attributes_array[$attr_slug] = array(
+//print_r($attributes);
 
-		'name' => $attr_label,
-		'value' => $var_string,
-		'is_visible' => '1',
-		'is_variation' => '1',
-		'is_taxonomy' => '0',
-	);
+	if (!empty($attributes)) {
 
-	update_post_meta($product->get_id(), '_product_attributes', $attributes_array);
+		$var_string = implode('|', $variants);
+
+		$attribute_array[$attr_slug] = array(
+
+			'name' => $attr_label,
+			'value' => $var_string,
+			'is_visible' => '1',
+			'is_variation' => '1',
+			'is_taxonomy' => '0',
+		);
+
+		//update attributes to use as variation
+		foreach ($attributes as $attribute) {
+			echo '<pre>';
+			//print_r($attribute);
+
+			//convert array to string
+			$var_string = implode('|', $attribute['options']);
+
+			$attribute_array[$attribute['name']] = array(
+
+				'name' => $attribute['name'],
+				'value' => $var_string,
+				'is_visible' => '1',
+				'is_variation' => '1',
+				'is_taxonomy' => '0',
+			);
+
+		}
+
+	} else {
+
+		$var_string = implode('|', $variants);
+
+		$attribute_array[$attr_slug] = array(
+
+			'name' => $attr_label,
+			'value' => $var_string,
+			'is_visible' => '1',
+			'is_variation' => '1',
+			'is_taxonomy' => '0',
+		);
+
+	}
+
+	update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
 
 	foreach ($variations as $variation) {
 
@@ -254,7 +295,30 @@ function create_product_var($product) {
 		update_post_meta($variation_id, '_regular_price', $variation->unit_price);
 		update_post_meta($variation_id, '_price', $variation->unit_price);
 		update_post_meta($variation_id, '_stock_qty', 0);
+
 		update_post_meta($variation_id, 'attribute_' . $attr_slug, $variation->name);
+
+		//get other attributes and loop through attributes and add them
+		//get other options now
+		$attributes = $product->get_attributes();
+
+		// all attributes except the first
+		$variation_attributes = array_slice($attributes, 1);
+
+		if (count($variation_attributes) > 0) {
+
+			foreach ($variation_attributes as $key => $value) {
+
+				//loop through the options
+				foreach ($value['options'] as $key => $value) {
+
+					update_post_meta($variation_id, 'attribute_' . $key, '');
+				}
+
+			}
+
+		}
+
 		WC_Product_Variable::sync($product->get_id());
 
 	}
