@@ -1673,10 +1673,10 @@ html, body {
           margin-bottom: 25px;
 
           form {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
+            //display: flex;
+            //align-items: center;
+            //justify-content: space-between;
+            //width: 100%;
 
             .form-input {
               width: calc(100% - 85px);
@@ -1901,13 +1901,12 @@ html, body {
             margin-bottom: 25px;
 
             form {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              width: 100%;
+              font-size: 14px;
+              width: 50%;
 
               .form-input {
-                width: calc(100% - 85px);
+                //width: calc(100% - 85px);
+                width: 100%;
                 .post-review {
                   color: lighten($gray, 10%);
                   border-radius: 8px;
@@ -1919,6 +1918,23 @@ html, body {
                   height: 70px;
                   max-height: 70px;
                   width: 100%;
+                }
+              }
+
+              .field {
+                input {
+                  line-height: 2.2em;
+                }
+              }
+
+              .form-submit {
+                font-size: 14px;
+                margin-top: 15px;
+                .button {
+                  padding: 1.5em 2em;
+                  &:hover {
+                    background-color: $default-dark-color;
+                  }
                 }
               }
 
@@ -2369,6 +2385,20 @@ html, body {
           font-size: 14px;
           margin: 20px 0;
           width: 100% !important;
+        }
+
+        .tabs-container {
+          .reviews {
+            .section-inner-wrapper {
+              .review-textarea {
+
+                form {
+                  font-size: 14px;
+                  width: 100%;
+                }
+              }
+            }
+          }
         }
       }
     }
