@@ -22,7 +22,7 @@
 
             <div class="orders-made">
                 <div class="tag-descriptor">
-                    <?php echo get_total_orders('complete'); ?>
+                    <?php echo get_total_number_of_products(); ?>
                     <span class="total-reviews">Products</span>
                 </div>
                 <div class="tag-descriptor">

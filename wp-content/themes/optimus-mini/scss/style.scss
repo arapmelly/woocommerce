@@ -915,7 +915,7 @@ html, body {
           a {
             font-size: 14px;
             padding: 1.2em;
-            font-weight: 400;
+            font-weight: 700;
           }
 
           //padding: 10px;
@@ -1653,11 +1653,14 @@ html, body {
             width: 100%;
 
             a.button, button {
-              background-color: $blue-button-color;
+              //background-color: $blue-button-color;
               border-radius: 4px;
               text-transform: uppercase;
               padding: 20px;
-              width: 260px;
+              font-size: 14px;
+              line-height: 12px;
+              width: 200px;
+
 
               &:hover {
                 background-color: $default-dark-color;
@@ -1705,6 +1708,12 @@ html, body {
 
           .share-btn {
             margin-top: 2em;
+
+            h3{
+              font-weight: bold;
+              font-size: 14px;
+              color: $color-medium;
+            }
 
             .share-icons {
               display: flex;
@@ -2601,7 +2610,7 @@ html, body {
           .section-inner-wrapper {
             .actions {
               justify-content: space-between;
-              font-size: 10px;
+              font-size: 15px;
               .variations_button, .talk-to-seller-button {
                 width: calc(50% - 0.25em);
 

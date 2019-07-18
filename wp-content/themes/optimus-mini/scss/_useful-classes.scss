@@ -602,13 +602,13 @@ img {
   outline: 0;
   border: none;
   vertical-align: baseline;
-  background-color: $blue-button-color;
+  background-color: $default-green;
   color: $default-white-color;
-  font-family: 'Helvetica Neue',Arial,Helvetica,sans-serif;
+  text-transform: uppercase;
   margin: 0 .25em 0 0;
   padding: .78571429em 1.5em .78571429em;
-  text-transform: none;
   text-shadow: none;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1em;
   font-style: normal;
