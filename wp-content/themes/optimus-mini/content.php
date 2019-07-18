@@ -20,6 +20,17 @@
         <div class="section-inner-wrapper">
             <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
 
+            <div class="orders-made">
+                <div class="tag-descriptor">
+                    <?php echo get_total_orders('complete'); ?>
+                    <span class="total-reviews">Products</span>
+                </div>
+                <div class="tag-descriptor">
+                    <a href="contact">Contact Shop</a>
+<!--                    <span class="total-reviews">Deliveries made</span>-->
+                </div>
+            </div>
+
             <?php if (get_reviews_count() >= 100) {?>
 
                 <div class="rating-widget">
