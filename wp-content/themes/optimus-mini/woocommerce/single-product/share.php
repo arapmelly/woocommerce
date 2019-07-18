@@ -31,6 +31,8 @@ global $product;
 
 <div class="share-btn">
 
+    <h3>Share This On:</h3>
+
     <div class="share-icons">
     	<?php
 $link = get_permalink($product->get_id());

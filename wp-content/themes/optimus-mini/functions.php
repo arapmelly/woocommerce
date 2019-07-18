@@ -356,4 +356,14 @@ function check_if_product_id_in_cart($productID){
     return false;
 }
 
+/**
+ * Get the number of items in the shop
+*/
+function get_total_number_of_products(){
+	$args = array( 'post_type' => 'product', 'post_status' => 'publish',
+	               'posts_per_page' => -1 );
+	$products = new WP_Query( $args );
+	return $products->found_posts;
+}
+
 ?>

@@ -44,13 +44,13 @@
                 <div class="woocommerce-variation-add-to-cart variations_button">
 
                     <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>"
-                            class="single_add_to_cart_button button alt">Buy
+                            class="single_add_to_cart_button button alt">Order Now
                     </button>
                 </div>
 
                 <div class="talk-to-seller-button">
 					<?php $link = contact_seller_link( $product ); ?>
-                    <a class="button" href="<?php echo $link; ?>"> Message Seller</a>
+                    <a class="button" target="_blank" href="<?php echo $link; ?>"> Message Seller</a>
                 </div>
             </div>
 

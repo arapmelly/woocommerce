@@ -20,7 +20,7 @@
 		do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
 
-    <button type="submit" class="single_add_to_cart_button button alt">Buy</button>
+    <button type="submit" class="single_add_to_cart_button button alt">Order Now</button>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 
@@ -31,6 +31,6 @@
 
 <div class="talk-to-seller-button">
 	<?php $link = contact_seller_link( $product ); ?>
-    <a class="button" href="<?php echo $link; ?>"> Message Seller</a>
+    <a class="button" target="_blank" href="<?php echo $link; ?>">Message Seller</a>
 </div>
 
