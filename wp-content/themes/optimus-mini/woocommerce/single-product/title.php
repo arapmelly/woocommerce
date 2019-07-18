@@ -71,17 +71,14 @@ if (!$short_description) {
 
 			<?php } else {?>
 				<?php if ($product->get_sale_price() <= 0) {?>
-                    <h2 class="current-price"
-                        id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                    <h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
 				<?php }?>
 
 				<?php if ($product->get_sale_price() > 0) {?>
 
-                    <h2 class="current-price"
-                        id="product_price"><?php echo wc_price($product->get_sale_price()); ?></h2>
+                    <h2 class="current-price" id="product_price"><?php echo wc_price($product->get_sale_price()); ?></h2>
 
-                    <h2 class="previous-price"
-                        id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                    <h2 class="previous-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
 				<?php }?>
 
 			<?php }?>
