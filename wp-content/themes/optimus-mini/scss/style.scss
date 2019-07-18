@@ -1342,8 +1342,8 @@ html, body {
           width: 100%;
 
           .product-name {
-            font-size: 28px;
-            font-weight: 400;
+            font-size: 18px;
+            margin-bottom: 8px;
             color: $color-medium;
           }
 
@@ -1375,7 +1375,7 @@ html, body {
             font-size: 12px;
             p {
               font-size: 1.15em;
-              font-weight: normal;
+              font-weight: 300;
               font-style: normal;
               font-stretch: normal;
               line-height: 1.6363636364;
@@ -1737,22 +1737,23 @@ html, body {
         width: 70% !important;
 
         h2 {
-          font-size: 22px;
+          font-size: 1em;
         }
 
         h1, h2, h3, h4, h5, h6 {
-          font-weight: bold;
-
+          font-weight: 600;
+          font-size: 1em;
           .sub-heading {
-            font-weight: normal;
+            font-weight: 400;
             font-size: 0.65em;
             display: table;
             margin-top: 2rem;
           }
         }
 
+
         p {
-          font-size: 14px;
+          font-size: 0.85em;
           font-weight: normal;
           font-style: normal;
           font-stretch: normal;
@@ -2252,11 +2253,13 @@ html, body {
     padding-top: 40%;
   }
 
+
   .main-content {
 
     .woocommerce-notices-wrapper {
       .product-notice {
         padding: 0 15px;
+        width: 100% !important;
         .woocommerce-message {
           width: 100%;
         }
@@ -2347,6 +2350,7 @@ html, body {
         flex-direction: column;
 
         .product-image {
+          min-height: 310px;
           width: 100%;
         }
 
@@ -2355,8 +2359,8 @@ html, body {
           width: 100%;
 
           .product-name {
-            font-size: 21px;
-            font-weight: 500;
+            font-size: 18px;
+            //font-weight: 500;
           }
 
           .section-inner-wrapper {

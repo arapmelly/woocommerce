@@ -588,10 +588,10 @@ img {
 }
 
 .tag-descriptor{
-  font-weight: bold;
+  font-weight: 300;
   margin-right: 3rem;
   div, span{
-    font-weight: normal;
+    font-weight: 300;
   }
 }
 
@@ -614,7 +614,7 @@ img {
   font-style: normal;
   text-align: center;
   text-decoration: none;
-  border-radius: .28571429rem;
+  border-radius: 4px !important;
   box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
   user-select: none;
   transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease,-webkit-box-shadow .1s ease;

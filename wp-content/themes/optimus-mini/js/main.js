@@ -292,7 +292,7 @@
         width: '100%',
         maxwidth: '100%',
         allowfullscreen: true,
-        nav: 'thumbs'
+        nav: 'dots'
     });
 
     $('select').select2({
@@ -305,4 +305,23 @@
         }, 1300);
     });
 
+    // stickybits('.stickybits', { verticalPosition: 'bottom' });
+
+    // $('.stickybits').stickybits({
+    //     verticalPosition: 'bottom',
+    //     useStickyClasses: true,
+    //     // customVerticalPosition: true
+    // });
+
 })(jQuery);
+
+// setup bottom sticky
+// var browserWindowHeight = window.innerHeight;
+// var children = document.querySelectorAll('.stickybits');
+// for (var i = 0; i < children.length; i += 1) {
+//     var child = children[i];
+//     var childHeight = child.offsetHeight;
+//     var childPosition = browserWindowHeight - childHeight;
+//     console.log(browserWindowHeight, child, childHeight, childPosition);
+//     child.style.top = childPosition + 'px';
+// }
