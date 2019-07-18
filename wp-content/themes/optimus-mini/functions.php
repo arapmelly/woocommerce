@@ -332,4 +332,28 @@ function remove_checkout_coupon_form() {
 	remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 }
 
+/**
+ * @param $woocommerce
+ * @param $productID
+ *
+ * @return boolean
+*/
+function check_if_product_id_in_cart($productID){
+    if(!empty($productID)){
+	    $cart = WC()->cart->get_cart_contents();
+
+	    foreach ($cart as $item){
+		    $item = (object)$item;
+
+	        if(isset($item->product_id) && !empty($item->product_id)){
+	            if($item->product_id == $productID){
+	                return true;
+                }
+            }
+        }
+    }
+
+    return false;
+}
+
 ?>
