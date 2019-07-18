@@ -1773,12 +1773,13 @@ html, body {
         width: 70% !important;
 
         h2 {
-          font-size: 1em;
+          font-size: 0.8em;
         }
 
         h1, h2, h3, h4, h5, h6 {
           font-weight: 600;
-          font-size: 1em;
+          font-size: 0.8em;
+
           .sub-heading {
             font-weight: 400;
             font-size: 0.65em;
@@ -1788,8 +1789,8 @@ html, body {
         }
 
         p {
-          font-size: 0.85em;
-          font-weight: normal;
+          font-size: 1em;
+          font-weight: 300;
           font-style: normal;
           font-stretch: normal;
           line-height: 1.6363636364;
@@ -1838,13 +1839,15 @@ html, body {
             padding: 8px 15px;
 
             .num-rating {
-              font-size: 36px;
+              font-size: 16px;
               font-weight: bold;
 
               .stars {
                 font-size: 10px;
+                margin-top: 5px;
               }
             }
+
 
             .rating-widget {
               display: flex;
@@ -1859,7 +1862,7 @@ html, body {
 
                 span.total-reviews {
                   font-weight: bold;
-                  font-size: 22px;
+                  font-size: 16px;
                   padding-bottom: 15px;
                 }
               }

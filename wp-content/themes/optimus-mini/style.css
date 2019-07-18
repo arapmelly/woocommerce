@@ -10461,18 +10461,18 @@ html, body {
         margin: 20px 0;
         width: 70% !important; }
         .main-content .product .tabs .styled-text h2 {
-          font-size: 1em; }
+          font-size: 0.8em; }
         .main-content .product .tabs .styled-text h1, .main-content .product .tabs .styled-text h2, .main-content .product .tabs .styled-text h3, .main-content .product .tabs .styled-text h4, .main-content .product .tabs .styled-text h5, .main-content .product .tabs .styled-text h6 {
           font-weight: 600;
-          font-size: 1em; }
+          font-size: 0.8em; }
           .main-content .product .tabs .styled-text h1 .sub-heading, .main-content .product .tabs .styled-text h2 .sub-heading, .main-content .product .tabs .styled-text h3 .sub-heading, .main-content .product .tabs .styled-text h4 .sub-heading, .main-content .product .tabs .styled-text h5 .sub-heading, .main-content .product .tabs .styled-text h6 .sub-heading {
             font-weight: 400;
             font-size: 0.65em;
             display: table;
             margin-top: 2rem; }
         .main-content .product .tabs .styled-text p {
-          font-size: 0.85em;
-          font-weight: normal;
+          font-size: 1em;
+          font-weight: 300;
           font-style: normal;
           font-stretch: normal;
           line-height: 1.6363636364;
@@ -10509,10 +10509,11 @@ html, body {
           justify-content: space-between;
           padding: 8px 15px; }
           .main-content .product .tabs .reviews .total-rating .rating-header .num-rating {
-            font-size: 36px;
+            font-size: 16px;
             font-weight: bold; }
             .main-content .product .tabs .reviews .total-rating .rating-header .num-rating .stars {
-              font-size: 10px; }
+              font-size: 10px;
+              margin-top: 5px; }
           .main-content .product .tabs .reviews .total-rating .rating-header .rating-widget {
             display: flex;
             flex-direction: column;
@@ -10524,7 +10525,7 @@ html, body {
               justify-content: center; }
               .main-content .product .tabs .reviews .total-rating .rating-header .rating-widget .tag-descriptor span.total-reviews {
                 font-weight: bold;
-                font-size: 22px;
+                font-size: 16px;
                 padding-bottom: 15px; }
       .main-content .product .tabs .reviews .section-inner-wrapper .item-review {
         display: flex;
