@@ -25,7 +25,11 @@
             </a>
         </div>
         <div class="right">
-            <a href="<?php echo ('cart'); ?>" title="shopping cart" class="shopping-cart"><span class="icon-shopping-cart-outline"></span></a>
+            <a href="<?php echo ('cart'); ?>" title="shopping cart" class="shopping-cart">
+                <span class="icon-shopping-cart-outline">
+                    <?php echo WC()->cart->get_cart_contents_count(); ?>
+                </span>
+            </a>
         </div>
     </div>
 </nav>
