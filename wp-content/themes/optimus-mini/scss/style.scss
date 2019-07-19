@@ -733,9 +733,9 @@ html, body {
             }
           }
 
-          .product-quantity{
-            .quantity{
-              input{
+          .product-quantity {
+            .quantity {
+              input {
                 height: 30px;
                 width: 35px;
               }
@@ -1287,11 +1287,11 @@ html, body {
         flex-direction: row;
         margin-bottom: 2rem;
 
-        .tag-descriptor{
-          &:last-child{
-            a{
+        .tag-descriptor {
+          &:last-child {
+            a {
               color: $blue-button-color;
-              &:hover{
+              &:hover {
                 color: $default-dark-color;
               }
             }
@@ -1658,9 +1658,8 @@ html, body {
               text-transform: uppercase;
               padding: 20px;
               font-size: 14px;
-              line-height: 12px;
+              line-height: 18px;
               width: 200px;
-
 
               &:hover {
                 background-color: $default-dark-color;
@@ -1669,17 +1668,31 @@ html, body {
             }
           }
 
+
           .talk-to-seller-button {
+
             a.button, button {
-              line-height: 9px;
-              border: 1px solid $default-dark-color;
-              color: $default-dark-color;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              line-height: 8px;
+              border: 2px solid $whatsapp-teal;
+              color: $whatsapp-teal;
+              //color: $default-white-color;
               background-color: transparent;
+              padding: 15px 10px;
+
               &:hover {
                 color: $default-white-color;
-                background-color: $default-dark-color;
+                background-color: $whatsapp-teal;
                 opacity: 1;
               }
+
+              span {
+                font-size: 24px;
+                margin-right: 5px;
+              }
+
             }
 
           }
@@ -1709,7 +1722,7 @@ html, body {
           .share-btn {
             margin-top: 2em;
 
-            h3{
+            h3 {
               font-weight: bold;
               font-size: 14px;
               color: $color-medium;
@@ -2655,7 +2668,7 @@ html, body {
 
   .woocommerce-cart {
     .main-wrapper {
-      .woocommerce{
+      .woocommerce {
         background-color: darken(#fcfcfc, 2%);
         .cart-item-list {
           flex-direction: column;
@@ -2693,7 +2706,6 @@ html, body {
   }
 
 }
-
 
 @media only screen and (max-width: $phablet) {
   .shop-banner {

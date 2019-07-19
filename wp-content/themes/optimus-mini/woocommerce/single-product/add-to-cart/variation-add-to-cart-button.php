@@ -31,6 +31,6 @@
 
 <div class="talk-to-seller-button">
 	<?php $link = contact_seller_link( $product ); ?>
-    <a class="button" target="_blank" href="<?php echo $link; ?>">Message Seller</a>
+    <a class="button" target="_blank" href="<?php echo $link; ?>"><span class="icon-whatsapp"></span> WhatsApp Seller</a>
 </div>
 
