@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
 </header>
 
-<table class="shop_table woocommerce-checkout-review-order-table ui celled table">
+<table class="shop_table woocommerce-checkout-review-order-table ui unstackable celled table">
 	<thead>
 		<tr>
 			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>

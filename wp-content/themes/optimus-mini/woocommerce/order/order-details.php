@@ -38,7 +38,7 @@ if ( $show_downloads ) {
         <h2 class="woocommerce-order-details__title"><?php _e( 'Order details', 'woocommerce' ); ?></h2>
     </header>
 
-	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details ui celled table">
+	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details ui unstackable celled table">
 
 		<thead>
 			<tr>

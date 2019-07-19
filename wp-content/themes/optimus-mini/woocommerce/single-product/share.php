@@ -53,7 +53,7 @@ $email = get_option('admin_email');
             <span class="icon-email"></span>
         </a>
         <a href="#">
-            <span class="icon-link-2"></span>
+            <span class="icon-whatsapp"></span>
         </a>
 
     </div>
