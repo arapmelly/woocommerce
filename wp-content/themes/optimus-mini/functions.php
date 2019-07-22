@@ -337,32 +337,32 @@ function remove_checkout_coupon_form() {
  * @param $productID
  *
  * @return boolean
-*/
-function check_if_product_id_in_cart($productID){
-    if(!empty($productID)){
-	    $cart = WC()->cart->get_cart_contents();
+ */
+function check_if_product_id_in_cart($productID) {
+	if (!empty($productID)) {
+		$cart = WC()->cart->get_cart_contents();
 
-	    foreach ($cart as $item){
-		    $item = (object)$item;
+		foreach ($cart as $item) {
+			$item = (object) $item;
 
-	        if(isset($item->product_id) && !empty($item->product_id)){
-	            if($item->product_id == $productID){
-	                return true;
-                }
-            }
-        }
-    }
+			if (isset($item->product_id) && !empty($item->product_id)) {
+				if ($item->product_id == $productID) {
+					return true;
+				}
+			}
+		}
+	}
 
-    return false;
+	return false;
 }
 
 /**
  * Get the number of items in the shop
-*/
-function get_total_number_of_products(){
-	$args = array( 'post_type' => 'product', 'post_status' => 'publish',
-	               'posts_per_page' => -1 );
-	$products = new WP_Query( $args );
+ */
+function get_total_number_of_products() {
+	$args = array('post_type' => 'product', 'post_status' => 'publish',
+		'posts_per_page' => -1);
+	$products = new WP_Query($args);
 	return $products->found_posts;
 }
 
