@@ -25,7 +25,11 @@ if (!$product->is_purchasable()) {
 
 echo wc_get_stock_html($product); // WPCS: XSS ok.
 
-if ($product->is_in_stock()): ?>
+if (check_if_product_id_in_cart($product->get_id())) {
+	echo '<a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward">' . esc_html__('View cart', 'woocommerce') . '</a>';
+} else {
+
+	if ($product->is_in_stock()): ?>
 
 		<?php do_action('woocommerce_before_add_to_cart_form');?>
 
@@ -37,8 +41,8 @@ if ($product->is_in_stock()): ?>
 			<?php
 do_action('woocommerce_before_add_to_cart_quantity');
 
-do_action('woocommerce_after_add_to_cart_quantity');
-?>
+	do_action('woocommerce_after_add_to_cart_quantity');
+	?>
 
             <div class="actions">
                 <div class="woocommerce-variation-add-to-cart variations_button">
@@ -68,5 +72,10 @@ do_action('woocommerce_after_add_to_cart_quantity');
                     <a class="button" target="_blank" href="<?php echo $link; ?>"><span class="icon-whatsapp"></span> WhatsApp Seller</a>
                 </div>
             <?php endif;?>
+
+
+<?php }?>
+
+
 
 
