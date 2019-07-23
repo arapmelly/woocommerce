@@ -39,6 +39,54 @@ do_action('woocommerce_after_add_to_cart_quantity');
 
 <div class="talk-to-seller-button">
 	<?php $link = contact_seller_link($product);?>
-    <a class="button" target="_blank" href="<?php echo $link; ?>"><span class="icon-whatsapp"></span> WhatsApp Seller</a>
+    <a class="button" id="whatsapp_btn" target="_blank" href="<?php echo $link; ?>" style="display: none;"><span class="icon-whatsapp" ></span> WhatsApp Seller</a>
+
+    <a class="button" href="#" onclick="showForm()"><span class="icon-whatsapp"></span> WhatsApp Seller</a>
 </div>
+
+<div id="whatsapp_form" style="display: none;">
+
+
+
+
+	<form method="post" action="#">
+
+
+	<label>Name</label>
+	<input type="text" id="whatsapp_lead_name" name="whatsapp_lead_name" required>
+
+	<label>Phone</label>
+	<input type="text" id="whatsapp_lead_phone" name="whatsapp_lead_phone" required>
+
+	<label>Email</label>
+	<input type="text" id="whatsapp_lead_email" name="whatsapp_lead_email" required>
+
+	<input type="hidden" id="whatsapp_lead_product" value="<?php echo $product->get_name(); ?>" name="whatsapp_lead_product" >
+	<input type="hidden" id="whatsapp_lead_product_sku" value="<?php echo $product->get_sku(); ?>" name="whatsapp_lead_product_sku" >
+
+	<input type="submit" id="submit_whatsapp" onclick="submitForm()" name="submitWhatsapp" value="Submit">
+
+
+	</form>
+
+
+</div>
+
+<script type="text/javascript">
+
+	function showForm(){
+
+		document.getElementById('whatsapp_form').style.display = "block";
+	}
+
+
+	function submitForm(){
+
+
+		document.getElementById("whatsapp_btn").click();
+		document.getElementById('whatsapp_form').style.display = "none";
+
+	}
+</script>
+
 

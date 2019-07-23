@@ -366,4 +366,38 @@ function get_total_number_of_products() {
 	return $products->found_posts;
 }
 
+add_action('init', 'submit_whatsapp_lead');
+
+function submit_whatsapp_lead() {
+
+	if (isset($_POST['submitWhatsapp'])) {
+
+		$name = $_POST['whatsapp_lead_name'];
+		$phone = $_POST['whatsapp_lead_phone'];
+		$email = $_POST['whatsapp_lead_email'];
+		$product = $_POST['whatsapp_lead_product'];
+		$product_sku = $_POST['whatsapp_lead_product_sku'];
+		$post_type = 'whatsapp_lead';
+
+		$content = array('name' => $name, 'phone' => $phone, 'email' => $email, 'product' => $product, 'product_sku' => $product_sku);
+
+		$post_args = array(
+
+			'post_title' => $name,
+			'post_content' => json_encode($content),
+			'post_status' => 'published',
+			'post_type' => $post_type,
+
+		);
+
+// insert the post into the database
+
+		wp_insert_post($post_args);
+
+		return;
+
+	}
+
+}
+
 ?>
