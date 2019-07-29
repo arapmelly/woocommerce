@@ -400,4 +400,14 @@ function submit_whatsapp_lead() {
 
 }
 
+function is_featured_category($category) {
+
+	if (get_term_meta($category->term_taxonomy_id, '_category_is_featured', true)) {
+
+		return true;
+	} else {
+		return false;
+	}
+}
+
 ?>

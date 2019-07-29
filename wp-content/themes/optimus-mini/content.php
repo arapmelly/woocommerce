@@ -75,7 +75,9 @@
 
         <?php $cats = get_product_categories();?>
         <?php foreach ($cats as $cat) {
-		?>
+
+		if (is_featured_category($cat)) {
+			?>
             <div class="products">
                 <header class="category-header">
                     <div class="inner-wrapper">
@@ -90,29 +92,29 @@
 
                             <?php
 $query = new WC_Product_Query(array(
-			'limit' => 4,
-			'orderby' => 'date',
-			'order' => 'DESC',
-			'category' => [$cat->slug],
+				'limit' => 4,
+				'orderby' => 'date',
+				'order' => 'DESC',
+				'category' => [$cat->slug],
 
-		));
-		$products = $query->get_products();
-		$itemWidth = "";
+			));
+			$products = $query->get_products();
+			$itemWidth = "";
 
-		$productsLoopCounter = 1;
-		foreach ($products as $product) {
+			$productsLoopCounter = 1;
+			foreach ($products as $product) {
 
-			if (count($products) == 1) {
+				if (count($products) == 1) {
 
-				$itemWidth = "full-width";
-
-			} elseif (count($products) > 1) {
-				if (count($products) == 3) {
 					$itemWidth = "full-width";
-				}
-			}
 
-			if ($productsLoopCounter == count($products) && count($products) == 3) {?>
+				} elseif (count($products) > 1) {
+					if (count($products) == 3) {
+						$itemWidth = "full-width";
+					}
+				}
+
+				if ($productsLoopCounter == count($products) && count($products) == 3) {?>
 
                             <a href="<?php echo get_permalink($product->get_id()); ?>"
                                class="card <?php echo $itemWidth; ?>">
@@ -128,13 +130,13 @@ $query = new WC_Product_Query(array(
 
                                         <?php
 
-			$image = get_product_primary_image($product);
+				$image = get_product_primary_image($product);
 
-			if (!is_null($image)) {
-				$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
-			}
+				if (!is_null($image)) {
+					$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+				}
 
-			?>
+				?>
 
                                         <div class="image"
                                              style="background-image: url(<?php echo $image->medium ?>)"></div>
@@ -149,11 +151,11 @@ $query = new WC_Product_Query(array(
 
 
                                                 <?php if ($product->is_type('variable')) {
-				?>
+					?>
 
                                                     <h2 class="current-price"
                                                         id="productPrice"><?php echo get_woocommerce_currency_symbol();
-				echo get_post_meta($product->get_id(), '_price', true) ?></h2>
+					echo get_post_meta($product->get_id(), '_price', true) ?></h2>
 
                                                 <?php } else {?>
                                                     <?php if ($product->get_sale_price() <= 0) {?>
@@ -205,4 +207,4 @@ $query = new WC_Product_Query(array(
 
     </section>
 
-<?php }?>
+<?php }}?>
