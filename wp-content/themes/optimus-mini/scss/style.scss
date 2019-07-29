@@ -2606,17 +2606,14 @@ html, body {
         flex-direction: column;
 
         .product-image {
-          //min-height: 310px;
           width: 100%;
         }
 
         .product-details {
-          //margin-top: 25px;
           width: 100%;
 
           .product-name {
             font-size: 18px;
-            //font-weight: 500;
           }
 
           .section-inner-wrapper {
@@ -2658,6 +2655,7 @@ html, body {
       }
 
       .tabs {
+        padding: 0 15px;
         .styled-text {
           font-size: 14px;
           margin: 20px 0;

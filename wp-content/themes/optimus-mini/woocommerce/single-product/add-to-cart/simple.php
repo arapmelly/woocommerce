@@ -84,12 +84,17 @@ do_action('woocommerce_before_add_to_cart_quantity');
 
 
 
-<div id="whatsapp_form" style="display: none;">
+<div id="whatsapp_form"  >
 
 
+	<!-- The Modal -->
+<div id="myModal" class="modal" style="display: none;">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
 
-	<form method="post" action="#">
+    <form method="post" action="#">
 
 
 	<label>Name</label>
@@ -109,14 +114,27 @@ do_action('woocommerce_before_add_to_cart_quantity');
 
 	</form>
 
+  </div>
 
 </div>
+
+
+
+
+
+
+
+</div>
+
+
+
 
 <script type="text/javascript">
 
 	function showForm(){
 
-		document.getElementById('whatsapp_form').style.display = "block";
+		document.getElementById("myModal").style.display = "block";
+
 	}
 
 
@@ -124,8 +142,14 @@ do_action('woocommerce_before_add_to_cart_quantity');
 
 
 		document.getElementById("whatsapp_btn").click();
-		document.getElementById('whatsapp_form').style.display = "none";
+		//document.getElementById('whatsapp_form').style.display = "none";
 
+	}
+
+
+	function closeModal(){
+
+		document.getElementById("myModal").style.display = "none";
 	}
 </script>
 
