@@ -66,7 +66,7 @@ html, body {
       align-items: center;
       border-radius: 4px;
       display: inherit;
-      justify-content: center;
+      justify-content: flex-start;
       height: inherit;
       width: 50px;
     }
@@ -1668,7 +1668,6 @@ html, body {
             }
           }
 
-
           .talk-to-seller-button {
 
             a.button, button {
@@ -1985,7 +1984,7 @@ html, body {
         letter-spacing: normal;
         text-align: left;
         color: $default-dark-color;
-
+        padding: 0;
         margin: 20px 0;
         width: 70% !important;
 
@@ -2607,12 +2606,12 @@ html, body {
         flex-direction: column;
 
         .product-image {
-          min-height: 310px;
+          //min-height: 310px;
           width: 100%;
         }
 
         .product-details {
-          margin-top: 25px;
+          //margin-top: 25px;
           width: 100%;
 
           .product-name {
@@ -2625,10 +2624,27 @@ html, body {
               justify-content: space-between;
               font-size: 15px;
               .variations_button, .talk-to-seller-button {
-                width: calc(50% - 0.25em);
+                //width: calc(50% - 0.25em);
 
                 a.button, button {
                   width: 100% !important;
+                  font-size: 12px;
+                }
+              }
+
+              .variations_button {
+                width: calc(40% - 0.25em);
+
+                button {
+                  padding: 15px 0;
+                }
+              }
+
+              .talk-to-seller-button {
+                width: calc(60% - 0.25em);
+
+                a.button {
+                  padding: 10px 0;
                 }
               }
             }
