@@ -8858,7 +8858,7 @@ a.ui.card:hover,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px; }
+  padding: 0; }
   .tabs ul.tab-items li {
     background: #fff; }
     .tabs ul.tab-items li.active a {
@@ -9371,7 +9371,7 @@ html, body {
       align-items: center;
       border-radius: 4px;
       display: inherit;
-      justify-content: center;
+      justify-content: flex-start;
       height: inherit;
       width: 50px; }
     .navigation .left .logo {
@@ -10600,6 +10600,7 @@ html, body {
         letter-spacing: normal;
         text-align: left;
         color: rgba(32, 32, 32, 0.89);
+        padding: 0;
         margin: 20px 0;
         width: 70% !important; }
         .main-content .product .tabs .styled-text h2 {
@@ -10946,20 +10947,25 @@ html, body {
     .main-content .product .product-top-section {
       flex-direction: column; }
       .main-content .product .product-top-section .product-image {
-        min-height: 310px;
         width: 100%; }
       .main-content .product .product-top-section .product-details {
-        margin-top: 25px;
         width: 100%; }
         .main-content .product .product-top-section .product-details .product-name {
           font-size: 18px; }
         .main-content .product .product-top-section .product-details .section-inner-wrapper .actions {
           justify-content: space-between;
           font-size: 15px; }
-          .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button {
-            width: calc(50% - 0.25em); }
-            .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button a.button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button a.button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button button {
-              width: 100% !important; }
+          .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button a.button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button a.button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button button {
+            width: 100% !important;
+            font-size: 12px; }
+          .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button {
+            width: calc(40% - 0.25em); }
+            .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button button {
+              padding: 15px 0; }
+          .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button {
+            width: calc(60% - 0.25em); }
+            .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button a.button {
+              padding: 10px 0; }
         .main-content .product .product-top-section .product-details .section-inner-wrapper .share-btn {
           margin-top: 1em; }
     .main-content .product .tabs .styled-text {
