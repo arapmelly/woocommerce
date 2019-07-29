@@ -201,17 +201,12 @@ function auto_create_var($post_id) {
 
 		if (get_post_meta($product->get_id(), '_product_variations', true)) {
 
-			$variations = get_post_meta($product->get_id(), '_product_variations', true);
+			$variations = json_decode(get_product_variations($product));
 			if (!empty($variations)) {
 				create_product_var($product);
 			}
 
 		}
-
-		/*$variations = get_post_meta($product->get_id(), '_product_variations', true);
-			if (!empty($variations)) {
-				create_product_var($product);
-		*/
 
 	}
 }
