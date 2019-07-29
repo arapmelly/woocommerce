@@ -10968,13 +10968,15 @@ html, body {
               padding: 10px 0; }
         .main-content .product .product-top-section .product-details .section-inner-wrapper .share-btn {
           margin-top: 1em; }
-    .main-content .product .tabs .styled-text {
-      font-size: 14px;
-      margin: 20px 0;
-      width: 100% !important; }
-    .main-content .product .tabs .tabs-container .reviews .section-inner-wrapper .review-textarea form {
-      font-size: 14px;
-      width: 100%; }
+    .main-content .product .tabs {
+      padding: 0 15px; }
+      .main-content .product .tabs .styled-text {
+        font-size: 14px;
+        margin: 20px 0;
+        width: 100% !important; }
+      .main-content .product .tabs .tabs-container .reviews .section-inner-wrapper .review-textarea form {
+        font-size: 14px;
+        width: 100%; }
 
   .woocommerce-cart .main-wrapper .woocommerce {
     background-color: #f7f7f7; }
