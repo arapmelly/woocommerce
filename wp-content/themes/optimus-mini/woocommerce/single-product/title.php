@@ -88,7 +88,9 @@ if (!$short_description) {
 
         <div class="out_of_stock">
 
-         <?php if ($product->get_stock_quantity() <= 0): ?>
+
+
+         <?php if ($product->get_stock_status() == 'outofstock'): ?>
             <h5>Out of Stock</h5>
         <?php endif;?>
 
