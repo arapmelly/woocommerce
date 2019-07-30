@@ -37,7 +37,7 @@
 		<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 		<?php if ( empty( $available_variations ) && false !== $available_variations ): ?>
-            <p class="stock out-of-stock"><?php esc_html_e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
+            <!-- <p class="stock out-of-stock"><?php// esc_html_e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p> -->
 		<?php else: ?>
             <div class="variations">
 				<?php foreach ( $attributes as $attribute_name => $options ): ?>

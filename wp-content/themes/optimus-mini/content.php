@@ -104,6 +104,8 @@ $query = new WC_Product_Query(array(
 			$productsLoopCounter = 1;
 			foreach ($products as $product) {
 
+				if ($product->get_status() == 'publish') {
+
 				if (count($products) == 1) {
 
 					$itemWidth = "full-width";
@@ -195,7 +197,7 @@ $query = new WC_Product_Query(array(
                                     </a>
 
 
-                                    <?php }?>
+                                    <?php } }?>
 
                         </div> <!-- end of owl-carousel -->
                     </div> <!-- end of products slider -->

@@ -23,7 +23,7 @@ if (!$product->is_purchasable()) {
 	return;
 }
 
-echo wc_get_stock_html($product); // WPCS: XSS ok.
+//echo wc_get_stock_html($product); // WPCS: XSS ok.
 
 if (check_if_product_id_in_cart($product->get_id())) {
 	echo '<a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward">' . esc_html__('View cart', 'woocommerce') . '</a>';
