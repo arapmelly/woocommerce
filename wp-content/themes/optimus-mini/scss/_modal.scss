@@ -1,0 +1,89 @@
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 150px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+  .field {
+    font-size: 13px;
+
+    input:not([type]),
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="text"],
+    input[type="file"],
+    input[type="url"] {
+      line-height: 25px;
+    }
+
+    label {
+      margin-bottom: 5px !important;
+    }
+  }
+
+  input[type="submit"] {
+    line-height: 21px;
+    padding: 15px 20px;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 15px;
+  position: relative;
+  border-radius: 4px;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: $default-white-color;
+  font-size: 21px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  z-index: 9999999;
+  width: 30px;
+  height: 30px;
+  background-color: $default-dark-color;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close:hover,
+.close:focus {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: $tablet) {
+  .modal-content {
+    width: 93%;
+    .close {
+      font-size: 18px;
+      top: -12px;
+      right: -8px;
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+}

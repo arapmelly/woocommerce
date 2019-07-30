@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?l505iq');
-  src:  url('fonts/icomoon.eot?l505iq#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?l505iq') format('truetype'),
-  url('fonts/icomoon.woff?l505iq') format('woff'),
-  url('fonts/icomoon.svg?l505iq#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?kjdb9w');
+  src:  url('fonts/icomoon.eot?kjdb9w#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?kjdb9w') format('truetype'),
+  url('fonts/icomoon.woff?kjdb9w') format('woff'),
+  url('fonts/icomoon.svg?kjdb9w#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close-outline:before {
+  content: "\e900";
+}
 .icon-whatsapp:before {
   content: "\e914";
 }
@@ -51,47 +54,48 @@
   content: "\e90f";
 }
 .icon-store:before {
-  content: "\e900";
-}
-.icon-phone-outline:before {
   content: "\e901";
 }
-.icon-email-outline:before {
+.icon-phone-outline:before {
   content: "\e902";
 }
-.icon-search-outline:before {
+.icon-email-outline:before {
   content: "\e903";
+}
+.icon-search-outline:before {
+  content: "\e904";
 }
 .icon-clock-outline:before {
   content: "\e909";
 }
 .icon-paper-plane-outline:before {
-  content: "\e904";
-}
-.icon-chevron-up-outline:before {
   content: "\e905";
 }
-.icon-chevron-down-outline:before {
+.icon-chevron-up-outline:before {
   content: "\e906";
 }
-.icon-chevron-left-outline:before {
+.icon-chevron-down-outline:before {
   content: "\e907";
 }
-.icon-chevron-right-outline:before {
+.icon-chevron-left-outline:before {
   content: "\e908";
 }
-.icon-shopping-cart-outline:before {
+.icon-chevron-right-outline:before {
   content: "\e90a";
 }
-.icon-menu-outline:before {
+.icon-shopping-cart-outline:before {
   content: "\e90b";
 }
-.icon-star-outline:before {
+.icon-menu-outline:before {
   content: "\e90c";
 }
-.icon-star:before {
+.icon-star-outline:before {
   content: "\e90d";
 }
+.icon-star:before {
+  content: "\e916";
+}
+
 
 
 @font-face {
