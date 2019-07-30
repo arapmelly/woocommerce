@@ -34,26 +34,30 @@ global $product;
     <h3>Share This On:</h3>
 
     <div class="share-icons">
-    	<?php
-$link = get_permalink($product->get_id());
+	    <?php
+		    $link = get_permalink( $product->get_id() );
 
-$share_url = 'https://www.facebook.com/sharer/sharer.php?' . $link;
+		    $share_url = 'https://www.facebook.com/sharer/sharer.php?' . $link;
 
-$twitter_share_url = 'http://twitter.com/share?url=' . $link;
+		    $twitter_share_url = 'http://twitter.com/share?url=' . $link;
 
-$email = get_option('admin_email');
-?>
+		    $whatsapp = 'whatsapp://send?text=' . $link;
+
+		    $email = get_option( 'admin_email' );
+	    ?>
+
         <a href="<?php echo $share_url; ?>" target="_blank">
             <span class="icon-facebook"></span>
         </a>
         <a href="<?php echo $twitter_share_url; ?>" target="_blank">
             <span class="icon-twitter"></span>
         </a>
-        <a href="mailto:<?php echo $email; ?>" target="_top">
+        <a href="mailto:<?php echo $email; ?>" target="_blank">
             <span class="icon-email"></span>
         </a>
-        <a href="#">
-            <span class="icon-whatsapp"></span>
+
+        <a href="<?php echo $whatsapp; ?>" data-action="share/whatsapp/share" target="_blank">
+            <span class="icon-whatsapp" ></span>
         </a>
 
     </div>

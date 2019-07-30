@@ -313,27 +313,6 @@
         if ($('.woocommerce-notices-wrapper div').length > 0) {
             $('.woocommerce-notices-wrapper div').remove();
         }
-
-        // $(".woocommerce-notices-wrapper div").hide('blind', {}, 500)
     }, 5000);
 
-    // stickybits('.stickybits', { verticalPosition: 'bottom' });
-
-    // $('.stickybits').stickybits({
-    //     verticalPosition: 'bottom',
-    //     useStickyClasses: true,
-    //     // customVerticalPosition: true
-    // });
-
 })(jQuery);
-
-// setup bottom sticky
-// var browserWindowHeight = window.innerHeight;
-// var children = document.querySelectorAll('.stickybits');
-// for (var i = 0; i < children.length; i += 1) {
-//     var child = children[i];
-//     var childHeight = child.offsetHeight;
-//     var childPosition = browserWindowHeight - childHeight;
-//     console.log(browserWindowHeight, child, childHeight, childPosition);
-//     child.style.top = childPosition + 'px';
-// }
