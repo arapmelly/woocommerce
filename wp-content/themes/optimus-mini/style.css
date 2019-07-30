@@ -9376,6 +9376,7 @@ a.ui.card:hover,
     .modal .field label {
       margin-bottom: 5px !important; }
   .modal input[type="submit"] {
+    font-size: 12px;
     line-height: 21px;
     padding: 15px 20px; }
 
