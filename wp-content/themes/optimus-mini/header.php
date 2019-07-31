@@ -19,10 +19,10 @@
         <div class="left">
             <a href="#" title="menu toggle" class="menu actionButton toggle sidebarTrigger"><span
                         class="icon-menu-outline"></span></a>
-            <!-- <a href="<?php //echo get_site_url(); ?>" title="shop logo" class="logo">
+            <a href="<?php echo get_site_url(); ?>" title="shop logo" class="logo">
 
-                <?php //echo get_option('blogacronym'); ?>
-            </a> -->
+                <?php echo get_option('blogacronym'); ?>
+            </a>
         </div>
         <div class="right">
             <a href="<?php echo ('cart'); ?>" title="shopping cart" class="shopping-cart">
