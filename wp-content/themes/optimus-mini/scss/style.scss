@@ -641,7 +641,7 @@ html, body {
 .woocommerce-cart {
   .woocommerce {
     margin: 70px auto 0 auto;
-    width: 100%;
+    width: 60%;
     padding: 1em;
 
     .cart-item-list {
@@ -683,8 +683,8 @@ html, body {
           }
 
           .image {
-            width: 100px;
-            max-width: 100px;
+            width: 180px;
+            max-width: 180px;
           }
 
           .left-column {
@@ -706,6 +706,7 @@ html, body {
             justify-content: flex-start;
             padding: 0 1.325em;
             flex-grow: 1;
+            width: calc(100% - 180px);
 
             h1, h2, h3, h4, h5 {
               font-size: 1em;
@@ -720,7 +721,7 @@ html, body {
 
             & > * {
               flex-grow: 1;
-              //padding: .325em;
+              padding: 3px 0;
               width: 100%;
             }
 
@@ -735,12 +736,21 @@ html, body {
           }
 
           .product-quantity {
-            .quantity {
+            .item_subtotal {
+              margin-bottom: 5px;
+              .woocommerce-Price-amount amount {
+                font-size: 12px;
+                opacity: 0.6;
+
+              }
+            }
+            //.quantity {
               input {
                 height: 30px;
                 width: 35px;
+                margin-top: 15px;
               }
-            }
+            //}
           }
 
           .product-thumbnail {
@@ -809,6 +819,7 @@ html, body {
     .cart_totals {
       background-color: #f6f9fe;
       //padding: .825em;
+
 
       .priceBlock-base-priceBreakUpContainer {
         background: #fff;

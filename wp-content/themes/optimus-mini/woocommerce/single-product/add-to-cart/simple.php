@@ -73,9 +73,9 @@
             <div class="actions talk-to-seller-button">
 				<?php $link = contact_seller_link( $product ); ?>
                 <a class="button" id="whatsapp_btn" target="_blank" href="<?php echo $link; ?>"
-                   style="display: none;"><span class="icon-whatsapp"></span> WhatsApp Seller</a>
+                   style="display: none;"><span class="icon-whatsapp"></span>WhatsApp Us</a>
 
-                <a class="button" href="#" onclick="showForm()"><span class="icon-whatsapp"></span> WhatsApp Seller</a>
+                <a class="button" href="#" onclick="showForm()"><span class="icon-whatsapp"></span>WhatsApp Us</a>
             </div>
 		<?php endif; ?>
 
