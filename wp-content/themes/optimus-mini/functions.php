@@ -217,6 +217,7 @@ function create_product_var($product) {
 
 	//get product variations and delete them if they
 	if ($product->is_type('variable')) {
+
 		$childs = $product->get_children();
 
 		if (!empty($childs)) {
@@ -227,6 +228,8 @@ function create_product_var($product) {
 
 			}
 		}
+
+		wp_set_object_terms($product->get_id(), 'simple', 'product_type');
 
 	}
 
