@@ -67,7 +67,7 @@ defined('ABSPATH') || exit;
 
                 <div class="field">
                     <label for="billing_address">Delivery address</label>
-                    <textarea name="billing_address_1" id="billing_address_1" placeholder="Delivery address"></textarea>
+                    <input type="text" name="billing_address_1" id="billing_address_1" placeholder="Delivery address">
                 </div>
             </div>
         </div>
