@@ -48,16 +48,17 @@
                     <div class="woocommerce-variation-add-to-cart variations_button">
 
                         <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>"
-                                class="single_add_to_cart_button button alt">Order Now
+                                class="single_add_to_cart_button button alt">
+                            <span class="icon-shopping-bag-outline"></span>Order Now
                         </button>
                     </div>
 
                     <div class="talk-to-seller-button">
 						<?php $link = contact_seller_link( $product ); ?>
                         <a class="button" id="whatsapp_btn" target="_blank" href="<?php echo $link; ?>"
-                           style="display: none;"><span class="icon-whatsapp"></span> WhatsApp Seller</a>
+                           style="display: none;"><span class="icon-whatsapp"></span>WhatsApp Us</a>
 
-                        <a class="button" onclick="showForm()"><span class="icon-whatsapp"></span> WhatsApp Seller</a>
+                        <a class="button" onclick="showForm()"><span class="icon-whatsapp"></span>WhatsApp Us</a>
                     </div>
 
                 </div>
@@ -104,17 +105,17 @@
                     <input type="text" id="whatsapp_lead_phone" name="whatsapp_lead_phone" required>
                 </div>
 
-                <div class="field">
-                    <label for="whatsapp_lead_email">Email</label>
-                    <input type="text" id="whatsapp_lead_email" name="whatsapp_lead_email" required>
-                </div>
+<!--                <div class="field">-->
+<!--                    <label for="whatsapp_lead_email">Email</label>-->
+<!--                    <input type="text" id="whatsapp_lead_email" name="whatsapp_lead_email" required>-->
+<!--                </div>-->
 
                 <input type="hidden" id="whatsapp_lead_product" value="<?php echo $product->get_name(); ?>"
                        name="whatsapp_lead_product">
                 <input type="hidden" id="whatsapp_lead_product_sku" value="<?php echo $product->get_sku(); ?>"
                        name="whatsapp_lead_product_sku">
 
-                <input type="submit" id="submit_whatsapp" class="button" onclick="submitForm()" name="submitWhatsapp" value="Submit">
+                <input type="submit" id="submit_whatsapp" class="button" onclick="submitForm()" name="submitWhatsapp" value="WhatsApp Us">
 
 
             </form>
