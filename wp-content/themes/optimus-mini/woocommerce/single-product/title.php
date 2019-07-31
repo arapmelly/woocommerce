@@ -38,22 +38,22 @@ if (!$short_description) {
 
         <h1 class="product-name"><?php echo $product->get_name(); ?></h1>
 
-		<?php if ($average < 3) {?>
+		<?php //if ($average < 3) {?>
 
             <div class="product-meta">
                 <div class="rating-widget">
                     <div class="stars" data-score="<?php echo $average; ?>"></div>
                 </div>
-                <div class="orders-made">
-                    <div class="num-rating tag-descriptor"><?php echo $average; ?> <span
-                                class="total-reviews">(<?php echo $review_count; ?> Reviews)</span></div>
-                    <div class="tag-descriptor"><?php echo $rating_count; ?> <span
+                <!-- <div class="orders-made">
+                    <div class="num-rating tag-descriptor"><?php //echo $average; ?> <span
+                                class="total-reviews">(<?php //echo $review_count; ?> Reviews)</span></div>
+                    <div class="tag-descriptor"><?php //echo $rating_count; ?> <span
                                 class="total-reviews">Orders made</span></div>
-                </div>
+                </div> -->
             </div>
 
 
-		<?php }?>
+		<?php// }?>
 
 
         <div class="price">
@@ -87,7 +87,9 @@ if (!$short_description) {
         </div>
 
         <div class="payment_terms">
+            <?php if (get_post_meta($product->get_id(), '_product_payment_terms', true)) {?>
             <p><b>Payment Terms:</b> <?php echo get_product_payment_terms($product); ?></p>
+        <?php }?>
 
         </div>
 
