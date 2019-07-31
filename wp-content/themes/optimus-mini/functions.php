@@ -391,11 +391,11 @@ function submit_whatsapp_lead() {
 
 	if (isset($_POST['submitWhatsapp'])) {
 
-		$name = $_POST['whatsapp_lead_name'];
-		$phone = $_POST['whatsapp_lead_phone'];
-		$email = $_POST['whatsapp_lead_email'];
-		$product = $_POST['whatsapp_lead_product'];
-		$product_sku = $_POST['whatsapp_lead_product_sku'];
+		$name = (isset($_POST['whatsapp_lead_name'])) ? $_POST['whatsapp_lead_name'] : '';
+		$phone = (isset($_POST['whatsapp_lead_phone'])) ? $_POST['whatsapp_lead_phone'] : '';
+		$email = (isset($_POST['whatsapp_lead_email'])) ? $_POST['whatsapp_lead_email'] : '';
+		$product = (isset($_POST['whatsapp_lead_product'])) ? $_POST['whatsapp_lead_product'] : '';
+		$product_sku = (isset($_POST['whatsapp_lead_product_sku'])) ? $_POST['whatsapp_lead_product_sku'] : '';
 		$post_type = 'whatsapp_lead';
 
 		$content = array('name' => $name, 'phone' => $phone, 'email' => $email, 'product' => $product, 'product_sku' => $product_sku);
