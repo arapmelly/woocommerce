@@ -132,23 +132,17 @@ do_action('woocommerce_before_add_to_cart_quantity');
 <script type="text/javascript">
 
     function showForm() {
-
         document.getElementById("myModal").style.display = "block";
-
     }
 
 
     function submitForm() {
-
-
         document.getElementById("whatsapp_btn").click();
         //document.getElementById('whatsapp_form').style.display = "none";
-
     }
 
 
     function closeModal() {
-
         document.getElementById("myModal").style.display = "none";
     }
 </script>
