@@ -127,6 +127,15 @@
         event.preventDefault();
         event.stopPropagation();
 
+        // console.log('----', this);
+        //
+        // if($sidebar.hasClass('inactive')){
+        //     $sidebar.removeClass('inactive');
+        //
+        // }else if(!$sidebar.hasClass('inactive')) {
+        //     $('#sidebar').addClass('inactive');
+        // }
+
         // Toggle.
         $sidebar.toggleClass('inactive');
     });
