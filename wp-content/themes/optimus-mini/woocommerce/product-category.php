@@ -43,11 +43,11 @@ if (!is_null($image)) {
     <div class="content">
         <div class="header"><?php echo $product->get_name(); ?></div>
         <div class="meta">
-			<?php
-if ($term = get_term_by('id', $product->get_id(), 'product_cat')) {
-	echo $term->name;
-}
-?>
+	        <?php
+		        if ( $term = get_term_by( 'id', $product->get_id(), 'product_cat' ) ) {
+			        echo $term->name;
+		        }
+	        ?>
         </div>
     </div>
 
@@ -56,8 +56,8 @@ if ($term = get_term_by('id', $product->get_id(), 'product_cat')) {
             <div class="header price">
 
 
-                                                 <?php if ($product->is_type('variable')) {
-	?>
+	            <?php if ( $product->is_type( 'variable' ) ) {
+		            ?>
 
                 <h2 class="current-price" id="productPrice"><?php echo get_woocommerce_currency_symbol();
 	echo get_post_meta($product->get_id(), '_price', true) ?></h2>
