@@ -1,39 +1,39 @@
 <?php
-	/**
-	 * Single Product tabs
-	 *
-	 * This template can be overridden by copying it to yourtheme/woocommerce/single-product/tabs/tabs.php.
-	 *
-	 * HOWEVER, on occasion WooCommerce will need to update template files and you
-	 * (the theme developer) will need to copy the new files to your theme to
-	 * maintain compatibility. We try to do this as little as possible, but it does
-	 * happen. When this occurs the version of the template file will be bumped and
-	 * the readme will list any important changes.
-	 *
-	 * @see    https://docs.woocommerce.com/document/template-structure/
-	 * @package WooCommerce/Templates
-	 * @version 2.4.0
-	 */
+/**
+ * Single Product tabs
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product/tabs/tabs.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see    https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates
+ * @version 2.4.0
+ */
 
-	if ( ! defined( 'ABSPATH' ) ) {
-		exit;
-	}
+if (!defined('ABSPATH')) {
+	exit;
+}
 
-	/**
-	 * Filter tabs and allow third parties to add their own.
-	 *
-	 * Each tab is an array containing title, callback and priority.
-	 * @see woocommerce_default_product_tabs()
-	 */
+/**
+ * Filter tabs and allow third parties to add their own.
+ *
+ * Each tab is an array containing title, callback and priority.
+ * @see woocommerce_default_product_tabs()
+ */
 
-	global $post;
-	global $product;
+global $post;
+global $product;
 
-	$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
+$short_description = apply_filters('woocommerce_short_description', $post->post_excerpt);
 
-	if ( ! $short_description ) {
-		return;
-	}
+if (!$short_description) {
+	return;
+}
 
 ?>
 
@@ -42,7 +42,7 @@
 
     <ul class="tab-items">
         <li><a href="#tab-1">Overview</a></li>
-        <li><a href="#tab-2">Details</a></li>
+        <li><a href="#tab-2">Additional Information</a></li>
         <li><a href="#tab-3">Reviews</a></li>
     </ul>
 
@@ -51,14 +51,31 @@
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                     ?></p>
             </div>
         </div>
+
         <div id="tab-2">
             <div class="styled-text section-inner-wrapper">
-                <p><?php echo $product->get_description(); // WPCS: XSS ok.                                                                ?></p>
+
+                 <p><b>Warranty Information</b></p>
+                <?php if (get_post_meta($product->get_id(), '_product_warranty_information', true)) {?>
+                <p><?php echo get_post_meta($product->get_id(), '_product_warranty_information', true); ?></p>
+            <?php } else {?>
+                <p> No warranty information </p>
+            <?php }?>
+
+                <p><b>Return Policy</b></p>
+                <?php if (get_post_meta($product->get_id(), '_product_return_policy', true)) {?>
+                <p><?php echo get_post_meta($product->get_id(), '_product_return_policy', true); ?></p>
+            <?php } else {?>
+                <p> No return Policy </p>
+            <?php }?>
+
+
             </div>
         </div>
+
         <div id="tab-3">
             <div class="reviews">
 
@@ -78,9 +95,9 @@
 
                 <div class="section-inner-wrapper">
 
-					<?php $reviews = get_approved_comments( $product->get_id() ); ?>
+					<?php $reviews = get_approved_comments($product->get_id());?>
 
-					<?php foreach ( $reviews as $review ) { ?>
+					<?php foreach ($reviews as $review) {?>
 
                         <div class="item-review">
                             <!--
@@ -103,7 +120,7 @@
 
                         </div>
 
-					<?php } ?>
+					<?php }?>
 
 
                     <!-- <div class="review-textarea">
