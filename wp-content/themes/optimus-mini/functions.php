@@ -409,4 +409,10 @@ function is_featured_category($category) {
 	}
 }
 
+function get_product_payment_terms($product) {
+
+	return get_post_meta($product->get_id(), '_product_payment_terms', true);
+
+}
+
 ?>
