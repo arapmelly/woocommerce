@@ -62,7 +62,7 @@
                     <span class="opener">Categories</span>
                     <ul>
                         <li>
-                                <a href="shop">All</a>
+                                <a href="<?php echo get_site_url() . '/shop'; ?>">All</a>
                             </li>
 
                         <?php $cats = get_product_categories();?>
