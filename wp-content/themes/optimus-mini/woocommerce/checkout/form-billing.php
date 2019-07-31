@@ -61,6 +61,18 @@ defined('ABSPATH') || exit;
                     <input type="text" name="billing_email" id="billing_email" placeholder="Email address">
                 </div>
             </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label for="billing_city">City</label>
+                    <input type="text" name="billing_city" id="billing_city" placeholder="City">
+                </div>
+
+                <div class="field">
+                    <label for="billing_address">Delivery address</label>
+                    <textarea name="billing_address" id="billing_address" placeholder="Delivery address"></textarea>
+                </div>
+            </div>
         </div>
 
 
