@@ -26,15 +26,18 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
             <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
 
             <!-- shop prducts count -->
-            <div class="orders-made">
-                <?php if (get_option('blogindustry')) {?>
+
+            <?php if (get_option('blogdescription')) {?>
                 <div class="tag-descriptor">
-                    <span><?php echo get_option('blogindustry'); ?></span>
+                    <p><?php echo get_option('blogdescription'); ?></p>
                 </div>
                 <?php }?>
+
+            <div class="orders-made">
+
                 <div class="tag-descriptor">
 
-                    <span><?php echo '+' . get_option('blogprimaryphonenumber'); ?></span>
+                    <p><?php echo '+' . get_option('blogprimaryphonenumber'); ?></p>
                 </div>
             </div>
             <!-- end shop prducts count -->

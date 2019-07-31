@@ -58,6 +58,10 @@
                 <li>
                     <span class="opener">Categories</span>
                     <ul>
+                        <li>
+                                <a href="shop">All</a>
+                            </li>
+
                         <?php $cats = get_product_categories();?>
                         <?php foreach ($cats as $cat) {?>
                             <?php if ($cat->name != 'Uncategorized') {?>
