@@ -10548,6 +10548,22 @@ html, body {
               text-decoration: line-through;
               padding-left: 1rem;
               font-weight: 400; }
+          .main-content .product .product-top-section .product-details .section-inner-wrapper .payment_terms {
+            font-size: 12px; }
+            .main-content .product .product-top-section .product-details .section-inner-wrapper .payment_terms p {
+              font-size: 1.15em;
+              font-weight: 300;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.6363636364;
+              letter-spacing: normal;
+              text-align: left;
+              color: rgba(32, 32, 32, 0.89);
+              margin-bottom: 2rem; }
+              .main-content .product .product-top-section .product-details .section-inner-wrapper .payment_terms p > * {
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit; }
           .main-content .product .product-top-section .product-details .section-inner-wrapper .poduct-desc {
             font-size: 12px; }
             .main-content .product .product-top-section .product-details .section-inner-wrapper .poduct-desc p {
