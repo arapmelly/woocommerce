@@ -25,7 +25,9 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
             <!-- shop name -->
             <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
 
+
             <!-- shop prducts count -->
+
 
             <?php if (get_option('blogdescription')) {?>
                 <div class="tag-descriptor">
@@ -33,29 +35,44 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                 </div>
                 <?php }?>
 
-            <div class="orders-made">
 
-                <div class="tag-descriptor">
 
-                    <p><?php echo '+' . get_option('blogprimaryphonenumber'); ?></p>
+
+
+
+            <!-- end shop products count -->
+
+            <div class="sec-rating-shop-contact">
+                <!-- reviews count -->
+	            <?php //if (get_reviews_count() < 10): ?>
+
+                <div class="rating-widget">
+                    <div class="stars" data-score="4.5"></div>
+                    <div class="num-rating tag-descriptor"><?php echo get_reviews_count(); ?> Ratings
+<!--                        <span class="total-reviews">(--><?php //echo get_reviews_count(); ?><!-- Ratings)</span>-->
+                    </div>
+
+                </div>
+
+	            <?php //endif; // end of reviews count if block ?>
+                <!-- end of reviews count -->
+
+                <div class="share-btn">
+                    <div class="share-icons">
+			            <?php
+
+$link = get_option('blogprimaryphonenumber');
+
+$call_shop = 'tel:+' . $link;
+
+?>
+
+                        <a href="<?php echo $call_shop; ?>">
+                            <span class="icon-phone-outline"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <!-- end shop prducts count -->
-
-            <!-- reviews count -->
-            <?php //if (get_reviews_count() < 10): ?>
-
-            <div class="rating-widget">
-                <div class="stars" data-score="4.5"></div>
-                <div class="num-rating tag-descriptor">4.25 <span
-                            class="total-reviews">(<?php echo get_reviews_count(); ?> Reviews)</span></div>
-            </div>
-
-
-
-
-            <?php //endif; // end of reviews count if block ?>
-            <!-- end of reviews count -->
 
         </div> <!-- /end of inner wrapper div -->
 
@@ -64,11 +81,11 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 
     <section class="products-by-category">
 
-        <?php
+	    <?php
 $cats = get_product_categories();
 foreach ($cats as $cat) {
 	?>
-        <?php if (is_featured_category($cat)): ?>
+			    <?php if (is_featured_category($cat)): ?>
 
         <div class="products">
 

@@ -86,9 +86,11 @@ if (!$short_description) {
 
         </div>
 
+        <?php if (get_post_meta($product->get_id(), '_product_payment_terms', true)) {?>
         <div class="payment_terms">
             <p><b>Payment Terms:</b> <?php echo get_product_payment_terms($product); ?></p>
         </div>
+    <?php }?>
 
         <div class="out_of_stock">
 

@@ -5718,7 +5718,7 @@ input[type=email], input[type=password], input[type=search], input[type=text] {
   -ms-transform: scaleX(-1);
   transform: scaleX(-1);
   color: #7f888f;
-  content: '\e903';
+  content: '\e904';
   cursor: default;
   display: block;
   font-size: 1.5em;
@@ -10296,14 +10296,47 @@ html, body {
       color: #202020;
       font-weight: 300;
       font-size: 1.2em;
-      line-height: 1.2em; }
-    .main-content .business-details .section-inner-wrapper .rating-widget {
-      align-items: center;
+      line-height: 1.2em;
+      margin-bottom: 5px; }
+    .main-content .business-details .section-inner-wrapper .business-category {
+      color: #202020;
+      font-size: 15px;
+      font-weight: 300; }
+    .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact {
       display: flex;
-      flex-direction: row;
-      margin-bottom: 2rem; }
-      .main-content .business-details .section-inner-wrapper .rating-widget div:first-child {
-        margin-right: 3rem; }
+      align-items: center;
+      align-content: center; }
+      .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact .share-btn h3 {
+        font-weight: bold;
+        font-size: 14px;
+        color: #202020; }
+      .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact .share-btn .share-icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start; }
+        .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact .share-btn .share-icons a {
+          border: 1px solid rgba(32, 32, 32, 0.89);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          justify-items: center;
+          padding: 1em;
+          margin-right: .5em;
+          height: 25px;
+          width: 25px; }
+          .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact .share-btn .share-icons a:last-child {
+            margin: 0; }
+          .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact .share-btn .share-icons a:hover {
+            border-color: #4971ff;
+            color: #4971ff; }
+      .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact .rating-widget {
+        align-items: center;
+        display: flex;
+        flex-direction: row; }
+        .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact .rating-widget div:first-child {
+          margin-right: 2rem; }
     .main-content .business-details .section-inner-wrapper .orders-made {
       align-items: center;
       display: flex;
@@ -10515,6 +10548,22 @@ html, body {
               text-decoration: line-through;
               padding-left: 1rem;
               font-weight: 400; }
+          .main-content .product .product-top-section .product-details .section-inner-wrapper .payment_terms {
+            font-size: 12px; }
+            .main-content .product .product-top-section .product-details .section-inner-wrapper .payment_terms p {
+              font-size: 1.15em;
+              font-weight: 300;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.6363636364;
+              letter-spacing: normal;
+              text-align: left;
+              color: rgba(32, 32, 32, 0.89);
+              margin-bottom: 2rem; }
+              .main-content .product .product-top-section .product-details .section-inner-wrapper .payment_terms p > * {
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit; }
           .main-content .product .product-top-section .product-details .section-inner-wrapper .poduct-desc {
             font-size: 12px; }
             .main-content .product .product-top-section .product-details .section-inner-wrapper .poduct-desc p {
