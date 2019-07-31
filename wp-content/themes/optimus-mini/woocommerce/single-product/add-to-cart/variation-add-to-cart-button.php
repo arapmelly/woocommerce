@@ -55,6 +55,10 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()"><span class="icon-close-outline"></span></span>
 
+            <header>
+                <h3>Hello there! <br><span>Kindly give us your details to follow up your inquiry. Thank you.</span></h3>
+            </header>
+
             <form method="post" class="ui form" action="#">
 
                 <div class="field">
