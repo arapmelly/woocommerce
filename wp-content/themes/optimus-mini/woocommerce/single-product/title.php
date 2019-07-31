@@ -88,12 +88,9 @@ if (!$short_description) {
 
         <div class="payment_terms">
             <p><b>Payment Terms:</b> <?php echo get_product_payment_terms($product); ?></p>
-
         </div>
 
         <div class="out_of_stock">
-
-
 
          <?php if ($product->get_stock_status() == 'outofstock'): ?>
             <h5>Out of Stock</h5>
@@ -105,11 +102,12 @@ if (!$short_description) {
 
         <div class="poduct-desc">
 
-            <p><?php
-echo wp_trim_words($product->get_short_description(), 20, ' <a href="#tabs" class="scroll-to">[...]</a>');
-?>
+            <p>
+	            <?php
+		            echo wp_trim_words( $product->get_short_description(), 20, ' <a href="#tabs" class="scroll-to">[...]</a>' );
+	            ?>
             </p>
-            <!--            <p>--><?php //echo $product->get_short_description(); // WPCS: XSS ok.?><!--</p>-->
+            <!-- <p>--><?php //echo $product->get_short_description(); // WPCS: XSS ok.?><!--</p>-->
         </div>
 
 
