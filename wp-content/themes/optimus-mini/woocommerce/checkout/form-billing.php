@@ -27,7 +27,7 @@ defined('ABSPATH') || exit;
 
 	<?php else: ?>
         <header>
-            <h3><?php esc_html_e('Billing details', 'woocommerce');?></h3>
+            <h3><?php esc_html_e('Delivery Details', 'woocommerce');?></h3>
         </header>
 
 	<?php endif;?>
@@ -67,7 +67,7 @@ defined('ABSPATH') || exit;
 
                 <div class="field">
                     <label for="billing_address">Delivery address</label>
-                    <textarea name="billing_address" id="billing_address" placeholder="Delivery address"></textarea>
+                    <textarea name="billing_address_1" id="billing_address_1" placeholder="Delivery address"></textarea>
                 </div>
             </div>
         </div>

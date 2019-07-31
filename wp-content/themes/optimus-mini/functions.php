@@ -144,6 +144,8 @@ function custom_override_checkout_fields($fields) {
 	//unset($fields['account']['account_username']);
 	//unset($fields['account']['account_password']);
 	//unset($fields['account']['account_password-2']);
+
+	$fields['billing']['billing_email']['required'] = false;
 	return $fields;
 }
 
