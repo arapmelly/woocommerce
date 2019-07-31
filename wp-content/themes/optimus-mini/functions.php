@@ -145,7 +145,7 @@ function custom_override_checkout_fields($fields) {
 	//unset($fields['account']['account_password']);
 	//unset($fields['account']['account_password-2']);
 
-	$fields['billing']['billing_email']['required'] = false;
+	//$fields['billing']['billing_email']['required'] = false;
 	return $fields;
 }
 
@@ -214,6 +214,21 @@ function auto_create_var($post_id) {
 }
 
 function create_product_var($product) {
+
+	//get product variations and delete them if they
+	if ($product->is_type('variable')) {
+		$childs = $product->get_children();
+
+		if (!empty($childs)) {
+
+			foreach ($childs as $child_id) {
+
+				wp_delete_post($child_id);
+
+			}
+		}
+
+	}
 
 	//set the product as a variable
 	wp_set_object_terms($product->get_id(), 'variable', 'product_type');
@@ -415,6 +430,13 @@ function get_product_payment_terms($product) {
 
 	return get_post_meta($product->get_id(), '_product_payment_terms', true);
 
+}
+
+function get_published_product_variations($product) {
+
+	$variations = $product->get_available_variations();
+
+	return $variations;
 }
 
 ?>
