@@ -47,7 +47,7 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 	            <?php //if (get_reviews_count() < 10): ?>
 
                 <div class="rating-widget">
-                    <div class="stars" data-score="4.5"></div>
+                    <div class="stars" data-score="0"></div>
                     <div class="num-rating tag-descriptor"><?php echo get_reviews_count(); ?> Ratings
 <!--                        <span class="total-reviews">(--><?php //echo get_reviews_count(); ?><!-- Ratings)</span>-->
                     </div>
@@ -102,29 +102,27 @@ foreach ($cats as $cat) {
                         <!-- start of ui div -->
                         <div class="ui link cards">
 	                        <?php
-		                        $query               = new WC_Product_Query( array(
-			                        'limit'    => 4,
-			                        'orderby'  => 'date',
-			                        'order'    => 'DESC',
-			                        'status'   => 'publish',
-			                        'category' => [ $cat->slug ]
-		                        ) );
-		                        $products            = $query->get_products();
-		                        $itemWidth           = "";
-		                        $productsLoopCounter = 1;
-		                        foreach ( $products
-
-		                        as $product ) {
-	                        ?>
+$query = new WC_Product_Query(array(
+		'limit' => 4,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'status' => 'publish',
+		'category' => [$cat->slug],
+	));
+	$products = $query->get_products();
+	$itemWidth = "";
+	$productsLoopCounter = 1;
+	foreach ($products as $product) {
+		?>
 	                        <?php
-		                        if ( count( $products ) == 1 ) {
-			                        $itemWidth = "full-width";
-		                        } elseif ( count( $products ) > 1 ) {
-			                        if ( count( $products ) == 3 ) {
-				                        $itemWidth = "full-width";
-			                        }
-		                        }
-	                        ?>
+if (count($products) == 1) {
+			$itemWidth = "full-width";
+		} elseif (count($products) > 1) {
+			if (count($products) == 3) {
+				$itemWidth = "full-width";
+			}
+		}
+		?>
 
                             <?php if ($productsLoopCounter == count($products) && count($products) == 3) {?>
 
@@ -137,11 +135,11 @@ foreach ($cats as $cat) {
                             <?php } // end of product loop else if block ?>
 
 	                                <?php
-		                                $image = get_product_primary_image( $product );
-		                                if ( ! is_null( $image ) ) {
-			                                $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
-		                                }
-	                                ?>
+$image = get_product_primary_image($product);
+		if (!is_null($image)) {
+			$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+		}
+		?>
                             <div class="image" style="background-image: url(<?php echo $image->medium ?>)">
 
                             </div> <!-- end of image div -->
