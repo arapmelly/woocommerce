@@ -25,17 +25,20 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
             <!-- shop name -->
             <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
 
-	        <?php if (get_option('blogindustry')) {?>
+
             <!-- shop prducts count -->
 
-                <h2 class="business-category"><?php echo get_option('blogindustry'); ?></h2>
 
-<!--            <div class="orders-made">-->
-<!--                <div class="tag-descriptor">-->
-<!--                    <span>--><?php //echo get_option('blogindustry'); ?><!--</span>-->
-<!--                </div>-->
-<!--            </div>-->
-	        <?php }?>
+            <?php if (get_option('blogdescription')) {?>
+                <div class="tag-descriptor">
+                    <p><?php echo get_option('blogdescription'); ?></p>
+                </div>
+                <?php }?>
+
+
+
+
+
 
             <!-- end shop products count -->
 
@@ -48,6 +51,7 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                     <div class="num-rating tag-descriptor"><?php echo get_reviews_count(); ?> Ratings
 <!--                        <span class="total-reviews">(--><?php //echo get_reviews_count(); ?><!-- Ratings)</span>-->
                     </div>
+
                 </div>
 
 	            <?php //endif; // end of reviews count if block ?>
@@ -57,11 +61,11 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                     <div class="share-icons">
 			            <?php
 
-				            $link = get_option('blogprimaryphonenumber');
+$link = get_option('blogprimaryphonenumber');
 
-				            $call_shop = 'tel:+' . $link;
+$call_shop = 'tel:+' . $link;
 
-			            ?>
+?>
 
                         <a href="<?php echo $call_shop; ?>">
                             <span class="icon-phone-outline"></span>
@@ -78,9 +82,10 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
     <section class="products-by-category">
 
 	    <?php
-		    $cats = get_product_categories();
-		    foreach ( $cats as $cat ) { ?>
-			    <?php if ( is_featured_category( $cat ) ): ?>
+$cats = get_product_categories();
+foreach ($cats as $cat) {
+	?>
+			    <?php if (is_featured_category($cat)): ?>
 
         <div class="products">
 

@@ -40,8 +40,11 @@
 
         <!-- Search -->
         <section id="search" class="alt">
-            <form method="post" action="#">
-                <input type="text" name="query" id="query" placeholder="Search" />
+            <form method="post" action="<?php echo home_url('/'); ?>">
+
+                <input type="text" name="s" placeholder="What you are looking for?" value="<?php the_search_query();?>">
+    <input type="hidden" name="post_type" value="product">
+
             </form>
         </section>
 
@@ -58,6 +61,10 @@
                 <li>
                     <span class="opener">Categories</span>
                     <ul>
+                        <li>
+                                <a href="shop">All</a>
+                            </li>
+
                         <?php $cats = get_product_categories();?>
                         <?php foreach ($cats as $cat) {?>
                             <?php if ($cat->name != 'Uncategorized') {?>
