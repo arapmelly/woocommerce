@@ -9418,6 +9418,13 @@ a.ui.card:hover,
   position: relative;
   border-radius: 4px;
   width: 80%; }
+  .modal-content header {
+    font-size: 14px; }
+    .modal-content header h3 {
+      font-weight: 400;
+      font-size: 1em; }
+      .modal-content header h3 span {
+        font-size: .9em; }
 
 /* The Close Button */
 .close {
@@ -11020,7 +11027,7 @@ html, body {
       text-align: left;
       font-size: 12px; }
       .main-content .products-category .section-inner-wrapper .cards .card .content .header {
-        font-weight: normal; }
+        font-weight: 300; }
     .main-content .products-category .section-inner-wrapper .cards .card .price-discount {
       display: flex;
       flex-direction: row;

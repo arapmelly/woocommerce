@@ -94,7 +94,7 @@ if (!$short_description) {
 
         <div class="out_of_stock">
 
-         <?php if ($product->get_stock_status() == 'outofstock'): ?>
+         <?php if (!$product->is_in_stock()): ?>
             <h5>Out of Stock</h5>
         <?php endif;?>
 
@@ -111,8 +111,6 @@ echo wp_trim_words($product->get_short_description(), 20, ' <a href="#tabs" clas
             </p>
             <!-- <p>--><?php //echo $product->get_short_description(); // WPCS: XSS ok.?><!--</p>-->
         </div>
-
-
 
 		<?php do_action('woocommerce_after_add_to_cart_button');?>
 
