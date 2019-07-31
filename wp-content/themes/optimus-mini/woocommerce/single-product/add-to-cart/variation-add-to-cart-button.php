@@ -25,7 +25,7 @@
 			do_action( 'woocommerce_after_add_to_cart_quantity' );
 		?>
 
-        <button type="submit" class="single_add_to_cart_button button alt">Order Now</button>
+        <button type="submit" class="single_add_to_cart_button button alt"><span class="icon-shopping-bag-outline"></span>Order Now</button>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 
@@ -67,17 +67,17 @@
                     <input type="text" id="whatsapp_lead_phone" name="whatsapp_lead_phone" required>
                 </div>
 
-                <div class="field">
-                    <label for="whatsapp_lead_email">Email</label>
-                    <input type="text" id="whatsapp_lead_email" name="whatsapp_lead_email" required>
-                </div>
+<!--                <div class="field">-->
+<!--                    <label for="whatsapp_lead_email">Email</label>-->
+<!--                    <input type="text" id="whatsapp_lead_email" name="whatsapp_lead_email" required>-->
+<!--                </div>-->
 
                 <input type="hidden" id="whatsapp_lead_product" value="<?php echo $product->get_name(); ?>"
                        name="whatsapp_lead_product">
                 <input type="hidden" id="whatsapp_lead_product_sku" value="<?php echo $product->get_sku(); ?>"
                        name="whatsapp_lead_product_sku">
 
-                <input type="submit" id="submit_whatsapp" class="button" onclick="submitForm()" name="submitWhatsapp" value=" WhatsApp Seller">
+                <input type="submit" id="submit_whatsapp" class="button" onclick="submitForm()" name="submitWhatsapp" value="WhatsApp Us">
 
 
             </form>
