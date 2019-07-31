@@ -20,8 +20,7 @@
             <a href="#" title="menu toggle" class="menu actionButton toggle sidebarTrigger"><span
                         class="icon-menu-outline"></span></a>
             <a href="<?php echo get_site_url(); ?>" title="shop logo" class="logo">
-
-                <?php echo get_option('blogacronym'); ?>
+		        <?php echo get_option( 'blogacronym' ); ?>
             </a>
         </div>
         <div class="right">
@@ -62,7 +61,7 @@
                     <span class="opener">Categories</span>
                     <ul>
                         <li>
-                                <a href="<?php echo get_site_url() . '/shop'; ?>">All</a>
+                                <a href="shop">All</a>
                             </li>
 
                         <?php $cats = get_product_categories();?>
