@@ -25,37 +25,33 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
             <!-- shop name -->
             <h1 class="business-name"><?php echo get_option('blogname'); ?></h1>
 
-            <!-- shop prducts count --> 
+            <!-- shop prducts count -->
             <div class="orders-made">
+                <?php if (get_option('blogindustry')) {?>
                 <div class="tag-descriptor">
-                    <?php echo get_total_number_of_products(); ?>
-                    <span class="total-reviews">Products</span>
+                    <span><?php echo get_option('blogindustry'); ?></span>
                 </div>
+                <?php }?>
                 <div class="tag-descriptor">
-                    <a href="contact">Contact Shop</a>
+
+                    <span><?php echo '+' . get_option('blogprimaryphonenumber'); ?></span>
                 </div>
             </div>
-            <!-- end shop prducts count --> 
+            <!-- end shop prducts count -->
 
             <!-- reviews count -->
-            <?php if (get_reviews_count() >= 100) : ?>
+            <?php //if (get_reviews_count() < 10): ?>
 
             <div class="rating-widget">
                 <div class="stars" data-score="4.5"></div>
                 <div class="num-rating tag-descriptor">4.25 <span
                             class="total-reviews">(<?php echo get_reviews_count(); ?> Reviews)</span></div>
             </div>
-            <div class="orders-made">
-                <div class="tag-descriptor"><?php echo get_total_orders('complete'); ?> <span
-                            class="total-reviews">Orders made</span>
-                </div>
-                <div class="tag-descriptor"><?php echo get_total_orders('on-hold'); ?> <span
-                            class="total-reviews">Deliveries made</span>
-                </div>
-            </div>
 
 
-            <?php endif; // end of reviews count if block ?>
+
+
+            <?php //endif; // end of reviews count if block ?>
             <!-- end of reviews count -->
 
         </div> <!-- /end of inner wrapper div -->
@@ -65,11 +61,11 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 
     <section class="products-by-category">
 
-        <?php 
-            $cats = get_product_categories();
-            foreach($cats as $cat) {
-        ?>
-        <?php if (is_featured_category($cat)) : ?>
+        <?php
+$cats = get_product_categories();
+foreach ($cats as $cat) {
+	?>
+        <?php if (is_featured_category($cat)): ?>
 
         <div class="products">
 
@@ -86,38 +82,38 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                         <!-- start of ui div -->
                         <div class="ui link cards">
                         <?php
-                        $query = new WC_Product_Query(array('limit' => 4,'orderby' => 'date','order' => 'DESC', 'status'=>'publish','category' => [$cat->slug],));
-                        $products = $query->get_products();
-                        $itemWidth = "";
-                        $productsLoopCounter = 1;
-                        foreach($products as $product) { 
-                        ?>
-                            <?php  
-                                if (count($products) == 1) { 
-                                    $itemWidth = "full-width"; 
-                                } elseif (count($products) > 1) {
-                                    if (count($products) == 3) {
-                                        $itemWidth = "full-width";
-                                    }
-                                }
-                            ?>
+$query = new WC_Product_Query(array('limit' => 4, 'orderby' => 'date', 'order' => 'DESC', 'status' => 'publish', 'category' => [$cat->slug]));
+	$products = $query->get_products();
+	$itemWidth = "";
+	$productsLoopCounter = 1;
+	foreach ($products as $product) {
+		?>
+                            <?php
+if (count($products) == 1) {
+			$itemWidth = "full-width";
+		} elseif (count($products) > 1) {
+			if (count($products) == 3) {
+				$itemWidth = "full-width";
+			}
+		}
+		?>
 
-                            <?php if ($productsLoopCounter == count($products) && count($products) == 3) { ?>
+                            <?php if ($productsLoopCounter == count($products) && count($products) == 3) {?>
 
                                 <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>">
 
-                            <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1) { ?>
+                            <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1) {?>
                                 <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>">
-                            <?php } else { ?>
+                            <?php } else {?>
                                 <a href="<?php echo get_permalink($product->get_id()); ?>" class="card">
                             <?php } // end of product loop else if block ?>
 
-                            <?php 
-                                $image = get_product_primary_image($product);
-                                if (!is_null($image)) {
-                                    $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
-                                }
-                            ?>
+                            <?php
+$image = get_product_primary_image($product);
+		if (!is_null($image)) {
+			$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+		}
+		?>
                             <div class="image" style="background-image: url(<?php echo $image->medium ?>)">
 
                             </div> <!-- end of image div -->
@@ -133,15 +129,18 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                             <div class="content price-discount">
                                 <div class="header price">
 
-                                    <?php 
-                                        if ($product->is_type('variable')) {?>
+                                    <?php
+if ($product->is_type('variable')) {
+			?>
                                             <h2 class="current-price" id="productPrice">
-                                                <?php echo get_woocommerce_currency_symbol(); echo get_post_meta($product->get_id(), '_price', true) ?>
+                                                <?php echo get_woocommerce_currency_symbol();
+			echo get_post_meta($product->get_id(), '_price', true) ?>
                                             </h2>
 
-                                    <?php } else {?>
-                                        <?php 
-                                            if ($product->get_sale_price() <= 0) {?>
+                                    <?php } else {
+			?>
+                                        <?php
+if ($product->get_sale_price() <= 0) {?>
                                                 <h2 class="current-price" id="productPrice">
                                                     <?php echo wc_price($product->get_regular_price()); ?>
                                                 </h2>
@@ -157,12 +156,12 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                                         <?php }?>
 
                                     <?php }?>
-           
+
 
                                 </div> <!-- /end of header price div -->
 
-                                <?php 
-                                    if ($product->get_sale_price() > 0) {?>
+                                <?php
+if ($product->get_sale_price() > 0) {?>
                                         <div class="discount">
                                             <?php echo get_percentage_discount($product); ?>
                                                     Off
@@ -177,7 +176,7 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 
                         <?php } //end of products foreach loop ?>
 
-                        </div> 
+                        </div>
                         <!-- end of ui link cards div -->
 
                     </div> <!-- end of products slider div -->

@@ -38,7 +38,7 @@ if (!$short_description) {
 
         <h1 class="product-name"><?php echo $product->get_name(); ?></h1>
 
-		<?php if ($average >= 3) {?>
+		<?php if ($average < 3) {?>
 
             <div class="product-meta">
                 <div class="rating-widget">
@@ -86,6 +86,11 @@ if (!$short_description) {
 
         </div>
 
+        <div class="payment_terms">
+            <p><b>Payment Terms:</b> <?php echo get_product_payment_terms($product); ?></p>
+
+        </div>
+
         <div class="out_of_stock">
 
 
@@ -101,7 +106,7 @@ if (!$short_description) {
         <div class="poduct-desc">
 
             <p><?php
-echo wp_trim_words($product->get_short_description(), 40, ' <a href="#tabs" class="scroll-to">[...]</a>');
+echo wp_trim_words($product->get_short_description(), 20, ' <a href="#tabs" class="scroll-to">[...]</a>');
 ?>
             </p>
             <!--            <p>--><?php //echo $product->get_short_description(); // WPCS: XSS ok.?><!--</p>-->
