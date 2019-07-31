@@ -21,9 +21,9 @@ defined('ABSPATH') || exit;
 
 <div class="woocommerce-billing-fields">
 	<?php if (wc_ship_to_billing_address_only() && WC()->cart->needs_shipping()): ?>
-    <header>
-        <h3><?php esc_html_e('Billing &amp; Shipping', 'woocommerce');?></h3>
-    </header>
+        <header>
+            <h3><?php esc_html_e('Billing &amp; Shipping', 'woocommerce');?></h3>
+        </header>
 
 	<?php else: ?>
         <header>
@@ -32,12 +32,9 @@ defined('ABSPATH') || exit;
 
 	<?php endif;?>
 
-
 	<?php do_action('woocommerce_before_checkout_billing_form', $checkout);?>
 
     <div class="woocommerce-billing-fields__field-wrapper">
-
-
 
         <div class="field">
             <div class="two fields">

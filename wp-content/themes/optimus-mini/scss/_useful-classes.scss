@@ -649,3 +649,40 @@ input[type=email], input[type=password], input[type=search], input[type=text] {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+
+.qty-input{
+  border: 1px solid black;
+  height: 40px;
+  position: relative;
+  width: 122px;
+
+  i{
+    cursor: pointer;
+    font-family: serif;
+    height: 40px;
+    float: left;
+    line-height: 40px;
+    text-align: center;
+    user-select: none;
+    transition: all 150ms ease-out;
+    width: 33px;
+
+    &:active{
+      background-color: initial;
+      color: #F1F1F1;
+      transition: none;
+    }
+  }
+
+  input{
+    border: 0px solid;
+    float: left;
+    font-size: 24px;
+    height: 38px;
+    text-align: center;
+    outline: none;
+    width: 54px;
+  }
+
+}
