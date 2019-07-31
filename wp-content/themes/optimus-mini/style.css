@@ -10298,10 +10298,20 @@ html, body {
       font-size: 1.2em;
       line-height: 1.2em;
       margin-bottom: 5px; }
-    .main-content .business-details .section-inner-wrapper .business-category {
+    .main-content .business-details .section-inner-wrapper .tag-descriptor {
       color: #202020;
       font-size: 12px;
       font-weight: 300; }
+      .main-content .business-details .section-inner-wrapper .tag-descriptor p {
+        font-size: 1.15em;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.6363636364;
+        letter-spacing: normal;
+        text-align: left;
+        color: rgba(32, 32, 32, 0.89);
+        margin-bottom: 2rem; }
     .main-content .business-details .section-inner-wrapper .sec-rating-shop-contact {
       display: flex;
       align-items: center;

@@ -101,22 +101,30 @@ foreach ($cats as $cat) {
                     <div class="products-slider">
                         <!-- start of ui div -->
                         <div class="ui link cards">
-                        <?php
-$query = new WC_Product_Query(array('limit' => 4, 'orderby' => 'date', 'order' => 'DESC', 'status' => 'publish', 'category' => [$cat->slug]));
-	$products = $query->get_products();
-	$itemWidth = "";
-	$productsLoopCounter = 1;
-	foreach ($products as $product) {
-		?>
-                            <?php
-if (count($products) == 1) {
-			$itemWidth = "full-width";
-		} elseif (count($products) > 1) {
-			if (count($products) == 3) {
-				$itemWidth = "full-width";
-			}
-		}
-		?>
+	                        <?php
+		                        $query               = new WC_Product_Query( array(
+			                        'limit'    => 4,
+			                        'orderby'  => 'date',
+			                        'order'    => 'DESC',
+			                        'status'   => 'publish',
+			                        'category' => [ $cat->slug ]
+		                        ) );
+		                        $products            = $query->get_products();
+		                        $itemWidth           = "";
+		                        $productsLoopCounter = 1;
+		                        foreach ( $products
+
+		                        as $product ) {
+	                        ?>
+	                        <?php
+		                        if ( count( $products ) == 1 ) {
+			                        $itemWidth = "full-width";
+		                        } elseif ( count( $products ) > 1 ) {
+			                        if ( count( $products ) == 3 ) {
+				                        $itemWidth = "full-width";
+			                        }
+		                        }
+	                        ?>
 
                             <?php if ($productsLoopCounter == count($products) && count($products) == 3) {?>
 
@@ -128,12 +136,12 @@ if (count($products) == 1) {
                                 <a href="<?php echo get_permalink($product->get_id()); ?>" class="card">
                             <?php } // end of product loop else if block ?>
 
-                            <?php
-$image = get_product_primary_image($product);
-		if (!is_null($image)) {
-			$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
-		}
-		?>
+	                                <?php
+		                                $image = get_product_primary_image( $product );
+		                                if ( ! is_null( $image ) ) {
+			                                $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
+		                                }
+	                                ?>
                             <div class="image" style="background-image: url(<?php echo $image->medium ?>)">
 
                             </div> <!-- end of image div -->
