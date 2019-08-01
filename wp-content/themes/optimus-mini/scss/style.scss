@@ -3235,3 +3235,28 @@ html, body {
   }
 
 }
+
+
+@media only screen and (max-width: 320px) {
+
+  .woocommerce-cart {
+    .main-wrapper {
+      .woocommerce {
+
+        .sticky-button {
+          .sticky-inner {
+
+            .checkout-button {
+              a {
+                font-size: 12px;
+                line-height: 20px;
+              }
+
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

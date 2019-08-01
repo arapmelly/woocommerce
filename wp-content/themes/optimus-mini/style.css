@@ -11384,5 +11384,9 @@ html, body {
     width: 100% !important; }
     .main-content .products-category .section-inner-wrapper .cards .card .price-discount .discount {
       top: -100px; } }
+@media only screen and (max-width: 320px) {
+  .woocommerce-cart .main-wrapper .woocommerce .sticky-button .sticky-inner .checkout-button a {
+    font-size: 12px;
+    line-height: 20px; } }
 
 /*# sourceMappingURL=style.css.map */
