@@ -1,13 +1,33 @@
 (function ($) {
-    $('.stars').raty({
+    /*$('.stars').raty({
         starType: 'i',
         score: function () {
-            return $(this).attr('data-score');
+            //return $(this).attr('data-score');
+            return $('stars').raty('score');
         },
         click: function (score, evt) {
+            
+            //generate a cookieId and post the score via ajax
+
+             $.ajax({
+                url: ajaxurl, // or example_ajax_obj.ajaxurl if using on frontend
+                data: {
+                    'action': 'rate_shop_ajax',
+                    'rating' : score
+                },
+                success:function(data) {
+                    // This outputs the result of the ajax request
+                    console.log(data);
+                },
+                error: function(errorThrown){
+                    console.log(errorThrown);
+                }
+            });  
+
             console.log('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
+            $('stars').raty('reload'); 
         }
-    });
+    });*/
 
     $('#tabs').tabslet({
         container: '#tabs_container'

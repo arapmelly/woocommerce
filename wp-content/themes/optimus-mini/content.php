@@ -46,10 +46,17 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                 <!-- reviews count -->
 	            <?php //if (get_reviews_count() < 10): ?>
 
+
+
                 <div class="rating-widget">
-                    <div class="stars" data-score="0"></div>
-                    <div class="num-rating tag-descriptor"><?php echo get_reviews_count(); ?> Ratings
-<!--                        <span class="total-reviews">(--><?php //echo get_reviews_count(); ?><!-- Ratings)</span>-->
+                    <div class="stars" data-score="<?php echo get_average_shop_rating(); ?>"></div>
+                    <div class="num-rating tag-descriptor"><?php echo get_total_shop_rating_count(); ?> Ratings
+
+                        <form method="post" id="shop_rating" action="#" style="display: none;">
+                            <input id="shop_rating_score" type="text" name="shop_rating_score">
+                            <input type="submit" id="submit_shop_rating" class="button" name="submit_shop_rating" value="submit">
+                        </form>
+
                     </div>
 
                 </div>

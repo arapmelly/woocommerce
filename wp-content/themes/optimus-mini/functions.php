@@ -413,10 +413,66 @@ function submit_whatsapp_lead() {
 
 		wp_insert_post($post_args);
 
-		return;
+		die();
 
 	}
 
+}
+
+add_action('init', 'submit_shop_rating');
+
+function submit_shop_rating() {
+
+	if (isset($_POST['submit_shop_rating'])) {
+
+		$score = isset($_POST['shop_rating_score']) ? $_POST['shop_rating_score'] : '';
+
+		$post_args = array(
+
+			'post_title' => 'shop rating',
+			'post_content' => $score,
+			'post_status' => 'published',
+			'post_type' => 'shop_rating',
+
+		);
+
+		// insert the post into the database
+
+		wp_insert_post($post_args);
+
+	}
+
+	return;
+}
+
+function get_average_shop_rating() {
+
+	global $wpdb;
+
+	$table_name = $wpdb->prefix . 'posts';
+
+	$post_type = 'shop_rating';
+
+	$average_rating = $wpdb->get_results(
+		$wpdb->prepare("SELECT AVG(post_content) as total FROM {$wpdb->prefix}posts WHERE post_type=%d", $post_type)
+	);
+
+	return $average_rating[0]->total;
+}
+
+function get_total_shop_rating_count() {
+
+	global $wpdb;
+
+	$table_name = $wpdb->prefix . 'posts';
+
+	$post_type = 'shop_rating';
+
+	$total_ratings = $wpdb->get_results(
+		$wpdb->prepare("SELECT count(post_content) as total FROM {$wpdb->prefix}posts WHERE post_type=%d", $post_type)
+	);
+
+	return $total_ratings[0]->total;
 }
 
 function is_featured_category($category) {
