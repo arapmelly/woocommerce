@@ -235,6 +235,7 @@ function create_product_var($product) {
 
 	//set the product as a variable
 	wp_set_object_terms($product->get_id(), 'variable', 'product_type');
+	update_post_meta($product->get_id(), '_stock_status', 'instock');
 
 	//set product attributes
 	$attr_label = 'variant';
