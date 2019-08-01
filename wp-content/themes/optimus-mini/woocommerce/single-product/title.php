@@ -116,6 +116,7 @@ echo wp_trim_words($product->get_short_description(), 20, ' <a href="#tabs" clas
 
         <script type="text/javascript">
 
+            /*
             function setVariationPrice() {
 
                 var variation = document.getElementById("variationSelect").options[document.getElementById("variationSelect").selectedIndex].value;
@@ -204,5 +205,6 @@ echo wp_trim_words($product->get_short_description(), 20, ' <a href="#tabs" clas
 
                 document.getElementById("atrribute").value = attribute;
             }
+            */
 
         </script>

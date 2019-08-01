@@ -59,16 +59,16 @@ do_action('woocommerce_after_add_to_cart_quantity');
                 <h3>Hello there! <br><span>Kindly give us your details to follow up your inquiry. Thank you.</span></h3>
             </header>
 
-            <form method="post" class="ui form" action="#">
+            <form method="post" class="ui form" action="#" novalidate>
 
                 <div class="field">
                     <label for="whatsapp_lead_name">Name</label>
-                    <input type="text" id="whatsapp_lead_name" name="whatsapp_lead_name" required>
+                    <input type="text" id="whatsapp_lead_name" name="whatsapp_lead_name" value="" >
                 </div>
 
                 <div class="field">
                     <label for="whatsapp_lead_phone">Phone</label>
-                    <input type="text" id="whatsapp_lead_phone" name="whatsapp_lead_phone" required>
+                    <input type="text" id="whatsapp_lead_phone" name="whatsapp_lead_phone" value="" >
                 </div>
 
 <!--                <div class="field">-->
