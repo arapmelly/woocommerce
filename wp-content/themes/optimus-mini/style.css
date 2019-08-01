@@ -9906,7 +9906,6 @@ html, body {
         justify-content: center;
         flex-wrap: wrap;
         flex-grow: 0;
-        padding: .825em;
         width: 100%; }
         .woocommerce-cart .woocommerce .cart-item-list .single-cart-item .inner-container .image {
           width: 180px;
@@ -11287,6 +11286,19 @@ html, body {
         max-height: 366.500px; }
   .main-content .product {
     width: 100% !important; }
+    .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      width: 100%; }
+      .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a {
+        font-size: inherit;
+        line-height: 8px;
+        padding: 20px 0; }
+        .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a:first-child {
+          width: calc(40% - 0.25em); }
+        .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a:nth-child(2) {
+          width: calc(60% - 0.25em); }
 
   .page-template-template-contact-us .get-in-touch {
     font-size: 14px;
@@ -11344,7 +11356,26 @@ html, body {
           padding-top: 1rem; }
 
   .woocommerce-cart .woocommerce, .woocommerce-checkout .woocommerce {
-    width: 100%; } }
+    width: 100%; }
+
+  .woocommerce-cart .woocommerce .cart-item-list .single-cart-item .inner-container .image {
+    width: 130px;
+    max-width: 130px; }
+  .woocommerce-cart .woocommerce .cart-item-list .single-cart-item .inner-container .right-column {
+    padding-left: 10px;
+    padding-right: 0;
+    width: calc(100% - 130px); }
+    .woocommerce-cart .woocommerce .cart-item-list .single-cart-item .inner-container .right-column .product-quantity .qty-input {
+      height: 30px; }
+      .woocommerce-cart .woocommerce .cart-item-list .single-cart-item .inner-container .right-column .product-quantity .qty-input input {
+        font-size: 16px;
+        height: 28px;
+        line-height: 28px; }
+      .woocommerce-cart .woocommerce .cart-item-list .single-cart-item .inner-container .right-column .product-quantity .qty-input i {
+        height: 30px;
+        font-size: 18px;
+        line-height: 24px;
+        width: 30px; } }
 @media only screen and (max-width: 375px) {
   .main-content .products .section-inner-wrapper .products-slider .cards .card .price-discount .discount {
     top: -100px; }
