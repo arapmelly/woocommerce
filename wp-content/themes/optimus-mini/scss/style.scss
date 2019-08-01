@@ -674,13 +674,7 @@ html, body {
           justify-content: center;
           flex-wrap: wrap;
           flex-grow: 0;
-          padding: .825em;
           width: 100%;
-          //border: 1px solid rgba(34, 36, 38, .1);
-          //border-left: none;
-          &:first-child {
-            //border-left: 1px solid rgba(34, 36, 38, .1);
-          }
 
           .image {
             width: 180px;
@@ -1326,7 +1320,7 @@ html, body {
         color: $color-medium;
         font-size: 12px;
         font-weight: 300;
-        p{
+        p {
           font-size: 1.15em;
           font-weight: 300;
           font-style: normal;
@@ -1733,7 +1727,6 @@ html, body {
               text-align: left;
               color: rgba(32, 32, 32, 0.89);
               margin-bottom: 2rem;
-
 
               & > * {
                 font-size: inherit;
@@ -3005,6 +2998,34 @@ html, body {
 
     .product {
       @include calcMaxWidth($phablet);
+
+      .product-top-section {
+        .product-details {
+          .section-inner-wrapper {
+            .view-cart-btns {
+              display: flex;
+              justify-content: space-between;
+              font-size: 13px;
+              width: 100%;
+              a {
+                font-size: inherit;
+                line-height: 8px;
+                padding: 20px 0;
+
+                &:first-child {
+                  width: calc(40% - 0.25em);
+                }
+
+                &:nth-child(2) {
+                  width: calc(60% - 0.25em);
+                }
+              }
+
+            }
+          }
+        }
+      }
+
     }
 
   }
@@ -3129,6 +3150,45 @@ html, body {
   .woocommerce-cart, .woocommerce-checkout {
     .woocommerce {
       width: 100%;
+    }
+  }
+
+  .woocommerce-cart {
+    .woocommerce {
+      .cart-item-list {
+        .single-cart-item {
+          .inner-container {
+            .image {
+              width: 130px;
+              max-width: 130px;
+            }
+
+            .right-column {
+              padding-left: 10px;
+              padding-right: 0;
+              width: calc(100% - 130px);
+
+              .product-quantity {
+                .qty-input {
+                  height: 30px;
+                  input {
+                    font-size: 16px;
+                    height: 28px;
+                    line-height: 28px;
+                  }
+
+                  i {
+                    height: 30px;
+                    font-size: 18px;
+                    line-height: 24px;
+                    width: 30px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 
