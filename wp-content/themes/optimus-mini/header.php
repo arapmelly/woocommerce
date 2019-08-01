@@ -20,7 +20,7 @@
             <a href="#" title="menu toggle" class="menu actionButton toggle sidebarTrigger"><span
                         class="icon-menu-outline"></span></a>
             <a href="<?php echo get_site_url(); ?>" title="shop logo" class="logo">
-		        <?php echo get_option( 'blogacronym' ); ?>
+		        <?php echo get_option('blogacronym'); ?>
             </a>
         </div>
         <div class="right">
@@ -53,9 +53,22 @@
 <!--                <h2>Menu</h2>-->
 <!--            </header>-->
             <ul>
-                <li><a href="<?php echo get_site_url(); ?>">Homepage</a></li>
 
-                <li><a href="<?php echo get_permalink(get_page_by_path('about')); ?>">About Us</a></li>
+                <li><a href="<?php echo get_site_url() . '/shop'; ?>">All</a></li>
+
+                <?php $cats = get_product_categories();?>
+                        <?php foreach ($cats as $cat) {?>
+                            <?php if ($cat->name != 'Uncategorized') {?>
+                            <li>
+                                <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>"><?php echo $cat->name; ?></a>
+                            </li>
+
+
+                            <?php }?>
+                        <?php }?>
+
+
+                <!-- <li><a href="<?php //echo get_permalink(get_page_by_path('about')); ?>">About Us</a></li>
 
                 <li>
                     <span class="opener">Categories</span>
@@ -64,19 +77,19 @@
                                 <a href="shop">All</a>
                             </li>
 
-                        <?php $cats = get_product_categories();?>
-                        <?php foreach ($cats as $cat) {?>
-                            <?php if ($cat->name != 'Uncategorized') {?>
+                        <?php //$cats = get_product_categories();?>
+                        <?php //foreach ($cats as $cat) {?>
+                            <?php //if ($cat->name != 'Uncategorized') {?>
                             <li>
-                                <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>"><?php echo $cat->name; ?></a>
+                                <a href="<?php //echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>"><?php //echo $cat->name; ?></a>
                             </li>
 
-                            <?php }?>
-                        <?php }?>
+                            <?php //}?>
+                        <?php// }?>
 
 
                     </ul>
-                </li>
+                </li> -->
                 <!-- <li><a href="<?php //echo get_permalink(get_page_by_path('contact')); ?>">Contact Us</a></li> -->
 
             </ul>
