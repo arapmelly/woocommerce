@@ -199,23 +199,21 @@ function auto_create_var($post_id) {
 	if (get_post_type($post_id) == 'product') {
 		$product = wc_get_product($post_id);
 
-		//check if product has product variations
+		$attributes = $product->get_attributes();
 
-		if (get_post_meta($product->get_id(), '_product_variations', true)) {
+		$variations = json_decode(get_product_variations($product));
 
-			$variations = json_decode(get_product_variations($product));
-			if (!empty($variations)) {
-				create_product_var($product);
-			}
+		if (!empty($attributes) || !empty($variations)) {
 
+			create_var($product);
 		}
 
 	}
 }
 
-function create_product_var($product) {
+function create_var($product) {
 
-	//get product variations and delete them if they
+	//delete existing variations and product attributes
 	if ($product->is_type('variable')) {
 
 		$childs = $product->get_children();
@@ -230,63 +228,30 @@ function create_product_var($product) {
 		}
 
 		wp_set_object_terms($product->get_id(), 'simple', 'product_type');
+		delete_post_meta($product->get_id(), '_product_attributes');
 
 	}
 
-	//set the product as a variable
-	wp_set_object_terms($product->get_id(), 'variable', 'product_type');
+	//get the variations and create them as attributes
 
-	//set product attributes
-	$attr_label = 'variant';
-	$attr_slug = sanitize_title($attr_label);
+	//get original product attributes
+	$product_attributes = $product->get_attributes();
 
-	//get the variations and create them as attributes and posts
 	$variations = json_decode(get_product_variations($product));
 
-	foreach ($variations as $variation) {
-		$variants[] = $variation->name;
+	if (!empty($variations)) {
 
-	}
+		// set product as variable and status as instock
+		wp_set_object_terms($product->get_id(), 'variable', 'product_type');
 
-	//get all existing attributes
-	$attributes = $product->get_attributes();
+		$attr_label = 'variations';
+		$attr_slug = sanitize_title($attr_label);
 
-//print_r($attributes);
-
-	if (!empty($attributes)) {
-
-		$var_string = implode('|', $variants);
-
-		$attribute_array[$attr_slug] = array(
-
-			'name' => $attr_label,
-			'value' => $var_string,
-			'is_visible' => '1',
-			'is_variation' => '1',
-			'is_taxonomy' => '0',
-		);
-
-		//update attributes to use as variation
-		foreach ($attributes as $attribute) {
-			echo '<pre>';
-			//print_r($attribute);
-
-			//convert array to string
-			$var_string = implode('|', $attribute['options']);
-
-			$attribute_array[$attribute['name']] = array(
-
-				'name' => $attribute['name'],
-				'value' => $var_string,
-				'is_visible' => '1',
-				'is_variation' => '1',
-				'is_taxonomy' => '0',
-			);
+		foreach ($variations as $variation) {
+			$variants[] = $variation->name;
 
 		}
 
-	} else {
-
 		$var_string = implode('|', $variants);
 
 		$attribute_array[$attr_slug] = array(
@@ -298,53 +263,259 @@ function create_product_var($product) {
 			'is_taxonomy' => '0',
 		);
 
-	}
+		update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
 
-	update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
+		foreach ($variations as $variation) {
 
-	foreach ($variations as $variation) {
+			$variationData = array(
+				'post_title' => $product->get_name() . '-' . $variation->name,
+				'post_status' => 'publish',
+				'post_parent' => $product->get_id(),
+				'post_type' => 'product_variation',
+			);
 
-		$variationData = array(
-			'post_title' => $product->get_name() . '-' . $variation->name,
-			'post_status' => 'publish',
-			'post_parent' => $product->get_id(),
-			'post_type' => 'product_variation',
-		);
+			$variation_id = wp_insert_post($variationData);
 
-		$variation_id = wp_insert_post($variationData);
+			update_post_meta($variation_id, '_regular_price', $variation->unit_price);
+			update_post_meta($variation_id, '_price', $variation->unit_price);
+			update_post_meta($variation_id, '_stock_qty', 0);
 
-		update_post_meta($variation_id, '_regular_price', $variation->unit_price);
-		update_post_meta($variation_id, '_price', $variation->unit_price);
-		update_post_meta($variation_id, '_stock_qty', 0);
+			update_post_meta($variation_id, 'attribute_' . $attr_slug, $variation->name);
+		}
 
-		update_post_meta($variation_id, 'attribute_' . $attr_slug, $variation->name);
+		//set original product attributes to be used with variations
+		if (!empty($product_attributes)) {
 
-		//get other attributes and loop through attributes and add them
-		//get other options now
-		$attributes = $product->get_attributes();
+			//make it usable with variation
+			foreach ($product_attributes as $attribute) {
 
-		// all attributes except the first
-		$variation_attributes = array_slice($attributes, 1);
+				$att_name = $attribute->get_name();
 
-		if (count($variation_attributes) > 0) {
+				$terms = wp_get_post_terms($product->get_id(), $att_name, 'all');
 
-			foreach ($variation_attributes as $key => $value) {
+				if (!empty($terms)) {
+					foreach ($terms as $term) {
 
-				//loop through the options
-				foreach ($value['options'] as $key => $value) {
+						$attribute_options[] = $term->name;
+					}
 
-					update_post_meta($variation_id, 'attribute_' . $key, '');
 				}
+
+				$var_string = implode('|', $attribute_options);
+
+				$attribute_array[$att_name] = array(
+					'name' => $att_name,
+					'value' => $var_string,
+					'is_visible' => '1',
+					'is_variation' => '1',
+					'is_taxonomy' => '1',
+				);
 
 			}
 
+			update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
+
 		}
 
-		WC_Product_Variable::sync($product->get_id());
+		update_post_meta($product->get_id(), '_stock_status', 'instock');
 
+	} else {
+
+		//set original product attributes to be used with variations
+		if (!empty($product_attributes)) {
+
+			// set product as variable and status as instock
+			wp_set_object_terms($product->get_id(), 'variable', 'product_type');
+
+			//make it usable with variation
+			foreach ($product_attributes as $attribute) {
+
+				$att_name = $attribute->get_name();
+
+				$terms = wp_get_post_terms($product->get_id(), $att_name, 'all');
+
+				if (!empty($terms)) {
+					foreach ($terms as $term) {
+
+						$attribute_options[] = $term->name;
+					}
+
+				}
+
+				$var_string = implode('|', $attribute_options);
+
+				$attribute_array[$att_name] = array(
+					'name' => $att_name,
+					'value' => $var_string,
+					'is_visible' => '1',
+					'is_variation' => '1',
+					'is_taxonomy' => '1',
+				);
+
+			}
+
+			update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
+
+			foreach ($attribute_options as $value) {
+
+				//create as a variation
+
+				$variationData = array(
+					'post_title' => $product->get_name() . '-' . $value,
+					'post_status' => 'publish',
+					'post_parent' => $product->get_id(),
+					'post_type' => 'product_variation',
+				);
+
+				$variation_id = wp_insert_post($variationData);
+
+				update_post_meta($variation_id, '_regular_price', $product->get_price());
+				update_post_meta($variation_id, '_price', $product->get_price());
+				update_post_meta($variation_id, '_stock_qty', 0);
+
+				update_post_meta($variation_id, 'attribute_' . $att_name, $value);
+
+			}
+
+			update_post_meta($product->get_id(), '_stock_status', 'instock');
+
+		}
 	}
 
 }
+
+/*function create_product_var($product) {
+
+//get product variations and delete them if they
+if ($product->is_type('variable')) {
+
+$childs = $product->get_children();
+
+if (!empty($childs)) {
+
+foreach ($childs as $child_id) {
+
+wp_delete_post($child_id);
+
+}
+}
+
+wp_set_object_terms($product->get_id(), 'simple', 'product_type');
+delete_post_meta($product->get_id(), '_product_attributes');
+
+}
+
+//set the product as a variable
+wp_set_object_terms($product->get_id(), 'variable', 'product_type');
+update_post_meta($product->get_id(), '_stock_status', 'instock');
+
+//set product attributes
+$attr_label = 'variant';
+$attr_slug = sanitize_title($attr_label);
+
+//get the variations and create them as attributes and posts
+$variations = json_decode(get_product_variations($product));
+
+foreach ($variations as $variation) {
+$variants[] = $variation->name;
+
+}
+
+//get all existing attributes
+$attributes = $product->get_attributes();
+
+//print_r($attributes);
+
+if (!empty($attributes)) {
+
+$var_string = implode('|', $variants);
+
+$attribute_array[$attr_slug] = array(
+
+'name' => $attr_label,
+'value' => $var_string,
+'is_visible' => '1',
+'is_variation' => '1',
+'is_taxonomy' => '0',
+);
+
+//update attributes to use as variation
+foreach ($attributes as $attribute) {
+
+//convert array to string
+$var_string = implode('|', $attribute['options']);
+
+$attribute_array[$attribute['name']] = array(
+
+'name' => $attribute['name'],
+'value' => $var_string,
+'is_visible' => '1',
+'is_variation' => '1',
+'is_taxonomy' => '0',
+);
+
+}
+
+} else {
+
+$var_string = implode('|', $variants);
+
+$attribute_array[$attr_slug] = array(
+
+'name' => $attr_label,
+'value' => $var_string,
+'is_visible' => '1',
+'is_variation' => '1',
+'is_taxonomy' => '0',
+);
+
+}
+
+update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
+
+foreach ($variations as $variation) {
+
+$variationData = array(
+'post_title' => $product->get_name() . '-' . $variation->name,
+'post_status' => 'publish',
+'post_parent' => $product->get_id(),
+'post_type' => 'product_variation',
+);
+
+$variation_id = wp_insert_post($variationData);
+
+update_post_meta($variation_id, '_regular_price', $variation->unit_price);
+update_post_meta($variation_id, '_price', $variation->unit_price);
+update_post_meta($variation_id, '_stock_qty', 0);
+
+update_post_meta($variation_id, 'attribute_' . $attr_slug, $variation->name);
+
+//get other attributes and loop through attributes and add them
+//get other options now
+$attributes = $product->get_attributes();
+
+// all attributes except the first
+$variation_attributes = array_slice($attributes, 1);
+
+if (count($variation_attributes) > 0) {
+
+foreach ($variation_attributes as $key => $value) {
+
+//loop through the options
+foreach ($value['options'] as $key => $value) {
+
+update_post_meta($variation_id, 'attribute_' . $key, '');
+}
+
+}
+
+}
+
+WC_Product_Variable::sync($product->get_id());
+
+}
+
+}*/
 
 add_action('woocommerce_before_checkout_form', 'remove_checkout_coupon_form', 9);
 function remove_checkout_coupon_form() {
