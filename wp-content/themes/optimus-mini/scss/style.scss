@@ -22,6 +22,7 @@ Version:      1.0.0
 @import "tabs";
 @import "dropdown/core";
 @import "modal";
+@import "preloader";
 
 html, body {
   background-color: $default-white-color;
@@ -662,7 +663,7 @@ html, body {
         font-size: 14px;
         position: relative;
         display: flex;
-        padding: 15px 10px 0;
+        padding: 15px 10px;
         border: 1px solid darken(#fcfcfc, 5%);
         border-radius: 4px;
         margin-bottom: 10px;
@@ -806,18 +807,23 @@ html, body {
             max-width: 100%;
 
             a, .button {
-              background-color: transparent;
-              color: darken(#696b79, 2%);
+              background-color: $default-dark-color;
+              color: $default-white-color;
               font-size: 1em;
-              font-weight: 300;
-              display: block;
+              font-weight: 400;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               position: relative;
               text-align: center;
               width: calc(50% - 10px);
 
+              span[class*="icon-"] {
+                font-size: 24px;
+                margin-left: 5px;
+              }
+
               &:hover {
-                background-color: $default-dark-color;
-                color: $default-white-color;
                 opacity: 1;
               }
 
@@ -1034,12 +1040,15 @@ html, body {
       }
     }
 
+
     form.checkout {
       .woocommerce-billing-fields {
         font-size: 14px;
         header {
           background-color: #f9fafb;
-          padding: .825em;
+          padding: 15px;
+          width: 100vw;
+          margin-left: -15px;
 
           h1, h2, h3, h4, h5 {
             font-size: 1.3em;
@@ -1808,7 +1817,6 @@ html, body {
           }
 
           .talk-to-seller-button {
-
             a.button, button {
               display: flex;
               align-items: center;
@@ -1832,6 +1840,48 @@ html, body {
 
             }
 
+          }
+
+          .view-cart-btns {
+            display: flex;
+            font-size: 12px;
+            margin-top: 20px;
+            width: 100%;
+
+            a.button, button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              line-height: 8px;
+              padding: 15px 10px;
+
+              &:nth-child(2) {
+                border: 2px solid $default-dark-color;
+                color: $default-dark-color;
+                background-color: transparent;
+
+                line-height: 20px;
+                padding: 15px 10px;
+
+                &:hover {
+                  color: $default-white-color;
+                  background-color: $default-dark-color;
+                  opacity: 1;
+                }
+              }
+
+              &:hover {
+                //color: $default-white-color;
+                //background-color: $whatsapp-teal;
+                opacity: 1;
+              }
+
+              span {
+                font-size: 24px;
+                margin-right: 5px;
+              }
+
+            }
           }
 
           .product-variation {
@@ -3236,7 +3286,6 @@ html, body {
 
 }
 
-
 @media only screen and (max-width: 320px) {
 
   .woocommerce-cart {
@@ -3259,4 +3308,38 @@ html, body {
       }
     }
   }
+
+  .main-content {
+    .product {
+      .product-top-section {
+        .product-details {
+          .section-inner-wrapper {
+            .view-cart-btns {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              font-size: 13px;
+              width: 100%;
+              a {
+                font-size: inherit;
+                line-height: 8px;
+                padding: 20px 0;
+                margin-bottom: 5px;
+
+                &:first-child {
+                  width: 100%;
+                }
+
+                &:nth-child(2) {
+                  width: 100%;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
