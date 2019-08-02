@@ -1,3 +1,10 @@
+
+// $(window).load(function () {
+//     $(".preloader").hide();
+//
+//     console.log('-----');
+// });
+
 (function ($) {
     /*$('.stars').raty({
         starType: 'i',
@@ -28,6 +35,7 @@
             $('stars').raty('reload'); 
         }
     });*/
+
 
     $('#tabs').tabslet({
         container: '#tabs_container'
