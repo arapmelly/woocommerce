@@ -55,6 +55,8 @@ if (!$short_description) {
 
 		<?php //}?>
 
+        <?php //create_var($product);?>
+
 
         <div class="price">
 
