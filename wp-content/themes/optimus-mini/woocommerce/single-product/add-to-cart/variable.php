@@ -61,8 +61,8 @@ wc_dropdown_variation_attribute_options(array(
 $productID = $product->get_id();
 
 if (check_if_product_id_in_cart($productID)) {
-	echo '<div class="view-cart-btns"><a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward">' . esc_html__('View cart', 'woocommerce') . '</a>';
-	echo '<a href="' . esc_url(get_site_url()) . '" class="button wc-forward">' . esc_html__('Continue Shopping', 'woocommerce') . '</a></div>';
+	echo '<div class="view-cart-btns"><a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward"><span class="icon-shopping-cart-outline"></span>' . esc_html__('View cart', 'woocommerce') . '</a>';
+	echo '<a href="' . esc_url(get_site_url()) . '" class="button wc-forward"><span class="icon-arrow-back-outline"></span>' . esc_html__('Continue Shopping', 'woocommerce') . '</a></div>';
 } else {
 	/**
 	 * Hook: woocommerce_before_single_variation.
