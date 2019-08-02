@@ -51,7 +51,7 @@ if (!$short_description) {
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                     ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                       ?></p>
             </div>
         </div>
 
@@ -59,8 +59,8 @@ if (!$short_description) {
             <div class="styled-text section-inner-wrapper">
 
                  <p><b>Warranty Information</b></p>
-                <?php if (get_post_meta($product->get_id(), '_product_warranty_information', true)) {?>
-                <p><?php echo get_post_meta($product->get_id(), '_product_warranty_information', true); ?></p>
+                <?php if (get_post_meta($product->get_id(), '_product_warranty', true)) {?>
+                <p><?php echo get_post_meta($product->get_id(), '_product_warranty', true); ?></p>
             <?php } else {?>
                 <p> No warranty information </p>
             <?php }?>
@@ -70,6 +70,14 @@ if (!$short_description) {
                 <p><?php echo get_post_meta($product->get_id(), '_product_return_policy', true); ?></p>
             <?php } else {?>
                 <p> No return Policy </p>
+            <?php }?>
+
+
+             <p><b>Expected Delivery Date</b></p>
+                <?php if (get_post_meta($product->get_id(), '_product_expected_delivery_date', true)) {?>
+                <p><?php echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true); ?></p>
+            <?php } else {?>
+                <p> No expected delivery date information </p>
             <?php }?>
 
 
