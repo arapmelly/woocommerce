@@ -205,12 +205,85 @@ function auto_create_var($post_id) {
 
 			$variations = json_decode(get_product_variations($product));
 			if (!empty($variations)) {
-				create_product_var($product);
+				//create_product_var($product);
+				create_var($product);
 			}
 
 		}
 
 	}
+}
+
+function create_var($product) {
+	//delete existing variations and product attributes
+	if ($product->is_type('variable')) {
+
+		$childs = $product->get_children();
+
+		if (!empty($childs)) {
+
+			foreach ($childs as $child_id) {
+
+				wp_delete_post($child_id);
+
+			}
+		}
+
+		wp_set_object_terms($product->get_id(), 'simple', 'product_type');
+		delete_post_meta($product->get_id(), '_product_attributes');
+
+	}
+
+	// set product as variable and status as instock
+	wp_set_object_terms($product->get_id(), 'variable', 'product_type');
+	update_post_meta($product->get_id(), '_stock_status', 'instock');
+
+	//get the variations and create them as attributes
+	$attr_label = 'variations';
+	$attr_slug = sanitize_title($attr_label);
+
+	$variations = json_decode(get_product_variations($product));
+
+	if (!empty($variations)) {
+
+		foreach ($variations as $variation) {
+			$variants[] = $variation->name;
+
+		}
+
+		$var_string = implode('|', $variants);
+
+		$attribute_array[$attr_slug] = array(
+
+			'name' => $attr_label,
+			'value' => $var_string,
+			'is_visible' => '1',
+			'is_variation' => '1',
+			'is_taxonomy' => '0',
+		);
+
+		update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
+
+		foreach ($variations as $variation) {
+
+			$variationData = array(
+				'post_title' => $product->get_name() . '-' . $variation->name,
+				'post_status' => 'publish',
+				'post_parent' => $product->get_id(),
+				'post_type' => 'product_variation',
+			);
+
+			$variation_id = wp_insert_post($variationData);
+
+			update_post_meta($variation_id, '_regular_price', $variation->unit_price);
+			update_post_meta($variation_id, '_price', $variation->unit_price);
+			update_post_meta($variation_id, '_stock_qty', 0);
+
+			update_post_meta($variation_id, 'attribute_' . $attr_slug, $variation->name);
+		}
+
+	}
+
 }
 
 function create_product_var($product) {
@@ -230,6 +303,7 @@ function create_product_var($product) {
 		}
 
 		wp_set_object_terms($product->get_id(), 'simple', 'product_type');
+		delete_post_meta($product->get_id(), '_product_attributes');
 
 	}
 
@@ -269,8 +343,6 @@ function create_product_var($product) {
 
 		//update attributes to use as variation
 		foreach ($attributes as $attribute) {
-			echo '<pre>';
-			//print_r($attribute);
 
 			//convert array to string
 			$var_string = implode('|', $attribute['options']);
