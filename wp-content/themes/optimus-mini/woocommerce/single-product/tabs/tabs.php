@@ -51,7 +51,7 @@ if (!$short_description) {
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                       ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                         ?></p>
             </div>
         </div>
 
@@ -91,7 +91,7 @@ if (!$short_description) {
                     <header class="rating-header">
                         <div class="num-rating">
                             <span class="rating"><?php echo $product->get_average_rating(); ?></span>
-                            <div class="stars" data-score="0"></div>
+                            <div class="stars" data-score="<?php echo $product->get_average_rating(); ?>"></div>
                         </div>
                         <div class="rating-widget">
                             <div class="tag-descriptor"><span
@@ -146,7 +146,7 @@ if (!$short_description) {
                         </form>
                     </div> -->
 
-                    <div id="review_form">
+                    <div id="review_form" style="display: none;">
                         <div id="respond" class="comment-respond review-textarea">
                             <!--                            <span id="reply-title" class="comment-reply-title">Add a review</span>-->
 

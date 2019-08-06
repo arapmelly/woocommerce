@@ -55,7 +55,12 @@ if (!$short_description) {
 
 		<?php //}?>
 
-        <?php //create_var($product);?>
+        <?php
+//create_var($product);
+//create_prod_attributes($product);
+//test_debug();
+//test_log($product);
+?>
 
 
         <div class="price">

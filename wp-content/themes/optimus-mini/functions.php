@@ -192,23 +192,57 @@ function get_product_variations($product) {
 
 }
 
-add_action('woocommerce_update_product', 'auto_create_var');
+//add_action('woocommerce_update_product', 'create_prod_attributes', 10, 1);
+
+//add_action('edit_post', 'auto_create_var', 10, 1);
+//add_action('updated_post_meta', 'auto_create_var', 10, 1);
+
+//add_action('added_post_meta', 'auto_create_var');
+//add_action('updated_post_meta', 'auto_create_var');
 
 function auto_create_var($post_id) {
 	//check if post type is product
 	if (get_post_type($post_id) == 'product') {
 		$product = wc_get_product($post_id);
 
-		$attributes = $product->get_attributes();
-
-		$variations = json_decode(get_product_variations($product));
-
-		if (!empty($attributes) || !empty($variations)) {
-
-			create_var($product);
-		}
+		create_prod_attributes($product);
 
 	}
+}
+
+function create_prod_attributes($product) {
+
+	//$product = wc_get_product($product_id);
+
+	//get the product variations and create them as attributes
+	$variations = json_decode(get_product_variations($product));
+
+	if (!empty($variations)) {
+
+		wp_set_object_terms($product->get_id(), 'variable', 'product_type');
+
+		$attr_label = 'variations';
+		$attr_slug = sanitize_title($attr_label);
+
+		foreach ($variations as $variation) {
+			$variants[] = $variation->name;
+
+		}
+
+		$var_string = implode('|', $variants);
+
+		$attribute_array[$attr_slug] = array(
+			'name' => $attr_label,
+			'value' => $var_string,
+			'is_visible' => '1',
+			'is_variation' => '1',
+			'is_taxonomy' => '0',
+		);
+
+		update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
+
+	}
+
 }
 
 function create_var($product) {
@@ -228,7 +262,7 @@ function create_var($product) {
 		}
 
 		wp_set_object_terms($product->get_id(), 'simple', 'product_type');
-		delete_post_meta($product->get_id(), '_product_attributes');
+		//delete_post_meta($product->get_id(), '_product_attributes');
 
 	}
 
@@ -284,7 +318,7 @@ function create_var($product) {
 		}
 
 		//set original product attributes to be used with variations
-		if (!empty($product_attributes)) {
+		/*if (!empty($product_attributes)) {
 
 			//make it usable with variation
 			foreach ($product_attributes as $attribute) {
@@ -315,11 +349,11 @@ function create_var($product) {
 
 			update_post_meta($product->get_id(), '_product_attributes', $attribute_array);
 
-		}
+		}*/
 
 		update_post_meta($product->get_id(), '_stock_status', 'instock');
 
-	} else {
+	} /*else {
 
 		//set original product attributes to be used with variations
 		if (!empty($product_attributes)) {
@@ -380,7 +414,7 @@ function create_var($product) {
 			update_post_meta($product->get_id(), '_stock_status', 'instock');
 
 		}
-	}
+	}*/
 
 }
 
@@ -588,62 +622,6 @@ function submit_whatsapp_lead() {
 
 	}
 
-}
-
-add_action('init', 'submit_shop_rating');
-
-function submit_shop_rating() {
-
-	if (isset($_POST['submit_shop_rating'])) {
-
-		$score = isset($_POST['shop_rating_score']) ? $_POST['shop_rating_score'] : '';
-
-		$post_args = array(
-
-			'post_title' => 'shop rating',
-			'post_content' => $score,
-			'post_status' => 'published',
-			'post_type' => 'shop_rating',
-
-		);
-
-		// insert the post into the database
-
-		wp_insert_post($post_args);
-
-	}
-
-	return;
-}
-
-function get_average_shop_rating() {
-
-	global $wpdb;
-
-	$table_name = $wpdb->prefix . 'posts';
-
-	$post_type = 'shop_rating';
-
-	$average_rating = $wpdb->get_results(
-		$wpdb->prepare("SELECT AVG(post_content) as total FROM {$wpdb->prefix}posts WHERE post_type=%d", $post_type)
-	);
-
-	return $average_rating[0]->total;
-}
-
-function get_total_shop_rating_count() {
-
-	global $wpdb;
-
-	$table_name = $wpdb->prefix . 'posts';
-
-	$post_type = 'shop_rating';
-
-	$total_ratings = $wpdb->get_results(
-		$wpdb->prepare("SELECT count(post_content) as total FROM {$wpdb->prefix}posts WHERE post_type=%d", $post_type)
-	);
-
-	return $total_ratings[0]->total;
 }
 
 function is_featured_category($category) {
