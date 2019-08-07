@@ -35,52 +35,58 @@ if (!$short_description) {
 	return;
 }
 
+
+$_product_warranty = get_post_meta($product->get_id(), '_product_warranty', true);
+$_product_return_policy = get_post_meta($product->get_id(), '_product_return_policy', true);
+$_product_expected_delivery_date = get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
 ?>
 
 
 <div id="tabs" class="tabs">
 
     <ul class="tab-items">
-        <li><a href="#tab-1">Overview</a></li>
-        <li><a href="#tab-2">Additional Information</a></li>
+        <li><a href="#tab-1">Product description</a></li>
+        <?php
+            if(!empty($_product_expected_delivery_date) || !empty($_product_return_policy) || !empty($_product_expected_delivery_date)){
+                ?>
+                <li><a href="#tab-2">Additional Information</a></li>
+                <?php
+            }
+        ?>
         <li><a href="#tab-3">Reviews</a></li>
     </ul>
 
     <div id="tabs_container" class="tabs-container">
         <div id="tab-1">
             <div class="styled-text section-inner-wrapper">
-
-                <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                           ?></p>
+                <p><?php echo $product->get_short_description();?></p>
             </div>
         </div>
 
         <div id="tab-2">
             <div class="styled-text section-inner-wrapper">
+	            <?php
+                    if (get_post_meta($product->get_id(), '_product_warranty', true)) {
+                        ?>
+                            <p><b>Warranty Information</b></p>
+                        <?php
+	                        echo get_post_meta($product->get_id(), '_product_warranty', true);
+                    }
 
-                 <p><b>Warranty Information</b></p>
-                <?php if (get_post_meta($product->get_id(), '_product_warranty', true)) {?>
-                <p><?php echo get_post_meta($product->get_id(), '_product_warranty', true); ?></p>
-            <?php } else {?>
-                <p> No warranty information </p>
-            <?php }?>
+                    if (get_post_meta($product->get_id(), '_product_return_policy', true)) {
+                        ?>
+                            <p><b>Return Policy</b></p>
+                        <?php
+	                    echo get_post_meta($product->get_id(), '_product_return_policy', true);
+                    }
 
-                <p><b>Return Policy</b></p>
-                <?php if (get_post_meta($product->get_id(), '_product_return_policy', true)) {?>
-                <p><?php echo get_post_meta($product->get_id(), '_product_return_policy', true); ?></p>
-            <?php } else {?>
-                <p> No return Policy </p>
-            <?php }?>
-
-
-             <p><b>Expected Delivery Date</b></p>
-                <?php if (get_post_meta($product->get_id(), '_product_expected_delivery_date', true)) {?>
-                <p><?php echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true); ?></p>
-            <?php } else {?>
-                <p> No expected delivery date information </p>
-            <?php }?>
-
-
+                    if (get_post_meta($product->get_id(), '_product_expected_delivery_date', true)) {
+                        ?>
+                            <p><b>Expected Delivery Date</b></p>
+                        <?php
+	                    echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
+                    }
+                ?>
             </div>
         </div>
 
@@ -94,8 +100,11 @@ if (!$short_description) {
                             <div class="stars" data-score="<?php echo $product->get_average_rating(); ?>"></div>
                         </div>
                         <div class="rating-widget">
-                            <div class="tag-descriptor"><span
-                                        class="total-reviews"><?php echo $product->get_review_count(); ?> Reviews</span>
+                            <div class="tag-descriptor">
+                                <span class="total-reviews">
+                                    <?php echo $product->get_review_count(); ?>
+                                    Reviews
+                                </span>
                             </div>
                         </div>
                     </header>
