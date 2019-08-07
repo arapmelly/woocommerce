@@ -2485,6 +2485,7 @@ html, body {
                 text-transform: capitalize;
                 font-size: 1.28571429em;
                 margin-top: -0.21425em;
+                margin-bottom: 0;
                 line-height: 1.28571429em;
               }
             }
@@ -2499,7 +2500,7 @@ html, body {
             padding-top: 0;
 
             .price {
-              font-size: 14px;
+              font-size: 12px;
               display: flex;
               flex-direction: row;
               align-items: center;
@@ -2516,7 +2517,7 @@ html, body {
               }
 
               .current-price {
-                font-weight: 700;
+                font-weight: 500;
               }
 
               .previous-price {
@@ -2723,6 +2724,15 @@ html, body {
     .category-header {
       .inner-wrapper {
         @include calcMaxWidth($tablet);
+
+        h1, h2, h3, h4 {
+          font-size: 1em !important;
+        }
+
+        a {
+          font-size: 1em !important;
+        }
+
       }
     }
 
