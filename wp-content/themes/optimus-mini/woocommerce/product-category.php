@@ -49,9 +49,7 @@ $productType  = $product->get_type();
         </div>
         <div class="meta">
 	        <?php
-		        if ( $term = get_term_by( 'id', $product->get_id(), 'product_cat' ) ) {
-			        echo $term->name;
-		        }
+                echo get_product_category_names($product);
 	        ?>
         </div>
     </div>
