@@ -13934,13 +13934,15 @@ html, body {
 }
 .main-content .category-header .inner-wrapper h1, .main-content .category-header .inner-wrapper h2, .main-content .category-header .inner-wrapper h3, .main-content .category-header .inner-wrapper h4 {
   text-align: left;
-  font-weight: bold;
+  font-weight: 400;
   text-transform: capitalize;
+  font-size: 1em;
 }
 .main-content .category-header .inner-wrapper a {
   color: #4972ff;
   text-align: right;
-  font-weight: bold;
+  font-weight: 400;
+  font-size: 1em;
 }
 .main-content .category-header .inner-wrapper a:hover {
   color: #202020;

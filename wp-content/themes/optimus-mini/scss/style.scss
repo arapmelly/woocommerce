@@ -2441,14 +2441,16 @@ html, body {
 
       h1, h2, h3, h4 {
         text-align: left;
-        font-weight: bold;
+        font-weight: 400;
         text-transform: capitalize;
+        font-size: 1em;
       }
 
       a {
         color: #4972ff;
         text-align: right;
-        font-weight: bold;
+        font-weight: 400;
+        font-size: 1em;
         &:hover {
           color: $color-medium;
         }
