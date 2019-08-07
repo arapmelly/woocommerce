@@ -115,6 +115,21 @@ function get_prod_attributes($product) {
 	return $formatted_attributes;
 }
 
+function get_product_category_names($product){
+    if(isset($product)){
+	    $terms = get_the_terms( $product->get_id(), 'product_cat' );
+	    $product_cat = array();
+
+	    foreach ($terms as $term) {
+		    $product_cat[] .= $term->name;
+	    }
+
+	    return implode(', ', $product_cat);
+    }else{
+        return "";
+    }
+}
+
 /*
 function layout_cart_page() {
 

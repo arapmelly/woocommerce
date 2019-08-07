@@ -54,13 +54,9 @@ $productPriceHTML = $product->get_price_html();
         <div class="content">
             <div class="header"><?php echo $product->get_name(); ?></div>
             <div class="meta">
-				<?php
-
-					if ( $term = get_term_by( 'id', $product->get_id(), 'product_cat' ) ) {
-						echo $term->name;
-					}
-
-				?>
+	            <?php
+	                echo get_product_category_names($product);
+	            ?>
             </div>
         </div>
 
