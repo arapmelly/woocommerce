@@ -14130,6 +14130,12 @@ html, body {
     margin: 0 auto;
     width: calc(100vw - 12.5rem) !important;
   }
+  .main-content .business-details .section-inner-wrapper .business-name {
+    margin-bottom: 10px;
+  }
+  .main-content .business-details .section-inner-wrapper .tag-descriptor {
+    display: none;
+  }
   .main-content .filter-by-category .section-inner-wrapper {
     width: calc(100vw - 12.5rem) !important;
   }

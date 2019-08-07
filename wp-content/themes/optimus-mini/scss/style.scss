@@ -1040,7 +1040,6 @@ html, body {
       }
     }
 
-
     form.checkout {
       .woocommerce-billing-fields {
         font-size: 14px;
@@ -1562,7 +1561,6 @@ html, body {
         }
       }
 
-
       .products-slider {
         .cards {
           .card {
@@ -1816,7 +1814,7 @@ html, body {
               }
             }
           }
-          
+
           .talk-to-seller-button {
             a.button, button {
               display: flex;
@@ -2702,7 +2700,6 @@ html, body {
       }
     }
   }
-
 }
 
 @media only screen and (max-width: $tablet) {
@@ -2734,6 +2731,14 @@ html, body {
         margin: 0 auto;
         @include calcMaxWidth($tablet);
 
+        .business-name {
+          margin-bottom: 10px;
+        }
+
+
+        .tag-descriptor {
+          display: none;
+        }
       }
     }
 
