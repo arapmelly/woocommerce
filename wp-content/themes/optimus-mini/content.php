@@ -48,9 +48,14 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 
 
 
-                <div class="rating-widget">
-                    <div class="stars" data-score="<?php echo get_average_shop_rating(); ?>"></div>
-                    <div class="num-rating tag-descriptor"><?php echo get_total_shop_rating_count(); ?> Ratings
+                <!-- <div class="rating-widget">
+
+
+
+
+                    <?php //echo get_average_shop_rating(); ?>
+                    <div class="stars"  data-score="<?php //echo get_average_shop_rating(); ?>"></div>
+                    <div class="num-rating tag-descriptor"><?php //echo get_total_shop_rating_count(); ?> Ratings
 
                         <form method="post" id="shop_rating" action="#" style="display: none;">
                             <input id="shop_rating_score" type="text" name="shop_rating_score">
@@ -59,7 +64,7 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 
                     </div>
 
-                </div>
+                </div> -->
 
 	            <?php //endif; // end of reviews count if block ?>
                 <!-- end of reviews count -->
@@ -68,15 +73,23 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                     <div class="share-icons">
 			            <?php
 
-$link = get_option('blogprimaryphonenumber');
+$phone = get_option('blogprimaryphonenumber');
 
-$call_shop = 'tel:+' . $link;
+$call_shop = 'tel:+' . $phone;
+
+$text = 'Hi! I would like to make an enquiry on your shop. Get back to me';
+
+$shop_link = 'https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $text;
 
 ?>
 
                         <a href="<?php echo $call_shop; ?>">
                             <span class="icon-phone-outline"></span>
                         </a>
+
+                        <a href="<?php echo $shop_link; ?>" data-action="share/whatsapp/share" target="_blank">
+            <span class="icon-whatsapp" ></span>
+        </a>
                     </div>
                 </div>
             </div>

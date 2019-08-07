@@ -51,7 +51,7 @@ if (!$short_description) {
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                     ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                           ?></p>
             </div>
         </div>
 
@@ -59,8 +59,8 @@ if (!$short_description) {
             <div class="styled-text section-inner-wrapper">
 
                  <p><b>Warranty Information</b></p>
-                <?php if (get_post_meta($product->get_id(), '_product_warranty_information', true)) {?>
-                <p><?php echo get_post_meta($product->get_id(), '_product_warranty_information', true); ?></p>
+                <?php if (get_post_meta($product->get_id(), '_product_warranty', true)) {?>
+                <p><?php echo get_post_meta($product->get_id(), '_product_warranty', true); ?></p>
             <?php } else {?>
                 <p> No warranty information </p>
             <?php }?>
@@ -70,6 +70,14 @@ if (!$short_description) {
                 <p><?php echo get_post_meta($product->get_id(), '_product_return_policy', true); ?></p>
             <?php } else {?>
                 <p> No return Policy </p>
+            <?php }?>
+
+
+             <p><b>Expected Delivery Date</b></p>
+                <?php if (get_post_meta($product->get_id(), '_product_expected_delivery_date', true)) {?>
+                <p><?php echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true); ?></p>
+            <?php } else {?>
+                <p> No expected delivery date information </p>
             <?php }?>
 
 
@@ -83,7 +91,7 @@ if (!$short_description) {
                     <header class="rating-header">
                         <div class="num-rating">
                             <span class="rating"><?php echo $product->get_average_rating(); ?></span>
-                            <div class="stars" data-score="0"></div>
+                            <div class="stars" data-score="<?php echo $product->get_average_rating(); ?>"></div>
                         </div>
                         <div class="rating-widget">
                             <div class="tag-descriptor"><span
@@ -138,7 +146,7 @@ if (!$short_description) {
                         </form>
                     </div> -->
 
-                    <div id="review_form">
+                    <div id="review_form" style="display: none;">
                         <div id="respond" class="comment-respond review-textarea">
                             <!--                            <span id="reply-title" class="comment-reply-title">Add a review</span>-->
 
@@ -180,15 +188,6 @@ if (!$short_description) {
                                               placeholder="Write a review" required=""></textarea>
                                 </div>
 
-                                <!--                                <p class="comment-form-author">-->
-                                <!--                                    <label for="author">Name&nbsp;<span class="required">*</span></label>-->
-                                <!--                                    <input id="author" name="author" type="text" value="" size="30" required="">-->
-                                <!--                                </p>-->
-                                <!---->
-                                <!--                                <p class="comment-form-email">-->
-                                <!--                                    <label for="email">Email&nbsp;<span class="required">*</span></label>-->
-                                <!--                                    <input id="email" name="email" type="email" value="" size="30" required="">-->
-                                <!--                                </p>-->
 
                                 <div class="form-submit">
 
@@ -196,8 +195,7 @@ if (!$short_description) {
                                            value="<?php echo $product->get_id(); ?>" id="comment_post_ID">
                                     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
 
-                                    <input type="submit" id="submit" class="submit button" value="Submit"
-                                           onClick="submitReview()">
+                                    <input type="submit" id="submit" class="submit button" value="Submit">
                                 </div>
                             </form>
                         </div><!-- #respond -->
@@ -211,26 +209,3 @@ if (!$short_description) {
 </div>
 
 
-<script type="text/javascript">
-
-    function submitReview() {
-
-        console.log('we here right now');
-
-        /*
-		var rating = document.getElementById('rating').value;
-		 var comment = document.getElementById('comment').value;
-		 var name = document.getElementById('name').value;
-		 var email = document.getElementById('email').value;
-		 var comment_post_ID = document.getElementById('comment_post_ID').value;
-
-
-		 console.log(rating);
-		 console.log(comment);
-		 */
-
-
-    }
-
-
-</script>
