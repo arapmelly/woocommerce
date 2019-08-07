@@ -45,7 +45,7 @@
 								<?php if ( ! is_null( $image ) ) { ?>
                                     <img src="<?php echo $image->small; ?>" alt="">
 								<?php } else { ?>
-                                    <img src="" alt="no image provided">
+                                    <img src="https://via.placeholder.com/600.png?text=No+Image" alt="no image provided">
 								<?php } ?>
                             </a>
 
