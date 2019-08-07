@@ -11882,7 +11882,11 @@ a.ui.card:hover,
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
   min-height: 100vh;
+  position: absolute;
+  z-index: 1;
+  background-color: #fff;
 }
 
 .circle {
@@ -13226,13 +13230,13 @@ html, body {
   text-align: left;
   font-weight: 400;
   text-transform: capitalize;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 .main-content .products-by-category .products .category-header .inner-wrapper a {
   color: #4972ff;
   text-align: right;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 .main-content .products-by-category .products .category-header .inner-wrapper a:hover {
   color: #202020;
@@ -13267,7 +13271,7 @@ html, body {
   padding-top: 0;
 }
 .main-content .products-by-category .products .products-slider .cards .card .price-discount .price {
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13283,7 +13287,7 @@ html, body {
   margin: 0;
 }
 .main-content .products-by-category .products .products-slider .cards .card .price-discount .price .current-price {
-  font-weight: 700;
+  font-weight: 500;
 }
 .main-content .products-by-category .products .products-slider .cards .card .price-discount .price .previous-price {
   color: #898c98;
@@ -13965,7 +13969,15 @@ html, body {
   font-size: 12px;
 }
 .main-content .products-category .section-inner-wrapper .cards .card .content .header {
+  font-size: 12px;
+}
+.main-content .products-category .section-inner-wrapper .cards .card .content .header h1, .main-content .products-category .section-inner-wrapper .cards .card .content .header h2, .main-content .products-category .section-inner-wrapper .cards .card .content .header h3, .main-content .products-category .section-inner-wrapper .cards .card .content .header h4 {
+  text-align: left;
   font-weight: 300;
+  text-transform: capitalize;
+  font-size: 1.28571429em;
+  margin-top: -0.21425em;
+  line-height: 1.28571429em;
 }
 .main-content .products-category .section-inner-wrapper .cards .card .price-discount {
   display: flex;

@@ -1546,14 +1546,14 @@ html, body {
             text-align: left;
             font-weight: 400;
             text-transform: capitalize;
-            font-size: 1em;
+            font-size: 1.5em;
           }
 
           a {
             color: #4972ff;
             text-align: right;
             font-weight: 400;
-            font-size: 1em;
+            font-size: 1.2em;
 
             &:hover {
               color: $color-medium;
@@ -1561,6 +1561,7 @@ html, body {
           }
         }
       }
+
 
       .products-slider {
         .cards {
@@ -1595,7 +1596,7 @@ html, body {
               padding-top: 0;
 
               .price {
-                font-size: 14px;
+                font-size: 12px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -1612,7 +1613,7 @@ html, body {
                 }
 
                 .current-price {
-                  font-weight: 700;
+                  font-weight: 500;
                 }
 
                 .previous-price {
@@ -2479,9 +2480,18 @@ html, body {
             text-align: left;
             font-size: 12px;
             .header {
-              font-weight: 300;
+              font-size: 12px;
+              h1, h2, h3, h4 {
+                text-align: left;
+                font-weight: 300;
+                text-transform: capitalize;
+                font-size: 1.28571429em;
+                margin-top: -0.21425em;
+                line-height: 1.28571429em;
+              }
             }
           }
+
           .price-discount {
             display: flex;
             flex-direction: row;
