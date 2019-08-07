@@ -111,7 +111,7 @@ foreach ($cats as $cat) {
 
                 <header class="category-header">
                     <div class="inner-wrapper">
-                        <h3><?php echo $cat->name; ?> </h3>
+                        <h1><?php echo $cat->name; ?> </h1>
                         <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">View All</a>
                     </div>
                 </header> <!-- end of category header -->
@@ -133,9 +133,12 @@ $query = new WC_Product_Query(array(
 	$itemWidth = "";
 	$productsLoopCounter = 1;
 	foreach ($products as $product) {
+        $product = wc_get_product( $product->get_id() );
+        $productPriceHTML = $product->get_price_html();
+        $productType  = $product->get_type();
 		?>
 	                        <?php
-if (count($products) == 1) {
+if (isset($products) && is_array($products) && count($products) == 1) {
 			$itemWidth = "full-width";
 		} elseif (count($products) > 1) {
 			if (count($products) == 3) {
@@ -160,7 +163,7 @@ $image = get_product_primary_image($product);
 			$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 		}
 		?>
-                            <div class="image" style="background-image: url(<?php echo $image->medium ?>)">
+                            <div class="image" style="background-image: url(<?php echo isset($image->medium) ? $image->medium : "https://via.placeholder.com/600x600.png?text=No+Image" ?>)">
 
                             </div> <!-- end of image div -->
                             <div class="content">
@@ -179,8 +182,9 @@ $image = get_product_primary_image($product);
 if ($product->is_type('variable')) {
 			?>
                                             <h2 class="current-price" id="productPrice">
-                                                <?php echo get_woocommerce_currency_symbol();
-			echo get_post_meta($product->get_id(), '_price', true) ?>
+                                                <?php
+                                                    echo $productPriceHTML;
+                                                ?>
                                             </h2>
 
                                     <?php } else {
