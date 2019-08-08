@@ -9607,7 +9607,11 @@ a.ui.card:hover,
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100vh; }
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  z-index: 1;
+  background-color: #fff; }
 
 .circle {
   width: 26px;
@@ -10345,7 +10349,6 @@ html, body {
         width: 100%; }
         .woocommerce-cart .woocommerce .sticky-button .sticky-inner .checkout-button a {
           font-size: 14px;
-          padding: 1.2em;
           font-weight: 700;
           line-height: 33px;
           width: 100%; }
@@ -10704,12 +10707,12 @@ html, body {
           text-align: left;
           font-weight: 400;
           text-transform: capitalize;
-          font-size: 1em; }
+          font-size: 1.5em; }
         .main-content .products-by-category .products .category-header .inner-wrapper a {
           color: #4972ff;
           text-align: right;
           font-weight: 400;
-          font-size: 1em; }
+          font-size: 1.2em; }
           .main-content .products-by-category .products .category-header .inner-wrapper a:hover {
             color: #202020; }
     .main-content .products-by-category .products .products-slider .cards .card {
@@ -10740,7 +10743,7 @@ html, body {
         border: none;
         padding-top: 0; }
         .main-content .products-by-category .products .products-slider .cards .card .price-discount .price {
-          font-size: 14px;
+          font-size: 12px;
           display: flex;
           flex-direction: row;
           align-items: center; }
@@ -10754,7 +10757,7 @@ html, body {
             color: #4971ff;
             margin: 0; }
           .main-content .products-by-category .products .products-slider .cards .card .price-discount .price .current-price {
-            font-weight: 700; }
+            font-weight: 500; }
           .main-content .products-by-category .products .products-slider .cards .card .price-discount .price .previous-price {
             color: #898c98;
             font-size: 1.1em;
@@ -10883,7 +10886,7 @@ html, body {
               padding: 17px;
               font-size: 14px;
               line-height: 18px;
-              width: 200px; }
+              width: 205px; }
               .main-content .product .product-top-section .product-details .section-inner-wrapper .actions a.button span, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions button span {
                 font-size: 24px;
                 margin-right: 5px; }
@@ -10937,7 +10940,7 @@ html, body {
             flex-direction: column;
             width: 100%; }
             .main-content .product .product-top-section .product-details .section-inner-wrapper .product-variation form.variations_form .variations {
-              width: 403.6px; }
+              width: 413.5px; }
               .main-content .product .product-top-section .product-details .section-inner-wrapper .product-variation form.variations_form .variations .field {
                 font-size: 14px; }
                 .main-content .product .product-top-section .product-details .section-inner-wrapper .product-variation form.variations_form .variations .field label {
@@ -11290,12 +11293,14 @@ html, body {
         flex: auto; }
       .main-content .category-header .inner-wrapper h1, .main-content .category-header .inner-wrapper h2, .main-content .category-header .inner-wrapper h3, .main-content .category-header .inner-wrapper h4 {
         text-align: left;
-        font-weight: bold;
-        text-transform: capitalize; }
+        font-weight: 400;
+        text-transform: capitalize;
+        font-size: 1em; }
       .main-content .category-header .inner-wrapper a {
         color: #4972ff;
         text-align: right;
-        font-weight: bold; }
+        font-weight: 400;
+        font-size: 1em; }
         .main-content .category-header .inner-wrapper a:hover {
           color: #202020; }
   .main-content .products-category .section-inner-wrapper .cards .card {
@@ -11313,7 +11318,15 @@ html, body {
       text-align: left;
       font-size: 12px; }
       .main-content .products-category .section-inner-wrapper .cards .card .content .header {
-        font-weight: 300; }
+        font-size: 12px; }
+        .main-content .products-category .section-inner-wrapper .cards .card .content .header h1, .main-content .products-category .section-inner-wrapper .cards .card .content .header h2, .main-content .products-category .section-inner-wrapper .cards .card .content .header h3, .main-content .products-category .section-inner-wrapper .cards .card .content .header h4 {
+          text-align: left;
+          font-weight: 300;
+          text-transform: capitalize;
+          font-size: 1.28571429em;
+          margin-top: -0.21425em;
+          margin-bottom: 0;
+          line-height: 1.28571429em; }
     .main-content .products-category .section-inner-wrapper .cards .card .price-discount {
       display: flex;
       flex-direction: row;
@@ -11322,7 +11335,7 @@ html, body {
       border: none;
       padding-top: 0; }
       .main-content .products-category .section-inner-wrapper .cards .card .price-discount .price {
-        font-size: 14px;
+        font-size: 12px;
         display: flex;
         flex-direction: row;
         align-items: center; }
@@ -11336,7 +11349,7 @@ html, body {
           color: #4971ff;
           margin: 0; }
         .main-content .products-category .section-inner-wrapper .cards .card .price-discount .price .current-price {
-          font-weight: 700; }
+          font-weight: 500; }
         .main-content .products-category .section-inner-wrapper .cards .card .price-discount .price .previous-price {
           color: #898c98;
           font-size: 1.1em;
@@ -11428,9 +11441,17 @@ html, body {
       width: calc(100vw - 12.5rem) !important; }
   .main-content .category-header .inner-wrapper {
     width: calc(100vw - 12.5rem) !important; }
+    .main-content .category-header .inner-wrapper h1, .main-content .category-header .inner-wrapper h2, .main-content .category-header .inner-wrapper h3, .main-content .category-header .inner-wrapper h4 {
+      font-size: 1em !important; }
+    .main-content .category-header .inner-wrapper a {
+      font-size: 1em !important; }
   .main-content .business-details .section-inner-wrapper {
     margin: 0 auto;
     width: calc(100vw - 12.5rem) !important; }
+    .main-content .business-details .section-inner-wrapper .business-name {
+      margin-bottom: 10px; }
+    .main-content .business-details .section-inner-wrapper .tag-descriptor {
+      display: none; }
   .main-content .filter-by-category .section-inner-wrapper {
     width: calc(100vw - 12.5rem) !important; }
   .main-content .products .category-header .inner-wrapper {

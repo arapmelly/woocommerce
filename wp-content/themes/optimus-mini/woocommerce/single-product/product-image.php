@@ -66,25 +66,31 @@ $gallery_images = get_product_images($product);
 ?>
 
 <section class="product-image">
+<?php
+    if(!empty($srcSet)){
+        ?>
+            <img alt=""
+             src="<?php echo isset($image->large) ? $image->large : "https://via.placeholder.com/600?text=No+Image"; ?>"
+             srcset="<?php echo $srcSet; ?>"
+             class="responsive" style="cursor: pointer;">
+        <?php
+    }else{
+	    ?>
+            <img alt="" src="<?php echo isset($image->large) ? $image->large : "https://via.placeholder.com/600?text=No+Image"; ?>" class="responsive" style="cursor: pointer;">
+	    <?php
+    }
+?>
 
-    <img alt=""
-         src="<?php echo $image->large; ?>"
-         srcset="<?php echo $srcSet; ?>"
-         class="responsive" style="cursor: pointer;">
+ <?php if (isset($gallery_images) && is_array($gallery_images) && count($gallery_images) > 0) {?>
 
+ <?php foreach ($gallery_images as $gallery_image) {?>
 
-         <?php if (count($gallery_images) > 0) {?>
+ <?php $srcSet = $gallery_image->small . ' 425w' . ', ' . $gallery_image->medium . ' 768w' . ', ' . $gallery_image->large . ' 1920w';?>
 
-         <?php foreach ($gallery_images as $gallery_image) {?>
+ <img alt="" src="<?php echo $gallery_image->large; ?>" srcset="<?php echo $srcSet; ?>">
 
-         <?php $srcSet = $gallery_image->small . ' 425w' . ', ' . $gallery_image->medium . ' 768w' . ', ' . $gallery_image->large . ' 1920w';?>
+ <?php }?>
 
-         <img alt="" src="<?php echo $gallery_image->large; ?>" srcset="<?php echo $srcSet; ?>">
-
-         <?php }?>
-
-         <?php }?>
-
-
+ <?php }?>
 
 </section>

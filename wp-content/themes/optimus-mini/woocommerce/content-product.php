@@ -23,6 +23,9 @@ global $product;
 if (empty($product) || !$product->is_visible()) {
 	return;
 }
+
+$product = wc_get_product( $product->get_id() );
+$productPriceHTML = $product->get_price_html();
 ?>
 
 
@@ -46,18 +49,14 @@ if (empty($product) || !$product->is_visible()) {
 
 	?>
 
-        <div class="image" style="background-image: url(<?php echo $image->medium ?>)"></div>
+        <div class="image" style="background-image: url(<?php echo isset($image->medium) ? $image->medium : "https://via.placeholder.com/600x600.png?text=No+Image" ?>)"></div>
 
         <div class="content">
             <div class="header"><?php echo $product->get_name(); ?></div>
             <div class="meta">
-				<?php
-
-					if ( $term = get_term_by( 'id', $product->get_id(), 'product_cat' ) ) {
-						echo $term->name;
-					}
-
-				?>
+	            <?php
+	                echo get_product_category_names($product);
+	            ?>
             </div>
         </div>
 
@@ -69,8 +68,11 @@ if (empty($product) || !$product->is_visible()) {
 	            <?php if ( $product->is_type( 'variable' ) ) {
 		            ?>
 
-                    <h2 class="current-price" id="productPrice"><?php echo get_woocommerce_currency_symbol();
-				            echo get_post_meta( $product->get_id(), '_price', true ) ?></h2>
+                    <h2 class="current-price" id="productPrice">
+                        <?php
+                            echo $productPriceHTML;
+                        ?>
+                    </h2>
 
 	            <?php } else { ?>
 		            <?php if ( $product->get_sale_price() <= 0 ) { ?>

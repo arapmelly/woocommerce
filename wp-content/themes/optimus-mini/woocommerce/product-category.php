@@ -36,17 +36,20 @@ if (!is_null($image)) {
 	$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 }
 
+$product = wc_get_product( $product->get_id() );
+$productPriceHTML = $product->get_price_html();
+$productType  = $product->get_type();
 ?>
 
-    <div class="image" style="background-image: url(<?php echo $image->medium ?>)"></div>
+    <div class="image" style="background-image: url(<?php echo isset($image->medium) ? $image->medium : "https://via.placeholder.com/600x600.png?text=No+Image" ?>)"></div>
 
     <div class="content">
-        <div class="header"><?php echo $product->get_name(); ?></div>
+        <div class="header">
+            <h2><?php echo $product->get_name(); ?></h2>
+        </div>
         <div class="meta">
 	        <?php
-		        if ( $term = get_term_by( 'id', $product->get_id(), 'product_cat' ) ) {
-			        echo $term->name;
-		        }
+                echo get_product_category_names($product);
 	        ?>
         </div>
     </div>
@@ -54,29 +57,26 @@ if (!is_null($image)) {
     <div class="content price-discount">
 
             <div class="header price">
+	            <?php if ( $product->is_type( 'variable' ) ) {?>
 
-
-	            <?php if ( $product->is_type( 'variable' ) ) {
-		            ?>
-
-                <h2 class="current-price" id="productPrice"><?php echo get_woocommerce_currency_symbol();
-	echo get_post_meta($product->get_id(), '_price', true) ?></h2>
+                <h3 class="current-price" id="productPrice">
+                    <?php
+                        echo $productPriceHTML;
+                    ?>
+                </h3>
 
             <?php } else {?>
             <?php if ($product->get_sale_price() <= 0) {?>
-                <h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                <h3 class="current-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h3>
             <?php }?>
 
             <?php if ($product->get_sale_price() > 0) {?>
-                <h2 class="previous-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                <h3 class="previous-price" id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h3>
 
-                <h2 class="current-price" id="productPrice"><?php echo wc_price($product->get_sale_price()); ?></h2>
+                <h4 class="current-price" id="productPrice"><?php echo wc_price($product->get_sale_price()); ?></h4>
             <?php }?>
 
             <?php }?>
-
-
-
                <!--  <?php //if ($product->get_sale_price() <= 0) {?>
                 <h2 class="current-price"><?php //echo wc_price($product->get_regular_price()); ?></h2>
             <?php //}?>

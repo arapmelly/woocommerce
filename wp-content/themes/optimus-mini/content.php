@@ -48,9 +48,14 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 
 
 
-                <div class="rating-widget">
-                    <div class="stars" data-score="<?php echo get_average_shop_rating(); ?>"></div>
-                    <div class="num-rating tag-descriptor"><?php echo get_total_shop_rating_count(); ?> Ratings
+                <!-- <div class="rating-widget">
+
+
+
+
+                    <?php //echo get_average_shop_rating(); ?>
+                    <div class="stars"  data-score="<?php //echo get_average_shop_rating(); ?>"></div>
+                    <div class="num-rating tag-descriptor"><?php //echo get_total_shop_rating_count(); ?> Ratings
 
                         <form method="post" id="shop_rating" action="#" style="display: none;">
                             <input id="shop_rating_score" type="text" name="shop_rating_score">
@@ -59,7 +64,7 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 
                     </div>
 
-                </div>
+                </div> -->
 
 	            <?php //endif; // end of reviews count if block ?>
                 <!-- end of reviews count -->
@@ -68,15 +73,23 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
                     <div class="share-icons">
 			            <?php
 
-$link = get_option('blogprimaryphonenumber');
+$phone = get_option('blogprimaryphonenumber');
 
-$call_shop = 'tel:+' . $link;
+$call_shop = 'tel:+' . $phone;
+
+$text = 'Hi! I would like to make an enquiry on your shop. Get back to me';
+
+$shop_link = 'https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $text;
 
 ?>
 
                         <a href="<?php echo $call_shop; ?>">
                             <span class="icon-phone-outline"></span>
                         </a>
+
+                        <a href="<?php echo $shop_link; ?>" data-action="share/whatsapp/share" target="_blank">
+            <span class="icon-whatsapp" ></span>
+        </a>
                     </div>
                 </div>
             </div>
@@ -98,7 +111,7 @@ foreach ($cats as $cat) {
 
                 <header class="category-header">
                     <div class="inner-wrapper">
-                        <h3><?php echo $cat->name; ?> </h3>
+                        <h1><?php echo $cat->name; ?> </h1>
                         <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">View All</a>
                     </div>
                 </header> <!-- end of category header -->
@@ -120,9 +133,12 @@ $query = new WC_Product_Query(array(
 	$itemWidth = "";
 	$productsLoopCounter = 1;
 	foreach ($products as $product) {
+        $product = wc_get_product( $product->get_id() );
+        $productPriceHTML = $product->get_price_html();
+        $productType  = $product->get_type();
 		?>
 	                        <?php
-if (count($products) == 1) {
+if (isset($products) && is_array($products) && count($products) == 1) {
 			$itemWidth = "full-width";
 		} elseif (count($products) > 1) {
 			if (count($products) == 3) {
@@ -147,7 +163,7 @@ $image = get_product_primary_image($product);
 			$srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $image->large . ' 1920w';
 		}
 		?>
-                            <div class="image" style="background-image: url(<?php echo $image->medium ?>)">
+                            <div class="image" style="background-image: url(<?php echo isset($image->medium) ? $image->medium : "https://via.placeholder.com/600x600.png?text=No+Image" ?>)">
 
                             </div> <!-- end of image div -->
                             <div class="content">
@@ -166,8 +182,9 @@ $image = get_product_primary_image($product);
 if ($product->is_type('variable')) {
 			?>
                                             <h2 class="current-price" id="productPrice">
-                                                <?php echo get_woocommerce_currency_symbol();
-			echo get_post_meta($product->get_id(), '_price', true) ?>
+                                                <?php
+                                                    echo $productPriceHTML;
+                                                ?>
                                             </h2>
 
                                     <?php } else {
