@@ -148,7 +148,6 @@
   }
 
   .modal-rating {
-    //display: none;
     vertical-align: middle;
     position: relative;
     z-index: 2;
@@ -219,6 +218,15 @@
         -webkit-animation-delay: -0.9s;
         animation-delay: -0.9s
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .blocker {
+    .modal-rating {
+      padding: 15px;
+      width: 100%;
     }
   }
 }

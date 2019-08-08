@@ -636,7 +636,6 @@ img {
     line-height: 32.95px;
   }
 
-
   &.google {
     background-color: $default-white-color;
     border: 1px solid #757575;
@@ -651,6 +650,19 @@ img {
         width: inherit !important;
 
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .button {
+    &.facebook {
+      font-size: 14px;
+      line-height: unset;
+    }
+
+    &.google {
+      font-size: 14px;
     }
   }
 }

@@ -1590,7 +1590,14 @@ html, body {
                 overflow: hidden;
                 text-overflow: ellipsis;
               }
+
+              .meta{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
             }
+
             .price-discount {
               display: flex;
               flex-direction: row;
@@ -1618,6 +1625,8 @@ html, body {
 
                 .current-price {
                   font-weight: 500;
+                  flex-wrap: wrap;
+                  display: flex;
                 }
 
                 .previous-price {
@@ -2524,6 +2533,8 @@ html, body {
 
               .current-price {
                 font-weight: 500;
+                flex-wrap: wrap;
+                display: flex;
               }
 
               .previous-price {

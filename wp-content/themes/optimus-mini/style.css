@@ -4908,6 +4908,12 @@ img {
       .button.google span[class*="icon-"] img {
         width: inherit !important; }
 
+@media only screen and (max-width: 375px) {
+  .button.facebook {
+    font-size: 14px;
+    line-height: unset; }
+  .button.google {
+    font-size: 14px; } }
 input {
   margin: 0;
   max-width: 100%;
@@ -9590,6 +9596,10 @@ a.ui.card:hover,
         -webkit-animation-delay: -0.9s;
         animation-delay: -0.9s; }
 
+@media only screen and (max-width: 375px) {
+  .blocker .modal-rating {
+    padding: 15px;
+    width: 100%; } }
 @-webkit-keyframes sk-stretchdelay {
   0%, 40%, 100% {
     -webkit-transform: scaleY(0.5); }
@@ -10735,6 +10745,10 @@ html, body {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis; }
+        .main-content .products-by-category .products .products-slider .cards .card .content .meta {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
       .main-content .products-by-category .products .products-slider .cards .card .price-discount {
         display: flex;
         flex-direction: row;
@@ -10757,7 +10771,9 @@ html, body {
             color: #4971ff;
             margin: 0; }
           .main-content .products-by-category .products .products-slider .cards .card .price-discount .price .current-price {
-            font-weight: 500; }
+            font-weight: 500;
+            flex-wrap: wrap;
+            display: flex; }
           .main-content .products-by-category .products .products-slider .cards .card .price-discount .price .previous-price {
             color: #898c98;
             font-size: 1.1em;
@@ -11349,7 +11365,9 @@ html, body {
           color: #4971ff;
           margin: 0; }
         .main-content .products-category .section-inner-wrapper .cards .card .price-discount .price .current-price {
-          font-weight: 500; }
+          font-weight: 500;
+          flex-wrap: wrap;
+          display: flex; }
         .main-content .products-category .section-inner-wrapper .cards .card .price-discount .price .previous-price {
           color: #898c98;
           font-size: 1.1em;

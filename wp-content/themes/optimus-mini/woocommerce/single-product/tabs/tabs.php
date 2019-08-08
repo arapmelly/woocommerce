@@ -193,6 +193,7 @@
 </div>
 
 <!-- Modal HTML embedded directly into document -->
+<!--https://github.com/kylefox/jquery-modal-->
 <div id="product_rating-form" class="modal-rating">
     <p>Login To Submit Your Review</p>
 
