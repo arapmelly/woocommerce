@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?1dk84p');
-  src:  url('fonts/icomoon.eot?1dk84p#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?1dk84p') format('truetype'),
-  url('fonts/icomoon.woff?1dk84p') format('woff'),
-  url('fonts/icomoon.svg?1dk84p#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?wsca99');
+  src:  url('fonts/icomoon.eot?wsca99#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?wsca99') format('truetype'),
+  url('fonts/icomoon.woff?wsca99') format('woff'),
+  url('fonts/icomoon.svg?wsca99#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -42,7 +42,7 @@
   content: "\e91a";
 }
 .icon-close-outline:before {
-  content: "\e900";
+  content: "\e907";
 }
 .icon-whatsapp:before {
   content: "\e914";
@@ -69,47 +69,48 @@
   content: "\e90f";
 }
 .icon-store:before {
-  content: "\e901";
-}
-.icon-phone-outline:before {
-  content: "\e902";
-}
-.icon-email-outline:before {
-  content: "\e903";
-}
-.icon-search-outline:before {
-  content: "\e904";
-}
-.icon-clock-outline:before {
-  content: "\e909";
-}
-.icon-paper-plane-outline:before {
-  content: "\e905";
-}
-.icon-chevron-up-outline:before {
-  content: "\e906";
-}
-.icon-chevron-down-outline:before {
-  content: "\e907";
-}
-.icon-chevron-left-outline:before {
   content: "\e908";
 }
-.icon-chevron-right-outline:before {
+.icon-phone-outline:before {
+  content: "\e909";
+}
+.icon-email-outline:before {
   content: "\e90a";
 }
-.icon-shopping-cart-outline:before {
+.icon-search-outline:before {
   content: "\e90b";
 }
-.icon-menu-outline:before {
+.icon-clock-outline:before {
   content: "\e90c";
 }
-.icon-star-outline:before {
+.icon-paper-plane-outline:before {
   content: "\e90d";
 }
-.icon-star:before {
+.icon-chevron-up-outline:before {
   content: "\e916";
 }
+.icon-chevron-down-outline:before {
+  content: "\e91c";
+}
+.icon-chevron-left-outline:before {
+  content: "\e91d";
+}
+.icon-chevron-right-outline:before {
+  content: "\e91e";
+}
+.icon-shopping-cart-outline:before {
+  content: "\e91f";
+}
+.icon-menu-outline:before {
+  content: "\e920";
+}
+.icon-star-outline:before {
+  content: "\e921";
+}
+.icon-star:before {
+  content: "\e922";
+}
+
 
 
 @font-face {
