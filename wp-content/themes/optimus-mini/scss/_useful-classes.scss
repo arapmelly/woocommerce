@@ -625,7 +625,36 @@ img {
     font-size: 24px;
     margin-right: 5px;
   }
+
+  &.facebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $facebook;
+    color: $default-white-color;
+    margin-bottom: 15px;
+    line-height: 32.95px;
+  }
+
+
+  &.google {
+    background-color: $default-white-color;
+    border: 1px solid #757575;
+    color: #757575;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span[class*="icon-"] {
+      width: 30px;
+
+      img{
+        width: inherit !important;
+
+      }
+    }
+  }
 }
+
 
 input {
   margin: 0;

@@ -8,6 +8,9 @@ jQuery(document).ready(function($) {
         },
         click: function (score, evt) {
 
+
+            $('#product_rating-form').modal();
+
             //set the value of the form rating
             document.getElementById("shop_rating_score").value = score;
             
