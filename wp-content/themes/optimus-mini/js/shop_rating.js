@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 
             
 
-            console.log('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
+            // console.log('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
             //document.getElementById("submit_shop_rating").click(); 
         }
     });

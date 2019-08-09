@@ -9595,6 +9595,13 @@ a.ui.card:hover,
       .blocker .modal-rating .modal-spinner .rect4 {
         -webkit-animation-delay: -0.9s;
         animation-delay: -0.9s; }
+    .blocker .modal-rating .your-rating {
+      text-align: center; }
+      .blocker .modal-rating .your-rating .rating-widget .stars {
+        margin: 0 auto;
+        width: auto;
+        display: table;
+        font-size: 34px; }
 
 @media only screen and (max-width: 375px) {
   .blocker .modal-rating {

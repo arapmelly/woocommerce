@@ -219,6 +219,19 @@
         animation-delay: -0.9s
       }
     }
+
+    .your-rating {
+      text-align: center;
+      .rating-widget {
+        .stars {
+          margin: 0 auto;
+          width: auto;
+          display: table;
+          font-size: 34px;
+        }
+      }
+
+    }
   }
 }
 
