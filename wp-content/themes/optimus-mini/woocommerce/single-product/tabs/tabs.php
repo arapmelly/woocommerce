@@ -212,8 +212,19 @@ $_product_expected_delivery_date = get_post_meta($product->get_id(), '_product_e
 <!-- Modal HTML embedded directly into document -->
 <!--https://github.com/kylefox/jquery-modal-->
 <div id="product_rating-form" class="modal-rating">
-    <p>Login To Submit Your Review</p>
 
-    <a href="#" class="button facebook"> <span class="icon-facebook"></span> Log In With facebook</a>
-    <a href="#" class="button google"> <span class="icon-google"> <img src="<?php echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a>
+    <div class="your-rating">
+        <p>Thank You For Your Review</p>
+
+        <div class="rating-widget">
+            <div class="stars" data-score="<?php echo $average; ?>"></div>
+        </div>
+    </div>
+
+    <div class="login-btns">
+        <p>Login To Submit Your Review</p>
+        <a href="#" class="button facebook"> <span class="icon-facebook"></span> Log In With facebook</a>
+        <a href="#" class="button google"> <span class="icon-google"> <img src="<?php echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a>
+    </div>
+
 </div>
