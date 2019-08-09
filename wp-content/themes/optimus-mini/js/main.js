@@ -1,10 +1,3 @@
-
-// $(window).load(function () {
-//     $(".preloader").hide();
-//
-//     console.log('-----');
-// });
-
 (function ($) {
     /*$('.stars').raty({
         starType: 'i',
