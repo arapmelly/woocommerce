@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
                 <p><?php echo $product->get_short_description(); ?></p>
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                           ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                               ?></p>
             </div>
         </div>
 
@@ -214,7 +214,7 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
 <div id="product_rating-form" class="modal-rating">
 
     <div class="your-rating">
-        <p>Thank You For Your Review</p>
+        <p>Give this product a rating</p>
 
         <div class="rating-widget">
             <div class="stars"  id="prod_stars" data-score=""></div>
