@@ -32,7 +32,7 @@ do_action('woocommerce_before_add_to_cart_form');?>
     <form class="variations_form cart ui form"
           action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
           method="post" enctype='multipart/form-data' data-product_id="<?php echo absint($product->get_id()); ?>"
-          data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok.                                                                            ?>">
+          data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok.                                                                             ?>">
 
 		<?php do_action('woocommerce_before_variations_form');?>
 
@@ -42,7 +42,7 @@ do_action('woocommerce_before_add_to_cart_form');?>
             <div class="variations">
 				<?php foreach ($attributes as $attribute_name => $options): ?>
 
-					<?php print_r($options);?>
+
                     <div class="field">
 <!--                        <label for="--><?php //echo esc_attr( sanitize_title( $attribute_name ) ); ?><!--">--><?php //echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok.                                                                       ?><!--</label>-->
 						<?php

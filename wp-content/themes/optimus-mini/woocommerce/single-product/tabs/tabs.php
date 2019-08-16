@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                     ?></p>
             </div>
         </div>
 
@@ -228,8 +228,8 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
  -->
 <div id="status">
 </div>
-        <a href="#" class="button facebook" id="fb_login" style="display: block"> <span class="icon-facebook"></span> Log In With facebook</a>
-        <!--  <a href="#" class="button google"> <span class="icon-google"> <img src="<?php //echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a> -->
+        <a href="#" class="button facebook" id="fb_login" style="display: block;"> <span class="icon-facebook"></span> Log In With facebook</a>
+        <a href="#" class="button google" id="google_login_button" style="display: ;"> <span class="icon-google"> <img src="<?php echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a>
     </div>
 
 
@@ -245,7 +245,153 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
         </form>
 
 
+        <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+
+        <script>
+
+// Called when Google Javascript API Javascript is loaded
+function HandleGoogleApiLibrary() {
+  // Load "client" & "auth2" libraries
+  gapi.load('client:auth2', {
+    callback: function() {
+      // Initialize client library
+      // clientId & scope is provided => automatically initializes auth2 library
+      gapi.client.init({
+          apiKey: 'AIzaSyDJ-2ZdDF703ytXuRgSv1xXsS95m3boqTI',
+          clientId: '57385844047-jqmkb55si8it5mtofbthu3b6fr6ql6c5.apps.googleusercontent.com',
+          scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me'
+      }).then(
+        // On success
+        function(success) {
+            // After library is successfully loaded then enable the login button
+            //$("#login-button").removeAttr('disabled');
+            console.log('library initialized');
+        },
+        // On error
+        function(error) {
+          console.log(error);
+          alert('Error : Failed to Load Library');
+          }
+      );
+    },
+    onerror: function() {
+      // Failed to load libraries
+    }
+  });
+}
+
+ document.getElementById('google_login_button').addEventListener('click', function() {
+    //do the login
+
+    console.log('login button clicked');
+  // API call for Google login
+  gapi.auth2.getAuthInstance().signIn().then(
+    // On success
+    function(success) {
+      // API call to get user information
+      gapi.client.request({ path: 'https://www.googleapis.com/plus/v1/people/me' }).then(
+        // On success
+        function(success) {
+          console.log(success);
+          var user_info = JSON.parse(success.body);
+          console.log(user_info);
+
+          //$("#user-information div").eq(0).find("span").text(user_info.displayName);
+          //$("#user-information div").eq(1).find("span").text(user_info.id);
+          //$("#user-information div").eq(2).find("span").text(user_info.gender);
+          //$("#user-information div").eq(3).find("span").html('<img src="' + user_info.image.url + '" />');
+          //$("#user-information div").eq(4).find("span").text(user_info.emails[0].value);
+
+          document.getElementById('prod_rating').value = $('#prod_stars').raty('score');
+          document.getElementById('prod_author').value = user_info.displayName;
+          document.getElementById('prod_email').value = user_info.emails[0].value;
+
+          document.getElementById('rating_submit').click();
+
+          document.getElementById('status').innerHTML = 'Thanks for submitting your rating, ' + user_info.displayName + '!';
+
+          document.getElementById('fb_login').style.display = "none";
+          document.getElementById('google_login_button').style.display = "none";
+
+
+
+
+        },
+        // On error
+        function(error) {
+          //$("#login-button").removeAttr('disabled');
+          alert('Error : Failed to get user user information');
+        }
+      );
+    },
+    // On error
+    function(error) {
+      //$("#login-button").removeAttr('disabled');
+      alert('Error : Login Failed');
+    }
+  );
+
+}, false);
+
+// Click on login button
+/*$(".google_login_button").on('click', function() {
+  //$("#login-button").attr('disabled', 'disabled');
+console.log('login button clicked');
+  // API call for Google login
+  gapi.auth2.getAuthInstance().signIn().then(
+    // On success
+    function(success) {
+      // API call to get user information
+      gapi.client.request({ path: 'https://www.googleapis.com/plus/v1/people/me' }).then(
+        // On success
+        function(success) {
+          console.log(success);
+          var user_info = JSON.parse(success.body);
+          console.log(user_info);
+
+          //$("#user-information div").eq(0).find("span").text(user_info.displayName);
+          //$("#user-information div").eq(1).find("span").text(user_info.id);
+          //$("#user-information div").eq(2).find("span").text(user_info.gender);
+          //$("#user-information div").eq(3).find("span").html('<img src="' + user_info.image.url + '" />');
+          //$("#user-information div").eq(4).find("span").text(user_info.emails[0].value);
+
+          document.getElementById('prod_rating').value = $('#prod_stars').raty('score');
+          document.getElementById('prod_author').value = user_info.displayName;
+          document.getElementById('prod_email').value = user_info.emails[0].value;
+
+          document.getElementById('rating_submit').click();
+
+          document.getElementById('status').innerHTML = 'Thanks for submitting your rating, ' + user_info.displayName + '!';
+
+          document.getElementById('fb_login').style.display = "none";
+          document.getElementById('google-login-button').style.display = "none";
+
+
+
+
+        },
+        // On error
+        function(error) {
+          //$("#login-button").removeAttr('disabled');
+          alert('Error : Failed to get user user information');
+        }
+      );
+    },
+    // On error
+    function(error) {
+      //$("#login-button").removeAttr('disabled');
+      alert('Error : Login Failed');
+    }
+  );
+});*/
+
+</script>
+
+
 </div>
+
+
+
 
 
 
@@ -331,7 +477,7 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
 
 
         document.getElementById('fb_login').style.display = "none";
-
+        document.getElementById('google-login-button').style.display = "none";
 
       document.getElementById('prod_rating').value = $('#prod_stars').raty('score');
       document.getElementById('prod_author').value = response.name;
