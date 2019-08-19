@@ -4856,11 +4856,9 @@ img {
 
 .tag-descriptor {
   font-weight: 300;
-  margin-right: 3rem; 
-}
-.tag-descriptor div, .tag-descriptor span {
-    font-weight: 300; 
-  }
+  margin-right: 3rem; }
+  .tag-descriptor div, .tag-descriptor span {
+    font-weight: 300; }
 
 .button {
   cursor: pointer;
@@ -4912,8 +4910,7 @@ img {
 
 @media only screen and (max-width: 375px) {
   .button.facebook {
-    font-size: 14px;
-    line-height: unset; }
+    font-size: 14px; }
   .button.google {
     font-size: 14px; } }
 input {
@@ -9626,7 +9623,7 @@ a.ui.card:hover,
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 100vh;
   position: absolute;
   z-index: 1;
@@ -10203,7 +10200,10 @@ html, body {
             text-align: left;
             text-transform: capitalize;
             color: rgba(32, 32, 32, 0.89);
-            margin: 0; }
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
           .woocommerce-cart .woocommerce .cart-item-list .single-cart-item .inner-container .right-column > * {
             flex-grow: 1;
             padding: 3px 0;
@@ -10833,7 +10833,10 @@ html, body {
             font-size: 18px;
             margin-top: 8px;
             margin-bottom: 8px;
-            color: #202020; }
+            color: #202020;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
           .main-content .product .product-top-section .product-details .section-inner-wrapper .price {
             display: flex;
             flex-direction: row;
@@ -11343,7 +11346,10 @@ html, body {
       text-align: left;
       font-size: 12px; }
       .main-content .products-category .section-inner-wrapper .cards .card .content .header {
-        font-size: 12px; }
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
         .main-content .products-category .section-inner-wrapper .cards .card .content .header h1, .main-content .products-category .section-inner-wrapper .cards .card .content .header h2, .main-content .products-category .section-inner-wrapper .cards .card .content .header h3, .main-content .products-category .section-inner-wrapper .cards .card .content .header h4 {
           text-align: left;
           font-weight: 300;
@@ -11351,7 +11357,10 @@ html, body {
           font-size: 1.28571429em;
           margin-top: -0.21425em;
           margin-bottom: 0;
-          line-height: 1.28571429em; }
+          line-height: 1.28571429em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
     .main-content .products-category .section-inner-wrapper .cards .card .price-discount {
       display: flex;
       flex-direction: row;
