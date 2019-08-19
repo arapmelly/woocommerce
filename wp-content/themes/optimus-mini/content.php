@@ -30,8 +30,8 @@ $srcset = $image->small . ' 425w' . ', ' . $image->medium . ' 768w' . ', ' . $im
 
 
             <?php if (get_option('blogdescription')) {?>
-                <div class="tag-descriptor">
-                    <p><?php echo get_option('blogdescription'); ?></p>
+                <div class="tag-description" style="font-weight: 300; margin-right: 3rem; margin-bottom: 3rem;">
+                    <span><?php echo get_option('blogdescription'); ?></span>
                 </div>
                 <?php }?>
 
@@ -133,9 +133,9 @@ $query = new WC_Product_Query(array(
 	$itemWidth = "";
 	$productsLoopCounter = 1;
 	foreach ($products as $product) {
-        $product = wc_get_product( $product->get_id() );
-        $productPriceHTML = $product->get_price_html();
-        $productType  = $product->get_type();
+		$product = wc_get_product($product->get_id());
+		$productPriceHTML = $product->get_price_html();
+		$productType = $product->get_type();
 		?>
 	                        <?php
 if (isset($products) && is_array($products) && count($products) == 1) {
@@ -183,8 +183,8 @@ if ($product->is_type('variable')) {
 			?>
                                             <h2 class="current-price" id="productPrice">
                                                 <?php
-                                                    echo $productPriceHTML;
-                                                ?>
+echo $productPriceHTML;
+			?>
                                             </h2>
 
                                     <?php } else {

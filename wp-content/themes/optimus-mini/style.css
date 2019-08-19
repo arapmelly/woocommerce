@@ -4856,9 +4856,11 @@ img {
 
 .tag-descriptor {
   font-weight: 300;
-  margin-right: 3rem; }
-  .tag-descriptor div, .tag-descriptor span {
-    font-weight: 300; }
+  margin-right: 3rem; 
+}
+.tag-descriptor div, .tag-descriptor span {
+    font-weight: 300; 
+  }
 
 .button {
   cursor: pointer;
