@@ -4856,11 +4856,9 @@ img {
 
 .tag-descriptor {
   font-weight: 300;
-  margin-right: 3rem; 
-}
-.tag-descriptor div, .tag-descriptor span {
-    font-weight: 300; 
-  }
+  margin-right: 3rem; }
+  .tag-descriptor div, .tag-descriptor span {
+    font-weight: 300; }
 
 .button {
   cursor: pointer;
@@ -9625,7 +9623,7 @@ a.ui.card:hover,
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 100vh;
   position: absolute;
   z-index: 1;
