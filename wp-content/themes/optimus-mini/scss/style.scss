@@ -713,6 +713,9 @@ html, body {
               text-transform: capitalize;
               color: $default-dark-color;
               margin: 0;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
 
             & > * {
@@ -1712,6 +1715,9 @@ html, body {
             margin-top: 8px;
             margin-bottom: 8px;
             color: $color-medium;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
 
           .price {
@@ -2494,6 +2500,10 @@ html, body {
             font-size: 12px;
             .header {
               font-size: 12px;
+
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
               h1, h2, h3, h4 {
                 text-align: left;
                 font-weight: 300;
@@ -2502,6 +2512,9 @@ html, body {
                 margin-top: -0.21425em;
                 margin-bottom: 0;
                 line-height: 1.28571429em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
               }
             }
           }
