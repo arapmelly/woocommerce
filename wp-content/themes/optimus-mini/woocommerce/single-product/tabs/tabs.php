@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                              ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                  ?></p>
             </div>
         </div>
 
@@ -113,7 +113,7 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
         <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="button facebook">
 </fb:login-button>
  -->
- <p>Login To Submit Your Rating</p>
+
 <div id="status">
 </div>
         <a href="#" class="button facebook" id="fb_login" style="display: ;"> <span class="icon-facebook"></span> Log In With facebook</a>
@@ -133,9 +133,9 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
         </form>
 
 
-        <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+        <!-- <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script> -->
 
-        <script>
+       <!--  <script>
 
 // Called when Google Javascript API Javascript is loaded
 function HandleGoogleApiLibrary() {
@@ -218,7 +218,7 @@ function HandleGoogleApiLibrary() {
 
 
 
-</script>
+</script> -->
 
 
 </div>
@@ -253,7 +253,7 @@ function HandleGoogleApiLibrary() {
     } else {
       // The person is not logged into your app or we are unable to tell.
       document.getElementById('status').innerHTML = '<p>Please login ' +
-        'via facebook to submit your rating.</p>';
+        'to submit your rating.</p>';
     }
   }
 
