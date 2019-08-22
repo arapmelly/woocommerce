@@ -15,6 +15,7 @@ jQuery(document).ready(function($) {
 
 
             $('#product_rating-form').modal();
+            
 
             //set the value of the form rating
             //document.getElementById("shop_rating_score").value = score;

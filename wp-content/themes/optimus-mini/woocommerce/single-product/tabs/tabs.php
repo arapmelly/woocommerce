@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                              ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                              ?></p>
             </div>
         </div>
 
@@ -91,121 +91,6 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
             </div>
         </div>
 
-        <!--        <div id="tab-3">-->
-        <!--            <div class="reviews">-->
-
-        <!--                <div class="total-rating">-->
-        <!--                    <header class="rating-header">-->
-        <!--                        <div class="num-rating">-->
-        <!--                            <span class="rating">-->
-		<?php //echo $product->get_average_rating(); ?><!--</span>-->
-        <!--                            <div class="stars" data-score="0"></div>-->
-        <!--                        </div>-->
-        <!--                        <div class="rating-widget">-->
-        <!--                            <div class="tag-descriptor"><span-->
-        <!--                                        class="total-reviews">-->
-		<?php //echo $product->get_review_count(); ?><!-- Reviews</span>-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                    </header>-->
-        <!--                </div>-->
-
-        <!--                <div class="section-inner-wrapper">-->
-        <!---->
-        <!--					--><?php //$reviews = get_approved_comments($product->get_id());?>
-        <!---->
-        <!--					--><?php //foreach ($reviews as $review) {?>
-        <!---->
-        <!--                        <div class="item-review">-->
-        <!--                            <div class="review">-->
-        <!--                                <div class="inner">-->
-        <!--                                    <h3>--><?php //echo $review->comment_author; ?><!--</h3>-->
-        <!--                                    <p>--><?php //echo $review->comment_content; ?><!--</p>-->
-        <!--                                </div>-->
-        <!--                                <div class="date-time"><span-->
-        <!--                                            class="icon-clock-outline"></span><span>-->
-		<?php //echo $review->comment_date; ?><!--</span>-->
-        <!--                                </div>-->
-        <!--                            </div>-->
-        <!---->
-        <!--                        </div>-->
-        <!---->
-        <!--					--><?php //}?>
-
-
-        <!-- <div class="review-textarea">
-			<form method="post">
-				<div class="form-input">
-
-
-					<textarea rows="4" class="post-review" placeholder="Write a review"></textarea>
-				</div>
-
-				<div class="submit-review">
-					<button type="button" class="ui button"><span class="icon-paper-plane-outline"/>
-					</button>
-				</div>
-			</form>
-		</div> -->
-
-
-
-
-                           <!--  <div id="review_form" style="display: none;">
-                                <div id="respond" class="comment-respond review-textarea">
-
-                                    <form action="<?php echo get_site_url() . '/wp-comments-post.php'; ?> "method="post" id="commentform" class="comment-form ui form">
-
-                                      <div class="field">
-
-                                            <div class="comment-form-rating field">
-                                                <label for="rating">Your rating</label>
-                                                <select name="rating" id="rating" required="">
-                                                    <option value="">Rate…</option>
-                                                    <option value="5">Perfect</option>
-                                                    <option value="4">Good</option>
-                                                    <option value="3">Average</option>
-                                                    <option value="2">Not that bad</option>
-                                                    <option value="1">Very poor</option>
-                                                </select>
-                                            </div> -->
-        <!---->
-        <!--                                    <div class="two fields">-->
-        <!--                                        <div class="field">-->
-        <!--                                            <label for="author">Name&nbsp;<span class="required">*</span></label>-->
-        <!--                                            <input id="author" name="author" type="text" value="" size="30"-->
-        <!--                                                   placeholder="Name" required="">-->
-        <!--                                        </div>-->
-        <!--                                        <div class="field">-->
-        <!--                                            <label for="email">Email&nbsp;<span class="required">*</span></label>-->
-        <!--                                            <input id="email" name="email" type="email" value="" size="30"-->
-        <!--                                                   placeholder="Email" required="">-->
-        <!--                                        </div>-->
-        <!--                                    </div>-->
-        <!--                                </div>-->
-        <!---->
-        <!---->
-        <!--                                <div class="comment-form-comment form-input">-->
-        <!--                                    <textarea id="comment" name="comment" cols="45" rows="8"-->
-        <!--                                              placeholder="Write a review" required=""></textarea>-->
-        <!--                                </div>-->
-        <!---->
-        <!--                                <div class="form-submit">-->
-        <!---->
-        <!--                                    <input type="hidden" name="comment_post_ID"-->
-        <!--                                           value="-->
-		<?php //echo $product->get_id(); ?><!--" id="comment_post_ID">-->
-        <!--                                    <input type="hidden" name="comment_parent" id="comment_parent" value="0">-->
-        <!---->
-        <!--                                    <input type="submit" id="submit" class="submit button" value="Submit"-->
-        <!--                                           onClick="submitReview()">-->
-        <!--                                </div>-->
-        <!--                            </form>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
     </div>
 </div>
 
@@ -214,11 +99,13 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
 <div id="product_rating-form" class="modal-rating">
 
     <div class="your-rating">
-        <p>Give this product a rating</p>
+
 
         <div class="rating-widget">
             <div class="stars"  id="prod_stars" data-score=""></div>
         </div>
+
+
     </div>
 
     <div class="login-btns">
@@ -226,10 +113,11 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
         <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="button facebook">
 </fb:login-button>
  -->
+ <p>Login To Submit Your Rating</p>
 <div id="status">
 </div>
         <a href="#" class="button facebook" id="fb_login" style="display: ;"> <span class="icon-facebook"></span> Log In With facebook</a>
-        <!-- <a href="#" class="button google" id="google_login_button" style="display: ;"> <span class="icon-google"> <img src="<?php //echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a> -->
+         <a href="#" class="button google" id="google_login_button" style="display: ;"> <span class="icon-google"> <img src="<?php echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a>
     </div>
 
 
@@ -245,7 +133,7 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
         </form>
 
 
-       <!--  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script> -->
+        <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 
         <script>
 
@@ -257,10 +145,8 @@ function HandleGoogleApiLibrary() {
       // Initialize client library
       // clientId & scope is provided => automatically initializes auth2 library
       gapi.client.init({
-          apiKey: 'AIzaSyDJ-2ZdDF703ytXuRgSv1xXsS95m3boqTI',
-          clientId: '57385844047-jqmkb55si8it5mtofbthu3b6fr6ql6c5.apps.googleusercontent.com',
-          //apiKey: 'AIzaSyD3zF4sONBErZFDlD5nDP5rCMft-ET5qOc',
-          //clientId: '571217543637-hp5npepph3217gioqrv6mkr2b875l4fk.apps.googleusercontent.com',
+          apiKey: 'AIzaSyBGK442K-SxJ-5ChVV1bdIy1fMvQe4Y9Qw',
+          clientId: '214940814253-fd11ba7nje065ncau0srk2p2keam69ea.apps.googleusercontent.com',
           scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me'
       }).then(
         // On success
@@ -298,11 +184,6 @@ function HandleGoogleApiLibrary() {
           var user_info = JSON.parse(success.body);
           console.log(user_info);
 
-          //$("#user-information div").eq(0).find("span").text(user_info.displayName);
-          //$("#user-information div").eq(1).find("span").text(user_info.id);
-          //$("#user-information div").eq(2).find("span").text(user_info.gender);
-          //$("#user-information div").eq(3).find("span").html('<img src="' + user_info.image.url + '" />');
-          //$("#user-information div").eq(4).find("span").text(user_info.emails[0].value);
 
           document.getElementById('prod_rating').value = $('#prod_stars').raty('score');
           document.getElementById('prod_author').value = user_info.displayName;
@@ -352,7 +233,7 @@ function HandleGoogleApiLibrary() {
 
     document.getElementById('fb_login').addEventListener('click', function() {
     //do the login
-    console.log('we here');
+
     FB.login(statusChangeCallback, {scope: 'email,public_profile', return_scopes: true});
 }, false);
 
@@ -360,7 +241,7 @@ function HandleGoogleApiLibrary() {
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
-    console.log(response);
+    //console.log(response);
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
@@ -371,7 +252,7 @@ function HandleGoogleApiLibrary() {
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = '<p>Please log ' +
+      document.getElementById('status').innerHTML = '<p>Please login ' +
         'via facebook to submit your rating.</p>';
     }
   }
@@ -407,7 +288,7 @@ function HandleGoogleApiLibrary() {
     // These three cases are handled in the callback function.
 
     FB.getLoginStatus(function(response) {
-      //statusChangeCallback(response);
+      statusChangeCallback(response);
     });
 
   };
@@ -443,3 +324,4 @@ function HandleGoogleApiLibrary() {
     });
   }
 </script>
+
