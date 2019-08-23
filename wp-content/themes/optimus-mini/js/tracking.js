@@ -160,10 +160,11 @@ function getBrowser(userAgent) {
 
 function postLog(data){
 
-	var request = new XMLHttpRequest();
-    request.open('POST', '<a class="vglnk" href="https://collection.optimus.site/metrics" rel="nofollow"><span>http</span><span>://</span><span>my</span><span>.</span><span>server</span><span>.</span><span>com</span><span>/</span><span>analytics</span><span>.</span><span>php</span></a>', true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    request.send(JSON.stringify(data));
+    var url = "https://collection.optimus.site/metrics";
+    var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send(JSON.stringify(data));
 
 }
 
