@@ -44,11 +44,11 @@ $_product_expected_delivery_date = get_post_meta($product->get_id(), '_product_e
 <div id="tabs" class="tabs">
 
     <ul class="tab-items">
-        <li><a href="#tab-1">Product description</a></li>
+        <li><a href="#tab-1" tracking-name="<?php echo 'description_tab-product-' . $product->get_sku(); ?>">Product description</a></li>
         <?php
 if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) || !empty($_product_expected_delivery_date)) {
 	?>
-                <li><a href="#tab-2">Additional Information</a></li>
+                <li><a href="#tab-2" tracking-name="<?php echo 'additional_info_tab-product-' . $product->get_sku(); ?>">Additional Information</a></li>
                 <?php
 }
 ?>
@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                  ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                    ?></p>
             </div>
         </div>
 

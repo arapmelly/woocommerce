@@ -32,7 +32,7 @@ do_action('woocommerce_before_add_to_cart_form');?>
     <form class="variations_form cart ui form"
           action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
           method="post" enctype='multipart/form-data' data-product_id="<?php echo absint($product->get_id()); ?>"
-          data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok.                                                                             ?>">
+          data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok.                                                                              ?>">
 
 		<?php do_action('woocommerce_before_variations_form');?>
 
@@ -63,8 +63,8 @@ wc_dropdown_variation_attribute_options(array(
 $productID = $product->get_id();
 
 if (check_if_product_id_in_cart($productID)) {
-	echo '<div class="view-cart-btns"><a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward"><span class="icon-shopping-cart-outline"></span>' . esc_html__('View cart', 'woocommerce') . '</a>';
-	echo '<a href="' . esc_url(get_site_url()) . '" class="button wc-forward"><span class="icon-arrow-back-outline"></span>' . esc_html__('Continue Shopping', 'woocommerce') . '</a></div>';
+	echo '<div class="view-cart-btns"><a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward" tracking-name="view_cart-product-' . $product->get_sku() . '"><span class="icon-shopping-cart-outline"></span>' . esc_html__('View cart', 'woocommerce') . '</a>';
+	echo '<a href="' . esc_url(get_site_url()) . '" class="button wc-forward"><span class="icon-arrow-back-outline" tracking-name="continue_shopping-product-' . $product->get_sku() . '"></span>' . esc_html__('Continue Shopping', 'woocommerce') . '</a></div>';
 } else {
 	/**
 	 * Hook: woocommerce_before_single_variation.

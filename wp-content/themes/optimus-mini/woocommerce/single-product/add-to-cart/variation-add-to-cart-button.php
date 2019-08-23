@@ -39,10 +39,10 @@ do_action('woocommerce_after_add_to_cart_quantity');
 
 <div class="talk-to-seller-button">
 	<?php $link = contact_seller_link($product);?>
-    <a class="button" id="whatsapp_btn" target="_blank" href="<?php echo $link; ?>" style="display: none;"><span
+    <a class="button" id="whatsapp_btn" target="_blank" href="<?php echo $link; ?>" style="display: none;" tracking-name="<?php echo 'whatsapp_btn-product-' . $product->get_sku(); ?>"><span
                 class="icon-whatsapp"></span>WhatsApp Us</a>
 
-    <a class="button" href="#" onclick="showForm()"><span class="icon-whatsapp"></span>WhatsApp Us</a>
+    <a class="button" href="#" onclick="showForm()" tracking-name="<?php echo 'whatsapp_btn-product-' . $product->get_sku(); ?>"><span class="icon-whatsapp"></span>WhatsApp Us</a>
 </div>
 
 <div id="whatsapp_form">

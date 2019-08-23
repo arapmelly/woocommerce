@@ -26,8 +26,8 @@ if (!$product->is_purchasable()) {
 //echo wc_get_stock_html($product); // WPCS: XSS ok.
 
 if (check_if_product_id_in_cart($product->get_id())) {
-	echo '<div class="view-cart-btns"><a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward"><span class="icon-shopping-cart-outline"></span>' . esc_html__('View Cart', 'woocommerce') . '</a>';
-	echo '<a href="' . esc_url(get_site_url()) . '" class="button wc-forward"><span class="icon-arrow-back-outline"></span>' . esc_html__('Continue Shopping', 'woocommerce') . '</a></div>';
+	echo '<div class="view-cart-btns"><a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward"><span class="icon-shopping-cart-outline" tracking-name="view_cart-product-' . $product->get_sku() . '"></span>' . esc_html__('View Cart', 'woocommerce') . '</a>';
+	echo '<a href="' . esc_url(get_site_url()) . '" class="button wc-forward" tracking-name="continue_shopping-product-' . $product->get_sku() . '"><span class="icon-arrow-back-outline"></span>' . esc_html__('Continue Shopping', 'woocommerce') . '</a></div>';
 } else {
 
 	if ($product->is_in_stock()): ?>
