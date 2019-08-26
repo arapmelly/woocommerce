@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                    ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                      ?></p>
             </div>
         </div>
 
