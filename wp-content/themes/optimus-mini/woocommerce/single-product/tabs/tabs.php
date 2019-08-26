@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                     ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                      ?></p>
             </div>
         </div>
 
@@ -133,9 +133,9 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
         </form>
 
 
-         <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+        <!-- <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script> -->
 
-       <script>
+       <!--  <script>
 
 // Called when Google Javascript API Javascript is loaded
 function HandleGoogleApiLibrary() {
@@ -218,7 +218,7 @@ function HandleGoogleApiLibrary() {
 
 
 
-</script>
+</script> -->
 
 
 </div>
