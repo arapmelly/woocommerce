@@ -605,14 +605,13 @@ body {
 		vertical-align: -1rem;
 		}
 	& q:before {
-		content: "“";
+		content: "\xE2";
 		margin-right: 1rem;
 		}
 	& q:after {
-		content: "”";
+		content: "\xE2";
 		margin-left: 1rem;
 		}
-
 }
 
 .article p, .article li {
