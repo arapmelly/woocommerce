@@ -2932,10 +2932,12 @@ html, body {
 
   }
 
+
   .woocommerce-cart {
     .main-wrapper {
       .woocommerce {
         background-color: darken(#fcfcfc, 2%);
+        width: 100%;
         .cart-item-list {
           flex-direction: column;
           justify-content: unset;

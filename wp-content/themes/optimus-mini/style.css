@@ -11538,7 +11538,8 @@ html, body {
         width: 100%; }
 
   .woocommerce-cart .main-wrapper .woocommerce {
-    background-color: #f7f7f7; }
+    background-color: #f7f7f7;
+    width: 100%; }
     .woocommerce-cart .main-wrapper .woocommerce .cart-item-list {
       flex-direction: column;
       justify-content: unset; }
