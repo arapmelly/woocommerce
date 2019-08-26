@@ -713,6 +713,12 @@ exit;
 }
 }*/
 
+/*add_action('woocommerce_order_status_processing', 'trigger_webhook');
+
+function trigger_webhook() {
 add_filter('woocommerce_webhook_deliver_async', '__return_false');
+}*/
+
+add_filter('action_scheduler_run_schedule', function ($arg) {return 20;});
 
 ?>
