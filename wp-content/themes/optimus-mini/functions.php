@@ -699,18 +699,20 @@ function display_price_in_variation_option_name($term) {
 
 }
 
-add_action('woocommerce_thankyou', 'checkout_redirect');
+/*add_action('woocommerce_thankyou', 'checkout_redirect');
 
 function checkout_redirect($order_id) {
-	$order = wc_get_order($order_id);
+$order = wc_get_order($order_id);
 
-	$url = get_site_url();
+$url = get_site_url();
 
-	if ($order->status != 'failed') {
-		//wp_safe_redirect($url);
-		header("refresh:10;url=$url");
-		exit;
-	}
+if ($order->status != 'failed') {
+//wp_safe_redirect($url);
+header("refresh:10;url=$url");
+exit;
 }
+}*/
+
+add_filter('woocommerce_webhook_deliver_async', '__return_false');
 
 ?>
