@@ -11416,7 +11416,10 @@ html, body {
     .footer .inner-wrapper .copyright {
       border-top: 1px solid #393a3e;
       margin-top: 15px;
-      padding-top: 15px; }
+      padding-top: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
       .footer .inner-wrapper .copyright ul {
         display: flex;
         flex-direction: row;
@@ -11427,6 +11430,8 @@ html, body {
           margin-right: 15px; }
           .footer .inner-wrapper .copyright ul li a:hover {
             color: #4971ff; }
+      .footer .inner-wrapper .copyright #siteseal {
+        align-self: flex-end; }
 
 @media only screen and (max-width: 1920px) {
   .main-content .woocommerce-message {
@@ -11654,7 +11659,14 @@ html, body {
       width: 100%; }
     .page-template-template-contact-us .contact-us .section-inner-wrapper .contact-details {
       display: none;
-      width: 100%; } }
+      width: 100%; }
+
+  .footer .inner-wrapper .copyright {
+    position: relative; }
+    .footer .inner-wrapper .copyright #siteseal {
+      position: absolute;
+      top: -60px;
+      right: 0; } }
 @media only screen and (max-width: 425px) {
   .main-content .products .section-inner-wrapper {
     margin: 0 auto;
