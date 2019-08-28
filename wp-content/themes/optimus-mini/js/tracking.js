@@ -160,8 +160,8 @@ function getBrowser(userAgent) {
 
 function postLog(data){
 
-    var url = "https://collection.optimus.site/metrics";
-    //var url = "http://localhost:3000/metrics";
+    //var url = "https://collection.optimus.site/metrics";
+    var url = "http://localhost/goby-tracker-service/public/metrics";
     var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader('Content-Type', 'application/json');

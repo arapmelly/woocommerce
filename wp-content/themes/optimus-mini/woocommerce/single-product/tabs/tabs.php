@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                      ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                                                              ?></p>
             </div>
         </div>
 
@@ -109,28 +109,91 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
     </div>
 
     <div class="login-btns">
-        <!-- <p>Login To Submit Your Rating</p> -->
+        <p>Fill your Name and Email Address to post your rating</p>
         <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="button facebook">
 </fb:login-button>
  -->
 
 <div id="status">
 </div>
-        <a href="#" class="button facebook" id="fb_login" style="display: ;"> <span class="icon-facebook"></span> Log In With facebook</a>
-         <a href="#" class="button google" id="google_login_button" style="display: ;"> <span class="icon-google"> <img src="<?php echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a>
+        <!-- <a href="#" class="button facebook" id="fb_login" style="display: ;"> <span class="icon-facebook"></span> Log In With facebook</a>
+         <a href="#" class="button google" id="google_login_button" style="display: ;" onclick="google_auth()"> <span class="icon-google"> <img src="<?php //echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a> -->
     </div>
 
 
-     <form action="<?php echo get_site_url() . '/wp-comments-post.php'; ?> "method="post" style="display: none;">
+     <form action="<?php echo get_site_url() . '/wp-comments-post.php'; ?> "method="post" style="display: ;" class="comment-form ui form">
 
-            <input type="text" id="prod_rating" name="rating" value="">
+
+            <!-- <label>Name</label>
             <input type="text" id="prod_author" name="author" value="">
-            <input type="text" id="prod_email" name="email" value="">
-            <input type="text" name="comment_post_ID" value="<?php echo $product->get_id(); ?> "id="comment_post_ID">
-            <input type="text" name="comment_parent" id="comment_parent" value="0">
-            <input type="submit" id="rating_submit" class="submit button" value="Submit">
+
+            <label>Email</label>
+            <input type="text" id="prod_email" name="email" value=""> -->
+
+            <div class="two fields">
+                                        <div class="field">
+                                            <label for="author">Name&nbsp;<span class="required">*</span></label>
+                                            <input id="prod_author" name="author" type="text" value="" size="30"
+                                                   placeholder="Name" required="">
+                                        </div>
+                                        <div class="field">
+                                            <label for="email">Email&nbsp;<span class="required">*</span></label>
+                                            <input id="prod_email" name="email" type="email" value="" size="30"
+                                                   placeholder="Email" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-submit">
+                                       <input type="hidden" id="prod_rating" name="rating" value="">
+
+                                       <input type="hidden" name="comment_post_ID" value="<?php echo $product->get_id(); ?> "id="comment_post_ID">
+            <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+
+                                     <input type="submit" id="rating_submit" class="submit button" value="Submit">
+                                </div>
+
+
 
         </form>
+
+
+       <!--  <script type="text/javascript">
+
+          function google_auth(){
+
+            /*//call the auth endpoint
+            //var url = "https://social-auth.goby.shop/api/auth/google";
+            var url = "http://127.0.0.1:8000/api/auth/facebook";
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            //xhr.responseType = 'json';
+            xhr.onreadystatechange = function() {
+
+              var status = xhr.status;
+              if (status === 200) {
+                console.log('success');
+                console.log(status);
+              } else {
+                console.log('failed');
+                console.log(status);
+              }
+            };
+            xhr.setRequestHeader("Content-Type","application/json");
+            xhr.setRequestHeader("Accept","application/json");
+            xhr.send();*/
+
+            $.ajax({
+                url: "http://localhost/gauth",
+                type: 'GET',
+                success: function(res) {
+                    console.log(res);
+                    alert(res);
+                }
+            });
+
+          }
+
+        </script> -->
 
 
         <!-- <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script> -->
@@ -229,7 +292,7 @@ function HandleGoogleApiLibrary() {
 
 
 
-<script>
+<!-- <script>
 
     document.getElementById('fb_login').addEventListener('click', function() {
     //do the login
@@ -324,4 +387,4 @@ function HandleGoogleApiLibrary() {
     });
   }
 </script>
-
+ -->
