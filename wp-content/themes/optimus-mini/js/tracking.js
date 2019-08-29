@@ -160,12 +160,25 @@ function getBrowser(userAgent) {
 
 function postLog(data){
 
-    //var url = "https://collection.optimus.site/metrics";
-    var url = "http://localhost/goby-tracker-service/public/metrics";
-    var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.send(JSON.stringify(data));
+    var url = "https://collection.optimus.site/api/metrics";
+   
+
+  $.ajax({
+           type: "POST",
+           url: url,
+           dataType: "json",
+           data: data,
+           success: function (msg) {
+               if (msg) {
+                   console.log(msg);
+                  
+               } else {
+                   console.log('error');
+               }
+           },
+
+          
+       });
 
 }
 
