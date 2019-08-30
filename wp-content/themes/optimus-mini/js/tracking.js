@@ -36,7 +36,12 @@ function logEvent(type, element){
         location: window.location.href,
         page: window.location.pathname,
         local_time: new Date(),
-        cookie_id: getCookie()
+        cookie_id: getCookie(),
+        domain: window.location.host,
+        page: window.location.pathname,
+        title: document.title,
+        userAgent: window.navigator.userAgent,
+        platform: window.navigator.platform
 	};
 
 	console.log(data);
@@ -162,7 +167,7 @@ function postLog(data){
 
     var url = "https://collection.optimus.site/api/metrics";
    
-
+    //var url = "http://127.0.0.1:8000/api/metrics";
   $.ajax({
            type: "POST",
            url: url,
