@@ -41,7 +41,8 @@ function logEvent(type, element){
         page: window.location.pathname,
         title: document.title,
         userAgent: window.navigator.userAgent,
-        platform: window.navigator.platform
+        platform: window.navigator.platform,
+        browser: getBrowser(window.navigator.userAgent)
 	};
 
 	console.log(data);
