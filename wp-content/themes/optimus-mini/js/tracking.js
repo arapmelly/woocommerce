@@ -41,8 +41,8 @@ function logEvent(type, element){
         page: window.location.pathname,
         title: document.title,
         userAgent: window.navigator.userAgent,
-        platform: window.navigator.platform,
-        browser: getBrowser(window.navigator.userAgent)
+        date: new Date().toLocaleDateString(),
+        time: new Date().toLocaleTimeString(),
 	};
 
 	console.log(data);
@@ -69,8 +69,8 @@ function logVisit(){
 		origin: window.location.origin,
 		title: document.title,
 		userAgent: window.navigator.userAgent,
-		browser: getBrowser(window.navigator.userAgent),
-		platform: window.navigator.platform
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
 	};
 
 
