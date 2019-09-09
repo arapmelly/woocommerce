@@ -60,7 +60,7 @@ if (!empty($_product_expected_delivery_date) || !empty($_product_return_policy) 
             <div class="styled-text section-inner-wrapper">
 
                 <h2>Product description</h2>
-                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                                                              ?></p>
+                <p><?php echo $product->get_short_description(); // WPCS: XSS ok.                                                                                                                                                                                                                       ?></p>
             </div>
         </div>
 
@@ -116,8 +116,8 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
 
 <div id="status">
 </div>
-        <!-- <a href="#" class="button facebook" id="fb_login" style="display: ;"> <span class="icon-facebook"></span> Log In With facebook</a>
-         <a href="#" class="button google" id="google_login_button" style="display: ;" onclick="google_auth()"> <span class="icon-google"> <img src="<?php //echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a> -->
+        <!-- <a href="#" class="button facebook" id="fb_login" style="display: ;"> <span class="icon-facebook"></span> Log In With facebook</a> -->
+        <!--  <a href="#" class="button google" id="google_login_button" style="display: ;" onclick="google_auth()"> <span class="icon-google"> <img src="<?php //echo get_template_directory_uri() . '/images/google-icon.svg'; ?>"> </span> Log In With Google</a> -->
     </div>
 
 
@@ -157,13 +157,13 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
         </form>
 
 
-       <!--  <script type="text/javascript">
+        <!--  <script type="text/javascript">
 
           function google_auth(){
 
-            /*//call the auth endpoint
-            //var url = "https://social-auth.goby.shop/api/auth/google";
-            var url = "http://127.0.0.1:8000/api/auth/facebook";
+            //call the auth endpoint
+            var url = "https://social-auth.goby.shop/api/auth/google";
+            //var url = "http://127.0.0.1:8000/api/auth/facebook";
             var xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
             //xhr.responseType = 'json';
@@ -180,21 +180,21 @@ echo get_post_meta($product->get_id(), '_product_expected_delivery_date', true);
             };
             xhr.setRequestHeader("Content-Type","application/json");
             xhr.setRequestHeader("Accept","application/json");
-            xhr.send();*/
+            xhr.send();
 
-            $.ajax({
-                url: "http://localhost/gauth",
+           /* $.ajax({
+                url: url,
                 type: 'GET',
                 success: function(res) {
                     console.log(res);
                     alert(res);
                 }
-            });
+            });*/
 
           }
 
-        </script> -->
-
+        </script>
+ -->
 
         <!-- <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};HandleGoogleApiLibrary()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script> -->
 

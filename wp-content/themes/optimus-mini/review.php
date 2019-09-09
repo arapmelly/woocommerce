@@ -15,14 +15,14 @@
 
 
             <?php if (have_posts()): while (have_posts()): the_post();?>
-								                <div class="container">
-								                    <?php //get_template_part('review_form', get_post_format());?>
+												                <div class="container">
+												                    <?php get_template_part('review_form', get_post_format());?>
 
 
 
 
-								                </div>
-								            <?php endwhile;endif;
+												                </div>
+												            <?php endwhile;endif;
 wp_reset_query();?>
 
 
@@ -30,4 +30,4 @@ wp_reset_query();?>
         </div>
     </section>
 
-<?php get_footer();
+<?php get_footer();?>

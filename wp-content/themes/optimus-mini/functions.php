@@ -723,4 +723,11 @@ add_filter('woocommerce_webhook_deliver_async', '__return_false');
 
 //add_filter('action_scheduler_run_schedule', function ($arg) {return 20;});
 
+function get_order_details($order_id) {
+
+	$order = wc_get_order($order_id);
+
+	return $order;
+}
+
 ?>
