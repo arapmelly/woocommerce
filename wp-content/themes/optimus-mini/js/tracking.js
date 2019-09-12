@@ -36,7 +36,13 @@ function logEvent(type, element){
         location: window.location.href,
         page: window.location.pathname,
         local_time: new Date(),
-        cookie_id: getCookie()
+        cookie_id: getCookie(),
+        domain: window.location.host,
+        page: window.location.pathname,
+        title: document.title,
+        userAgent: window.navigator.userAgent,
+        date: new Date().toLocaleDateString(),
+        time: new Date().toLocaleTimeString(),
 	};
 
 	console.log(data);
@@ -63,8 +69,8 @@ function logVisit(){
 		origin: window.location.origin,
 		title: document.title,
 		userAgent: window.navigator.userAgent,
-		browser: getBrowser(window.navigator.userAgent),
-		platform: window.navigator.platform
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
 	};
 
 
@@ -160,12 +166,25 @@ function getBrowser(userAgent) {
 
 function postLog(data){
 
-    var url = "https://collection.optimus.site/metrics";
-    //var url = "http://localhost:3000/metrics";
-    var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.send(JSON.stringify(data));
+    var url = "https://collection.optimus.site/api/metrics";
+   
+    //var url = "http://127.0.0.1:8000/api/metrics";
+  $.ajax({
+           type: "POST",
+           url: url,
+           dataType: "json",
+           data: data,
+           success: function (msg) {
+               if (msg) {
+                   console.log(msg);
+                  
+               } else {
+                   console.log('error');
+               }
+           },
+
+          
+       });
 
 }
 
