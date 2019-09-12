@@ -62,13 +62,15 @@
     });
 
     // Stops animations/transitions until the page has ...
-
     // ... loaded.
-    $window.on('load', function () {
-        window.setTimeout(function () {
-            $body.removeClass('is-preload');
-        }, 100);
-    });
+    if ($(body).hasClass('home') && $(body).hasClass('single single-product')){
+        $window.on('load', function () {
+            window.setTimeout(function () {
+                $body.removeClass('is-preload');
+            }, 100);
+        });
+    }
+
 
     // ... stopped resizing.
     var resizeTimeout;
