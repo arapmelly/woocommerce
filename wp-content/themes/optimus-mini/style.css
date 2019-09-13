@@ -11433,7 +11433,7 @@ html, body {
       .footer .inner-wrapper .copyright #siteseal {
         align-self: flex-end; }
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 2048px) {
   .main-content .woocommerce-message {
     width: calc(100vw - 15rem); }
   .main-content .category-header .inner-wrapper {
@@ -11449,7 +11449,13 @@ html, body {
       width: calc((100% / 5) - 10px); }
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
-    width: calc(100vw - 15rem); } }
+    width: calc(100vw - 15rem); }
+
+  .woocommerce-checkout .woocommerce, .woocommerce-order-received .woocommerce {
+    width: 60%; }
+    .woocommerce-checkout .woocommerce form.checkout .woocommerce-billing-fields header, .woocommerce-order-received .woocommerce form.checkout .woocommerce-billing-fields header {
+      width: 100%;
+      margin-left: 0; } }
 @media only screen and (max-width: 1366px) {
   .main-content .products .section-inner-wrapper .products-slider .cards .card, .main-content .products-category .section-inner-wrapper .products-slider .cards .card {
     width: calc((100% / 4) - 10px); } }

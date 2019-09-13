@@ -83,11 +83,11 @@ $shop_link = 'https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $text;
 
 ?>
 
-                        <a href="<?php echo $call_shop; ?>">
+                        <a href="<?php echo $call_shop; ?>" tracking-name="phone_icon_home">
                             <span class="icon-phone-outline"></span>
                         </a>
 
-                        <a href="<?php echo $shop_link; ?>" data-action="share/whatsapp/share" target="_blank">
+                        <a href="<?php echo $shop_link; ?>" data-action="share/whatsapp/share" target="_blank" tracking-name="whatsapp_icon_home">
             <span class="icon-whatsapp" ></span>
         </a>
                     </div>
@@ -112,7 +112,7 @@ foreach ($cats as $cat) {
                 <header class="category-header">
                     <div class="inner-wrapper">
                         <h1><?php echo $cat->name; ?> </h1>
-                        <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>">View All</a>
+                        <a href="<?php echo get_term_link($cat->term_taxonomy_id, 'product_cat'); ?>" tracking-name="">View All</a>
                     </div>
                 </header> <!-- end of category header -->
 
@@ -149,12 +149,12 @@ if (isset($products) && is_array($products) && count($products) == 1) {
 
                             <?php if ($productsLoopCounter == count($products) && count($products) == 3) {?>
 
-                                <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>">
+                                <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>" tracking-name="<?php echo 'product-' . $product->get_sku(); ?>">
 
                             <?php } elseif ($productsLoopCounter == count($products) && count($products) == 1) {?>
-                                <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>">
+                                <a href="<?php echo get_permalink($product->get_id()); ?>" class="card <?php echo $itemWidth; ?>" tracking-name="<?php echo 'product-' . $product->get_sku(); ?>">
                             <?php } else {?>
-                                <a href="<?php echo get_permalink($product->get_id()); ?>" class="card">
+                                <a href="<?php echo get_permalink($product->get_id()); ?>" class="card" tracking-name="<?php echo 'product-' . $product->get_sku(); ?>">
                             <?php } // end of product loop else if block ?>
 
 	                                <?php

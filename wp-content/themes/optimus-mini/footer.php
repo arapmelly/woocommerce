@@ -39,6 +39,6 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/plugins.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/main.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/shop_rating.js'; ?>"></script>
-
+<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/tracking.js'; ?>"></script>
 </body>
 </html>

@@ -115,19 +115,19 @@ function get_prod_attributes($product) {
 	return $formatted_attributes;
 }
 
-function get_product_category_names($product){
-    if(isset($product)){
-	    $terms = get_the_terms( $product->get_id(), 'product_cat' );
-	    $product_cat = array();
+function get_product_category_names($product) {
+	if (isset($product)) {
+		$terms = get_the_terms($product->get_id(), 'product_cat');
+		$product_cat = array();
 
-	    foreach ($terms as $term) {
-		    $product_cat[] .= $term->name;
-	    }
+		foreach ($terms as $term) {
+			$product_cat[] .= $term->name;
+		}
 
-	    return implode(', ', $product_cat);
-    }else{
-        return "";
-    }
+		return implode(', ', $product_cat);
+	} else {
+		return "";
+	}
 }
 
 /*
@@ -662,18 +662,23 @@ function get_published_product_variations($product) {
 	return $variations;
 }
 
-add_filter( 'woocommerce_variation_option_name', 'display_price_in_variation_option_name' );
-function display_price_in_variation_option_name( $term ) {
+add_filter('woocommerce_variation_option_name', 'display_price_in_variation_option_name');
+function display_price_in_variation_option_name($term) {
 	global $wpdb, $product;
 
-	if ( empty( $term ) ) return $term;
-	if ( empty( $product->get_id() ) ) return $term;
+	if (empty($term)) {
+		return $term;
+	}
+
+	if (empty($product->get_id())) {
+		return $term;
+	}
 
 	$id = @$product->get_id();
 
-	$result = $wpdb->get_col( "SELECT slug FROM {$wpdb->prefix}terms WHERE name = '$term'" );
+	$result = $wpdb->get_col("SELECT slug FROM {$wpdb->prefix}terms WHERE name = '$term'");
 
-	$term_slug = ( !empty( $result ) ) ? $result[0] : $term;
+	$term_slug = (!empty($result)) ? $result[0] : $term;
 
 	$query = "SELECT postmeta.post_id AS product_id
                 FROM {$wpdb->prefix}postmeta AS postmeta
@@ -682,15 +687,47 @@ function display_price_in_variation_option_name( $term ) {
                     AND postmeta.meta_value = '$term_slug'
                     AND products.post_parent = $id";
 
-	$variation_id = $wpdb->get_col( $query );
+	$variation_id = $wpdb->get_col($query);
 
-	$parent = @wp_get_post_parent_id( $variation_id[0] );
+	$parent = @wp_get_post_parent_id($variation_id[0]);
 
-	if ( $parent > 0 ) {
-		$_product = new WC_Product_Variation( $variation_id[0] );
-		return $term . ' (' . wp_kses( wc_price( $_product->get_price() ), array() ) . ')';
+	if ($parent > 0) {
+		$_product = new WC_Product_Variation($variation_id[0]);
+		return $term . ' (' . wp_kses(wc_price($_product->get_price()), array()) . ')';
 	}
 	return $term;
 
 }
+
+/*add_action('woocommerce_thankyou', 'checkout_redirect');
+
+function checkout_redirect($order_id) {
+$order = wc_get_order($order_id);
+
+$url = get_site_url();
+
+if ($order->status != 'failed') {
+//wp_safe_redirect($url);
+header("refresh:10;url=$url");
+exit;
+}
+}*/
+
+/*add_action('woocommerce_order_status_processing', 'trigger_webhook');
+
+function trigger_webhook() {
+add_filter('woocommerce_webhook_deliver_async', '__return_false');
+}*/
+
+add_filter('woocommerce_webhook_deliver_async', '__return_false');
+
+//add_filter('action_scheduler_run_schedule', function ($arg) {return 20;});
+
+function get_order_details($order_id) {
+
+	$order = wc_get_order($order_id);
+
+	return $order;
+}
+
 ?>

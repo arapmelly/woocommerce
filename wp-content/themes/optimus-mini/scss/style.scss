@@ -1032,7 +1032,6 @@ html, body {
 // CHECKOUT PAGE
 // -------------------------
 
-//.single-product {
 .woocommerce-notices-wrapper {
   margin-top: 5px;
 
@@ -1059,8 +1058,6 @@ html, body {
 
 }
 
-//}
-
 .woocommerce-checkout {
   .woocommerce {
     margin: 70px auto 0 auto;
@@ -1076,9 +1073,7 @@ html, body {
           margin-bottom: 0.825em;
 
           strong {
-            //font-weight: 500;
             color: darken($red, 15%);
-
           }
         }
 
@@ -2778,7 +2773,43 @@ html, body {
 
   }
 
+  .woocommerce-checkout, .woocommerce-order-received {
+    .woocommerce {
+      //margin: 70px auto 0 auto;
+      width: 60%;
+      //@include calcMaxWidth($desktopLarge);
+      //padding: 2em 1em;
+
+      form.checkout{
+        .woocommerce-billing-fields{
+          header {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
 }
+
+//.woocommerce-checkout, .woocommerce-order-received {
+//  .woocommerce {
+//    //margin: 70px auto 0 auto;
+//    width: 60%;
+//    //@include calcMaxWidth($desktopLarge);
+//    //padding: 2em 1em;
+//    form.checkout{
+//      .woocommerce-billing-fields{
+//        header {
+//          width: 100%;
+//          margin-left: 0;
+//        }
+//      }
+//    }
+//
+//  }
+//}
 
 @media only screen and (max-width: $desktopmedium) {
 

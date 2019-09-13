@@ -39,7 +39,7 @@
                 </a>
             </div>
             <div class="right">
-                <a href="<?php echo ('cart'); ?>" title="shopping cart" class="shopping-cart">
+                <a href="<?php echo ('cart'); ?>" title="shopping cart" class="shopping-cart" tracking-name="shopping_cart_icon">
                     <span class="icon-shopping-cart-outline"></span>
                     <span class="item-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                 </a>
