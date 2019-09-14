@@ -7,7 +7,7 @@ Description:  This is the official optimus mini ecommerce theme
 Version:      1.0.0
 */
 /* CSS RESET */
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,700|Roboto:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,700,900|Roboto:300,400,500,700,900&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, hr, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   vertical-align: baseline;
@@ -9616,7 +9616,7 @@ a.ui.card:hover,
   height: auto;
   min-height: 100vh;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   background-color: #fff; }
 
 .circle {
@@ -9830,20 +9830,61 @@ html, body {
   height: 100%; }
 
 .shop-banner {
-  width: 100%;
-  height: 0;
-  margin-top: 70px;
-  padding-top: 30%;
+  position: relative;
   overflow: hidden;
-  position: relative; }
-  .shop-banner img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: block;
+  margin-top: 70px;
+  height: 100%;
+  max-height: 350px;
+  width: 100%; }
+  .shop-banner .banner-inner-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
     width: 100%;
-    height: auto; }
+    max-width: 1440px; }
+    .shop-banner .banner-inner-wrapper .shop-description {
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 20%;
+      z-index: 2; }
+      .shop-banner .banner-inner-wrapper .shop-description .shop-name {
+        background-color: #ffffff;
+        color: #242424;
+        text-align: left;
+        position: absolute;
+        padding: 30px 10px;
+        left: 48px;
+        width: 390px; }
+        .shop-banner .banner-inner-wrapper .shop-description .shop-name h1, .shop-banner .banner-inner-wrapper .shop-description .shop-name h2, .shop-banner .banner-inner-wrapper .shop-description .shop-name h3, .shop-banner .banner-inner-wrapper .shop-description .shop-name h4, .shop-banner .banner-inner-wrapper .shop-description .shop-name h5 {
+          color: inherit;
+          font-size: 34px;
+          font-weight: 900; }
+        .shop-banner .banner-inner-wrapper .shop-description .shop-name .tag-description {
+          color: inherit;
+          font-weight: 400;
+          margin-right: 3rem;
+          margin-bottom: 3rem;
+          width: 100%; }
+          .shop-banner .banner-inner-wrapper .shop-description .shop-name .tag-description p {
+            font-weight: inherit;
+            line-height: normal; }
+    .shop-banner .banner-inner-wrapper .shop-cover-photo {
+      background-color: #f0f0f0;
+      display: block;
+      width: 80%;
+      max-width: 1150px;
+      top: 0;
+      right: 0;
+      z-index: 1; }
+      .shop-banner .banner-inner-wrapper .shop-cover-photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
 
 .about-us {
   display: block;
@@ -11468,9 +11509,6 @@ html, body {
     .main-content .products .section-inner-wrapper .products-slider .cards .card .price-discount .discount, .main-content .products-category .section-inner-wrapper .products-slider .cards .card .price-discount .discount {
       top: -115px; } }
 @media only screen and (max-width: 1024px) {
-  .shop-banner {
-    padding-top: 40%; }
-
   .main-content .woocommerce-notices-wrapper .product-notice {
     padding: 0 15px;
     width: 100% !important; }
@@ -11580,9 +11618,6 @@ html, body {
       .woocommerce-cart .main-wrapper .woocommerce .sticky-button .sticky-inner .checkout-button a {
         width: auto; } }
 @media only screen and (max-width: 768px) {
-  .shop-banner {
-    padding-top: 50%; }
-
   .full-width {
     width: 100% !important; }
 
@@ -11674,6 +11709,26 @@ html, body {
       top: -60px;
       right: 0; } }
 @media only screen and (max-width: 425px) {
+  .main-wrapper .shop-banner {
+    height: auto;
+    max-height: 380px; }
+    .main-wrapper .shop-banner .banner-inner-wrapper {
+      flex-direction: column; }
+      .main-wrapper .shop-banner .banner-inner-wrapper .shop-description {
+        background: transparent;
+        margin-top: -35px;
+        order: 2;
+        width: 100%; }
+        .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name {
+          margin: 0 auto;
+          position: relative;
+          padding: 15px;
+          left: auto;
+          width: 320px; }
+      .main-wrapper .shop-banner .banner-inner-wrapper .shop-cover-photo {
+        order: 1;
+        width: 100%; }
+
   .main-content .products .section-inner-wrapper {
     margin: 0 auto;
     width: 100% !important; }

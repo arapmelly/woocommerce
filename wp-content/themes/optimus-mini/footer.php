@@ -18,18 +18,15 @@
         <div class="copyright">
 
             <ul>
-                <li>© 2019 Squad</li>
+                <li>© 2019 <a href="https://goby.shop" target="_blank">Goby</a> </li>
                 <li><a href="#">Privacy</a></li>
                 <li><a href="#">Terms of Use</a></li>
 
             </ul>
 
-<!--            <div class="seal">-->
-                <span id="siteseal">
-                    <script async type="text/javascript"
-                                            src="https://seal.godaddy.com/getSeal?sealID=HhUTlNug1eynlbSH1Cx7pT6wGCkzW5K8K9x2Q6OdAoaxEbpcBUWDTASoTLpg"></script>
-                </span>
-<!--            </div>-->
+            <span id="siteseal">
+                <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=HhUTlNug1eynlbSH1Cx7pT6wGCkzW5K8K9x2Q6OdAoaxEbpcBUWDTASoTLpg"></script>
+            </span>
         </div>
 
     </div>
