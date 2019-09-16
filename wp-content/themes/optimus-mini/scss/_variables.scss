@@ -58,7 +58,8 @@ $phone: 425px;
 @mixin calcMaxWidth($deviceWidth){
 
   @if($deviceWidth == $desktopLarge){
-    width: calc(100vw - 15rem);
+    //width: calc(100vw - 15rem);
+    width: 1440px;
 
   }@else if ($deviceWidth == $tablet) {
     width: calc(100vw - 12.5rem) !important;

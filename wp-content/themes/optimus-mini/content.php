@@ -4,6 +4,23 @@
         <div class="banner-inner-wrapper">
 
             <div class="shop-description">
+
+                <div id="search" class="search-mobile">
+                    <form method="post" action="<?php echo home_url('/'); ?>">
+                        <div class="input-group">
+                            <input type="text" name="search" placeholder="What you are looking for?"
+                                   value="<?php the_search_query(); ?>">
+                            <input type="hidden" name="post_type" value="product">
+
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
                 <header class="shop-name">
                     <h1><?php echo get_option('blogname'); ?></h1>
 

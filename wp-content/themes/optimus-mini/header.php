@@ -37,7 +37,17 @@
                 <a href="<?php echo get_site_url(); ?>" title="shop logo" class="logo">
 					<?php echo get_option('blogacronym'); ?>
                 </a>
+
+                <div id="search" class="search-top">
+                    <form method="post" action="<?php echo home_url('/'); ?>">
+                        <input type="text" name="search" placeholder="What you are looking for?"
+                               value="<?php the_search_query();?>">
+                        <input type="hidden" name="post_type" value="product">
+                    </form>
+                </div>
+
             </div>
+
             <div class="right">
                 <a href="<?php echo ('cart'); ?>" title="shopping cart" class="shopping-cart" tracking-name="shopping_cart_icon">
                     <span class="icon-shopping-cart-outline"></span>
@@ -55,11 +65,9 @@
             <!-- Search -->
             <section id="search" class="alt">
                 <form method="post" action="<?php echo home_url('/'); ?>">
-
                     <input type="text" name="s" placeholder="What you are looking for?"
                            value="<?php the_search_query();?>">
                     <input type="hidden" name="post_type" value="product">
-
                 </form>
             </section>
 

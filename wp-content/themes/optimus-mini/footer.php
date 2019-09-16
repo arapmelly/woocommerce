@@ -19,8 +19,8 @@
 
             <ul>
                 <li>© 2019 <a href="https://goby.shop" target="_blank">Goby</a> </li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms of Use</a></li>
+                <li><a href="https://goby.shop/privacy.php" target="_blank">Privacy</a></li>
+<!--                <li><a href="#">Terms of Use</a></li>-->
 
             </ul>
 
