@@ -7,7 +7,7 @@ Description:  This is the official optimus mini ecommerce theme
 Version:      1.0.0
 */
 /* CSS RESET */
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,700,900|Roboto:300,400,500,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Lato:300,400,500,700,900|Roboto:300,400,500,700,900&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, hr, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   vertical-align: baseline;
@@ -43,8 +43,8 @@ html {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?4aov0v");
-  src: url("fonts/icomoon.eot?4aov0v#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?4aov0v") format("truetype"), url("fonts/icomoon.woff?4aov0v") format("woff"), url("fonts/icomoon.svg?4aov0v#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?ql7tkz");
+  src: url("fonts/icomoon.eot?ql7tkz#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?ql7tkz") format("truetype"), url("fonts/icomoon.woff?ql7tkz") format("woff"), url("fonts/icomoon.svg?ql7tkz#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block; }
@@ -60,6 +60,9 @@ html {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-pin-outline:before {
+  content: "\e900"; }
 
 .icon-close-outline:before {
   content: "\e907"; }
@@ -4968,6 +4971,31 @@ input[type=email], input[type=password], input[type=search], input[type=text] {
     outline: none;
     width: 54px; }
 
+.share-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; }
+  .share-icons a, .share-icons .location {
+    border: 1px solid rgba(32, 32, 32, 0.89);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 1em;
+    margin-right: .5em;
+    height: 25px;
+    width: 25px; }
+    .share-icons a:last-child, .share-icons .location:last-child {
+      margin: 0; }
+    .share-icons a:hover, .share-icons .location:hover {
+      border-color: #4971ff;
+      color: #4971ff; }
+
+@media only screen and (max-width: 768px) {
+  .share-icons {
+    justify-content: center; } }
 /*
  *  Owl Carousel - Core
  */
@@ -5983,7 +6011,7 @@ input[type=email], input[type=password], input[type=search], input[type=text] {
 #header .logo {
   border-bottom: 0;
   color: inherit;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   font-size: 1.125em; }
 
 #header .icons {
@@ -6187,7 +6215,6 @@ input[type=email], input[type=password], input[type=search], input[type=text] {
       .ui.cards .card .content .header, .ui.cards .ui.card .content .header {
         display: block;
         margin: unset;
-        font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
         color: rgba(0, 0, 0, 0.85); }
         .ui.cards .card .content .header:not(.ui), .ui.cards .ui.card .content .header:not(.ui) {
           font-weight: bold;
@@ -9722,7 +9749,7 @@ html, body {
   background-color: #fff;
   box-sizing: border-box;
   color: #000;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   margin: 0;
   padding: 0;
   position: relative;
@@ -9907,7 +9934,8 @@ html, body {
         .shop-banner .banner-inner-wrapper .shop-description .shop-name h1, .shop-banner .banner-inner-wrapper .shop-description .shop-name h2, .shop-banner .banner-inner-wrapper .shop-description .shop-name h3, .shop-banner .banner-inner-wrapper .shop-description .shop-name h4, .shop-banner .banner-inner-wrapper .shop-description .shop-name h5 {
           color: inherit;
           font-size: 34px;
-          font-weight: 900; }
+          font-weight: 900;
+          margin-bottom: 10px; }
         .shop-banner .banner-inner-wrapper .shop-description .shop-name .tag-description {
           color: inherit;
           font-weight: 400;
@@ -9917,8 +9945,17 @@ html, body {
           .shop-banner .banner-inner-wrapper .shop-description .shop-name .tag-description p {
             font-weight: inherit;
             line-height: normal; }
+        .shop-banner .banner-inner-wrapper .shop-description .shop-name ul {
+          list-style-type: none;
+          color: #aaa; }
+          .shop-banner .banner-inner-wrapper .shop-description .shop-name ul li {
+            color: inherit; }
+            .shop-banner .banner-inner-wrapper .shop-description .shop-name ul li span {
+              margin-right: 5px; }
       .shop-banner .banner-inner-wrapper .shop-description #search {
         margin-left: 2em; }
+        .shop-banner .banner-inner-wrapper .shop-description #search.search-mobile {
+          display: none; }
         .shop-banner .banner-inner-wrapper .shop-description #search form {
           text-decoration: none;
           position: relative;
@@ -10823,7 +10860,7 @@ html, body {
     .main-content .products-by-category .products:first-child .category-header .inner-wrapper {
       border-top: none; }
     .main-content .products-by-category .products .category-header {
-      background-color: #f7f7f7;
+      background-color: transparent;
       margin: 0 auto;
       width: 1440px; }
       .main-content .products-by-category .products .category-header .inner-wrapper {
@@ -10846,12 +10883,12 @@ html, body {
           text-align: left;
           font-weight: 400;
           text-transform: capitalize;
-          font-size: 1.5em; }
+          font-size: 1.8em; }
         .main-content .products-by-category .products .category-header .inner-wrapper a {
-          color: #4972ff;
+          color: #9a9a9a;
           text-align: right;
           font-weight: 400;
-          font-size: 1.2em; }
+          font-size: 1.8em; }
           .main-content .products-by-category .products .category-header .inner-wrapper a:hover {
             color: #202020; }
     .main-content .products-by-category .products .products-slider .cards .card {
@@ -10897,10 +10934,10 @@ html, body {
             letter-spacing: normal;
             text-align: left;
             text-transform: capitalize;
-            color: #4971ff;
+            color: rgba(32, 32, 32, 0.89);
             margin: 0; }
           .main-content .products-by-category .products .products-slider .cards .card .price-discount .price .current-price {
-            font-weight: 500;
+            font-weight: 700;
             flex-wrap: wrap;
             display: flex; }
           .main-content .products-by-category .products .products-slider .cards .card .price-discount .price .previous-price {
@@ -11610,9 +11647,9 @@ html, body {
   .main-content .category-header .inner-wrapper {
     width: calc(100vw - 12.5rem) !important; }
     .main-content .category-header .inner-wrapper h1, .main-content .category-header .inner-wrapper h2, .main-content .category-header .inner-wrapper h3, .main-content .category-header .inner-wrapper h4 {
-      font-size: 1em !important; }
+      font-size: 1.6em !important; }
     .main-content .category-header .inner-wrapper a {
-      font-size: 1em !important; }
+      font-size: 1.6em !important; }
   .main-content .business-details .section-inner-wrapper {
     margin: 0 auto;
     width: calc(100vw - 12.5rem) !important; }
@@ -11726,10 +11763,6 @@ html, body {
     width: 100% !important; }
     .main-content .woocommerce-notices-wrapper .product-notice .woocommerce-message {
       width: 100% !important; }
-  .main-content .category-header {
-    margin-bottom: 5rem; }
-    .main-content .category-header .inner-wrapper {
-      width: 100% !important; }
   .main-content .business-details {
     border-top: 1px solid #f5f5f5;
     border-bottom: 1px solid #f5f5f5; }
@@ -11740,13 +11773,16 @@ html, body {
     width: 100% !important; }
     .main-content .filter-by-category .section-inner-wrapper .owl-nav button.owl-prev, .main-content .filter-by-category .section-inner-wrapper .owl-nav button.owl-next {
       font-size: 4rem; }
-  .main-content .products .category-header .inner-wrapper {
+  .main-content .products-by-category .products .category-header {
+    margin-bottom: 5rem;
+    width: 100%; }
+    .main-content .products-by-category .products .category-header .inner-wrapper {
+      width: 100% !important; }
+  .main-content .products-by-category .section-inner-wrapper {
     width: 100% !important; }
-  .main-content .products .section-inner-wrapper {
-    width: 100% !important; }
-    .main-content .products .section-inner-wrapper .products-slider .cards .card {
+    .main-content .products-by-category .section-inner-wrapper .products-slider .cards .card {
       width: calc((100% / 2) - 10px); }
-      .main-content .products .section-inner-wrapper .products-slider .cards .card .image {
+      .main-content .products-by-category .section-inner-wrapper .products-slider .cards .card .image {
         height: 366.500px;
         max-height: 366.500px; }
   .main-content .products-category .section-inner-wrapper {
@@ -11807,7 +11843,7 @@ html, body {
 
   .main-wrapper .shop-banner {
     height: auto;
-    max-height: 400px; }
+    max-height: 420px; }
     .main-wrapper .shop-banner .banner-inner-wrapper {
       flex-direction: column; }
       .main-wrapper .shop-banner .banner-inner-wrapper .shop-description {
@@ -11817,8 +11853,9 @@ html, body {
         order: 2;
         width: 100%; }
         .main-wrapper .shop-banner .banner-inner-wrapper .shop-description #search {
+          display: block;
           margin: 0 auto;
-          top: -60px;
+          top: -70px;
           position: absolute;
           width: 320px; }
         .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name {
@@ -11827,6 +11864,14 @@ html, body {
           padding: 15px;
           left: auto;
           width: 320px; }
+          .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h1, .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h2, .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h3, .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h4, .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h5 {
+            text-align: center; }
+          .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name .tag-description {
+            text-align: center;
+            font-size: 14px; }
+            .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name .tag-description p {
+              font-weight: 300;
+              font-size: 1em; }
       .main-wrapper .shop-banner .banner-inner-wrapper .shop-cover-photo {
         order: 1;
         width: 100%; }

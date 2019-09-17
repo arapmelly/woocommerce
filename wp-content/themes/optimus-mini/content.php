@@ -7,41 +7,62 @@
 
                 <div id="search" class="search-mobile">
                     <form method="post" action="<?php echo home_url('/'); ?>">
-                        <div class="input-group">
-                            <input type="text" name="search" placeholder="What you are looking for?"
-                                   value="<?php the_search_query(); ?>">
-                            <input type="hidden" name="post_type" value="product">
-
-                            <div class="input-group-btn">
-                                <button class="btn btn-primary" type="submit">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </div>
-                        </div>
+                        <input type="text" name="search" placeholder="What you are looking for?"
+                               value="<?php the_search_query(); ?>">
+                        <input type="hidden" name="post_type" value="product">
                     </form>
                 </div>
 
                 <header class="shop-name">
                     <h1><?php echo get_option('blogname'); ?></h1>
 
-                    <ul>
-                        <?php if (get_option('blogprimaryphonenumber')) { ?>
-                            <li><span>Phone:</span> <a
-                                    href="tel:<?php echo get_option('blogprimaryphonenumber'); ?>"> <?php echo get_option('blogprimaryphonenumber'); ?></a>
-                            </li><?php } ?>
-                        <?php if (get_option('admin_email')) { ?>
-                            <li><span>Email:</span> <a
-                                    href="mailto:<?php echo get_option('admin_email'); ?>"><?php echo get_option('admin_email'); ?></a>
-                            </li><?php } ?>
-                        <?php if (get_option('blogprimaryaddress')) { ?>
-                            <li><span>Address:</span> <?php echo get_option('blogprimaryaddress'); ?></li><?php } ?>
-                    </ul>
+                    <?php if (get_option('blogdescription')) { ?>
+                        <div class="tag-description">
+                            <p><?php echo get_option('blogdescription'); ?></p>
+                        </div>
+                    <?php } ?>
 
-<!--                    --><?php //if (get_option('blogdescription')) { ?>
-<!--                        <div class="tag-description">-->
-<!--                            <p>--><?php //echo get_option('blogdescription'); ?><!--</p>-->
-<!--                        </div>-->
-<!--                    --><?php //} ?>
+                    <div class="share-btn">
+                        <div class="share-icons">
+                            <?php
+
+                            $phone = get_option('blogprimaryphonenumber');
+
+                            $call_shop = 'tel:+' . $phone;
+
+                            $text = 'Hi! I would like to make an enquiry on your shop. Get back to me';
+
+                            $shop_link = 'https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $text;
+                            $lat = '-1.2922618';
+                            $long = '36.8063141';
+                            $query_place_id = 'ChIJKxjxuaNqkFQR3CK6O1HNNqY';
+                            $location = 'https://www.google.com/maps/search/?api=1&query=' . $lat . ',' .  $long . '&query_place_id=' . $query_place_id;
+//                            'https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393'
+
+                            ?>
+
+                            <a href="<?php echo $call_shop; ?>" tracking-name="phone_icon_home">
+                                <span class="icon-phone-outline"></span>
+                            </a>
+
+                            <a href="<?php echo $shop_link; ?>" data-action="share/whatsapp/share" target="_blank"
+                               tracking-name="whatsapp_icon_home">
+                                <span class="icon-whatsapp"></span>
+                            </a>
+
+                            <?php if ($location) { ?>
+                                <a href="<?php echo $location; ?>" target="_blank" class="location"><span class="icon-pin-outline"></span> </a>
+                            <?php } ?>
+
+<!--                            --><?php //echo get_option('blogprimaryaddress'); ?>
+
+<!--                            <a href="--><?php //echo $call_shop; ?><!--" tracking-name="phone_icon_home">-->
+<!--                                <span class="icon-phone-outline"></span>-->
+<!--                            </a>-->
+
+                        </div>
+                    </div>
+
                 </header>
             </div>
 

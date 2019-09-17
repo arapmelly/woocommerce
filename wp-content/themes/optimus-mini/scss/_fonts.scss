@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700,900|Roboto:300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Lato:300,400,500,700,900|Roboto:300,400,500,700,900&display=swap');
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?4aov0v');
-  src:  url('fonts/icomoon.eot?4aov0v#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?4aov0v') format('truetype'),
-  url('fonts/icomoon.woff?4aov0v') format('woff'),
-  url('fonts/icomoon.svg?4aov0v#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ql7tkz');
+  src:  url('fonts/icomoon.eot?ql7tkz#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?ql7tkz') format('truetype'),
+  url('fonts/icomoon.woff?ql7tkz') format('woff'),
+  url('fonts/icomoon.svg?ql7tkz#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-pin-outline:before {
+  content: "\e900";
+}
 .icon-close-outline:before {
   content: "\e907";
 }
