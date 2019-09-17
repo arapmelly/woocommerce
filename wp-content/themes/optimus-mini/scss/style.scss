@@ -1909,7 +1909,7 @@ html, body {
 
   .product {
     margin: 0 auto;
-    //padding: 0 15px;
+    padding: 0 15px;
     @include calcMaxWidth($desktopLarge);
 
     .product-top-section {
@@ -1970,7 +1970,7 @@ html, body {
               letter-spacing: normal;
               text-align: left;
               text-transform: capitalize;
-              color: $blue-button-color;
+              color: $default-dark-color;
             }
 
             .previous-price {
@@ -2060,9 +2060,9 @@ html, body {
               border-radius: 4px;
               text-transform: uppercase;
               padding: 17px;
-              font-size: 14px;
+              font-size: 16px;
               line-height: 18px;
-              width: 205px;
+              width: 175px;
 
               span {
                 font-size: 24px;
@@ -2077,6 +2077,8 @@ html, body {
           }
 
           .talk-to-seller-button {
+            margin-left: 1.5em;
+
             a.button, button {
               display: flex;
               align-items: center;
@@ -3181,7 +3183,8 @@ html, body {
 
                 a.button, button {
                   width: 100% !important;
-                  font-size: 12px;
+                  font-size: 16px;
+                  font-weight: 400;
                 }
               }
 

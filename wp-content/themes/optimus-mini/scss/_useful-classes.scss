@@ -602,13 +602,14 @@ img {
   outline: 0;
   border: none;
   vertical-align: baseline;
-  background-color: $default-green;
+  background-color: $magenta-button-color;
   color: $default-white-color;
   text-transform: uppercase;
   margin: 0 .25em 0 0;
   padding: .78571429em 1.5em .78571429em;
   text-shadow: none;
   font-size: 15px;
+  font-family: inherit;
   font-weight: 700;
   line-height: 1em;
   font-style: normal;

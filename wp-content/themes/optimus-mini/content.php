@@ -74,6 +74,7 @@
 
                 ?>
 
+<!--                <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="">-->
 <!--                <img src="https://massdrop-s3.imgix.net/hero-banner/TReEW4PJSD2VxYw2evyZ_3450x1767_HD6XX_Copy.jpg?auto=format&fm=jpg&fit=crop" alt="">-->
 <!--                <img src="--><?php //echo get_template_directory_uri() . '/images/banner3.jpg'; ?><!--" alt="">-->
                         <img srcset="<?php echo $srcset; ?>" sizes="(max-width: 425px) 270px, (max-width: 768px) 600px, 1920px"
