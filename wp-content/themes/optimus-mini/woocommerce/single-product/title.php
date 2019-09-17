@@ -32,7 +32,8 @@ if (!$short_description) {
 }
 
 $product = wc_get_product( $product->get_id() );
-$productPriceHTML = $product->get_price_html();
+//$productPriceHTML = $product->get_price_html();
+$productPriceHTML = get_option('woocommerce_currency').' '.$product->get_price();
 $productType  = $product->get_type();
 ?>
 
@@ -80,16 +81,25 @@ $productType  = $product->get_type();
 			<?php } else {?>
 				<?php if ($product->get_sale_price() <= 0) {?>
                     <h2 class="current-price"
-                        id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                        id="productPrice"><?php 
+                        //echo wc_price($product->get_regular_price()); 
+                        echo get_option('woocommerce_currency').' '.$product->get_regular_price();
+                        ?></h2>
 				<?php }?>
 
 				<?php if ($product->get_sale_price() > 0) {?>
 
                     <h2 class="current-price"
-                        id="product_price"><?php echo wc_price($product->get_sale_price()); ?></h2>
+                        id="product_price"><?php 
+                        //echo wc_price($product->get_sale_price()); 
+                        echo get_option('woocommerce_currency').' '.$product->get_sale_price();
+                        ?></h2>
 
                     <h2 class="previous-price"
-                        id="productPrice"><?php echo wc_price($product->get_regular_price()); ?></h2>
+                        id="productPrice"><?php 
+                        //echo wc_price($product->get_regular_price()); 
+                        echo get_option('woocommerce_currency').' '.$product->get_regular_price();
+                        ?></h2>
 				<?php }?>
 
 			<?php }?>

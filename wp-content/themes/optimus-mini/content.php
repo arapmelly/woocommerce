@@ -183,7 +183,8 @@ if ($product->is_type('variable')) {
 			?>
                                             <h2 class="current-price" id="productPrice">
                                                 <?php
-echo $productPriceHTML;
+//echo $productPriceHTML;
+                                                echo get_option('woocommerce_currency').' '.$product->get_price();
 			?>
                                             </h2>
 
@@ -192,16 +193,25 @@ echo $productPriceHTML;
                                         <?php
 if ($product->get_sale_price() <= 0) {?>
                                                 <h2 class="current-price" id="productPrice">
-                                                    <?php echo wc_price($product->get_regular_price()); ?>
+                                                    <?php 
+                                                    //echo wc_price($product->get_regular_price());
+                                                    echo get_option('woocommerce_currency').' '.$product->get_regular_price();
+                                                     ?>
                                                 </h2>
                                         <?php }?>
 
                                         <?php if ($product->get_sale_price() > 0) {?>
                                             <h2 class="current-price" id="product_price">
-                                                <?php echo wc_price($product->get_sale_price()); ?>
+                                                <?php 
+                                                //echo wc_price($product->get_sale_price());
+                                                echo get_option('woocommerce_currency').' '.$product->get_sale_price();
+                                                 ?>
                                             </h2>
                                             <h2 class="previous-price" id="productPrice">
-                                                <?php echo wc_price($product->get_regular_price()); ?>
+                                                <?php 
+                                                //echo wc_price($product->get_regular_price());
+                                                echo get_option('woocommerce_currency').' '.$product->get_regular_price();
+                                                 ?>
                                             </h2>
                                         <?php }?>
 
