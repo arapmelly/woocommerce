@@ -3777,6 +3777,8 @@ html, body {
     .product {
       .product-top-section {
         .product-details {
+          padding: unset;
+
           .section-inner-wrapper {
             .view-cart-btns {
               display: flex;
@@ -3801,8 +3803,30 @@ html, body {
               }
 
             }
+
+            .actions {
+              .variations_button {
+                button {
+                  font-size: 12px;
+                  font-weight: 700;
+                }
+              }
+
+              .talk-to-seller-button {
+                margin-left: unset;
+
+                a.button {
+                  font-size: 12px;
+                  font-weight: 700;
+                }
+              }
+            }
           }
         }
+      }
+
+      .tabs {
+        padding: unset;
       }
     }
   }
