@@ -14,7 +14,8 @@
                 </div>
 
                 <header class="shop-name">
-                    <h1><?php echo get_option('blogname'); ?></h1>
+                    <h1>Lorem ipsum dolor sit amet com</h1>
+<!--                    <h1>--><?php //echo get_option('blogname'); ?><!--</h1>-->
 
                     <?php if (get_option('blogdescription')) { ?>
                         <div class="tag-description">

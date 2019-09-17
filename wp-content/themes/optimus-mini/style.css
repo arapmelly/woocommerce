@@ -9907,6 +9907,7 @@ html, body {
   overflow: hidden;
   margin-top: 70px;
   height: 100%;
+  min-height: 350px;
   max-height: 350px;
   width: 100%; }
   .shop-banner .banner-inner-wrapper {
@@ -10983,6 +10984,7 @@ html, body {
           height: auto;
           width: 100%; }
       .main-content .product .product-top-section .product-details {
+        padding: 0 15px;
         width: calc(100% * 0.5); }
         .main-content .product .product-top-section .product-details .section-inner-wrapper {
           position: relative;
@@ -11129,7 +11131,7 @@ html, body {
             flex-direction: column;
             width: 100%; }
             .main-content .product .product-top-section .product-details .section-inner-wrapper .product-variation form.variations_form .variations {
-              width: 413.5px; }
+              width: 372px; }
               .main-content .product .product-top-section .product-details .section-inner-wrapper .product-variation form.variations_form .variations .field {
                 font-size: 14px; }
                 .main-content .product .product-top-section .product-details .section-inner-wrapper .product-variation form.variations_form .variations .field label {
@@ -11463,7 +11465,7 @@ html, body {
   display: block;
   position: relative; }
   .main-content .category-header {
-    background-color: #fcfcfc;
+    background-color: transparent;
     margin-bottom: 2.5rem; }
     .main-content .category-header .inner-wrapper {
       align-items: center;
@@ -11541,7 +11543,7 @@ html, body {
           letter-spacing: normal;
           text-align: left;
           text-transform: capitalize;
-          color: #4971ff;
+          color: rgba(32, 32, 32, 0.89);
           margin: 0; }
         .main-content .products-category .section-inner-wrapper .cards .card .price-discount .price .current-price {
           font-weight: 500;
@@ -11649,7 +11651,9 @@ html, body {
     .main-content .woocommerce-notices-wrapper .product-notice .woocommerce-message {
       width: calc(100vw - 12.5rem) !important; }
   .main-content .category-header .inner-wrapper {
-    width: calc(100vw - 12.5rem) !important; }
+    width: 100% !important;
+    padding: 0 12px;
+    margin-bottom: 15px; }
     .main-content .category-header .inner-wrapper h1, .main-content .category-header .inner-wrapper h2, .main-content .category-header .inner-wrapper h3, .main-content .category-header .inner-wrapper h4 {
       font-size: 1.6em !important; }
     .main-content .category-header .inner-wrapper a {
@@ -11792,6 +11796,7 @@ html, body {
         max-height: 366.500px; }
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
+    padding: 0 15px;
     width: 100% !important; }
     .main-content .products-category .section-inner-wrapper .cards .card {
       width: calc((100% / 2) - 10px); }
@@ -11848,7 +11853,8 @@ html, body {
 
   .main-wrapper .shop-banner {
     height: auto;
-    max-height: 420px; }
+    min-height: 420px;
+    max-height: 100%; }
     .main-wrapper .shop-banner .banner-inner-wrapper {
       flex-direction: column; }
       .main-wrapper .shop-banner .banner-inner-wrapper .shop-description {
@@ -11868,6 +11874,8 @@ html, body {
           position: relative;
           padding: 15px;
           left: auto;
+          border: 1px solid #d4d4d5;
+          border-radius: 0.375em;
           width: 320px; }
           .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h1, .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h2, .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h3, .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h4, .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name h5 {
             text-align: center; }
