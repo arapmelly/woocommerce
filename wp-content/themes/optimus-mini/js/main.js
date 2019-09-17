@@ -63,7 +63,7 @@
 
     // Stops animations/transitions until the page has ...
     // ... loaded.
-    if ($(body).hasClass('home') && $(body).hasClass('single single-product')){
+    if ($('body').hasClass('home') || $('body').hasClass('single single-product')){
         $window.on('load', function () {
             window.setTimeout(function () {
                 $body.removeClass('is-preload');
