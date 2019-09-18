@@ -340,12 +340,12 @@
     // setTimeout() function will be fired after page is loaded
     // it will wait for 5 sec. and then will fire
     // $("#successMessage").hide() function
-    setTimeout(function() {
-
-        if ($('.woocommerce-notices-wrapper div').length > 0) {
-            $('.woocommerce-notices-wrapper div').remove();
-        }
-    }, 5000);
+    // setTimeout(function() {
+    //
+    //     if ($('.woocommerce-notices-wrapper div').length > 0) {
+    //         $('.woocommerce-notices-wrapper div').remove();
+    //     }
+    // }, 5000);
 
     $('.qty-input i').click(function() {
         $this = $(this).parent().find('input');

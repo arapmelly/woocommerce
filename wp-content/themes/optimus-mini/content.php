@@ -33,11 +33,10 @@
                             $text = 'Hi! I would like to make an enquiry on your shop. Get back to me';
 
                             $shop_link = 'https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $text;
-                            $lat = '-1.2922618';
-                            $long = '36.8063141';
-                            $query_place_id = 'ChIJKxjxuaNqkFQR3CK6O1HNNqY';
+                            $lat = '';
+                            $long = '';
+                            $query_place_id = '';
                             $location = 'https://www.google.com/maps/search/?api=1&query=' . $lat . ',' .  $long . '&query_place_id=' . $query_place_id;
-//                            'https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393'
 
                             ?>
 
@@ -50,16 +49,9 @@
                                 <span class="icon-whatsapp"></span>
                             </a>
 
-                            <?php if ($location) { ?>
+                            <?php if ($lat || $long) { ?>
                                 <a href="<?php echo $location; ?>" target="_blank" class="location"><span class="icon-pin-outline"></span> </a>
                             <?php } ?>
-
-<!--                            --><?php //echo get_option('blogprimaryaddress'); ?>
-
-<!--                            <a href="--><?php //echo $call_shop; ?><!--" tracking-name="phone_icon_home">-->
-<!--                                <span class="icon-phone-outline"></span>-->
-<!--                            </a>-->
-
                         </div>
                     </div>
 

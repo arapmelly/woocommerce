@@ -730,4 +730,21 @@ function get_order_details($order_id) {
 	return $order;
 }
 
+//Removing button in message notification
+
+add_filter( 'wc_add_to_cart_message_html', 'empty_wc_add_to_cart_message', 10, 2 );
+function empty_wc_add_to_cart_message( $message, $products ) {
+    foreach( $products as $product_id => $quantity ) {
+        // (If needed) get the WC_Product object
+        $product = wc_get_product($product_id);
+        // The product title
+        $product_title = $product->get_title();
+    }
+
+    $new_message = '"'. $product_title . '"' . ' has been added to your cart.';
+
+    return $new_message;
+};
+
+
 ?>
