@@ -9917,8 +9917,7 @@ html, body {
     margin: 0 auto;
     padding: 0;
     height: 100%;
-    width: 100%;
-    max-width: 1440px; }
+    width: 100%; }
     .shop-banner .banner-inner-wrapper .shop-description {
       background-color: #ffffff;
       display: flex;
@@ -9932,7 +9931,7 @@ html, body {
         text-align: left;
         position: absolute;
         padding: 30px 10px;
-        left: 48px;
+        left: 24px;
         width: 390px; }
         .shop-banner .banner-inner-wrapper .shop-description .shop-name h1, .shop-banner .banner-inner-wrapper .shop-description .shop-name h2, .shop-banner .banner-inner-wrapper .shop-description .shop-name h3, .shop-banner .banner-inner-wrapper .shop-description .shop-name h4, .shop-banner .banner-inner-wrapper .shop-description .shop-name h5 {
           color: inherit;
@@ -10990,7 +10989,7 @@ html, body {
         .main-content .product .product-top-section .product-details .section-inner-wrapper {
           position: relative;
           height: 100%;
-          width: 100%; }
+          width: 100% !important; }
           .main-content .product .product-top-section .product-details .section-inner-wrapper .product-name {
             font-size: 18px;
             margin-top: 8px;
@@ -11610,6 +11609,9 @@ html, body {
         align-self: flex-end; }
 
 @media only screen and (max-width: 2048px) {
+  .navigation .sections {
+    width: 1440px; }
+
   .main-content .woocommerce-message {
     width: 1440px; }
   .main-content .category-header .inner-wrapper {
@@ -11628,23 +11630,61 @@ html, body {
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
     width: 1440px; }
+  .main-content .product {
+    width: 1440px; }
+
+  .main-wrapper .shop-banner .banner-inner-wrapper {
+    width: 1440px; }
+    .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name {
+      left: 8px; }
 
   .woocommerce-checkout .woocommerce, .woocommerce-order-received .woocommerce {
     width: 60%; }
     .woocommerce-checkout .woocommerce form.checkout .woocommerce-billing-fields header, .woocommerce-order-received .woocommerce form.checkout .woocommerce-billing-fields header {
       width: 100%;
-      margin-left: 0; } }
+      margin-left: 0; }
+
+  .footer .inner-wrapper {
+    width: 1440px; } }
 @media only screen and (max-width: 1366px) {
+  .navigation .sections {
+    width: calc(100vw - 5rem) !important; }
+
+  .main-wrapper .shop-banner .banner-inner-wrapper .shop-description .shop-name {
+    left: 24px; }
+
+  .main-content .section-inner-wrapper {
+    width: calc(100vw - 5rem) !important; }
+  .main-content .products-by-category .products .category-header {
+    width: 100%; }
+    .main-content .products-by-category .products .category-header .inner-wrapper {
+      width: calc(100vw - 5rem) !important; }
   .main-content .products .section-inner-wrapper .products-slider .cards .card, .main-content .products-category .section-inner-wrapper .products-slider .cards .card {
-    width: calc((100% / 4) - 10px); } }
+    width: calc((100% / 4) - 10px); }
+  .main-content .product {
+    width: calc(100vw - 5rem) !important; }
+
+  .footer .inner-wrapper {
+    width: calc(100vw - 5rem) !important; } }
 @media only screen and (max-width: 1280px) {
+  .navigation .sections {
+    width: calc(100vw - 5rem) !important; }
+
+  .main-content .section-inner-wrapper {
+    margin: 0 auto;
+    width: calc(100vw - 5rem) !important; }
   .main-content .products .section-inner-wrapper .products-slider .cards .card, .main-content .products-category .section-inner-wrapper .products-slider .cards .card {
     width: calc((100% / 4) - 10px); }
     .main-content .products .section-inner-wrapper .products-slider .cards .card .image, .main-content .products-category .section-inner-wrapper .products-slider .cards .card .image {
       height: 250px;
       max-height: 250px; }
     .main-content .products .section-inner-wrapper .products-slider .cards .card .price-discount .discount, .main-content .products-category .section-inner-wrapper .products-slider .cards .card .price-discount .discount {
-      top: -115px; } }
+      top: -115px; }
+  .main-content .product {
+    width: calc(100vw - 5rem) !important; }
+
+  .footer .inner-wrapper {
+    width: calc(100vw - 5rem) !important; } }
 @media only screen and (max-width: 1024px) {
   .main-content .woocommerce-notices-wrapper .product-notice {
     padding: 0 15px;
@@ -11687,44 +11727,36 @@ html, body {
         max-height: 234.750px; }
       .main-content .products-category .section-inner-wrapper .cards .card .price-discount .discount {
         top: -85px; }
-  .main-content .product {
-    width: calc(100vw - 12.5rem) !important; }
-    .main-content .product .product-top-section {
-      flex-direction: column; }
-      .main-content .product .product-top-section .product-image {
-        width: 100%; }
-      .main-content .product .product-top-section .product-details {
-        width: 100%; }
-        .main-content .product .product-top-section .product-details .product-name {
-          font-size: 18px; }
-        .main-content .product .product-top-section .product-details .section-inner-wrapper .actions {
-          justify-content: space-between;
-          font-size: 15px; }
-          .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button a.button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button a.button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button button {
-            width: 100% !important;
-            font-size: 16px;
-            font-weight: 400; }
-          .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button {
-            width: calc(50% - 0.25em); }
-            .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button button {
-              padding: 12px 0; }
-          .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button {
-            width: calc(50% - 0.25em); }
-            .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button a.button {
-              padding: 10px 0; }
-        .main-content .product .product-top-section .product-details .section-inner-wrapper .share-btn {
-          margin-top: 1em; }
-        .main-content .product .product-top-section .product-details .section-inner-wrapper .product-variation .variations {
-          width: 100% !important; }
-    .main-content .product .tabs {
-      padding: 0 15px; }
-      .main-content .product .tabs .styled-text {
-        font-size: 14px;
-        margin: 20px 0;
-        width: 100% !important; }
-      .main-content .product .tabs .tabs-container .reviews .section-inner-wrapper .review-textarea form {
-        font-size: 14px;
-        width: 100%; }
+  .main-content .product .product-top-section .product-details .product-name {
+    font-size: 18px; }
+  .main-content .product .product-top-section .product-details .section-inner-wrapper .actions {
+    justify-content: space-between;
+    font-size: 15px; }
+    .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button a.button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button a.button, .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button button {
+      width: 100% !important;
+      font-size: 16px;
+      font-weight: 400; }
+    .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button {
+      width: calc(50% - 0.25em); }
+      .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .variations_button button {
+        padding: 12px 0; }
+    .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button {
+      width: calc(50% - 0.25em); }
+      .main-content .product .product-top-section .product-details .section-inner-wrapper .actions .talk-to-seller-button a.button {
+        padding: 10px 0; }
+  .main-content .product .product-top-section .product-details .section-inner-wrapper .share-btn {
+    margin-top: 1em; }
+  .main-content .product .product-top-section .product-details .section-inner-wrapper .product-variation .variations {
+    width: 100% !important; }
+  .main-content .product .tabs {
+    padding: 0 15px; }
+    .main-content .product .tabs .styled-text {
+      font-size: 14px;
+      margin: 20px 0;
+      width: 100% !important; }
+    .main-content .product .tabs .tabs-container .reviews .section-inner-wrapper .review-textarea form {
+      font-size: 14px;
+      width: 100%; }
 
   .woocommerce-cart .main-wrapper .woocommerce {
     background-color: #f7f7f7;
@@ -11762,9 +11794,10 @@ html, body {
     width: 100% !important; }
 
   .navigation {
-    padding: 10px; }
+    padding: 12px; }
     .navigation .sections {
-      width: 100%; }
+      width: 100% !important;
+      padding: 0; }
       .navigation .sections .left .menu {
         justify-content: flex-start; }
 
@@ -11806,19 +11839,25 @@ html, body {
         max-height: 366.500px; }
   .main-content .product {
     width: 100% !important; }
-    .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      width: 100%; }
-      .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a {
-        font-size: inherit;
-        line-height: 8px;
-        padding: 20px 0; }
-        .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a:first-child {
-          width: calc(40% - 0.25em); }
-        .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a:nth-child(2) {
-          width: calc(60% - 0.25em); }
+    .main-content .product .product-top-section {
+      flex-direction: column; }
+      .main-content .product .product-top-section .product-image {
+        width: 100%; }
+      .main-content .product .product-top-section .product-details {
+        width: 100%; }
+        .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns {
+          display: flex;
+          justify-content: space-between;
+          font-size: 13px;
+          width: 100%; }
+          .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a {
+            font-size: inherit;
+            line-height: 8px;
+            padding: 20px 0; }
+            .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a:first-child {
+              width: calc(40% - 0.25em); }
+            .main-content .product .product-top-section .product-details .section-inner-wrapper .view-cart-btns a:nth-child(2) {
+              width: calc(60% - 0.25em); }
 
   .page-template-template-contact-us .get-in-touch {
     font-size: 14px;
@@ -11856,7 +11895,8 @@ html, body {
     height: auto;
     max-height: 100%; }
     .main-wrapper .shop-banner .banner-inner-wrapper {
-      flex-direction: column; }
+      flex-direction: column;
+      width: 100%; }
       .main-wrapper .shop-banner .banner-inner-wrapper .shop-description {
         background: transparent;
         flex-direction: column;
@@ -11952,7 +11992,10 @@ html, body {
         height: 30px;
         font-size: 18px;
         line-height: 24px;
-        width: 30px; } }
+        width: 30px; }
+
+  .footer .inner-wrapper .copyright #siteseal {
+    top: 14px; } }
 @media only screen and (max-width: 375px) {
   .main-content .products .section-inner-wrapper .products-slider .cards .card .price-discount .discount {
     top: -100px; }

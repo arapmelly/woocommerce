@@ -54,13 +54,16 @@ $phablet: 768px;
 $phone: 425px;
 
 
-@mixin calcMaxWidth($deviceWidth){
+@mixin calcMaxWidth($deviceWidth) {
 
-  @if($deviceWidth == $desktopLarge){
+  @if ($deviceWidth == $desktopLarge) {
     //width: calc(100vw - 15rem);
     width: 1440px;
 
-  }@else if ($deviceWidth == $tablet) {
+  } @else if ($deviceWidth == $desktopmedium or $deviceWidth == $desktop) {
+    width: calc(100vw - 5rem) !important; //35px
+
+  } @else if ($deviceWidth == $tablet) {
     width: calc(100vw - 12.5rem) !important;
 
   } @else if ($deviceWidth == $phablet) {
