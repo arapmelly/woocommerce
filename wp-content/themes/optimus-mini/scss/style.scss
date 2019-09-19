@@ -2927,6 +2927,12 @@ html, body {
     }
   }
 
+  .woocommerce-notices-wrapper {
+    .product-notice{
+      @include calcMaxWidth($desktopLarge);
+    }
+  }
+
   .main-content {
     .woocommerce-message {
       @include calcMaxWidth($desktopLarge);
@@ -2990,12 +2996,15 @@ html, body {
     }
   }
 
+  .woocommerce-cart {
+    .woocommerce {
+      @include calcMaxWidth($desktopLarge);
+    }
+  }
+
   .woocommerce-checkout, .woocommerce-order-received {
     .woocommerce {
-      //margin: 70px auto 0 auto;
       width: 60%;
-      //@include calcMaxWidth($desktopLarge);
-      //padding: 2em 1em;
 
       form.checkout{
         .woocommerce-billing-fields{
@@ -3020,6 +3029,18 @@ html, body {
 
   .navigation {
     .sections {
+      @include calcMaxWidth($desktopmedium);
+    }
+  }
+
+  .woocommerce-notices-wrapper {
+    .product-notice{
+      @include calcMaxWidth($desktopmedium);
+    }
+  }
+
+  .woocommerce-cart {
+    .woocommerce {
       @include calcMaxWidth($desktopmedium);
     }
   }
@@ -3088,6 +3109,18 @@ html, body {
     }
   }
 
+  .woocommerce-notices-wrapper {
+    .product-notice{
+      @include calcMaxWidth($desktop);
+    }
+  }
+
+  .woocommerce-cart {
+    .woocommerce {
+      @include calcMaxWidth($desktop);
+    }
+  }
+
   .main-content {
     .section-inner-wrapper {
       margin: 0 auto;
@@ -3123,7 +3156,7 @@ html, body {
   }
 
   .footer {
-    .inner-wrapper{
+    .inner-wrapper {
       @include calcMaxWidth($desktop);
     }
   }
