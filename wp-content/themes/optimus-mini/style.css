@@ -11626,10 +11626,6 @@ html, body {
   .main-content .products .section-inner-wrapper {
     margin: 0 auto;
     width: 1440px; }
-    .main-content .products .section-inner-wrapper .products-slider .cards {
-      margin: -0.875em 0; }
-      .main-content .products .section-inner-wrapper .products-slider .cards .card {
-        width: calc((100% / 5) - 10px); }
   .main-content .products-category .section-inner-wrapper {
     margin: 0 auto;
     width: 1440px; }
