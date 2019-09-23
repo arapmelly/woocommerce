@@ -10595,7 +10595,7 @@ html, body {
         font-size: 1.2em; }
         .woocommerce-checkout .woocommerce form.checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment .payment_methods li p {
           font-size: 1.2em;
-          text-transform: lowercase;
+          text-transform: capitalize;
           margin-bottom: 1em; }
         .woocommerce-checkout .woocommerce form.checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment .payment_methods li .payment_method_lipa_na_mpesa .wc-payment-form {
           margin-bottom: 1em; }
@@ -11565,6 +11565,33 @@ html, body {
         top: -95px;
         right: 10px; }
 
+#cookieConsent {
+  background-color: rgba(20, 20, 20, 0.8);
+  min-height: 26px;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 26px;
+  padding: 8px 0 8px 30px;
+  font-family: "Trebuchet MS",Helvetica,sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 9999; }
+  #cookieConsent .inner-wrapper {
+    text-align: center; }
+    #cookieConsent .inner-wrapper p {
+      font-size: 12px;
+      margin: 0;
+      display: inline-block; }
+      #cookieConsent .inner-wrapper p a {
+        text-decoration: underline;
+        font-weight: 500; }
+    #cookieConsent .inner-wrapper .cookieConsentOK {
+      display: inline-block;
+      margin-left: 30px; }
+
 .footer {
   background-color: rgba(32, 32, 32, 0.89);
   color: #fff;
@@ -12007,6 +12034,14 @@ html, body {
         font-size: 18px;
         line-height: 24px;
         width: 30px; }
+
+  #cookieConsent {
+    padding-left: 0; }
+    #cookieConsent .inner-wrapper {
+      width: 100%; }
+      #cookieConsent .inner-wrapper .cookieConsentOK {
+        margin-left: 0;
+        margin-top: 15px; }
 
   .footer .inner-wrapper .copyright #siteseal {
     top: 14px; } }
