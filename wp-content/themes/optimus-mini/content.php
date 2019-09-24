@@ -225,5 +225,4 @@
         <?php } //end of cats loop ?>
 
     </section> <!-- end of section products by category -->
-
 </main>
