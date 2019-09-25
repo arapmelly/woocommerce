@@ -16,7 +16,7 @@
 
     <script language="javascript">
         window.onload = function (e) {
-            $(".pre-loader").fadeOut(2500);
+            $(".pre-loader").fadeOut(300);
         }
     </script>
 
