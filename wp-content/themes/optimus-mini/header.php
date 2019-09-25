@@ -4,6 +4,9 @@
 
     <meta charset="utf-8">
     <title><?php echo bloginfo('sitename'); ?></title>
+    <meta name="description" content="<?php echo get_option('blogdescription'); ?>">
+    <meta name="keywords" content="<?php echo get_option('blogdescription'); ?>">
+    <meta name="keywords" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/images/favicon.ico'; ?>"
           type="image/x-icon">

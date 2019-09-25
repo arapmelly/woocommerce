@@ -9945,8 +9945,9 @@ html, body {
           margin-bottom: 3rem;
           width: 100%; }
           .shop-banner .banner-inner-wrapper .shop-description .shop-name .tag-description p {
-            font-weight: inherit;
-            line-height: normal; }
+            font-weight: 300;
+            line-height: normal;
+            font-size: 16px; }
         .shop-banner .banner-inner-wrapper .shop-description .shop-name ul {
           list-style-type: none;
           color: #aaa; }
