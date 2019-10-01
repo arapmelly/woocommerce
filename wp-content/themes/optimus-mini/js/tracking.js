@@ -1,4 +1,6 @@
 // Kick off the process
+document.addEventListener("DOMContentLoaded", cookieConsent);
+
 document.addEventListener("DOMContentLoaded", logVisit);
 
 links = document.querySelectorAll('a')
@@ -25,6 +27,25 @@ buttons.forEach(function(elem) {
    logEvent(type, element);
   });
 });
+
+
+function cookieConsent(){
+
+  //if cookie exists dont show cookie consent notice.
+  cookieExist = checkCookie();
+
+  if(cookieExist){
+     
+    document.getElementById('cookieConsent').style.display = 'none';
+
+  } else {
+
+    setTimeout(function () {
+        $("#cookieConsent").fadeIn(200);
+    }, 4000);
+
+  }
+}
 
 
 

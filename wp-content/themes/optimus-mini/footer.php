@@ -4,7 +4,7 @@
 
 <footer class="footer">
 
-    <div id="cookieConsent">
+    <div id="cookieConsent" style="display:none;">
         <div class="inner-wrapper">
 <!--        <div id="closeCookieConsent">x</div>-->
         <p>This website uses cookies to ensure you get the best experience on this website. <a href="https://goby.shop/privacy-policy.php" target="_blank">Privacy Policy</a></p> <a href="javascript:void(0)" class="cookieConsentOK button">Accept</a>
