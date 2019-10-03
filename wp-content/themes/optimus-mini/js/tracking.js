@@ -187,14 +187,14 @@ function getBrowser(userAgent) {
 
 function postLog(data){
 
-    var url = "https://collection.optimus.site/ecommerce";
+    var url = "https://collection.optimus.site/api/metrics";
    
     //var url = "http://127.0.0.1:8000/api/metrics";
   $.ajax({
            type: "POST",
            url: url,
            dataType: "json",
-           data: JSON.stringify(data),
+           data: data,
            success: function (msg) {
                if (msg) {
                    console.log(msg);
