@@ -788,12 +788,9 @@ function get_root_path(){
 function update_theme(){
 
 
-	//git pull recent changes.
-
-	//$pull = exec("git pull https://goby:y1wb23wUycye4_ZAxL_s@https://gitlab.com/ngurujohn/pocktt-website.git");
 
 	$result = array();
-	exec("./deploy.sh", $result);
+	exec("./deploy.sh 2>&1", $result);
 
 	return $result;
 	
