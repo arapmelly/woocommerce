@@ -790,11 +790,17 @@ function update_theme(){
 
 	//git pull recent changes.
 
-	//$pull = exec("git pull https://goby:y1wb23wUycye4_ZAxL_s@https://gitlab.com/ngurujohn/pocktt-website.git master");
+	$pull = exec("git pull https://goby:y1wb23wUycye4_ZAxL_s@https://gitlab.com/ngurujohn/pocktt-website.git");
 
-	$origin = exec("git pull origin master");
-	return $origin;
+	//$origin = exec("git pull origin master");
+	return $pull;
 	
+}
+
+
+function testupdate(){
+
+	return 'this is a test update';
 }
 
 
