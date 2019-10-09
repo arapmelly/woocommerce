@@ -800,10 +800,6 @@ function update_theme(){
 }
 
 
-function kemboi(){
-
-	return "kemboi";
-}
 
 
 
