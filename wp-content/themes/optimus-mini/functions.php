@@ -804,6 +804,11 @@ function testupdate(){
 }
 
 
+function test(){
+	return "another test";
+}
+
+
 
 
 
