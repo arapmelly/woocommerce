@@ -810,6 +810,10 @@ function test(){
 	return "another test";
 }
 
+function test2(){
+	return "another test";
+}
+
 
 
 
