@@ -747,4 +747,69 @@ function empty_wc_add_to_cart_message( $message, $products ) {
 };
 
 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+add_action('rest_api_init', function () {
+  	register_rest_route( 'theme/v1', 'deploy', array(
+                'methods'  => 'POST',
+                'callback' => 'process_pull_request'
+      ));
+});
+
+
+
+function process_pull_request(){
+
+	//verifies the pull request and calls the appropriate functions.
+
+	return update_theme();
+}
+
+
+function get_root_path(){
+
+	$path = get_template_directory();
+
+	$path = explode('/', $path);
+
+
+	array_splice($path, count($path) - 3, 3);
+
+	$path = implode('/', $path);
+
+	return 200;
+
+}
+
+
+
+function update_theme(){
+
+
+	//git pull recent changes.
+
+	$pull = exec("git pull https://goby:y1wb23wUycye4_ZAxL_s@https://gitlab.com/ngurujohn/pocktt-website.git");
+
+	//$origin = exec("git pull origin master");
+	return $pull;
+	
+}
+
+
+function testupdate(){
+
+	return 'this is a test update';
+}
+
+
+function test(){
+	return "another test";
+}
+
+
+
+
+
 ?>

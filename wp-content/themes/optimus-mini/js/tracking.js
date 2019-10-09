@@ -1,4 +1,6 @@
 // Kick off the process
+document.addEventListener("DOMContentLoaded", cookieConsent);
+
 document.addEventListener("DOMContentLoaded", logVisit);
 
 links = document.querySelectorAll('a')
@@ -25,6 +27,25 @@ buttons.forEach(function(elem) {
    logEvent(type, element);
   });
 });
+
+
+function cookieConsent(){
+
+  //if cookie exists dont show cookie consent notice.
+  cookieExist = checkCookie();
+
+  if(cookieExist){
+     
+    document.getElementById('cookieConsent').style.display = 'none';
+
+  } else {
+
+    setTimeout(function () {
+        $("#cookieConsent").fadeIn(200);
+    }, 4000);
+
+  }
+}
 
 
 
@@ -166,14 +187,14 @@ function getBrowser(userAgent) {
 
 function postLog(data){
 
-    var url = "https://analytics.optimus.site/ecommerce";
+    var url = "https://collection.optimus.site/api/metrics";
    
     //var url = "http://127.0.0.1:8000/api/metrics";
   $.ajax({
            type: "POST",
            url: url,
            dataType: "json",
-           data: JSON.stringify(data),
+           data: data,
            success: function (msg) {
                if (msg) {
                    console.log(msg);
