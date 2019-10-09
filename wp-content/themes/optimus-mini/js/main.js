@@ -373,4 +373,17 @@
         $("#cookieConsent").fadeOut(200);
     });
 
+    // Age restriction modal
+    // =======================
+
+    function showModal() {
+        document.getElementById("age-restriction").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("age-restriction").style.display = "none";
+    }
+
+    showModal()
+
 })(jQuery);

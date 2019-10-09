@@ -1,0 +1,65 @@
+/*-- Checkbox and Radio button styles --*/
+.form label{color:#003643;display:block;line-height:1.19;font-size:16px;
+  margin-bottom:10px;font-weight:bold;
+}
+
+.form [type="radio"]:checked,
+.form [type="radio"]:not(:checked),
+.form [type="checkbox"]:checked,
+.form [type="checkbox"]:not(:checked){position:absolute;left:-9999px;}
+.form [type="radio"]:checked + label,
+.form [type="radio"]:not(:checked) + label,
+.form [type="checkbox"]:checked + label,
+.form [type="checkbox"]:not(:checked) + label{position:relative;padding-left:28px;cursor:pointer;
+  line-height:20px;display:block;color:#003643;font-weight:normal;
+}
+.form [type="radio"]:checked + label:before,
+.form [type="radio"]:not(:checked) + label:before,
+.form [type="checkbox"]:checked + label:before,
+.form [type="checkbox"]:not(:checked) + label:before{content:'';position:absolute;left:0;top:0;width:20px;
+  height:20px;border:1px solid #9b9b9b;;background:#fff;color:#7cc142;
+  -webkit-border-radius:100%;
+  border-radius:100%;
+}
+.form [type="checkbox"]:checked + label:before,
+.form [type="checkbox"]:not(:checked) + label:before{
+  -webkit-border-radius:4px;
+  border-radius:4px;
+}
+.form [type="radio"]:not(:checked) + label:hover:before,
+.form [type="radio"]:focus + label:before,
+.form [type="checkbox"]:not(:checked) + label:hover:before,
+.form [type="checkbox"]:focus + label:before{border-color:#9b9b9b;}
+.form [type="radio"]:checked + label:after,
+.form [type="radio"]:not(:checked) + label:after{content:'';width:14px;height:14px;background:#7cc142;
+  position:absolute;top:3px;left:3px;
+  -webkit-border-radius:100%;
+  border-radius:100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+
+}
+.form [type="checkbox"]:checked + label:before{content:"\1F5F8";font-weight:bold;
+  font-size:14px;width:20px;height:20px;text-align:center;line-height:18px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.form [type="radio"]:not(:checked) + label:after,
+.form [type="checkbox"]:not(:checked) + label:after{opacity:0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.form [type="radio"]:checked + label:after,
+.form [type="checkbox"]:checked + label:after{opacity:1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/*--- Layout styles ---*/
+.form .radio-group{font-size:0;padding-top:13px;}
+.form .radio-group li{display:inline-block;vertical-align:middle;padding-left:30px;}
+.form .radio-group li:first-child{padding-left:0;}
+
+.form .checkbox-list{padding:10px 0;}
+.form .checkbox-list li{margin-top:6px;}
+.form .checkbox-list li:first-child{margin-top:0;}

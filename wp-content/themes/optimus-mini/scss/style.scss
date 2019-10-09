@@ -23,6 +23,7 @@ Version:      1.0.0
 @import "dropdown/core";
 @import "modal";
 @import "preloader";
+@import "checkbox";
 
 html, body {
   background-color: $default-white-color;
@@ -2919,6 +2920,38 @@ html, body {
     }
   }
 
+}
+
+// -------------------------
+// AGE CONSENT
+// -------------------------
+
+.age-restriction-modal {
+  display: none;
+
+  .modal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    height: 365.63px;
+
+    .modal-header {
+      padding: 3em;
+      text-align: center;
+    }
+
+    #age-restriction{
+      .checkbox-list{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+      }
+    }
+  }
 }
 
 // -------------------------

@@ -1,14 +1,30 @@
 </div> <!-- Wrapper -->
 
+<div id="age-restriction" class="age-restriction-modal modal">
 
+    <div class="modal-content modal-inner">
+        <header class="modal-header">
+            <p>In order to continue, please confirm that you are above
+                <br><strong>18 years of age.</strong></p>
+        </header>
+
+        <form id="age-restriction" class="form">
+            <ul class="checkbox-list">
+                <li>
+                    <input type="checkbox" id="chk_html" name="tech_group">
+                    <label for="chk_html">Yes, I'm 18 years and above.</label>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
 
 <footer class="footer">
-
     <div id="cookieConsent" style="display:none;">
         <div class="inner-wrapper">
-<!--        <div id="closeCookieConsent">x</div>-->
-        <p>This website uses cookies to ensure you get the best experience on this website. <a href="https://goby.shop/privacy-policy.php" target="_blank">Privacy Policy</a></p> <a href="javascript:void(0)" class="cookieConsentOK button">Accept</a>
-
+            <p>This website uses cookies to ensure you get the best experience on this website. <a
+                        href="https://goby.shop/privacy-policy.php" target="_blank">Privacy Policy</a></p> <a
+                    href="javascript:void(0)" class="cookieConsentOK button">Accept</a>
         </div>
     </div>
 
@@ -29,12 +45,13 @@
 
         <div class="copyright">
             <ul>
-                <li>© 2019 <a href="https://goby.shop" target="_blank">Goby</a> </li>
+                <li>© 2019 <a href="https://goby.shop" target="_blank">Goby</a></li>
                 <li><a href="https://goby.shop/privacy.php" target="_blank">Privacy</a></li>
             </ul>
 
             <span id="siteseal">
-                <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=HhUTlNug1eynlbSH1Cx7pT6wGCkzW5K8K9x2Q6OdAoaxEbpcBUWDTASoTLpg"></script>
+                <script async type="text/javascript"
+                        src="https://seal.godaddy.com/getSeal?sealID=HhUTlNug1eynlbSH1Cx7pT6wGCkzW5K8K9x2Q6OdAoaxEbpcBUWDTASoTLpg"></script>
             </span>
         </div>
 
