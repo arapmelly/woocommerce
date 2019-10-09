@@ -800,19 +800,12 @@ function update_theme(){
 }
 
 
-function testupdate(){
+function kemboi(){
 
-	return 'this is a test update';
+	return "kemboi";
 }
 
 
-function test(){
-	return "another test";
-}
-
-function test2(){
-	return "another test";
-}
 
 
 
