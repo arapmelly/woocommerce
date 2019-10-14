@@ -798,7 +798,10 @@ function update_theme(){
 
 
 
+function test_branch(){
 
+	return "this is a rest branch for git flow";
+}
 
 
 
