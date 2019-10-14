@@ -2928,29 +2928,53 @@ html, body {
 
 .age-restriction-modal {
   display: none;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
 
   .modal-inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 0;
     width: 650px;
     height: 365.63px;
 
-    .modal-header {
-      padding: 3em;
-      text-align: center;
+    .pattern-age-gate {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      width: 25%;
     }
 
-    #age-restriction{
-      .checkbox-list{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+    .modal-message{
+      background-color: #ed1863;
+      color: #ffffff;
+      display: inherit;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 75%;
 
+      .modal-header {
+        padding: 3em 2em;
+        text-align: center;
+      }
+      #age-restriction{
+        .checkbox-list{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+        }
       }
     }
+
   }
 }
 
@@ -4029,6 +4053,40 @@ html, body {
         margin-left: 0;
         margin-top: 15px;
       }
+    }
+  }
+
+  // -------------------------
+  // AGE CONSENT
+  // -------------------------
+
+  .age-restriction-modal {
+
+    .modal-inner {
+      height: 230px;
+      width: 100vw;
+
+      .pattern-age-gate {
+        width: 12%;
+      }
+
+      .modal-message{
+        width: 88%;
+
+        .modal-header {
+          padding: 1em;
+        }
+        #age-restriction{
+          .checkbox-list{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+          }
+        }
+      }
+
     }
   }
 

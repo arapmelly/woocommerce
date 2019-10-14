@@ -1,21 +1,24 @@
 </div> <!-- Wrapper -->
 
 <div id="age-restriction" class="age-restriction-modal modal">
-
     <div class="modal-content modal-inner">
-        <header class="modal-header">
-            <p>In order to continue, please confirm that you are above
-                <br><strong>18 years of age.</strong></p>
-        </header>
+        <div class="pattern-age-gate" style="background-image: url(<?php echo get_template_directory_uri() . '/images/pattern-age-gate.png';?>)"></div>
 
-        <form id="age-restriction" class="form">
-            <ul class="checkbox-list">
-                <li>
-                    <input type="checkbox" id="chk_html" name="tech_group">
-                    <label for="chk_html">Yes, I'm 18 years and above.</label>
-                </li>
-            </ul>
-        </form>
+        <div class="modal-message">
+            <header class="modal-header">
+                <p>In order to continue, please confirm that you are above
+                    <strong>18 years of age.</strong></p>
+            </header>
+            <form id="age-restriction" class="form">
+                <ul class="checkbox-list">
+                    <li>
+                        <input type="checkbox" id="chk_html" name="tech_group">
+                        <label for="chk_html">Yes, I'm 18 years and above.</label>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
     </div>
 </div>
 

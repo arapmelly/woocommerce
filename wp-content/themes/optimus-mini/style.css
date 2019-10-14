@@ -9771,7 +9771,7 @@ a.ui.card:hover,
   cursor: pointer;
   line-height: 20px;
   display: block;
-  color: #003643;
+  color: #ffffff;
   font-weight: normal; }
 
 .form [type="radio"]:checked + label:before,
@@ -9816,7 +9816,7 @@ a.ui.card:hover,
   transition: all 0.2s ease; }
 
 .form [type="checkbox"]:checked + label:before {
-  content: "\1F5F8";
+  content: "\2714";
   font-weight: bold;
   font-size: 14px;
   width: 20px;
@@ -11733,22 +11733,42 @@ html, body {
         right: 10px; }
 
 .age-restriction-modal {
-  display: none; }
+  display: none;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5; }
   .age-restriction-modal .modal-inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 0;
     width: 650px;
     height: 365.63px; }
-    .age-restriction-modal .modal-inner .modal-header {
-      padding: 3em;
-      text-align: center; }
-    .age-restriction-modal .modal-inner #age-restriction .checkbox-list {
-      display: flex;
-      flex-direction: row;
+    .age-restriction-modal .modal-inner .pattern-age-gate {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      width: 25%; }
+    .age-restriction-modal .modal-inner .modal-message {
+      background-color: #ed1863;
+      color: #ffffff;
+      display: inherit;
+      flex-direction: column;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      height: 100%;
+      width: 75%; }
+      .age-restriction-modal .modal-inner .modal-message .modal-header {
+        padding: 3em 2em;
+        text-align: center; }
+      .age-restriction-modal .modal-inner .modal-message #age-restriction .checkbox-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; }
 
 #cookieConsent {
   background-color: rgba(20, 20, 20, 0.8);
@@ -12246,6 +12266,21 @@ html, body {
       #cookieConsent .inner-wrapper .cookieConsentOK {
         margin-left: 0;
         margin-top: 15px; }
+
+  .age-restriction-modal .modal-inner {
+    height: 230px;
+    width: 100vw; }
+    .age-restriction-modal .modal-inner .pattern-age-gate {
+      width: 12%; }
+    .age-restriction-modal .modal-inner .modal-message {
+      width: 88%; }
+      .age-restriction-modal .modal-inner .modal-message .modal-header {
+        padding: 1em; }
+      .age-restriction-modal .modal-inner .modal-message #age-restriction .checkbox-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; }
 
   .footer .inner-wrapper .copyright #siteseal {
     top: 14px; } }

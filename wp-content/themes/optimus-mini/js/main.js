@@ -377,7 +377,7 @@
     // =======================
 
     function showModal() {
-        document.getElementById("age-restriction").style.display = "block";
+        document.getElementById("age-restriction").style.display = "flex";
     }
 
     function closeModal() {

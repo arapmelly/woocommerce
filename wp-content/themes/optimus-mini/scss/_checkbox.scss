@@ -11,7 +11,7 @@
 .form [type="radio"]:not(:checked) + label,
 .form [type="checkbox"]:checked + label,
 .form [type="checkbox"]:not(:checked) + label{position:relative;padding-left:28px;cursor:pointer;
-  line-height:20px;display:block;color:#003643;font-weight:normal;
+  line-height:20px;display:block;color:#ffffff;font-weight:normal;
 }
 .form [type="radio"]:checked + label:before,
 .form [type="radio"]:not(:checked) + label:before,
@@ -39,7 +39,7 @@
   transition: all 0.2s ease;
 
 }
-.form [type="checkbox"]:checked + label:before{content:"\1F5F8";font-weight:bold;
+.form [type="checkbox"]:checked + label:before{content:"\2714";font-weight:bold;
   font-size:14px;width:20px;height:20px;text-align:center;line-height:18px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
