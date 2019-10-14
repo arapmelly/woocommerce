@@ -12271,9 +12271,9 @@ html, body {
     height: 230px;
     width: 100vw; }
     .age-restriction-modal .modal-inner .pattern-age-gate {
-      width: 12%; }
+      width: 15%; }
     .age-restriction-modal .modal-inner .modal-message {
-      width: 88%; }
+      width: 85%; }
       .age-restriction-modal .modal-inner .modal-message .modal-header {
         padding: 1em; }
       .age-restriction-modal .modal-inner .modal-message #age-restriction .checkbox-list {
