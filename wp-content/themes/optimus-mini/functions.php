@@ -699,6 +699,14 @@ function display_price_in_variation_option_name($term) {
 
 }
 
+
+function has_age_disclaimer($product){
+
+	$age_disclaimer = get_post_meta($product->get_id(), '_age_disclaimer', true);
+
+	return $age_disclaimer;
+}
+
 /*add_action('woocommerce_thankyou', 'checkout_redirect');
 
 function checkout_redirect($order_id) {

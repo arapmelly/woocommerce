@@ -384,6 +384,79 @@
         document.getElementById("age-restriction").style.display = "none";
     }
 
-    showModal()
+    //check if product has _age_disclaimer set to true
+
+    var age_disclaimer = document.getElementById("age_disclaimer").value;
+
+    var home_url = document.getElementById("home_url").value;
+    
+
+    if(age_disclaimer){
+        //check cookie status
+        var age_disclaimer_status = getCookieID();
+
+        
+
+        if(age_disclaimer_status == "belowAge"){
+
+
+
+            document.location.href= home_url;
+
+        } else {
+
+            if(age_disclaimer_status == "aboveAge"){
+
+
+
+                closeModal()
+
+            } else {
+
+                 showModal()
+            }
+           
+        }
+
+
+       
+    }
+    
+
+    $("#below_age").click(function(){
+
+        createCookie('belowAge');
+        
+        closeModal();
+        var home_url = document.getElementById("home_url").value;
+        document.location.href= home_url;
+    });
+
+    $("#above_age").click(function(){
+
+        createCookie('aboveAge');
+        
+        closeModal();
+        
+    });
+
+
+    function createCookie(cvalue){
+        var cookieID = cvalue;
+        var cname = "ageGate";
+
+        var exdays = 30;
+
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cookieID + ";" + expires + ";path=/";
+        console.log(document.cookie);
+    }
+
+    function getCookieID(){
+        var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)ageGate\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        return cookieValue;
+    }
 
 })(jQuery);
