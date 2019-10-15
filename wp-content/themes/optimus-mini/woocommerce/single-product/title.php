@@ -40,6 +40,9 @@ $productType  = $product->get_type();
 <section class="product-details">
     <div class="section-inner-wrapper">
 
+        <input type="hidden" name="" id="age_disclaimer" value="<?php echo has_age_disclaimer($product); ?>">
+        <input type="hidden" name="" id="home_url" value="<?php echo home_url('/'); ?>">
+
         <h1 class="product-name"><?php echo $product->get_name(); ?></h1>
 
 		<?php //if ($average < 3) {?>
