@@ -4056,6 +4056,7 @@ html, body {
     }
   }
 
+
   // -------------------------
   // AGE CONSENT
   // -------------------------
@@ -4063,7 +4064,7 @@ html, body {
   .age-restriction-modal {
 
     .modal-inner {
-      height: 230px;
+      height: 250px;
       width: 100vw;
 
       .pattern-age-gate {
@@ -4076,6 +4077,7 @@ html, body {
         .modal-header {
           padding: 1em;
         }
+
         #age-restriction{
           .checkbox-list{
             display: flex;
@@ -4083,6 +4085,17 @@ html, body {
             align-items: center;
             justify-content: center;
 
+            li{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              .button{
+                &:last-child{
+                  margin-top: 10px;
+                }
+              }
+            }
           }
         }
       }

@@ -4912,6 +4912,32 @@ img {
       .button.google span[class*="icon-"] img {
         width: inherit !important; }
 
+.white-border-button {
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: transparent; }
+  .white-border-button:hover {
+    border-color: rgba(32, 32, 32, 0.89);
+    background-color: rgba(32, 32, 32, 0.89); }
+
+.white-solid-button {
+  border: 2px solid #fff;
+  color: rgba(32, 32, 32, 0.89);
+  background-color: #fff; }
+  .white-solid-button:hover {
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: transparent; }
+
+.dark-border-button {
+  border: 2px solid rgba(32, 32, 32, 0.89);
+  color: rgba(32, 32, 32, 0.89);
+  background-color: transparent; }
+  .dark-border-button:hover {
+    border: 2px solid #fff;
+    color: rgba(32, 32, 32, 0.89);
+    background-color: #fff; }
+
 @media only screen and (max-width: 375px) {
   .button.facebook {
     font-size: 14px; }
@@ -12268,7 +12294,7 @@ html, body {
         margin-top: 15px; }
 
   .age-restriction-modal .modal-inner {
-    height: 230px;
+    height: 250px;
     width: 100vw; }
     .age-restriction-modal .modal-inner .pattern-age-gate {
       width: 12%; }
@@ -12281,6 +12307,12 @@ html, body {
         flex-direction: row;
         align-items: center;
         justify-content: center; }
+        .age-restriction-modal .modal-inner .modal-message #age-restriction .checkbox-list li {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          .age-restriction-modal .modal-inner .modal-message #age-restriction .checkbox-list li .button:last-child {
+            margin-top: 10px; }
 
   .footer .inner-wrapper .copyright #siteseal {
     top: 14px; } }
