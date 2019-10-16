@@ -12,8 +12,8 @@
             <form id="age-restriction" class="form">
                 <ul class="checkbox-list">
                     <li>
-                        <button class="" id="above_age">I'm above 18 years</button>
-                        <button class="" ID="below_age">I'm below 18 years</button>
+                        <button class="button white-border-button" id="above_age">I'm above 18 years</button>
+                        <button class="button white-solid-button" ID="below_age">I'm below 18 years</button>
                        <!--  <input type="checkbox" id="chk_html" name="tech_group">
                         <label for="chk_html">Yes, I'm 18 years and above.</label> -->
                     </li>
