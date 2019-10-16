@@ -35,6 +35,7 @@
 
     <div class="inner-wrapper">
         <h3>CONTACT US</h3>
+        <p>Test update</p>
         <ul>
             <?php if (get_option('blogprimaryphonenumber')) { ?>
                 <li><span>Phone:</span> <a
