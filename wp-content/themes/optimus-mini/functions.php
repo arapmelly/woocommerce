@@ -771,24 +771,43 @@ add_action('rest_api_init', function () {
 function process_pull_request(){
 
 	//verifies the pull request and calls the appropriate functions.
+	
 
-	return update_theme();
+	//get the api key from the post request
+	$api_key = base64_decode($_POST['api_key']);
+
+	//get the decrypted api key
+	$decrypted_key = decrypt_api_key($api_key);
+
+
+	//get the application consumer key
+	$api_secret = "nIhm5lNl3KRUMQl53o9WDmJ2FS27BsxMp9lrpKLAoZS4KSHMIUksDZAb4J/cLEIGBlcN9nSLYozGUuOB";
+
+	if($decrypted_key == $api_secret){
+
+		$resp = update_theme();
+	} else {
+		$resp = false;
+	}
+
+	return $resp;
+
 }
 
 
-function get_root_path(){
+function decrypt_api_key($api_key){
 
-	$path = get_template_directory();
+	//get the private key
+	$private_key_file = 'file://'.get_template_directory().'/private.pem';
 
-	$path = explode('/', $path);
+	$file_data = file_get_contents('private.pem');
 
+	$private_key = openssl_pkey_get_private($file_data);
 
-	array_splice($path, count($path) - 3, 3);
+	//decrypt api_key using private key
+	openssl_private_decrypt($api_key, $decrypted, $private_key);
 
-	$path = implode('/', $path);
-
-	return 200;
-
+	return $decrypted;
 }
 
 
@@ -803,16 +822,6 @@ function update_theme(){
 	return $result;
 	
 }
-
-
-
-function test_branch(){
-
-	return "this is a rest branch for git flow";
-}
-
-
-
 
 
 ?>

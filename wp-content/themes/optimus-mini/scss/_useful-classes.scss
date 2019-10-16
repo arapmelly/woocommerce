@@ -655,6 +655,42 @@ img {
   }
 }
 
+.white-border-button{
+  border: 2px solid $default-white-color;
+  color: $default-white-color;
+  background-color: transparent;
+
+  &:hover{
+    border-color: $default-dark-color;
+    background-color: $default-dark-color;
+  }
+}
+
+.white-solid-button{
+  border: 2px solid $default-white-color;
+  color: $default-dark-color;
+  background-color: $default-white-color;
+
+  &:hover{
+    border: 2px solid $default-white-color;
+    color: $default-white-color;
+    background-color: transparent;
+  }
+}
+
+.dark-border-button{
+  border: 2px solid $default-dark-color;
+  color: $default-dark-color;
+  background-color: transparent;
+
+  &:hover{
+    border: 2px solid $default-white-color;
+    color: $default-dark-color;
+    background-color: $default-white-color;
+  }
+}
+
+
 @media only screen and (max-width: 375px) {
   .button {
     &.facebook {
