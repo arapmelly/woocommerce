@@ -391,7 +391,7 @@
     var home_url = document.getElementById("home_url").value;
     
 
-    if(age_disclaimer){
+    if(age_disclaimer == 1){
         //check cookie status
         var age_disclaimer_status = getCookieID();
 
