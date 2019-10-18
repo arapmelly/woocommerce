@@ -382,6 +382,7 @@
 
     function closeModal() {
         document.getElementById("age-restriction").style.display = "none";
+       
     }
 
     //check if product has _age_disclaimer set to true
@@ -389,7 +390,8 @@
     var age_disclaimer = document.getElementById("age_disclaimer").value;
 
     var home_url = document.getElementById("home_url").value;
-    
+
+
 
     if(age_disclaimer == 1){
         //check cookie status
@@ -425,18 +427,23 @@
 
     $("#below_age").click(function(){
 
-        createCookie('belowAge');
+        
+        createCookie("belowAge");
         
         closeModal();
+
         var home_url = document.getElementById("home_url").value;
+
         document.location.href= home_url;
+        
     });
 
     $("#above_age").click(function(){
 
-        createCookie('aboveAge');
+        createCookie("aboveAge");
         
         closeModal();
+
         
     });
 
@@ -445,7 +452,7 @@
         var cookieID = cvalue;
         var cname = "ageGate";
 
-        var exdays = 30;
+        var exdays = 1;
 
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -458,5 +465,7 @@
         var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)ageGate\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         return cookieValue;
     }
+
+  
 
 })(jQuery);
