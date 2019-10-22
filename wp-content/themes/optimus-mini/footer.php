@@ -35,7 +35,7 @@
 
     <div class="inner-wrapper">
         <h3>CONTACT US</h3>
-       
+
         <ul>
             <?php if (get_option('blogprimaryphonenumber')) { ?>
                 <li><span>Phone:</span> <a
@@ -51,6 +51,7 @@
 
         <div class="copyright">
             <ul>
+                <li><?php echo getVersion(); ?></li>
                 <li>© 2019 <a href="https://goby.shop" target="_blank">Goby</a></li>
                 <li><a href="https://goby.shop/privacy.php" target="_blank">Privacy</a></li>
             </ul>
