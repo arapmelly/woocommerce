@@ -826,11 +826,10 @@ function update_theme(){
 
 function getVersion(){
 
-	$version_data = exec("git for-each-ref refs/tags --sort=-taggerdate --format='%(refname)' --count=1");
+	
 
-	$vdata = explode('/', $version_data);
+	$version = exec("git describe --tags $(git rev-list --tags --max-count=1)");
 
-	$version = $vdata[2];
 
 	return $version;
 
