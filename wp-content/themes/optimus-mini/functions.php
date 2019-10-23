@@ -824,4 +824,17 @@ function update_theme(){
 }
 
 
+function getVersion(){
+
+	
+
+	$version = exec("git describe --tags $(git rev-list --tags --max-count=1)");
+
+
+	return $version;
+
+
+}
+
+
 ?>
