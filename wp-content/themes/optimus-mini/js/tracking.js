@@ -1,7 +1,10 @@
 // Kick off the process
+
+
 document.addEventListener("DOMContentLoaded", cookieConsent);
 
 document.addEventListener("DOMContentLoaded", logVisit);
+
 
 links = document.querySelectorAll('a')
 
@@ -15,9 +18,7 @@ links.forEach(function(elem) {
 });
 
 
-
 buttons = document.querySelectorAll('button')
-
 
 
 buttons.forEach(function(elem) {
@@ -27,6 +28,7 @@ buttons.forEach(function(elem) {
    logEvent(type, element);
   });
 });
+
 
 
 function cookieConsent(){
@@ -187,7 +189,7 @@ function getBrowser(userAgent) {
 
 function postLog(data){
 
-    var url = "https://collection.optimus.site/api/metrics";
+    var url = getMetricsURL();
    
     //var url = "http://127.0.0.1:8000/api/metrics";
   $.ajax({
@@ -207,5 +209,27 @@ function postLog(data){
           
        });
 
+}
+
+
+function getMetricsURL(){
+
+  
+
+  //get the subdomain
+  //var subdomain =  window.location.host.split('.')[1] ? window.location.host.split('.')[1] : false;
+  var domain = location.host;
+
+  var subdomain = domain.split('.').reverse().splice(0,2).reverse().join('.');
+  
+  if(subdomain == 'pocktt.com'){
+   var url = "https://analytics.pocktt.com/api/metrics";
+  } 
+
+  if(subdomain == 'goby.shop'){
+     var url = "https://analytics.goby.shop/api/metrics";
+  }
+
+  return url;
 }
 
